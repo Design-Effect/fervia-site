@@ -1,0 +1,8 @@
+# OS / éditeur
+.DS_Store
+Thumbs.db
+*.swp
+.vscode/
+
+# Vercel
+.vercel/

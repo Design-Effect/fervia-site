@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fervia — Forger votre voie digitale</title>
+<meta name="description" content="Fervia, studio créatif digital basé en Belgique. L'artisanat du digital, accéléré par l'IA : développement web, application mobile et identité visuelle.">
+<meta name="theme-color" content="#1A2D45">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Fervia — Forger votre voie digitale">
+<meta property="og:description" content="L'artisanat du digital, accéléré par l'IA.">
+<meta property="og:locale" content="fr_BE">
+<!-- og:image à ajouter après déploiement (URL absolue) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#1A2D45;
+  --navy-deep:#0E1C30;
+  --or:#C9A84C;
+  --or-light:#F5D27A;
+  --or-deep:#A8792A;
+  --creme:#F5F0E6;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html,body{height:100%;}
+body{
+  min-height:100vh;min-height:100svh;
+  background:var(--navy-deep) url('assets/hero-bg.jpg') center center / cover no-repeat;
+  color:var(--creme);
+  font-family:'Cormorant Garamond',Georgia,serif;
+  position:relative;overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+/* vignette + dégradé sombre bas (lisibilité services) */
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+  background:
+    radial-gradient(125% 80% at 50% 40%, transparent 0%, rgba(10,18,32,.30) 72%, rgba(10,18,32,.62) 100%),
+    linear-gradient(180deg, rgba(14,28,48,.12) 0%, transparent 32%, transparent 58%, rgba(10,18,32,.55) 100%);
+}
+/* grain subtil */
+body::after{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.05;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.hero{
+  position:relative;z-index:1;
+  display:flex;flex-direction:column;align-items:center;justify-content:flex-start;
+  text-align:center;
+  min-height:100vh;min-height:100svh;
+  max-width:780px;margin:0 auto;
+  padding:clamp(4vh,6.5vh,9vh) 24px clamp(5vh,7vh,8vh);
+  gap:clamp(13px,2.3vh,24px);
+}
+.visually-hidden{
+  position:absolute;width:1px;height:1px;overflow:hidden;
+  clip:rect(0 0 0 0);white-space:nowrap;border:0;
+}
+.brand{display:flex;flex-direction:column;align-items:center;gap:clamp(6px,1vh,11px);}
+.logo-svg{width:clamp(112px,13.8vw,178px);height:auto;display:block;overflow:visible;}
+.fervia-flame{animation:flameGlow 4.6s ease-in-out infinite;}
+.tagline{
+  font-style:italic;font-weight:500;color:var(--or);
+  font-size:clamp(.98rem,2.2vw,1.35rem);
+  letter-spacing:.045em;opacity:.94;
+}
+.divider{
+  width:clamp(116px,14.2vw,184px);height:1px;
+  background:linear-gradient(90deg,transparent,var(--or) 10%,var(--or-light) 50%,var(--or) 90%,transparent);
+  opacity:.9;
+}
+.accroche{
+  font-weight:400;color:var(--creme);
+  font-size:clamp(1.5rem,4.7vw,2.9rem);
+  line-height:1.16;letter-spacing:.005em;
+  max-width:15em;
+}
+.accroche .gold{color:var(--or);font-style:italic;font-weight:500;}
+.services{
+  display:flex;align-items:center;justify-content:center;
+  gap:clamp(18px,3vw,42px);
+  margin-top:clamp(6px,1.4vh,16px);
+}
+.service{display:flex;flex-direction:column;align-items:center;gap:11px;}
+.service svg{
+  width:clamp(42px,5vw,50px);height:auto;display:block;
+}
+.service span{
+  font-family:'Jost',system-ui,sans-serif;font-weight:400;
+  text-transform:uppercase;letter-spacing:.19em;
+  font-size:clamp(.6rem,1.25vw,.73rem);
+  color:var(--creme);opacity:.86;white-space:nowrap;
+}
+.sep{
+  width:1px;height:clamp(40px,5vw,54px);
+  background:linear-gradient(180deg,transparent,rgba(201,168,76,.5),transparent);
+}
+.soon{
+  margin-top:clamp(16px,3vh,38px);
+  display:flex;flex-direction:column;align-items:center;gap:7px;
+}
+.soon-label{
+  font-family:'Jost',system-ui,sans-serif;
+  text-transform:uppercase;letter-spacing:.24em;
+  font-size:clamp(.57rem,1.15vw,.69rem);
+  color:var(--creme);opacity:.55;
+}
+.contact{
+  font-family:'Jost',system-ui,sans-serif;letter-spacing:.05em;
+  font-size:clamp(.8rem,1.6vw,.92rem);
+  color:var(--or);text-decoration:none;
+  border-bottom:1px solid rgba(201,168,76,.32);
+  padding-bottom:2px;transition:color .3s,border-color .3s;
+}
+.contact:hover{color:var(--or-light);border-color:var(--or-light);}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:translateY(0);}}
+@keyframes flameGlow{
+  0%,100%{filter:drop-shadow(0 0 6px rgba(201,168,76,.22));}
+  50%{filter:drop-shadow(0 0 16px rgba(245,210,122,.42));}
+}
+.logo-svg,.divider,.tagline,.accroche,.services,.soon{animation:fadeUp .9s cubic-bezier(.22,.61,.36,1) both;}
+.logo-svg{animation-delay:.15s;}
+.tagline{animation-delay:.65s;}
+.divider{animation-delay:.45s;}
+.accroche{animation-delay:.85s;}
+.services{animation-delay:1.1s;}
+.soon{animation-delay:1.4s;}
+
+@media (max-width:600px){
+  .services{flex-direction:column;gap:18px;}
+  .sep{display:none;}
+  .accroche{font-size:clamp(1.55rem,8vw,2.2rem);}
+}
+@media (prefers-reduced-motion:reduce){
+  .logo-svg,.divider,.tagline,.accroche,.services,.soon{animation:none;opacity:1;transform:none;}
+  .fervia-flame{animation:none;}
+}
+</style>
+</head>
+<body>
+<main class="hero">
+  <h1 class="visually-hidden">Fervia — studio créatif digital. Forger votre voie digitale.</h1>
+
+  <div class="brand">
+  <svg class="logo-svg" role="img" aria-label="Logo Fervia" viewBox="185 219 630 622" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"><g class="fervia-flame"><path d="M567.317,347.521c35.36,50.817 49.883,138.235 17.301,204.89c-10.528,21.539 -26.089,44.373 -62.525,45.458c-42.8,1.275 -74.178,-48.506 -42.145,-88.042c30.053,-37.091 101.649,-54.984 87.369,-162.306Zm12.31,53.537c-5.963,35.591 -23.875,57.951 -43.408,75.76c-16.657,15.186 -34.89,26.477 -46.558,40.878c-24.577,30.333 -0.777,68.657 32.06,67.679c30.356,-0.904 42.895,-20.508 51.667,-38.453c22.104,-45.221 21.055,-100.62 6.239,-145.864Z" style="fill:url(#_Linear1);"/><path d="M490.391,237.971c-4.47,-3.855 111.996,76.729 40.025,155.3c-132.885,145.073 -57.458,199.556 -57.434,201.171c0.037,2.55 -142.56,-86.1 -36.644,-208.904c50.451,-58.495 74.523,-129.911 54.053,-147.567Zm-50.877,312.108c-2.892,-33.918 10.638,-87.687 81.685,-165.251c27.653,-30.189 22.608,-60.738 9.17,-84.896c-6.058,-10.892 -13.714,-20.584 -21.093,-28.559c-4.631,32.481 -27.498,80.619 -63.472,122.329c-26.092,30.251 -36.05,58.06 -36.107,82.744c-0.071,30.149 14.197,55.289 29.817,73.633Z" style="fill:url(#_Linear2);"/></g><g class="fervia-word"><path d="M203.778,794.949c-0.319,-0 -0.479,-0.353 -0.479,-1.058c-0,-0.705 0.16,-1.058 0.479,-1.058c4.124,0 7.196,-0.293 9.216,-0.881c2.02,-0.587 3.369,-1.763 4.049,-3.525c0.679,-1.763 1.019,-4.348 1.019,-7.756l-0,-81.615c-0,-3.408 -0.319,-5.964 -0.956,-7.668c-0.635,-1.704 -1.9,-2.879 -3.793,-3.525c-1.891,-0.647 -4.771,-0.97 -8.64,-0.97c-0.321,0 -0.482,-0.352 -0.482,-1.058c0,-0.705 0.161,-1.057 0.482,-1.057l73.382,-0c1.142,-0 1.713,0.529 1.713,1.586l0.353,22.864c-0,0.266 -0.302,0.442 -0.906,0.528c-0.602,0.085 -0.989,-0.049 -1.16,-0.402c-1.362,-6.707 -4.099,-11.709 -8.21,-15.005c-4.11,-3.296 -9.516,-4.944 -16.22,-4.944l-7.181,0c-4.3,0 -7.313,0.748 -9.039,2.245c-1.726,1.494 -2.589,4.022 -2.589,7.582l-0,80.733c-0,3.526 0.477,6.199 1.432,8.021c0.957,1.821 2.851,3.085 5.682,3.79c2.833,0.705 7.04,1.057 12.62,1.057c0.267,0 0.4,0.353 0.4,1.058c-0,0.705 -0.133,1.058 -0.4,1.058c-3.931,-0 -8.185,-0.059 -12.763,-0.177c-4.578,-0.117 -9.835,-0.176 -15.771,-0.176c-4.102,0 -8.087,0.059 -11.954,0.176c-3.865,0.118 -7.293,0.177 -10.284,0.177Zm65.414,-37.905c-0,-4.862 -1.668,-8.585 -5.005,-11.168c-3.334,-2.584 -8.404,-3.875 -15.209,-3.875l-22.147,-0l0,-4.501l22.47,0c6.707,0 11.669,-1.153 14.886,-3.459c3.219,-2.306 4.829,-5.548 4.829,-9.726c-0,-0.235 0.352,-0.352 1.057,-0.352c0.705,-0 1.058,0.117 1.058,0.352c0,3.834 -0.029,6.798 -0.088,8.891c-0.059,2.093 -0.088,4.283 -0.088,6.569c-0,2.841 0.058,5.631 0.176,8.37c0.118,2.74 0.176,5.706 0.176,8.899c0,0.322 -0.352,0.482 -1.057,0.482c-0.705,0 -1.058,-0.16 -1.058,-0.482Z" style="fill:url(#_Linear3);fill-rule:nonzero;"/><path d="M372.488,794.949l-76.505,-0c-0.322,-0 -0.482,-0.353 -0.482,-1.058c-0,-0.705 0.16,-1.058 0.482,-1.058c3.869,0 6.749,-0.293 8.64,-0.881c1.893,-0.587 3.157,-1.763 3.793,-3.525c0.637,-1.763 0.955,-4.348 0.955,-7.756l0,-81.615c0,-3.408 -0.318,-5.964 -0.955,-7.668c-0.636,-1.704 -1.9,-2.879 -3.793,-3.525c-1.891,-0.647 -4.771,-0.97 -8.64,-0.97c-0.322,0 -0.482,-0.352 -0.482,-1.058c-0,-0.705 0.16,-1.057 0.482,-1.057l73.382,-0c1.142,-0 1.713,0.529 1.713,1.586l0.353,22.864c-0,0.266 -0.302,0.442 -0.907,0.528c-0.602,0.085 -0.988,-0.049 -1.159,-0.402c-1.363,-6.707 -4.099,-11.709 -8.211,-15.005c-4.109,-3.296 -9.516,-4.944 -16.22,-4.944l-7.18,0c-2.899,0 -5.202,0.315 -6.908,0.945c-1.705,0.63 -2.919,1.69 -3.641,3.181c-0.72,1.491 -1.079,3.472 -1.079,5.944l-0,80.49c-0,2.523 0.317,4.565 0.953,6.126c0.637,1.561 1.68,2.677 3.128,3.349c1.451,0.672 3.455,1.008 6.013,1.008l8.679,0c7.937,0 14.377,-1.928 19.318,-5.784c4.941,-3.858 8.462,-9.562 10.563,-17.112c0.086,-0.353 0.46,-0.456 1.121,-0.311c0.663,0.143 0.994,0.348 0.994,0.614c-0.47,3.311 -0.873,7.239 -1.209,11.785c-0.336,4.545 -0.504,8.766 -0.504,12.665c-0,1.762 -0.898,2.644 -2.694,2.644Zm-9.871,-39.89c-0,-4.949 -1.628,-8.715 -4.883,-11.298c-3.254,-2.584 -8.213,-3.876 -14.876,-3.876l-24.717,0l-0,-4.5l24.989,-0c6.513,-0 11.36,-1.124 14.54,-3.371c3.181,-2.248 4.771,-5.476 4.771,-9.684c-0,-0.322 0.331,-0.482 0.994,-0.482c0.663,-0 0.994,0.16 0.994,0.482c0,3.747 -0.029,6.668 -0.088,8.761c-0.059,2.093 -0.088,4.283 -0.088,6.569c-0,2.84 0.08,5.631 0.24,8.37c0.159,2.74 0.239,5.749 0.239,9.029c0,0.235 -0.352,0.352 -1.057,0.352c-0.706,0 -1.058,-0.117 -1.058,-0.352Z" style="fill:url(#_Linear4);fill-rule:nonzero;"/><path d="M507.986,823.024c-1.827,0 -4.798,-2.227 -8.913,-6.682c-4.115,-4.456 -37.139,-38.955 -42.921,-47.347c-5.78,-8.393 -12.283,-18.407 -19.509,-30.041l14.086,-4.305c9.594,14.22 17.768,25.595 24.521,34.126c6.754,8.529 40.823,42.746 46.058,46.501c5.235,3.755 10.252,5.633 15.05,5.633c0.266,-0 0.399,0.352 0.399,1.058c-0,0.705 -0.133,1.057 -0.399,1.057l-28.372,0Zm-68.205,-138.775c10.326,0 18.253,2.025 23.78,6.076c5.527,4.049 8.29,9.583 8.29,16.603c0,6.738 -1.907,12.741 -5.72,18.007c-3.814,5.266 -8.747,9.368 -14.799,12.306c-6.052,2.938 -12.508,4.407 -19.368,4.407c-1.484,0 -3.037,-0.016 -4.66,-0.047c-1.623,-0.033 -3.108,-0.108 -4.454,-0.226l0,39.296c0,3.408 0.309,5.993 0.928,7.756c0.621,1.762 1.885,2.938 3.793,3.525c1.91,0.588 4.799,0.881 8.668,0.881c0.268,0 0.402,0.353 0.402,1.058c-0,0.705 -0.134,1.058 -0.402,1.058c-2.992,-0 -6.311,-0.059 -9.96,-0.177c-3.647,-0.117 -7.654,-0.176 -12.022,-0.176c-4.1,0 -8.02,0.059 -11.758,0.176c-3.739,0.118 -7.103,0.177 -10.095,0.177c-0.321,-0 -0.482,-0.353 -0.482,-1.058c0,-0.705 0.161,-1.058 0.482,-1.058c3.869,0 6.758,-0.293 8.665,-0.881c1.908,-0.587 3.209,-1.763 3.903,-3.525c0.696,-1.763 1.044,-4.348 1.044,-7.756l-0,-81.615c-0,-3.408 -0.319,-5.964 -0.956,-7.668c-0.635,-1.704 -1.898,-2.879 -3.79,-3.525c-1.891,-0.647 -4.772,-0.97 -8.643,-0.97c-0.266,0 -0.399,-0.352 -0.399,-1.058c0,-0.705 0.133,-1.057 0.399,-1.057c2.96,-0 6.28,0.088 9.96,0.264c3.68,0.177 7.57,0.265 11.67,0.265c3.814,-0 8.065,-0.177 12.755,-0.529c4.691,-0.353 8.948,-0.529 12.769,-0.529Zm14.785,28.843c-0,-6.772 -0.795,-11.995 -2.383,-15.669c-1.586,-3.676 -3.8,-6.239 -6.64,-7.687c-2.839,-1.449 -6.152,-2.174 -9.938,-2.174c-4.572,0 -7.841,0.85 -9.808,2.548c-1.965,1.699 -2.947,4.798 -2.947,9.299l0,37.273c1.645,0.202 3.416,0.362 5.313,0.479c1.897,0.118 3.566,0.177 5.007,0.177c7.808,-0 13.326,-1.966 16.554,-5.897c3.228,-3.933 4.842,-10.05 4.842,-18.349Z" style="fill:url(#_Linear5);fill-rule:nonzero;"/><path d="M611.609,684.778c0.352,-0 0.528,0.352 0.528,1.057c0,0.706 -0.176,1.058 -0.528,1.058c-4.154,0 -7.995,1.574 -11.524,4.721c-3.529,3.145 -6.436,7.714 -8.72,13.705l-34.307,89.453c-0.118,0.471 -0.735,0.706 -1.851,0.706c-1.117,-0 -1.792,-0.235 -2.028,-0.706l-62.161,-133.316c-1.997,-4.242 -4.07,-7.388 -6.219,-9.439c-2.146,-2.051 -4.716,-3.077 -7.709,-3.077c-0.353,0 -0.529,-0.352 -0.529,-1.057c0,-0.705 0.176,-1.058 0.529,-1.058c1.474,0 2.723,0.059 3.746,0.176c1.023,0.118 2.257,0.206 3.704,0.265c1.449,0.059 3.449,0.088 5.999,0.088c5.547,-0 10.135,-0.029 13.763,-0.088c3.629,-0.059 6.646,-0.147 9.054,-0.265c2.407,-0.117 4.534,-0.176 6.381,-0.176c0.353,0 0.529,0.353 0.529,1.058c-0,0.705 -0.176,1.057 -0.529,1.057c-4.89,0 -8.19,1.225 -9.901,3.675c-1.71,2.447 -1.48,5.999 0.688,10.656l51.714,111.536l-7.315,12.27l31.845,-82.433c1.985,-5.306 2.075,-9.591 0.27,-12.854c-1.805,-3.265 -5.7,-4.897 -11.684,-4.897c-0.352,0 -0.529,-0.352 -0.529,-1.058c0,-0.705 0.177,-1.057 0.529,-1.057c3.213,-0 6.275,0.088 9.186,0.264c2.91,0.177 6.746,0.265 11.507,0.265c3.323,-0 6.013,-0.088 8.07,-0.265c2.057,-0.176 4.554,-0.264 7.492,-0.264Z" style="fill:url(#_Linear6);fill-rule:nonzero;"/><path d="M649.155,780.671c-0,3.408 0.309,5.993 0.928,7.756c0.621,1.762 1.885,2.938 3.793,3.525c1.909,0.588 4.799,0.881 8.667,0.881c0.32,0 0.48,0.353 0.48,1.058c-0,0.705 -0.16,1.058 -0.48,1.058c-3.013,-0 -6.34,-0.059 -9.981,-0.177c-3.639,-0.117 -7.656,-0.176 -12.05,-0.176c-4.168,0 -8.116,0.059 -11.843,0.176c-3.726,0.118 -7.105,0.177 -10.136,0.177c-0.268,-0 -0.402,-0.353 -0.402,-1.058c-0,-0.705 0.15,-1.058 0.451,-1.058c3.82,0 6.709,-0.293 8.668,-0.881c1.959,-0.587 3.278,-1.763 3.955,-3.525c0.68,-1.763 1.019,-4.348 1.019,-7.756l0,-81.615c0,-3.408 -0.329,-5.964 -0.988,-7.668c-0.66,-1.704 -1.978,-2.879 -3.956,-3.525c-1.977,-0.647 -4.893,-0.97 -8.747,-0.97c-0.268,0 -0.402,-0.352 -0.402,-1.058c-0,-0.705 0.134,-1.057 0.402,-1.057c3.031,-0 6.41,0.088 10.136,0.264c3.727,0.177 7.675,0.265 11.843,0.265c4.394,-0 8.442,-0.088 12.144,-0.265c3.703,-0.176 6.999,-0.264 9.887,-0.264c0.32,-0 0.48,0.352 0.48,1.057c-0,0.706 -0.16,1.058 -0.48,1.058c-3.812,0 -6.67,0.353 -8.576,1.058c-1.905,0.705 -3.183,1.939 -3.834,3.702c-0.652,1.762 -0.978,4.348 -0.978,7.756l-0,81.262Z" style="fill:url(#_Linear7);fill-rule:nonzero;"/><path d="M702.142,751.77l2.354,-4.451l49.36,0l1.234,4.451l-52.948,0Zm93.725,41.063c0.556,0 0.834,0.353 0.834,1.058c0,0.705 -0.278,1.058 -0.834,1.058c-3.462,-0 -7.053,-0.118 -10.775,-0.353c-3.722,-0.235 -7.297,-0.352 -10.725,-0.352c-3.898,-0 -7.276,0.117 -10.133,0.352c-2.857,0.235 -6.043,0.353 -9.557,0.353c-0.471,-0 -0.706,-0.353 -0.706,-1.058c0,-0.705 0.235,-1.058 0.706,-1.058c5.302,0 8.465,-0.944 9.488,-2.834c1.023,-1.891 0.162,-5.603 -2.584,-11.135l-36.899,-74.806l7.184,-11.816l-34.787,78.596c-3.108,7.084 -3.216,12.521 -0.322,16.311c2.894,3.79 7.825,5.684 14.793,5.684c0.588,0 0.881,0.353 0.881,1.058c0,0.705 -0.293,1.058 -0.881,1.058c-3.525,-0 -6.757,-0.118 -9.695,-0.353c-2.938,-0.235 -6.64,-0.352 -11.105,-0.352c-4.453,-0 -8.028,0.117 -10.725,0.352c-2.698,0.235 -5.979,0.353 -9.844,0.353c-0.47,-0 -0.705,-0.353 -0.705,-1.058c-0,-0.705 0.235,-1.058 0.705,-1.058c3.173,0 5.912,-0.65 8.219,-1.952c2.308,-1.304 4.575,-3.675 6.803,-7.115c2.227,-3.439 4.729,-8.319 7.505,-14.641l37.863,-85.344c0.151,-0.353 0.639,-0.55 1.465,-0.592c0.827,-0.043 1.299,0.155 1.416,0.592l43.198,87.018c2.787,5.621 5.218,10.047 7.291,13.279c2.073,3.231 4.06,5.499 5.963,6.803c1.902,1.302 3.89,1.952 5.963,1.952Z" style="fill:url(#_Linear8);fill-rule:nonzero;"/></g><defs><linearGradient id="_Linear1" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(2.84217e-14,436.729,-647.489,5.68434e-14,500,187.124)"><stop offset="0" style="stop-color:#f5d27a;stop-opacity:1"/><stop offset="0.5" style="stop-color:#d4a84f;stop-opacity:1"/><stop offset="1" style="stop-color:#a8792a;stop-opacity:1"/></linearGradient><linearGradient id="_Linear2" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(2.67419e-14,436.729,-647.489,3.96472e-14,500,187.124)"><stop offset="0" style="stop-color:#f5d27a;stop-opacity:1"/><stop offset="0.5" style="stop-color:#d4a84f;stop-opacity:1"/><stop offset="1" style="stop-color:#a8792a;stop-opacity:1"/></linearGradient><linearGradient id="_Linear3" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(3.01874,214.03,-214.03,3.01874,507.44,632.939)"><stop offset="0" style="stop-color:#f5d27a;stop-opacity:1"/><stop offset="0.5" style="stop-color:#d4a84f;stop-opacity:1"/><stop offset="1" style="stop-color:#a8792a;stop-opacity:1"/></linearGradient><linearGradient id="_Linear4" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(3.01874,214.03,-214.03,3.01874,507.44,632.939)"><stop offset="0" style="stop-color:#f5d27a;stop-opacity:1"/><stop offset="0.5" style="stop-color:#d4a84f;stop-opacity:1"/><stop offset="1" style="stop-color:#a8792a;stop-opacity:1"/></linearGradient><linearGradient id="_Linear5" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(3.01874,214.03,-214.03,3.01874,507.44,632.939)"><stop offset="0" style="stop-color:#f5d27a;stop-opacity:1"/><stop offset="0.5" style="stop-color:#d4a84f;stop-opacity:1"/><stop offset="1" style="stop-color:#a8792a;stop-opacity:1"/></linearGradient><linearGradient id="_Linear6" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(3.01874,214.03,-214.03,3.01874,507.44,632.939)"><stop offset="0" style="stop-color:#f5d27a;stop-opacity:1"/><stop offset="0.5" style="stop-color:#d4a84f;stop-opacity:1"/><stop offset="1" style="stop-color:#a8792a;stop-opacity:1"/></linearGradient><linearGradient id="_Linear7" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(3.01874,214.03,-214.03,3.01874,507.44,632.939)"><stop offset="0" style="stop-color:#f5d27a;stop-opacity:1"/><stop offset="0.5" style="stop-color:#d4a84f;stop-opacity:1"/><stop offset="1" style="stop-color:#a8792a;stop-opacity:1"/></linearGradient><linearGradient id="_Linear8" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(3.01874,214.03,-214.03,3.01874,507.44,632.939)"><stop offset="0" style="stop-color:#f5d27a;stop-opacity:1"/><stop offset="0.5" style="stop-color:#d4a84f;stop-opacity:1"/><stop offset="1" style="stop-color:#a8792a;stop-opacity:1"/></linearGradient></defs></svg>
+  <div class="divider"></div>
+  <p class="tagline">Forger votre voie digitale</p>
+  </div>
+
+  <p class="accroche">L'artisanat du digital,<br>accéléré par <span class="gold">l'IA</span></p>
+
+  <nav class="services" aria-label="Services">
+    <div class="service">
+      <svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;" viewBox="242.55 452.05 97.90 97.90"><g><circle cx="291.342" cy="519.214" r="0.375" style="fill:none;stroke:url(#gold-web);stroke-width:3.33px;"/><path d="M279.824,538.135c-0.457,0.27 3.678,-4.776 2.945,-12.149" style="fill:none;stroke:url(#gold-web);stroke-width:3.33px;"/><path d="M302.863,538.135c0.457,0.27 -3.679,-4.776 -2.945,-12.149" style="fill:none;stroke:url(#gold-web);stroke-width:3.33px;"/><path d="M272.268,538.135l38.898,0" style="fill:none;stroke:url(#gold-web);stroke-width:3.33px;"/><path d="M248.207,515.172l86.27,0" style="fill:none;stroke:url(#gold-web);stroke-width:3.33px;"/><path d="M295.687,478.523l-10.501,24.844" style="fill:none;stroke:url(#gold-web);stroke-width:3.33px;"/><path d="M279.89,482.743l-9.405,9.405l8.705,8.704" style="fill:none;stroke:url(#gold-web);stroke-width:3.33px;"/><path d="M301.761,482.743l9.405,9.405l-8.704,8.704" style="fill:none;stroke:url(#gold-web);stroke-width:3.33px;"/><path d="M334.477,468.359l0,53.524c0,2.265 -1.838,4.103 -4.103,4.103l-78.063,0c-2.265,0 -4.104,-1.838 -4.104,-4.103l0,-53.524c0,-2.265 1.839,-4.104 4.104,-4.104l78.063,0c2.265,0 4.103,1.839 4.103,4.104Z" style="fill:none;stroke:url(#gold-web);stroke-width:3.33px;"/></g><defs><linearGradient id="gold-web" gradientUnits="userSpaceOnUse" x1="291.5" y1="463.0" x2="291.5" y2="539.0"><stop offset="0" stop-color="#f5d27a"/><stop offset="0.5" stop-color="#d4a84f"/><stop offset="1" stop-color="#a8792a"/></linearGradient></defs></svg>
+      <span>Développement web</span>
+    </div>
+    <span class="sep"></span>
+    <div class="service">
+      <svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;" viewBox="452.05 451.05 97.90 97.90"><g><path d="M520.863,464.938l-0,70.114c-0,1.702 -1.382,3.083 -3.084,3.083l-33.351,0c-1.702,0 -3.084,-1.381 -3.084,-3.083l-0,-70.114c-0,-1.702 1.382,-3.084 3.084,-3.084l33.351,0c1.702,0 3.084,1.382 3.084,3.084Z" style="fill:none;stroke:url(#gold-mobile);stroke-width:3.33px;"/><path d="M495.405,468.006l11.526,-0" style="fill:none;stroke:url(#gold-mobile);stroke-width:3.33px;"/><circle cx="501.168" cy="529.693" r="2.373" style="fill:none;stroke:url(#gold-mobile);stroke-width:3.33px;"/></g><defs><linearGradient id="gold-mobile" gradientUnits="userSpaceOnUse" x1="501.0" y1="461.0" x2="501.0" y2="539.0"><stop offset="0" stop-color="#f5d27a"/><stop offset="0.5" stop-color="#d4a84f"/><stop offset="1" stop-color="#a8792a"/></linearGradient></defs></svg>
+      <span>Application mobile</span>
+    </div>
+    <span class="sep"></span>
+    <div class="service">
+      <svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;" viewBox="660.55 452.55 97.90 97.90"><g><g><path d="M713.12,468.86c4.899,0.405 9.809,1.677 14.515,3.894c10.141,4.779 17.969,13.39 21.762,23.94m-79.75,0.548c0.5,-1.453 1.078,-2.876 1.733,-4.265c6.665,-14.147 20.188,-22.882 34.737,-24.11" style="fill:none;stroke:url(#gold-design);stroke-width:3.33px;"/><g><path d="M713.024,468.86l31.765,0" style="fill:none;stroke:url(#gold-design);stroke-width:3.33px;"/><path d="M674.732,468.86l31.288,0" style="fill:none;stroke:url(#gold-design);stroke-width:3.33px;"/><rect x="667.729" y="465.359" width="7.003" height="7.003" style="fill:none;stroke:url(#gold-design);stroke-width:3.33px;"/><rect x="706.02" y="465.359" width="7.003" height="7.003" style="fill:none;stroke:url(#gold-design);stroke-width:3.33px;"/><rect x="744.789" y="465.359" width="7.003" height="7.003" style="fill:none;stroke:url(#gold-design);stroke-width:3.33px;"/></g></g><g><g><path d="M709.522,480.324l0,25.013" style="fill:none;stroke:url(#gold-design);stroke-width:3.33px;"/><g><path d="M700.299,529.693l-10.63,-20.471l19.697,-30.014l20.009,29.389l-10.004,21.096l-19.072,-0Z" style="fill:none;stroke:url(#gold-design);stroke-width:3.33px;"/><rect x="694.984" y="529.693" width="28.764" height="8.453" style="fill:none;stroke:url(#gold-design);stroke-width:3.33px;"/></g></g><circle cx="709.522" cy="510.161" r="4.824" style="fill:none;stroke:url(#gold-design);stroke-width:3.33px;"/></g></g><defs><linearGradient id="gold-design" gradientUnits="userSpaceOnUse" x1="709.5" y1="464.0" x2="709.5" y2="539.0"><stop offset="0" stop-color="#f5d27a"/><stop offset="0.5" stop-color="#d4a84f"/><stop offset="1" stop-color="#a8792a"/></linearGradient></defs></svg>
+      <span>Identité visuelle</span>
+    </div>
+  </nav>
+
+  <footer class="soon">
+    <span class="soon-label">Site complet bientôt en ligne</span>
+    <a class="contact" href="mailto:contact@fervia.be">contact@fervia.be</a>
+  </footer>
+</main>
+</body>
+</html>
