@@ -54,14 +54,17 @@ a{color:inherit;}
   border-bottom:1px solid rgba(201,168,76,.16);
 }
 .topbar-brand{
-  font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;
-  letter-spacing:.34em;text-indent:.34em;font-size:1.02rem;
-  text-decoration:none;
-  background:linear-gradient(135deg,var(--or-light) 0%,var(--or) 50%,var(--or-deep) 100%);
-  -webkit-background-clip:text;background-clip:text;color:transparent;
-  transition:opacity .3s;
+  display:inline-flex;align-items:center;gap:9px;
+  text-decoration:none;transition:opacity .3s;
 }
 .topbar-brand:hover{opacity:.8;}
+.topbar-flame{height:1.55em;width:auto;flex:none;display:block;}
+.topbar-wordmark{
+  font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;
+  letter-spacing:.34em;text-indent:.34em;font-size:1.02rem;
+  background:linear-gradient(135deg,var(--or-light) 0%,var(--or) 50%,var(--or-deep) 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
 .topbar-nav{display:flex;gap:clamp(18px,2.4vw,34px);}
 .topbar-nav a{
   font-family:'Jost',system-ui,sans-serif;text-transform:uppercase;
@@ -392,7 +395,10 @@ a{color:inherit;}
 </head>
 <body>
 <header class="topbar" id="topbar">
-  <a class="topbar-brand" href="#top" aria-label="Fervia — haut de page">FERVIA</a>
+  <a class="topbar-brand" href="#top" aria-label="Fervia — haut de page">
+    <svg class="topbar-flame" viewBox="402 230 191 375" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M567.317,347.521c35.36,50.817 49.883,138.235 17.301,204.89c-10.528,21.539 -26.089,44.373 -62.525,45.458c-42.8,1.275 -74.178,-48.506 -42.145,-88.042c30.053,-37.091 101.649,-54.984 87.369,-162.306Zm12.31,53.537c-5.963,35.591 -23.875,57.951 -43.408,75.76c-16.657,15.186 -34.89,26.477 -46.558,40.878c-24.577,30.333 -0.777,68.657 32.06,67.679c30.356,-0.904 42.895,-20.508 51.667,-38.453c22.104,-45.221 21.055,-100.62 6.239,-145.864Z" fill="url(#_tbFlame1)"/><path d="M490.391,237.971c-4.47,-3.855 111.996,76.729 40.025,155.3c-132.885,145.073 -57.458,199.556 -57.434,201.171c0.037,2.55 -142.56,-86.1 -36.644,-208.904c50.451,-58.495 74.523,-129.911 54.053,-147.567Zm-50.877,312.108c-2.892,-33.918 10.638,-87.687 81.685,-165.251c27.653,-30.189 22.608,-60.738 9.17,-84.896c-6.058,-10.892 -13.714,-20.584 -21.093,-28.559c-4.631,32.481 -27.498,80.619 -63.472,122.329c-26.092,30.251 -36.05,58.06 -36.107,82.744c-0.071,30.149 14.197,55.289 29.817,73.633Z" fill="url(#_tbFlame2)"/><defs><linearGradient id="_tbFlame1" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(2.84217e-14,436.729,-647.489,5.68434e-14,500,187.124)"><stop offset="0" stop-color="#f5d27a"/><stop offset="0.5" stop-color="#d4a84f"/><stop offset="1" stop-color="#a8792a"/></linearGradient><linearGradient id="_tbFlame2" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(2.67419e-14,436.729,-647.489,3.96472e-14,500,187.124)"><stop offset="0" stop-color="#f5d27a"/><stop offset="0.5" stop-color="#d4a84f"/><stop offset="1" stop-color="#a8792a"/></linearGradient></defs></svg>
+    <span class="topbar-wordmark">FERVIA</span>
+  </a>
   <div class="topbar-right">
     <nav class="topbar-nav" aria-label="Sections du site">
       <a href="#methode">Méthode</a>
