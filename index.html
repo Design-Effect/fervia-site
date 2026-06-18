@@ -319,22 +319,37 @@ a{color:inherit;}
   letter-spacing:.22em;font-size:.62rem;color:var(--creme);opacity:.4;
 }
 .site-foot--alt{margin-top:8px;opacity:.28;}
-/* bouton téléphone flottant */
-.fab-phone{
+/* boutons de contact flottants */
+.fab-stack{
   position:fixed;left:clamp(16px,3vw,28px);bottom:clamp(16px,3vw,28px);z-index:40;
+  display:flex;flex-direction:column;gap:14px;
+  opacity:0;visibility:hidden;transform:translateY(16px);pointer-events:none;
+  transition:opacity .4s,transform .4s,visibility .4s;
+}
+.fab-stack.visible{opacity:1;visibility:visible;transform:translateY(0);pointer-events:auto;}
+.fab{
   width:54px;height:54px;border-radius:50%;
   display:flex;align-items:center;justify-content:center;
-  background:rgba(14,28,48,.9);
-  -webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);
-  border:1px solid rgba(201,168,76,.5);color:var(--or);
   box-shadow:0 10px 30px -10px rgba(0,0,0,.6);
   transition:background .35s,color .35s,transform .35s,box-shadow .35s;
 }
-.fab-phone svg{width:23px;height:23px;}
-.fab-phone:hover{
+.fab svg{width:23px;height:23px;}
+.fab:hover{transform:translateY(-3px);}
+/* primaire — mail (doré plein, icône navy) */
+.fab--mail{
   background:linear-gradient(135deg,var(--or-light),var(--or-deep));
-  color:var(--navy-deep);transform:translateY(-3px);
-  box-shadow:0 16px 36px -12px rgba(201,168,76,.5);
+  color:var(--navy-deep);
+}
+.fab--mail:hover{box-shadow:0 16px 36px -12px rgba(201,168,76,.5);}
+/* secondaire — téléphone (ghost) */
+.fab--phone{
+  background:rgba(14,28,48,.9);
+  -webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);
+  border:1px solid rgba(201,168,76,.5);color:var(--or);
+}
+.fab--phone:hover{
+  background:linear-gradient(135deg,var(--or-light),var(--or-deep));
+  color:var(--navy-deep);box-shadow:0 16px 36px -12px rgba(201,168,76,.5);
 }
 
 @keyframes fadeUp{from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:translateY(0);}}
@@ -543,9 +558,14 @@ a{color:inherit;}
   </section>
 </main>
 
-<a class="fab-phone" href="tel:+32465935655" aria-label="Appeler Fervia au 0465 93 56 55">
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-</a>
+<div class="fab-stack" id="fabStack" aria-hidden="true">
+  <a class="fab fab--mail" href="mailto:contact@fervia.be" aria-label="Envoyer un email à contact@fervia.be">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+  </a>
+  <a class="fab fab--phone" href="tel:+32465935655" aria-label="Appeler Fervia au 0465 93 56 55">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+  </a>
+</div>
 
 <script>
   (function(){
@@ -568,11 +588,14 @@ a{color:inherit;}
     var bg = document.querySelector('.hero-bg');
     var hero = document.querySelector('.hero');
     var topbar = document.getElementById('topbar');
+    var fabStack = document.getElementById('fabStack');
     var ticking = false;
     function update(){
       var y = window.pageYOffset || 0;
       var h = hero.offsetHeight;
-      if (topbar){ topbar.classList.toggle('visible', y > h * 0.7); }
+      var past = y > h * 0.7;
+      if (topbar){ topbar.classList.toggle('visible', past); }
+      if (fabStack){ fabStack.classList.toggle('visible', past); fabStack.setAttribute('aria-hidden', past ? 'false' : 'true'); }
       if (!reduce && bg && y < h){ bg.style.transform = 'translate3d(0,' + (y * 0.28) + 'px,0)'; }
       ticking = false;
     }
