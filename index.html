@@ -10,7 +10,15 @@
 <meta property="og:title" content="Fervia — Forger votre voie digitale">
 <meta property="og:description" content="L'artisanat du digital, accéléré par l'IA.">
 <meta property="og:locale" content="fr_BE">
-<!-- og:image à ajouter après déploiement (URL absolue) -->
+<meta property="og:url" content="https://fervia.be/">
+<meta property="og:image" content="https://fervia.be/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Fervia — studio créatif digital">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Fervia — Forger votre voie digitale">
+<meta name="twitter:description" content="L'artisanat du digital, accéléré par l'IA.">
+<meta name="twitter:image" content="https://fervia.be/assets/og-image.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
@@ -571,6 +579,10 @@ a{color:inherit;}
 
 <script>
   (function(){
+    // URL propre : /index.html -> /
+    if (location.pathname.endsWith('/index.html')) {
+      history.replaceState(null, '', location.pathname.slice(0, -'index.html'.length) + location.search + location.hash);
+    }
     var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     // Révélation des sections au scroll
