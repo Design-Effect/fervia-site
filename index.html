@@ -319,6 +319,13 @@ a{color:inherit;}
   letter-spacing:.22em;font-size:.62rem;color:var(--creme);opacity:.4;
 }
 .site-foot--alt{margin-top:8px;opacity:.28;}
+.site-foot-links{margin-top:16px;display:flex;gap:18px;justify-content:center;flex-wrap:wrap;}
+.site-foot-links a{
+  font-family:'Jost',system-ui,sans-serif;text-transform:uppercase;
+  letter-spacing:.18em;font-size:.6rem;color:var(--creme);opacity:.5;
+  text-decoration:none;transition:color .3s,opacity .3s;
+}
+.site-foot-links a:hover{color:var(--or);opacity:1;}
 /* boutons de contact flottants */
 .fab-stack{
   position:fixed;left:clamp(16px,3vw,28px);bottom:clamp(16px,3vw,28px);z-index:40;
@@ -554,6 +561,11 @@ a{color:inherit;}
       </div>
       <p class="site-foot">Fervia · Studio créatif digital · Belgique</p>
       <p class="site-foot site-foot--alt">Fervia — anciennement Design Effect</p>
+      <p class="site-foot site-foot--alt">© 2026 Fervia — Tous droits réservés · Conçu &amp; réalisé par Fervia</p>
+      <nav class="site-foot-links" aria-label="Informations légales">
+        <a href="mentions-legales.html">Mentions légales</a>
+        <a href="politique-confidentialite.html">Politique de confidentialité</a>
+      </nav>
     </div>
   </section>
 </main>
