@@ -604,9 +604,11 @@ a{color:inherit;}
 
 <script>
   (function(){
-    // URL propre : /index.html -> /
-    if (location.pathname.endsWith('/index.html')) {
-      history.replaceState(null, '', location.pathname.slice(0, -'index.html'.length) + location.search + location.hash);
+    // URL propre : /index.html -> / (ignoré en local file://, et protégé pour ne jamais bloquer le script)
+    if (location.protocol !== 'file:' && location.pathname.endsWith('/index.html')) {
+      try {
+        history.replaceState(null, '', location.pathname.slice(0, -'index.html'.length) + location.search + location.hash);
+      } catch (e) { /* origine opaque / restriction navigateur : on ignore */ }
     }
     var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
