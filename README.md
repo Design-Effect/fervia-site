@@ -13,7 +13,7 @@ Site du studio créatif Fervia (page d'attente / hero, à étendre en site compl
 - `assets/icons/` — icônes services (web, mobile, design) en SVG dégradé or
 
 ## Déploiement
-Hébergé sur Vercel (plan Hobby). Domaine `fervia.be` connecté via enregistrement A
+Hébergé sur Github . Domaine `fervia.be` connecté via enregistrement A
 chez OVH (le DNS reste chez OVH pour préserver les MX de l'email Zimbra).
 
 ## À faire ensuite
