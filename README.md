@@ -3,7 +3,7 @@
 Site du studio créatif Fervia (page d'attente / hero, à étendre en site complet).
 
 ## Stack
-- HTML statique (pas de build) — déploiement Vercel
+- HTML statique (pas de build) — déploiement Github
 - Polices : Cormorant Garamond + Jost (Google Fonts)
 - Couleurs : navy `#1A2D45`, or `#C9A84C`, crème `#F5F0E6`
 
