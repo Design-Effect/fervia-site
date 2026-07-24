@@ -514,6 +514,26 @@ a{color:inherit;}
   .reveal > *{opacity:1;transform:none;transition:none;}
   .hero-bg{transform:none!important;}
 }
+/* ===== FORMULAIRE DE CONTACT ===== */
+.contact-form{max-width:34em;margin:0 auto clamp(30px,5vh,44px);text-align:left;}
+.cf-row{display:flex;gap:14px;flex-wrap:wrap;}
+.cf-field{margin-bottom:16px;flex:1 1 200px;display:flex;flex-direction:column;}
+.cf-field label{font-family:'Jost',system-ui,sans-serif;text-transform:uppercase;letter-spacing:.14em;font-size:.64rem;color:var(--or);opacity:.9;margin-bottom:7px;}
+.contact-form input,.contact-form textarea,.contact-form select{font-family:'Jost',system-ui,sans-serif;font-size:.95rem;color:var(--creme);background:rgba(14,28,48,.55);border:1px solid rgba(201,168,76,.3);border-radius:4px;padding:12px 14px;width:100%;transition:border-color .3s,background .3s;}
+.contact-form input:focus,.contact-form textarea:focus,.contact-form select:focus{outline:none;border-color:var(--or);background:rgba(14,28,48,.78);}
+.contact-form textarea{min-height:128px;resize:vertical;}
+.contact-form input::placeholder,.contact-form textarea::placeholder{color:rgba(245,240,230,.38);}
+.contact-form select{appearance:none;-webkit-appearance:none;cursor:pointer;}
+.cf-consent{display:flex;align-items:flex-start;gap:10px;margin:2px 0 20px;font-family:'Jost',system-ui,sans-serif;font-size:.78rem;color:var(--creme);opacity:.86;line-height:1.5;}
+.cf-consent input{width:auto;flex:none;margin-top:3px;accent-color:var(--or);}
+.cf-consent a{color:var(--or);}
+.contact-submit{cursor:pointer;width:100%;font-size:.8rem;font-family:'Jost',system-ui,sans-serif;}
+.contact-submit:disabled{opacity:.5;cursor:not-allowed;}
+.cf-hp{position:absolute!important;left:-9999px;width:1px;height:1px;overflow:hidden;}
+.cf-status{font-family:'Jost',system-ui,sans-serif;font-size:.9rem;margin-top:15px;min-height:1.2em;text-align:center;}
+.cf-status.ok{color:var(--or-light);}
+.cf-status.err{color:#e8a0a0;}
+.contact-sep{font-family:'Jost',system-ui,sans-serif;text-transform:uppercase;letter-spacing:.16em;font-size:.64rem;color:var(--creme);opacity:.5;margin:0 0 16px;}
 </style>
 <script type="application/ld+json">
 {
@@ -852,6 +872,45 @@ a{color:inherit;}
       <span class="eyebrow">Contact</span>
       <h2 class="s-title">Un projet <span class="gold">en tête</span> ?</h2>
       <p class="lead">Parlons-en. Une idée, un devis, une question — j'y réponds personnellement.</p>
+
+      <form class="contact-form" id="contactForm" action="https://formsubmit.co/ajax/contact@fervia.be" method="POST" novalidate>
+        <div class="cf-row">
+          <div class="cf-field">
+            <label for="cf-nom">Votre nom</label>
+            <input type="text" id="cf-nom" name="Nom" autocomplete="name" placeholder="Prénom et nom" required>
+          </div>
+          <div class="cf-field">
+            <label for="cf-email">Votre e-mail</label>
+            <input type="email" id="cf-email" name="Email" autocomplete="email" placeholder="vous@exemple.be" required>
+          </div>
+        </div>
+        <div class="cf-field">
+          <label for="cf-sujet">Votre besoin</label>
+          <select id="cf-sujet" name="Type de projet">
+            <option value="Site vitrine">Un site vitrine</option>
+            <option value="Application / outil métier">Une application / un outil métier</option>
+            <option value="Identité visuelle">Une identité visuelle (logo, marque)</option>
+            <option value="Autre / je ne sais pas encore">Autre / je ne sais pas encore</option>
+          </select>
+        </div>
+        <div class="cf-field">
+          <label for="cf-message">Votre message</label>
+          <textarea id="cf-message" name="Message" placeholder="Parlez-moi de votre projet en quelques lignes…" required></textarea>
+        </div>
+        <label class="cf-consent" for="cf-consent">
+          <input type="checkbox" id="cf-consent" required>
+          <span>J'accepte que mes données soient utilisées pour traiter ma demande, conformément à la <a href="politique-confidentialite.html">politique de confidentialité</a>.</span>
+        </label>
+        <!-- anti-spam : ne pas remplir -->
+        <input type="text" class="cf-hp" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <input type="hidden" name="_subject" value="Nouveau contact via fervia.be">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <button type="submit" class="offre-cta plein contact-submit">Envoyer ma demande</button>
+        <p class="cf-status" id="cfStatus" role="status" aria-live="polite"></p>
+      </form>
+
+      <p class="contact-sep">— ou directement —</p>
       <div class="contact-methods">
         <a class="contact" href="mailto:contact@fervia.be">contact@fervia.be</a>
         <a class="contact" href="tel:+32465935655">0465.93.56.55</a>
@@ -905,6 +964,44 @@ a{color:inherit;}
       if (!ticking){ window.requestAnimationFrame(update); ticking = true; }
     }, { passive: true });
     update();
+  })();
+</script>
+<script>
+  (function(){
+    var form = document.getElementById('contactForm');
+    if (!form) return;
+    var status = document.getElementById('cfStatus');
+    var btn = form.querySelector('.contact-submit');
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      // honeypot : si rempli, un robot -> on ignore silencieusement
+      var hp = form.querySelector('[name="_honey"]');
+      if (hp && hp.value) return;
+      if (!form.checkValidity()) { form.reportValidity(); return; }
+      status.textContent = ''; status.className = 'cf-status';
+      var label = btn.textContent;
+      btn.disabled = true; btn.textContent = 'Envoi…';
+      fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      })
+      .then(function(r){ return r.json(); })
+      .then(function(res){
+        if (res && (res.success === 'true' || res.success === true)) {
+          form.reset();
+          status.textContent = 'Merci ! Votre message est bien parti. Je vous réponds au plus vite.';
+          status.className = 'cf-status ok';
+        } else {
+          throw new Error((res && res.message) || 'Réponse inattendue');
+        }
+      })
+      .catch(function(){
+        status.innerHTML = 'Envoi impossible pour le moment. Écrivez-moi directement à <a href="mailto:contact@fervia.be">contact@fervia.be</a>.';
+        status.className = 'cf-status err';
+      })
+      .finally(function(){ btn.disabled = false; btn.textContent = label; });
+    });
   })();
 </script>
 </body>
