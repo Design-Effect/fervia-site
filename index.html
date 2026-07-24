@@ -19,6 +19,10 @@
 <meta name="twitter:title" content="Fervia — Forger votre voie digitale">
 <meta name="twitter:description" content="L'artisanat du digital, accéléré par l'IA.">
 <meta name="twitter:image" content="https://fervia.be/assets/og-image.png">
+<link rel="canonical" href="https://fervia.be/">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/favicon.svg">
+<link rel="manifest" href="/site.webmanifest">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" media="print" onload="this.media='all'">
@@ -511,6 +515,62 @@ a{color:inherit;}
   .hero-bg{transform:none!important;}
 }
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://fervia.be/#business",
+      "name": "Fervia",
+      "description": "Studio créatif digital à Wavre : développement web, applications mobiles et identité visuelle, l'artisanat du digital accéléré par l'IA.",
+      "url": "https://fervia.be/",
+      "image": "https://fervia.be/assets/og-image.png",
+      "logo": "https://fervia.be/assets/favicon.svg",
+      "email": "contact@fervia.be",
+      "telephone": "+32465935655",
+      "priceRange": "€€",
+      "vatID": "BE1032140673",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Rue de la Limite 9",
+        "postalCode": "1300",
+        "addressLocality": "Wavre",
+        "addressRegion": "Brabant wallon",
+        "addressCountry": "BE"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 50.7167,
+        "longitude": 4.6000
+      },
+      "areaServed": [
+        { "@type": "Country", "name": "Belgique" },
+        { "@type": "AdministrativeArea", "name": "Brabant wallon" }
+      ],
+      "knowsLanguage": ["fr", "en"],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Services Fervia",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Développement web", "description": "Sites vitrines et applications web sur mesure." } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Application mobile", "description": "Applications mobiles iOS et Android." } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Identité visuelle", "description": "Logo, charte graphique et identité de marque." } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Outil métier sur mesure", "description": "Application faite pour votre activité, prix fixe sans abonnement obligatoire." } }
+        ]
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://fervia.be/#website",
+      "url": "https://fervia.be/",
+      "name": "Fervia",
+      "inLanguage": "fr-BE",
+      "publisher": { "@id": "https://fervia.be/#business" }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <header class="topbar" id="topbar">
@@ -732,6 +792,10 @@ a{color:inherit;}
       <p class="offre-note">
         Chaque offre inclut l'hébergement, la sécurité et la tranquillité d'esprit d'un interlocuteur unique.<br>
         <em>La retenue fait le premium — on construit l'essentiel, parfaitement, plutôt que l'accessoire, en trop.</em>
+      </p>
+      <p class="offre-note" style="margin-top:14px">
+        Besoin d'un <strong>outil de gestion sur mesure</strong> pour votre activité, plutôt qu'un simple site ?
+        <a class="gold" href="/outil-metier/" style="text-decoration:underline;text-underline-offset:3px">Découvrez l'outil métier Fervia&nbsp;→</a>
       </p>
     </div>
   </section>
