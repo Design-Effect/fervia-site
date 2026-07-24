@@ -873,7 +873,7 @@ a{color:inherit;}
       <h2 class="s-title">Un projet <span class="gold">en tête</span> ?</h2>
       <p class="lead">Parlons-en. Une idée, un devis, une question — j'y réponds personnellement.</p>
 
-      <form class="contact-form" id="contactForm" action="https://formsubmit.co/ajax/contact@fervia.be" method="POST" novalidate>
+      <form class="contact-form" id="contactForm" action="https://formsubmit.co/contact@fervia.be" method="POST">
         <div class="cf-row">
           <div class="cf-field">
             <label for="cf-nom">Votre nom</label>
@@ -906,6 +906,7 @@ a{color:inherit;}
         <input type="hidden" name="_subject" value="Nouveau contact via fervia.be">
         <input type="hidden" name="_template" value="table">
         <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://fervia.be/?envoye=1#contact">
         <button type="submit" class="offre-cta plein contact-submit">Envoyer ma demande</button>
         <p class="cf-status" id="cfStatus" role="status" aria-live="polite"></p>
       </form>
@@ -968,40 +969,19 @@ a{color:inherit;}
 </script>
 <script>
   (function(){
-    var form = document.getElementById('contactForm');
-    if (!form) return;
-    var status = document.getElementById('cfStatus');
-    var btn = form.querySelector('.contact-submit');
-    form.addEventListener('submit', function(e){
-      e.preventDefault();
-      // honeypot : si rempli, un robot -> on ignore silencieusement
-      var hp = form.querySelector('[name="_honey"]');
-      if (hp && hp.value) return;
-      if (!form.checkValidity()) { form.reportValidity(); return; }
-      status.textContent = ''; status.className = 'cf-status';
-      var label = btn.textContent;
-      btn.disabled = true; btn.textContent = 'Envoi…';
-      fetch(form.action, {
-        method: 'POST',
-        body: new FormData(form),
-        headers: { 'Accept': 'application/json' }
-      })
-      .then(function(r){ return r.json(); })
-      .then(function(res){
-        if (res && (res.success === 'true' || res.success === true)) {
-          form.reset();
-          status.textContent = 'Merci ! Votre message est bien parti. Je vous réponds au plus vite.';
-          status.className = 'cf-status ok';
-        } else {
-          throw new Error((res && res.message) || 'Réponse inattendue');
-        }
-      })
-      .catch(function(){
-        status.innerHTML = 'Envoi impossible pour le moment. Écrivez-moi directement à <a href="mailto:contact@fervia.be">contact@fervia.be</a>.';
-        status.className = 'cf-status err';
-      })
-      .finally(function(){ btn.disabled = false; btn.textContent = label; });
-    });
+    // Au retour de FormSubmit (redirection _next -> /?envoye=1#contact), afficher la confirmation
+    var params = new URLSearchParams(window.location.search);
+    if (params.get('envoye') === '1') {
+      var status = document.getElementById('cfStatus');
+      if (status) {
+        status.textContent = 'Merci ! Votre message est bien parti. Je vous réponds au plus vite.';
+        status.className = 'cf-status ok';
+      }
+      // Nettoyer l'URL sans recharger la page
+      try {
+        window.history.replaceState(null, '', window.location.pathname + '#contact');
+      } catch (e) { /* restriction navigateur : on ignore */ }
+    }
   })();
 </script>
 </body>
