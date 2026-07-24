@@ -1,0 +1,13 @@
+{
+  "name": "Fervia",
+  "short_name": "Fervia",
+  "description": "Studio créatif digital à Wavre : sites web, applications mobiles et identité visuelle.",
+  "lang": "fr-BE",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0E1C30",
+  "theme_color": "#1A2D45",
+  "icons": [
+    { "src": "/assets/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}

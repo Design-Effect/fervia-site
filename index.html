@@ -19,6 +19,10 @@
 <meta name="twitter:title" content="Fervia — Forger votre voie digitale">
 <meta name="twitter:description" content="L'artisanat du digital, accéléré par l'IA.">
 <meta name="twitter:image" content="https://fervia.be/assets/og-image.png">
+<link rel="canonical" href="https://fervia.be/">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/favicon.svg">
+<link rel="manifest" href="/site.webmanifest">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" media="print" onload="this.media='all'">
@@ -510,7 +514,83 @@ a{color:inherit;}
   .reveal > *{opacity:1;transform:none;transition:none;}
   .hero-bg{transform:none!important;}
 }
+/* ===== FORMULAIRE DE CONTACT ===== */
+.contact-form{max-width:34em;margin:0 auto clamp(30px,5vh,44px);text-align:left;}
+.cf-row{display:flex;gap:14px;flex-wrap:wrap;}
+.cf-field{margin-bottom:16px;flex:1 1 200px;display:flex;flex-direction:column;}
+.cf-field label{font-family:'Jost',system-ui,sans-serif;text-transform:uppercase;letter-spacing:.14em;font-size:.64rem;color:var(--or);opacity:.9;margin-bottom:7px;}
+.contact-form input,.contact-form textarea,.contact-form select{font-family:'Jost',system-ui,sans-serif;font-size:.95rem;color:var(--creme);background:rgba(14,28,48,.55);border:1px solid rgba(201,168,76,.3);border-radius:4px;padding:12px 14px;width:100%;transition:border-color .3s,background .3s;}
+.contact-form input:focus,.contact-form textarea:focus,.contact-form select:focus{outline:none;border-color:var(--or);background:rgba(14,28,48,.78);}
+.contact-form textarea{min-height:128px;resize:vertical;}
+.contact-form input::placeholder,.contact-form textarea::placeholder{color:rgba(245,240,230,.38);}
+.contact-form select{appearance:none;-webkit-appearance:none;cursor:pointer;}
+.cf-consent{display:flex;align-items:flex-start;gap:10px;margin:2px 0 20px;font-family:'Jost',system-ui,sans-serif;font-size:.78rem;color:var(--creme);opacity:.86;line-height:1.5;}
+.cf-consent input{width:auto;flex:none;margin-top:3px;accent-color:var(--or);}
+.cf-consent a{color:var(--or);}
+.contact-submit{cursor:pointer;width:100%;font-size:.8rem;font-family:'Jost',system-ui,sans-serif;}
+.contact-submit:disabled{opacity:.5;cursor:not-allowed;}
+.cf-hp{position:absolute!important;left:-9999px;width:1px;height:1px;overflow:hidden;}
+.cf-status{font-family:'Jost',system-ui,sans-serif;font-size:.9rem;margin-top:15px;min-height:1.2em;text-align:center;}
+.cf-status.ok{color:var(--or-light);}
+.cf-status.err{color:#e8a0a0;}
+.contact-sep{font-family:'Jost',system-ui,sans-serif;text-transform:uppercase;letter-spacing:.16em;font-size:.64rem;color:var(--creme);opacity:.5;margin:0 0 16px;}
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://fervia.be/#business",
+      "name": "Fervia",
+      "description": "Studio créatif digital à Wavre : développement web, applications mobiles et identité visuelle, l'artisanat du digital accéléré par l'IA.",
+      "url": "https://fervia.be/",
+      "image": "https://fervia.be/assets/og-image.png",
+      "logo": "https://fervia.be/assets/favicon.svg",
+      "email": "contact@fervia.be",
+      "telephone": "+32465935655",
+      "priceRange": "€€",
+      "vatID": "BE1032140673",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Rue de la Limite 9",
+        "postalCode": "1300",
+        "addressLocality": "Wavre",
+        "addressRegion": "Brabant wallon",
+        "addressCountry": "BE"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 50.7167,
+        "longitude": 4.6000
+      },
+      "areaServed": [
+        { "@type": "Country", "name": "Belgique" },
+        { "@type": "AdministrativeArea", "name": "Brabant wallon" }
+      ],
+      "knowsLanguage": ["fr", "en"],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Services Fervia",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Développement web", "description": "Sites vitrines et applications web sur mesure." } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Application mobile", "description": "Applications mobiles iOS et Android." } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Identité visuelle", "description": "Logo, charte graphique et identité de marque." } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Outil métier sur mesure", "description": "Application faite pour votre activité, prix fixe sans abonnement obligatoire." } }
+        ]
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://fervia.be/#website",
+      "url": "https://fervia.be/",
+      "name": "Fervia",
+      "inLanguage": "fr-BE",
+      "publisher": { "@id": "https://fervia.be/#business" }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <header class="topbar" id="topbar">
@@ -733,6 +813,10 @@ a{color:inherit;}
         Chaque offre inclut l'hébergement, la sécurité et la tranquillité d'esprit d'un interlocuteur unique.<br>
         <em>La retenue fait le premium — on construit l'essentiel, parfaitement, plutôt que l'accessoire, en trop.</em>
       </p>
+      <p class="offre-note" style="margin-top:14px">
+        Besoin d'un <strong>outil de gestion sur mesure</strong> pour votre activité, plutôt qu'un simple site ?
+        <a class="gold" href="/outil-metier/" style="text-decoration:underline;text-underline-offset:3px">Découvrez l'outil métier Fervia&nbsp;→</a>
+      </p>
     </div>
   </section>
 
@@ -788,6 +872,45 @@ a{color:inherit;}
       <span class="eyebrow">Contact</span>
       <h2 class="s-title">Un projet <span class="gold">en tête</span> ?</h2>
       <p class="lead">Parlons-en. Une idée, un devis, une question — j'y réponds personnellement.</p>
+
+      <form class="contact-form" id="contactForm" action="https://formsubmit.co/ajax/contact@fervia.be" method="POST" novalidate>
+        <div class="cf-row">
+          <div class="cf-field">
+            <label for="cf-nom">Votre nom</label>
+            <input type="text" id="cf-nom" name="Nom" autocomplete="name" placeholder="Prénom et nom" required>
+          </div>
+          <div class="cf-field">
+            <label for="cf-email">Votre e-mail</label>
+            <input type="email" id="cf-email" name="Email" autocomplete="email" placeholder="vous@exemple.be" required>
+          </div>
+        </div>
+        <div class="cf-field">
+          <label for="cf-sujet">Votre besoin</label>
+          <select id="cf-sujet" name="Type de projet">
+            <option value="Site vitrine">Un site vitrine</option>
+            <option value="Application / outil métier">Une application / un outil métier</option>
+            <option value="Identité visuelle">Une identité visuelle (logo, marque)</option>
+            <option value="Autre / je ne sais pas encore">Autre / je ne sais pas encore</option>
+          </select>
+        </div>
+        <div class="cf-field">
+          <label for="cf-message">Votre message</label>
+          <textarea id="cf-message" name="Message" placeholder="Parlez-moi de votre projet en quelques lignes…" required></textarea>
+        </div>
+        <label class="cf-consent" for="cf-consent">
+          <input type="checkbox" id="cf-consent" required>
+          <span>J'accepte que mes données soient utilisées pour traiter ma demande, conformément à la <a href="politique-confidentialite.html">politique de confidentialité</a>.</span>
+        </label>
+        <!-- anti-spam : ne pas remplir -->
+        <input type="text" class="cf-hp" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <input type="hidden" name="_subject" value="Nouveau contact via fervia.be">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <button type="submit" class="offre-cta plein contact-submit">Envoyer ma demande</button>
+        <p class="cf-status" id="cfStatus" role="status" aria-live="polite"></p>
+      </form>
+
+      <p class="contact-sep">— ou directement —</p>
       <div class="contact-methods">
         <a class="contact" href="mailto:contact@fervia.be">contact@fervia.be</a>
         <a class="contact" href="tel:+32465935655">0465.93.56.55</a>
@@ -841,6 +964,44 @@ a{color:inherit;}
       if (!ticking){ window.requestAnimationFrame(update); ticking = true; }
     }, { passive: true });
     update();
+  })();
+</script>
+<script>
+  (function(){
+    var form = document.getElementById('contactForm');
+    if (!form) return;
+    var status = document.getElementById('cfStatus');
+    var btn = form.querySelector('.contact-submit');
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      // honeypot : si rempli, un robot -> on ignore silencieusement
+      var hp = form.querySelector('[name="_honey"]');
+      if (hp && hp.value) return;
+      if (!form.checkValidity()) { form.reportValidity(); return; }
+      status.textContent = ''; status.className = 'cf-status';
+      var label = btn.textContent;
+      btn.disabled = true; btn.textContent = 'Envoi…';
+      fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      })
+      .then(function(r){ return r.json(); })
+      .then(function(res){
+        if (res && (res.success === 'true' || res.success === true)) {
+          form.reset();
+          status.textContent = 'Merci ! Votre message est bien parti. Je vous réponds au plus vite.';
+          status.className = 'cf-status ok';
+        } else {
+          throw new Error((res && res.message) || 'Réponse inattendue');
+        }
+      })
+      .catch(function(){
+        status.innerHTML = 'Envoi impossible pour le moment. Écrivez-moi directement à <a href="mailto:contact@fervia.be">contact@fervia.be</a>.';
+        status.className = 'cf-status err';
+      })
+      .finally(function(){ btn.disabled = false; btn.textContent = label; });
+    });
   })();
 </script>
 </body>
