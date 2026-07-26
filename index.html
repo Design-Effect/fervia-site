@@ -519,12 +519,11 @@ a{color:inherit;}
 .contact-form{max-width:34em;margin:0 auto clamp(30px,5vh,44px);text-align:left;}
 .cf-row{display:flex;gap:14px;flex-wrap:wrap;}
 .cf-field{margin-bottom:16px;flex:1 1 200px;display:flex;flex-direction:column;}
-.cf-field label{font-family:'Jost',system-ui,sans-serif;text-transform:uppercase;letter-spacing:.14em;font-size:.64rem;color:var(--or);opacity:.9;margin-bottom:7px;}
+.cf-field label,.cf-select-label{font-family:'Jost',system-ui,sans-serif;text-transform:uppercase;letter-spacing:.14em;font-size:.64rem;color:var(--or);opacity:.9;margin-bottom:7px;}
 .contact-form input,.contact-form textarea,.contact-form select{font-family:'Jost',system-ui,sans-serif;font-size:.95rem;color:var(--creme);background:rgba(14,28,48,.55);border:1px solid rgba(201,168,76,.3);border-radius:4px;padding:12px 14px;width:100%;transition:border-color .3s,background .3s;}
 .contact-form input:focus,.contact-form textarea:focus,.contact-form select:focus{outline:none;border-color:var(--or);background:rgba(14,28,48,.78);}
 .contact-form textarea{min-height:128px;resize:vertical;}
 .contact-form input::placeholder,.contact-form textarea::placeholder{color:rgba(245,240,230,.38);}
-.contact-form select{appearance:none;-webkit-appearance:none;cursor:pointer;}
 .cf-consent{display:flex;align-items:flex-start;gap:10px;margin:2px 0 20px;font-family:'Jost',system-ui,sans-serif;font-size:.78rem;color:var(--creme);opacity:.86;line-height:1.5;}
 .cf-consent input{width:auto;flex:none;margin-top:3px;accent-color:var(--or);}
 .cf-consent a{color:var(--or);}
@@ -534,6 +533,37 @@ a{color:inherit;}
 .cf-status{font-family:'Jost',system-ui,sans-serif;font-size:.9rem;margin-top:15px;min-height:1.2em;text-align:center;}
 .cf-status.ok{color:var(--or-light);}
 .cf-status.err{color:#e8a0a0;}
+/* ===== MENU DÉROULANT SUR MESURE (couleurs Fervia) ===== */
+.cf-select{position:relative;}
+.cf-select-trigger{
+  width:100%;display:flex;align-items:center;justify-content:space-between;gap:10px;
+  font-family:'Jost',system-ui,sans-serif;font-size:.95rem;text-align:left;color:var(--creme);
+  background:rgba(14,28,48,.55);border:1px solid rgba(201,168,76,.3);border-radius:4px;
+  padding:12px 14px;cursor:pointer;transition:border-color .3s,background .3s;
+}
+.cf-select-trigger:hover{border-color:rgba(201,168,76,.55);}
+.cf-select-trigger[aria-expanded="true"]{border-color:var(--or);background:rgba(14,28,48,.78);}
+.cf-select-arrow{
+  width:8px;height:8px;flex:none;border-right:1.5px solid var(--or);border-bottom:1.5px solid var(--or);
+  transform:rotate(45deg) translateY(-2px);transition:transform .3s;
+}
+.cf-select-trigger[aria-expanded="true"] .cf-select-arrow{transform:rotate(225deg) translateY(-2px);}
+.cf-select-list{
+  position:absolute;top:calc(100% + 6px);left:0;right:0;z-index:30;
+  list-style:none;margin:0;padding:5px;
+  background:#0b1726;border:1px solid var(--or);border-radius:6px;
+  box-shadow:0 16px 40px rgba(0,0,0,.55);
+  max-height:260px;overflow-y:auto;
+}
+.cf-select-list[hidden]{display:none;}
+.cf-select-opt{
+  font-family:'Jost',system-ui,sans-serif;font-size:.92rem;line-height:1.4;
+  color:var(--creme);padding:11px 12px;border-radius:4px;cursor:pointer;
+  transition:background .2s,color .2s;
+}
+.cf-select-opt:hover,.cf-select-opt.is-active{background:rgba(201,168,76,.16);color:var(--or-light);}
+.cf-select-opt.is-selected{color:var(--or);font-weight:500;}
+.cf-select-opt.is-selected::after{content:' ✓';color:var(--or);}
 .contact-sep{font-family:'Jost',system-ui,sans-serif;text-transform:uppercase;letter-spacing:.16em;font-size:.64rem;color:var(--creme);opacity:.5;margin:0 0 16px;}
 </style>
 <script type="application/ld+json">
@@ -897,13 +927,22 @@ a{color:inherit;}
           </div>
         </div>
         <div class="cf-field">
-          <label for="cf-sujet">Votre besoin</label>
-          <select id="cf-sujet" name="Type de projet">
-            <option value="Site vitrine">Un site vitrine</option>
-            <option value="Application / outil métier">Une application / un outil métier</option>
-            <option value="Identité visuelle">Une identité visuelle (logo, marque)</option>
-            <option value="Autre / je ne sais pas encore">Autre / je ne sais pas encore</option>
-          </select>
+          <span class="cf-select-label" id="cf-sujet-label">Votre besoin</span>
+          <div class="cf-select" id="cfSelect">
+            <button type="button" class="cf-select-trigger" id="cfSelectBtn" role="combobox"
+                    aria-haspopup="listbox" aria-expanded="false" aria-controls="cfSelectList"
+                    aria-labelledby="cf-sujet-label cfSelectValue">
+              <span id="cfSelectValue">Un site vitrine</span>
+              <span class="cf-select-arrow" aria-hidden="true"></span>
+            </button>
+            <ul class="cf-select-list" id="cfSelectList" role="listbox" aria-labelledby="cf-sujet-label" hidden>
+              <li class="cf-select-opt is-selected" role="option" id="cfopt0" aria-selected="true"  data-value="Site vitrine">Un site vitrine</li>
+              <li class="cf-select-opt"             role="option" id="cfopt1" aria-selected="false" data-value="Application / outil métier">Une application / un outil métier</li>
+              <li class="cf-select-opt"             role="option" id="cfopt2" aria-selected="false" data-value="Identité visuelle">Une identité visuelle (logo, marque)</li>
+              <li class="cf-select-opt"             role="option" id="cfopt3" aria-selected="false" data-value="Autre / je ne sais pas encore">Autre / je ne sais pas encore</li>
+            </ul>
+            <input type="hidden" name="Type de projet" id="cfSujetInput" value="Site vitrine">
+          </div>
         </div>
         <div class="cf-field">
           <label for="cf-message">Votre message</label>
@@ -977,6 +1016,70 @@ a{color:inherit;}
       if (!ticking){ window.requestAnimationFrame(update); ticking = true; }
     }, { passive: true });
     update();
+  })();
+</script>
+<script>
+  (function(){
+    // Menu déroulant sur mesure : les <select> natifs ne sont pas stylables à l'ouverture
+    var root = document.getElementById('cfSelect');
+    if (!root) return;
+    var btn   = document.getElementById('cfSelectBtn');
+    var list  = document.getElementById('cfSelectList');
+    var label = document.getElementById('cfSelectValue');
+    var input = document.getElementById('cfSujetInput');
+    var opts  = Array.prototype.slice.call(list.querySelectorAll('.cf-select-opt'));
+    var active = 0;
+
+    function setActive(i){
+      active = (i + opts.length) % opts.length;
+      opts.forEach(function(o, n){ o.classList.toggle('is-active', n === active); });
+      btn.setAttribute('aria-activedescendant', opts[active].id);
+      opts[active].scrollIntoView({ block: 'nearest' });
+    }
+    function open(){
+      list.hidden = false;
+      btn.setAttribute('aria-expanded', 'true');
+      setActive(opts.findIndex(function(o){ return o.getAttribute('aria-selected') === 'true'; }));
+    }
+    function close(){
+      list.hidden = true;
+      btn.setAttribute('aria-expanded', 'false');
+      btn.removeAttribute('aria-activedescendant');
+    }
+    function choose(i){
+      opts.forEach(function(o, n){
+        var sel = n === i;
+        o.setAttribute('aria-selected', sel ? 'true' : 'false');
+        o.classList.toggle('is-selected', sel);
+      });
+      label.textContent = opts[i].textContent;
+      input.value = opts[i].getAttribute('data-value');
+      close();
+      btn.focus();
+    }
+
+    btn.addEventListener('click', function(){ list.hidden ? open() : close(); });
+    opts.forEach(function(o, i){
+      o.addEventListener('click', function(){ choose(i); });
+      o.addEventListener('mousemove', function(){ setActive(i); });
+    });
+    btn.addEventListener('keydown', function(e){
+      var k = e.key;
+      if (k === 'ArrowDown' || k === 'ArrowUp' || k === 'Enter' || k === ' ') {
+        if (list.hidden) { e.preventDefault(); open(); return; }
+      }
+      if (list.hidden) return;
+      if (k === 'ArrowDown') { e.preventDefault(); setActive(active + 1); }
+      else if (k === 'ArrowUp') { e.preventDefault(); setActive(active - 1); }
+      else if (k === 'Home') { e.preventDefault(); setActive(0); }
+      else if (k === 'End') { e.preventDefault(); setActive(opts.length - 1); }
+      else if (k === 'Enter' || k === ' ') { e.preventDefault(); choose(active); }
+      else if (k === 'Escape') { e.preventDefault(); close(); }
+      else if (k === 'Tab') { close(); }
+    });
+    document.addEventListener('click', function(e){
+      if (!list.hidden && !root.contains(e.target)) close();
+    });
   })();
 </script>
 <script>
