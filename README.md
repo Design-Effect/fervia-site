@@ -17,5 +17,5 @@ Hébergé sur Github . Domaine `fervia.be` connecté via enregistrement A
 chez OVH (le DNS reste chez OVH pour préserver les MX de l'email Zimbra).
 
 ## À faire ensuite
-- Témoignages clients (Healthy Sounna reçu sur Google Business, RTM en attente)
+- Témoignage RTM à intégrer quand reçu (Healthy Sounna intégré : accueil + outil-métier)
 - Pages dédiées par service/ville si le SEO local doit monter d'un cran

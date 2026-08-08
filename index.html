@@ -563,6 +563,18 @@ a{color:inherit;}
 .cf-select-opt.is-selected{color:var(--or);font-weight:500;}
 .cf-select-opt.is-selected::after{content:' ✓';color:var(--or);}
 .contact-sep{font-family:'Jost',system-ui,sans-serif;text-transform:uppercase;letter-spacing:.16em;font-size:.64rem;color:var(--creme);opacity:.5;margin:0 0 16px;}
+/* ===== TÉMOIGNAGE ===== */
+.temoignage{margin:clamp(40px,7vh,72px) auto 0;max-width:640px;text-align:center;}
+.temoignage-stars{color:var(--or);letter-spacing:.3em;font-size:.95rem;margin-bottom:14px;}
+.temoignage blockquote{
+  font-size:clamp(1.15rem,2.3vw,1.45rem);font-style:italic;line-height:1.5;
+  color:var(--creme);opacity:.92;
+}
+.temoignage figcaption{
+  margin-top:14px;font-family:'Jost',system-ui,sans-serif;
+  font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--or);opacity:.85;
+}
 /* ===== FAQ ===== */
 .faq-list{border-top:1px solid rgba(201,168,76,.22);}
 .faq-item{border-bottom:1px solid rgba(201,168,76,.22);}
@@ -961,6 +973,11 @@ a{color:inherit;}
           </div>
         </div>
       </div>
+      <figure class="temoignage">
+        <div class="temoignage-stars" aria-hidden="true">★★★★★</div>
+        <blockquote>« Fervia, travail pro, soigné, sur mesure. L'outil que Fervia m'a fourni m'a énormément aidé à faire l'inventaire précis et détaillé de mon stock de marchandises. Je recommande tous leurs services, ils sont polyvalents et multifacettes. »</blockquote>
+        <figcaption>Julien Manna · Healthy Sounna — avis Google, 5/5</figcaption>
+      </figure>
     </div>
   </section>
 
