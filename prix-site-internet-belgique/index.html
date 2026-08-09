@@ -140,6 +140,67 @@
     padding:1px 7px;margin-left:9px;vertical-align:1px;
   }
 
+  /* comparatif anime */
+  .compare{margin-top:8px}
+  .crow{
+    display:grid;grid-template-columns:210px 1fr;gap:0 20px;align-items:center;
+    padding:13px 0;
+  }
+  @media(max-width:620px){
+    .crow{grid-template-columns:1fr;gap:7px;padding:15px 0}
+  }
+  .clabel{font-size:14.5px;color:var(--cream-70);line-height:1.35}
+  .crow.me .clabel{color:var(--cream)}
+  .crow.me .clabel strong{color:var(--gold);font-weight:400}
+  .ctrack{
+    position:relative;height:26px;
+    border-left:1px solid var(--hair-soft);
+  }
+  .cbar{
+    position:absolute;top:5px;height:16px;border-radius:2px;
+    left:var(--s);width:0;
+    transition:width .95s cubic-bezier(.22,.61,.36,1);
+    transition-delay:var(--d,0s);
+  }
+  .compare.in .cbar{width:var(--w)}
+  .crow:not(.me) .cbar{
+    background:rgba(245,240,230,.14);
+    border:1px solid rgba(245,240,230,.22);
+  }
+  .crow.me .cbar{
+    background:linear-gradient(135deg,var(--gold-hi),var(--gold) 55%,var(--gold-lo));
+    box-shadow:0 0 16px -4px rgba(201,168,76,.55);
+  }
+  .cval--left{left:auto !important;right:calc(100% - var(--s) + 12px)}
+  .cval{
+    position:absolute;top:3px;left:calc(var(--s) + var(--w) + 10px);
+    font-size:13px;color:var(--cream-50);white-space:nowrap;
+    opacity:0;transition:opacity .5s ease;transition-delay:calc(var(--d,0s) + .5s);
+    font-variant-numeric:tabular-nums;
+  }
+  .compare.in .cval{opacity:1}
+  .crow.me .cval{color:var(--gold);font-size:14px}
+  @media(max-width:620px){
+    .cval{font-size:12px}
+  }
+  .caxis{
+    display:grid;grid-template-columns:210px 1fr;gap:0 20px;
+    margin-top:6px;padding-top:10px;
+  }
+  @media(max-width:620px){.caxis{grid-template-columns:1fr}}
+  .cscale{
+    position:relative;height:16px;border-top:1px solid var(--hair-soft);
+    font-size:11.5px;color:var(--cream-50);font-variant-numeric:tabular-nums;
+  }
+  .cscale span{position:absolute;top:5px;transform:translateX(-50%);white-space:nowrap}
+  .cscale span:first-child{transform:none}
+  .cscale span:last-child{transform:translateX(-100%)}
+  .cnote{margin-top:34px;font-size:13.5px;color:var(--cream-50);line-height:1.55}
+  @media (prefers-reduced-motion: reduce){
+    .cbar{width:var(--w);transition:none}
+    .cval{opacity:1;transition:none}
+  }
+
   /* facteurs */
   .steps{counter-reset:step}
   .step{
@@ -362,6 +423,66 @@
   </section>
 
   <section>
+    <h2 class="stitle">Le même site, selon qui le fait</h2>
+    <p class="lead" style="margin-bottom:28px">Un site vitrine, comparé sur une seule échelle. Les barres claires sont les fourchettes du marché belge, les barres dorées sont mes deux offres.</p>
+
+    <div class="compare" id="compare">
+      <div class="crow">
+        <div class="clabel">Site vitrine sur thème adapté</div>
+        <div class="ctrack">
+          <div class="cbar" style="--s:5.83%;--w:15%;--d:0s"></div>
+          <div class="cval" style="--s:5.83%;--w:15%;--d:0s">700 à 2 500 €</div>
+        </div>
+      </div>
+
+      <div class="crow me">
+        <div class="clabel"><strong>Fervia Essentiel</strong><br>une page complète, sur mesure</div>
+        <div class="ctrack">
+          <div class="cbar" style="--s:9.5%;--w:2.6%;--d:.14s"></div>
+          <div class="cval" style="--s:9.5%;--w:2.6%;--d:.14s">1 200 €</div>
+        </div>
+      </div>
+
+      <div class="crow">
+        <div class="clabel">Site vitrine sur mesure, indépendant</div>
+        <div class="ctrack">
+          <div class="cbar" style="--s:12.5%;--w:20.83%;--d:.28s"></div>
+          <div class="cval" style="--s:12.5%;--w:20.83%;--d:.28s">1 500 à 4 000 €</div>
+        </div>
+      </div>
+
+      <div class="crow me">
+        <div class="clabel"><strong>Fervia Signature</strong><br>5 à 6 pages, référencement local</div>
+        <div class="ctrack">
+          <div class="cbar" style="--s:23.7%;--w:2.6%;--d:.42s"></div>
+          <div class="cval" style="--s:23.7%;--w:2.6%;--d:.42s">2 900 €</div>
+        </div>
+      </div>
+
+      <div class="crow">
+        <div class="clabel">Site vitrine sur mesure, agence</div>
+        <div class="ctrack">
+          <div class="cbar" style="--s:41.67%;--w:58.33%;--d:.56s"></div>
+          <div class="cval cval--left" style="--s:41.67%;--w:58.33%;--d:.56s">5 000 à 12 000 €</div>
+        </div>
+      </div>
+
+      <div class="caxis">
+        <div></div>
+        <div class="cscale">
+          <span style="left:0">0 €</span>
+          <span style="left:25%">3 000</span>
+          <span style="left:50%">6 000</span>
+          <span style="left:75%">9 000</span>
+          <span style="left:100%">12 000</span>
+        </div>
+      </div>
+    </div>
+
+    <p class="cnote">On compare ici ce qui est comparable : des sites vitrines sur mesure, pas des projets d'une autre nature. Une agence n'est pas plus chère parce qu'elle travaillerait mieux, mais parce qu'elle fait vivre une équipe, des bureaux et des commerciaux. Pour un projet à quinze intervenants, c'est le bon choix. Pour un site d'indépendant ou de PME, vous payez une structure dont vous n'avez pas l'usage.</p>
+  </section>
+
+  <section>
     <h2 class="stitle">Ce qui fait vraiment varier le prix</h2>
     <div class="steps">
       <div class="step"><div class="num">1</div><p><strong>Le nombre de pages.</strong> C'est le facteur le plus simple et le plus honnête. Une page se conçoit, se rédige et se teste ; six pages, six fois. Le reste du site (structure, styles, formulaire) ne se paie qu'une fois.</p></div>
@@ -457,6 +578,20 @@
   <div class="tagline">Forger votre voie digitale</div>
   <div class="sub"><a href="/">Fervia</a> · Studio créatif digital · Wavre, Belgique</div>
 </footer>
+
+<script>
+(function(){
+  var el = document.getElementById('compare');
+  if (!el) return;
+  if (!('IntersectionObserver' in window)) { el.classList.add('in'); return; }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.25 });
+  io.observe(el);
+})();
+</script>
 
 </body>
 </html>
