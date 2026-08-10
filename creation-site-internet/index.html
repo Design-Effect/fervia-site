@@ -39,10 +39,17 @@
     --cream-50:rgba(245,240,230,.52);
     --hair:rgba(201,168,76,.28);
     --hair-soft:rgba(201,168,76,.16);
+    /* motion : une seule courbe, quatre durees */
+    --ease:cubic-bezier(.22,.61,.36,1);
+    --d-press:.16s;
+    --d-hover:.25s;
+    --d-ui:.25s;
+    --d-enter:.6s;
     --no:#E08A6B;
   }
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
   body{
     background:var(--navy-deep);color:var(--cream);
     font-family:'Jost',sans-serif;font-weight:300;
@@ -50,11 +57,19 @@
   }
   .wrap{max-width:760px;margin:0 auto;padding:0 28px}
 
-  .rise{opacity:0;transform:translateY(14px);animation:rise .8s cubic-bezier(.22,.61,.36,1) forwards}
+  .rise{opacity:0;transform:translateY(14px);animation:rise .8s var(--ease) forwards}
   .d1{animation-delay:.08s}.d2{animation-delay:.18s}.d3{animation-delay:.28s}.d4{animation-delay:.38s}
   @keyframes rise{to{opacity:1;transform:none}}
+  /* revelation au scroll : les sections se posent quand on les atteint */
+  .rv{opacity:0;transform:translateY(18px);transition:opacity var(--d-enter) var(--ease),transform var(--d-enter) var(--ease)}
+  .rv.seen{opacity:1;transform:none}
+  .rv.seen > *:nth-child(2){transition-delay:.06s}
+  .rv.seen > *:nth-child(3){transition-delay:.12s}
+  .rv.seen > *:nth-child(4){transition-delay:.18s}
   @media (prefers-reduced-motion: reduce){.rise{opacity:1;transform:none;animation:none}
-    .cta:hover,.work:hover{transform:none}}
+    .cta:hover,.work:hover{transform:none}
+    .rv{transform:none;transition:opacity .2s ease}
+    .rv.seen{opacity:1;transition-delay:0s}}
 
   .crumb{padding:20px 0 0;font-size:13px;letter-spacing:.06em;color:var(--cream-50)}
   .crumb a{color:var(--cream-50);text-decoration:none;border-bottom:1px solid var(--hair-soft)}
@@ -164,7 +179,7 @@
     padding:15px 34px;border-radius:3px;transition:box-shadow .25s ease,transform .25s ease;
   }
   .cta:hover{box-shadow:0 6px 24px rgba(201,168,76,.35);transform:translateY(-1px)}
-  .cta:active{transform:scale(.97);transition:transform .16s cubic-bezier(.22,.61,.36,1)}
+  .cta:active{transform:scale(.97);transition:transform var(--d-press) var(--ease)}
   /* le tactile declenche un faux survol au tap : l'etat resterait colle apres le doigt */
   @media (hover:none){.cta:hover{transform:none}}
   .coords{margin-top:26px;font-size:16px;color:var(--cream-70)}
@@ -447,5 +462,21 @@
   <div class="sub"><a href="/">Fervia</a> · Studio créatif digital · Wavre, Belgique</div>
 </footer>
 
+<script>
+(function(){
+  var els = document.querySelectorAll('section, .contact');
+  if (!els.length) return;
+  var start = 1; // on laisse le premier bloc a l'animation d'entree existante
+  var list = Array.prototype.slice.call(els, start);
+  if (!('IntersectionObserver' in window)) { list.forEach(function(el){ el.classList.add('rv','seen'); }); return; }
+  list.forEach(function(el){ el.classList.add('rv'); });
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (e.isIntersecting) { e.target.classList.add('seen'); io.unobserve(e.target); }
+    });
+  }, { rootMargin: '0px 0px -12% 0px', threshold: 0.05 });
+  list.forEach(function(el){ io.observe(el); });
+})();
+</script>
 </body>
 </html>
