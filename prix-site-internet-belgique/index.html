@@ -36,7 +36,7 @@
     --gold-lo:#A8792A;
     --cream:#F5F0E6;
     --cream-70:rgba(245,240,230,.72);
-    --cream-50:rgba(245,240,230,.52);
+    --cream-50:rgba(245,240,230,.62);
     --hair:rgba(201,168,76,.28);
     --hair-soft:rgba(201,168,76,.16);
     /* motion : une seule courbe, quatre durees */
@@ -45,6 +45,7 @@
     --d-hover:.25s;
     --d-ui:.25s;
     --d-enter:.6s;
+    --measure:36em;
   }
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
@@ -79,7 +80,7 @@
 
   /* fil d'ariane */
   .crumb{padding:20px 0 0;font-size:13px;letter-spacing:.06em;color:var(--cream-50)}
-  .crumb a{color:var(--cream-50);text-decoration:none;border-bottom:1px solid var(--hair-soft)}
+  .crumb a{padding:8px 0;display:inline-block;color:var(--cream-50);text-decoration:none;border-bottom:1px solid var(--hair-soft)}
   .crumb a:hover{color:var(--gold)}
 
   /* hero */
@@ -95,7 +96,7 @@
   }
   h1{
     font-family:'Cormorant Garamond',serif;font-weight:500;
-    font-size:clamp(34px,5.4vw,50px);line-height:1.1;letter-spacing:.01em;
+    font-size:clamp(34px,5.4vw,50px);line-height:1.1;letter-spacing:-.015em;
     color:var(--cream);
   }
   .hero .sub{
@@ -111,7 +112,7 @@
     display:flex;align-items:center;gap:18px;margin-bottom:26px;
   }
   .stitle::after{content:"";flex:1;height:1px;background:var(--hair-soft)}
-  p.lead{font-size:18.5px;color:var(--cream-70)}
+  p.lead{font-size:18.5px;color:var(--cream-70);max-width:var(--measure)}
   p.lead strong{color:var(--cream);font-weight:400}
   p + p{margin-top:16px}
 

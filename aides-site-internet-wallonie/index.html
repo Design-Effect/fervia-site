@@ -36,7 +36,7 @@
     --gold-lo:#A8792A;
     --cream:#F5F0E6;
     --cream-70:rgba(245,240,230,.72);
-    --cream-50:rgba(245,240,230,.52);
+    --cream-50:rgba(245,240,230,.62);
     --hair:rgba(201,168,76,.28);
     --hair-soft:rgba(201,168,76,.16);
     /* motion : une seule courbe, quatre durees */
@@ -45,6 +45,7 @@
     --d-hover:.25s;
     --d-ui:.25s;
     --d-enter:.6s;
+    --measure:36em;
     --dead:#E08A6B;
     --live:#8FBF9C;
   }
@@ -73,14 +74,14 @@
     .rv.seen{opacity:1;transition-delay:0s}}
 
   .crumb{padding:20px 0 0;font-size:13px;letter-spacing:.06em;color:var(--cream-50)}
-  .crumb a{color:var(--cream-50);text-decoration:none;border-bottom:1px solid var(--hair-soft)}
+  .crumb a{padding:8px 0;display:inline-block;color:var(--cream-50);text-decoration:none;border-bottom:1px solid var(--hair-soft)}
   .crumb a:hover{color:var(--gold)}
 
   .hero{background:var(--navy);border-bottom:1px solid var(--hair);padding:38px 0 56px;text-align:center}
   .kicker{font-size:12px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);font-weight:400;margin-bottom:18px}
   h1{
     font-family:'Cormorant Garamond',serif;font-weight:500;
-    font-size:clamp(32px,5vw,47px);line-height:1.12;letter-spacing:.01em;color:var(--cream);
+    font-size:clamp(32px,5vw,47px);line-height:1.12;letter-spacing:-.015em;color:var(--cream);
   }
   .hero .sub{
     font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;
@@ -96,7 +97,7 @@
     display:flex;align-items:center;gap:18px;margin-bottom:26px;
   }
   .stitle::after{content:"";flex:1;height:1px;background:var(--hair-soft)}
-  p.lead{font-size:18.5px;color:var(--cream-70)}
+  p.lead{font-size:18.5px;color:var(--cream-70);max-width:var(--measure)}
   p.lead strong{color:var(--cream);font-weight:400}
   p + p{margin-top:16px}
 

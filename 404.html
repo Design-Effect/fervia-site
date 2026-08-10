@@ -39,6 +39,13 @@
     transition:box-shadow .3s,transform .3s;
   }
   .btn:hover{box-shadow:0 10px 22px -10px rgba(201,168,76,.6);transform:translateY(-2px);}
+  :focus-visible{outline:2px solid var(--or);outline-offset:3px;border-radius:2px}
+  .btn:active{transform:scale(.97);transition:transform .16s cubic-bezier(.22,.61,.36,1)}
+  @media (hover:none){.btn:hover{transform:none}}
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .btn:hover,.btn:active{transform:none}
+  }
 </style>
 </head>
 <body>
