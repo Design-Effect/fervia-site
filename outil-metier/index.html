@@ -211,6 +211,25 @@
   }
   footer .sub{font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--cream-50);margin-top:10px}
 
+  /* fil d'ariane */
+  .crumb{padding:0 0 22px;font-size:13px;letter-spacing:.06em;color:var(--cream-50)}
+  .crumb a{color:var(--cream-50);text-decoration:none;border-bottom:1px solid var(--hair-soft)}
+  .crumb a:hover{color:var(--gold)}
+
+  /* reponse directe */
+  .answer{background:var(--navy);border:1px solid var(--hair);border-radius:4px;padding:30px}
+  .answer p{font-size:18.5px;color:var(--cream);line-height:1.6}
+  .answer p strong{color:var(--gold);font-weight:400}
+
+  /* faq */
+  .faq h3{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:22px;color:var(--gold);margin-bottom:8px}
+  .faq .qa{padding:22px 0;border-bottom:1px solid var(--hair-soft)}
+  .faq .qa:last-child{border-bottom:none}
+  .faq p{font-size:16.5px;color:var(--cream-70)}
+  .faq p strong{color:var(--cream);font-weight:400}
+  .faq a{color:var(--gold);text-decoration:none;border-bottom:1px solid var(--hair)}
+  .inlink{color:var(--gold);text-decoration:none;border-bottom:1px solid var(--hair)}
+
   /* impression */
   @media print{
     body{-webkit-print-color-adjust:exact;print-color-adjust:exact}
@@ -223,7 +242,10 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
+  "@graph": [
+    {
   "@type": "Service",
+  "@id": "https://fervia.be/outil-metier/#service",
   "serviceType": "Développement d'application métier sur mesure",
   "name": "Outil métier sur mesure",
   "description": "Une application faite pour votre activité, livrée en 7 jours ouvrables. Prix fixe payé une fois, sans abonnement obligatoire, vos données restent chez vous.",
@@ -261,6 +283,52 @@
     "description": "Prix fixe, une fois : à partir de 750 €, sans abonnement obligatoire.",
     "availability": "https://schema.org/InStock"
   }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://fervia.be/outil-metier/#crumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://fervia.be/" },
+        { "@type": "ListItem", "position": 2, "name": "Outil métier sur mesure" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://fervia.be/outil-metier/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Qu'est-ce qu'un outil métier sur mesure, concrètement ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Une petite application construite pour une seule activité : la vôtre. Elle ne fait que ce dont vous avez besoin, avec vos mots et vos habitudes. Un inventaire pour un commerce, un suivi de dossiers pour un thérapeute, un carnet de commandes pour un artisan. Elle s'installe sur votre téléphone comme une application normale." }
+        },
+        {
+          "@type": "Question",
+          "name": "En quoi est-ce différent d'un logiciel du marché à 30 € par mois ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Un logiciel du marché se loue : vous payez chaque mois, à vie, pour des fonctions dont vous utilisez une petite part, et le jour où vous arrêtez vous perdez l'accès. Un outil Fervia s'achète une fois. Il vous appartient, il ne contient que ce qui vous sert, et il continue de fonctionner si vous arrêtez tout paiement." }
+        },
+        {
+          "@type": "Question",
+          "name": "Où sont stockées mes données ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Sur votre appareil, pas chez un tiers. Vous les exportez d'un seul geste quand vous voulez, dans un format que n'importe quel tableur peut lire. Elles ne transitent par aucun service extérieur et ne servent à personne d'autre qu'à vous." }
+        },
+        {
+          "@type": "Question",
+          "name": "Faut-il une connexion internet pour l'utiliser ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Non. L'application fonctionne hors connexion, ce qui compte quand on travaille dans une réserve, un atelier, une cave ou en déplacement. C'est justement là que les logiciels en ligne deviennent inutilisables." }
+        },
+        {
+          "@type": "Question",
+          "name": "Que se passe-t-il si j'arrête l'entretien mensuel ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Rien ne s'arrête. L'entretien à 29 € par mois couvre l'hébergement surveillé, les sauvegardes et les petites retouches. Il est facultatif et résiliable à tout moment : votre application continue de fonctionner sans lui, et vos données restent les vôtres." }
+        },
+        {
+          "@type": "Question",
+          "name": "Peut-on faire évoluer l'outil dans un an ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Oui, et c'est fréquent : on découvre en s'en servant ce qu'on aurait aimé y trouver. Une évolution se devise à part, dans la continuité de l'existant. Deux séries d'ajustements sont déjà comprises dans la livraison initiale, pour coller au quotidien réel plutôt qu'au quotidien imaginé." }
+        }
+      ]
+    }
+  ]
 }
 </script>
 </head>
@@ -277,7 +345,17 @@
 
 <main class="wrap">
 
-  <section class="rise d4">
+  <nav class="crumb rise d4" aria-label="Fil d'Ariane" style="padding-top:34px">
+    <a href="/">Fervia</a> · Outil métier sur mesure
+  </nav>
+
+  <section class="rise d4" style="padding-top:0">
+    <div class="answer">
+      <p>Une application de gestion construite pour votre seule activité, à partir de <strong>750&nbsp;€</strong> payés une fois. Stock, commandes, clients ou rendez-vous : elle ne contient que ce qui vous sert, fonctionne sans connexion, et vos données restent chez vous. Livrée en <strong>7 jours ouvrables</strong>.</p>
+    </div>
+  </section>
+
+  <section>
     <p class="lead">Vous gérez encore vos dossiers sur Excel, vos rendez-vous sur papier, vos contacts dans WhatsApp. Les logiciels du marché coûtent 30 à 50 € par mois, à vie, pour des fonctions que vous n'utiliserez jamais, et vos données dorment chez un tiers.</p>
     <p class="lead">Je conçois l'inverse : <strong>une application pensée pour votre façon de travailler</strong>, installée sur votre téléphone en cinq minutes, utilisable sans connexion. Vos données restent chez vous.</p>
     <p class="lead">Commerçant, artisan, thérapeute, coach, indépendant, association, peu importe votre métier&nbsp;: <strong>dès qu'une tâche revient chaque jour</strong>, il existe un outil taillé pour la vôtre qui vous fera gagner un temps réel.</p>
@@ -364,6 +442,45 @@
       <div class="step"><div class="num">3</div><p><strong>Livraison sous 7 jours ouvrables</strong>, installation guidée sur votre téléphone, prise en main immédiate.</p></div>
       <div class="step"><div class="num">4</div><p><strong>Deux séries d'ajustements incluses</strong> pour que l'outil colle parfaitement à votre quotidien.</p></div>
     </div>
+  </section>
+
+  <section class="faq">
+    <h2 class="stitle">Questions fréquentes</h2>
+
+    <div class="qa">
+      <h3>Qu'est-ce qu'un outil métier sur mesure, concrètement&nbsp;?</h3>
+      <p>Une petite application construite pour une seule activité : la vôtre. Elle ne fait que ce dont vous avez besoin, avec vos mots et vos habitudes. Un inventaire pour un commerce, un suivi de dossiers pour un thérapeute, un carnet de commandes pour un artisan. Elle s'installe sur votre téléphone comme une application normale.</p>
+    </div>
+
+    <div class="qa">
+      <h3>En quoi est-ce différent d'un logiciel du marché à 30 € par mois&nbsp;?</h3>
+      <p>Un logiciel du marché se loue : vous payez chaque mois, à vie, pour des fonctions dont vous utilisez une petite part, et le jour où vous arrêtez vous perdez l'accès. Un outil Fervia s'achète une fois. Il vous appartient, il ne contient que ce qui vous sert, et il continue de fonctionner si vous arrêtez tout paiement.</p>
+    </div>
+
+    <div class="qa">
+      <h3>Où sont stockées mes données&nbsp;?</h3>
+      <p>Sur votre appareil, pas chez un tiers. Vous les exportez d'un seul geste quand vous voulez, dans un format que n'importe quel tableur peut lire. Elles ne transitent par aucun service extérieur et ne servent à personne d'autre qu'à vous.</p>
+    </div>
+
+    <div class="qa">
+      <h3>Faut-il une connexion internet pour l'utiliser&nbsp;?</h3>
+      <p>Non. L'application fonctionne hors connexion, ce qui compte quand on travaille dans une réserve, un atelier, une cave ou en déplacement. C'est justement là que les logiciels en ligne deviennent inutilisables.</p>
+    </div>
+
+    <div class="qa">
+      <h3>Que se passe-t-il si j'arrête l'entretien mensuel&nbsp;?</h3>
+      <p>Rien ne s'arrête. L'entretien à 29 € par mois couvre l'hébergement surveillé, les sauvegardes et les petites retouches. Il est facultatif et résiliable à tout moment : votre application continue de fonctionner sans lui, et vos données restent les vôtres.</p>
+    </div>
+
+    <div class="qa">
+      <h3>Peut-on faire évoluer l'outil dans un an&nbsp;?</h3>
+      <p>Oui, et c'est fréquent : on découvre en s'en servant ce qu'on aurait aimé y trouver. Une évolution se devise à part, dans la continuité de l'existant. Deux séries d'ajustements sont déjà comprises dans la livraison initiale, pour coller au quotidien réel plutôt qu'au quotidien imaginé.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="stitle">Vous cherchiez autre chose&nbsp;?</h2>
+    <p class="lead">Un outil métier n'est pas un site internet : c'est une application de gestion, pour vous et vos collaborateurs, pas pour vos clients. Si votre besoin est d'être visible et joignable, c'est vers <a class="inlink" href="/creation-site-internet/">la création de site internet</a> qu'il faut regarder. Et si vous voulez situer les budgets avant tout échange, <a class="inlink" href="/prix-site-internet-belgique/">les prix sont tous publiés ici</a>.</p>
   </section>
 
 </main>
