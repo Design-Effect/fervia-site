@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="fr-BE">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://fervia.be/creation-site-internet/">
+<link rel="manifest" href="/site.webmanifest">
+<title>Création de site internet sur mesure dès 1 200 € · Fervia</title>
+<meta name="description" content="Un site vitrine dessiné pour votre activité, pas un thème acheté. Ce qui est compris, comment ça se passe, et ce que je ne fais pas. À partir de 1 200 €.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Création de site internet sur mesure dès 1 200 € · Fervia">
+<meta property="og:description" content="Un site vitrine dessiné pour votre activité, pas un thème acheté. Ce qui est compris, comment ça se passe, et ce que je ne fais pas.">
+<meta property="og:locale" content="fr_BE">
+<meta property="og:url" content="https://fervia.be/creation-site-internet/">
+<meta property="og:image" content="https://fervia.be/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Fervia, studio créatif digital">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Création de site internet sur mesure dès 1 200 € · Fervia">
+<meta name="twitter:description" content="Un site vitrine dessiné pour votre activité, pas un thème acheté. Ce qui est compris, comment ça se passe, et ce que je ne fais pas.">
+<meta name="twitter:image" content="https://fervia.be/assets/og-image.png">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="preload" as="font" type="font/woff2" href="/assets/fonts/jost-300.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="/assets/fonts/cormorant-garamond-500.woff2" crossorigin>
+<link rel="stylesheet" href="/assets/fonts/fonts.css">
+<style>
+  :root{
+    --navy:#1A2D45;
+    --navy-deep:#0E1C30;
+    --gold:#C9A84C;
+    --gold-hi:#F5D27A;
+    --gold-lo:#A8792A;
+    --cream:#F5F0E6;
+    --cream-70:rgba(245,240,230,.72);
+    --cream-50:rgba(245,240,230,.52);
+    --hair:rgba(201,168,76,.28);
+    --hair-soft:rgba(201,168,76,.16);
+    --no:#E08A6B;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--navy-deep);color:var(--cream);
+    font-family:'Jost',sans-serif;font-weight:300;
+    font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:760px;margin:0 auto;padding:0 28px}
+
+  .rise{opacity:0;transform:translateY(14px);animation:rise .8s cubic-bezier(.22,.61,.36,1) forwards}
+  .d1{animation-delay:.08s}.d2{animation-delay:.18s}.d3{animation-delay:.28s}.d4{animation-delay:.38s}
+  @keyframes rise{to{opacity:1;transform:none}}
+  @media (prefers-reduced-motion: reduce){.rise{opacity:1;transform:none;animation:none}}
+
+  .crumb{padding:20px 0 0;font-size:13px;letter-spacing:.06em;color:var(--cream-50)}
+  .crumb a{color:var(--cream-50);text-decoration:none;border-bottom:1px solid var(--hair-soft)}
+  .crumb a:hover{color:var(--gold)}
+
+  .hero{background:var(--navy);border-bottom:1px solid var(--hair);padding:38px 0 56px;text-align:center}
+  .kicker{font-size:12px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);font-weight:400;margin-bottom:18px}
+  h1{
+    font-family:'Cormorant Garamond',serif;font-weight:500;
+    font-size:clamp(34px,5.4vw,50px);line-height:1.1;letter-spacing:.01em;color:var(--cream);
+  }
+  .hero .sub{
+    font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;
+    font-size:clamp(19px,3vw,24px);color:var(--gold);margin-top:14px;
+  }
+
+  section{padding:58px 0 0}
+  .stitle{
+    font-family:'Cormorant Garamond',serif;font-weight:500;font-size:29px;color:var(--cream);
+    display:flex;align-items:center;gap:18px;margin-bottom:26px;
+  }
+  .stitle::after{content:"";flex:1;height:1px;background:var(--hair-soft)}
+  p.lead{font-size:18.5px;color:var(--cream-70)}
+  p.lead strong{color:var(--cream);font-weight:400}
+  p + p{margin-top:16px}
+
+  .answer{background:var(--navy);border:1px solid var(--hair);border-radius:4px;padding:30px}
+  .answer p{font-size:18.5px;color:var(--cream);line-height:1.6}
+  .answer p strong{color:var(--gold);font-weight:400}
+
+  /* offres */
+  .offres{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  @media(max-width:680px){.offres{grid-template-columns:1fr}}
+  .offre{
+    background:var(--navy);border:1px solid var(--hair-soft);border-radius:4px;
+    padding:28px 26px;display:flex;flex-direction:column;
+  }
+  .offre--main{border-color:var(--hair)}
+  .offre .nom{
+    font-family:'Cormorant Garamond',serif;font-weight:500;font-size:25px;color:var(--cream);
+  }
+  .offre .pour{font-size:14.5px;color:var(--cream-50);margin-top:4px;line-height:1.45}
+  .offre .prix{
+    font-family:'Cormorant Garamond',serif;font-weight:600;font-size:40px;line-height:1;margin:18px 0 4px;
+    background:linear-gradient(135deg,var(--gold-hi),var(--gold) 55%,var(--gold-lo));
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .offre .hors{font-size:13px;color:var(--cream-50)}
+  .offre ul{list-style:none;margin-top:20px;padding:0}
+  .offre li{
+    font-size:15.5px;color:var(--cream-70);padding:9px 0 9px 22px;position:relative;
+    border-top:1px solid var(--hair-soft);
+  }
+  .offre li::before{content:"◆";position:absolute;left:0;top:9px;color:var(--gold);font-size:10px}
+
+  /* toujours compris */
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:22px 34px}
+  @media(max-width:620px){.grid{grid-template-columns:1fr}}
+  .item{border-top:1px solid var(--hair-soft);padding-top:14px}
+  .item h3{font-family:'Jost',sans-serif;font-weight:400;font-size:16.5px;color:var(--gold);letter-spacing:.02em;margin-bottom:5px}
+  .item p{font-size:15.5px;color:var(--cream-70)}
+
+  /* etapes */
+  .steps{counter-reset:step}
+  .step{display:flex;gap:24px;align-items:baseline;padding:20px 0;border-bottom:1px solid var(--hair-soft)}
+  .step:last-child{border-bottom:none}
+  .step .num{
+    font-family:'Cormorant Garamond',serif;font-weight:600;font-size:30px;line-height:1;
+    background:linear-gradient(135deg,var(--gold-hi),var(--gold) 55%,var(--gold-lo));
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    min-width:34px;text-align:center;flex-shrink:0;
+  }
+  .step p{font-size:16.5px;color:var(--cream-70)}
+  .step p strong{color:var(--cream);font-weight:400}
+
+  /* ce que je ne fais pas */
+  .nots{border-top:1px solid var(--hair-soft)}
+  .not{display:flex;gap:16px;align-items:baseline;padding:16px 0;border-bottom:1px solid var(--hair-soft)}
+  .not .x{color:var(--no);font-size:15px;flex-shrink:0;line-height:1}
+  .not p{font-size:16px;color:var(--cream-70)}
+  .not p strong{color:var(--cream);font-weight:400}
+
+  .case{background:var(--navy);border:1px solid var(--hair);border-radius:4px;padding:30px}
+  .case p{font-size:16.5px;color:var(--cream-70)}
+  .case p strong{color:var(--cream);font-weight:400}
+  .case .stars{color:var(--gold);letter-spacing:.25em;font-size:13px;margin-bottom:10px}
+  .case blockquote{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:19px;line-height:1.45;color:var(--cream)}
+  .case figcaption{margin-top:10px;font-size:12px;letter-spacing:.13em;text-transform:uppercase;color:var(--cream-50)}
+  .case figure{margin-top:26px;padding-top:22px;border-top:1px solid var(--hair-soft)}
+
+  .faq h3{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:22px;color:var(--gold);margin-bottom:8px}
+  .faq .qa{padding:22px 0;border-bottom:1px solid var(--hair-soft)}
+  .faq .qa:last-child{border-bottom:none}
+  .faq p{font-size:16.5px;color:var(--cream-70)}
+  .faq p strong{color:var(--cream);font-weight:400}
+  .faq a{color:var(--gold);text-decoration:none;border-bottom:1px solid var(--hair)}
+
+  .contact{margin-top:64px;background:var(--navy);border-top:1px solid var(--hair);padding:56px 0;text-align:center}
+  .contact .invite{
+    font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;
+    font-size:clamp(22px,4vw,27px);color:var(--cream);max-width:580px;margin:0 auto 30px;line-height:1.35;
+  }
+  .cta{
+    display:inline-block;font-family:'Jost',sans-serif;font-weight:400;font-size:15px;
+    letter-spacing:.12em;text-transform:uppercase;color:var(--navy-deep);text-decoration:none;
+    background:linear-gradient(135deg,var(--gold-hi),var(--gold) 55%,var(--gold-lo));
+    padding:15px 34px;border-radius:3px;transition:box-shadow .25s ease,transform .25s ease;
+  }
+  .cta:hover{box-shadow:0 6px 24px rgba(201,168,76,.35);transform:translateY(-1px)}
+  .coords{margin-top:26px;font-size:16px;color:var(--cream-70)}
+  .coords a{color:var(--cream-70);text-decoration:none;border-bottom:1px solid var(--hair)}
+  .coords a:hover{color:var(--gold)}
+  .coords .sep{color:var(--hair);margin:0 12px}
+
+  footer{padding:36px 0 44px;text-align:center}
+  footer .tagline{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:19px;color:var(--gold)}
+  footer .sub{font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--cream-50);margin-top:10px}
+  footer .sub a{color:var(--cream-50);text-decoration:none;border-bottom:1px solid var(--hair-soft)}
+  footer .sub a:hover{color:var(--gold)}
+
+  :focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:2px}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://fervia.be/creation-site-internet/#page",
+      "url": "https://fervia.be/creation-site-internet/",
+      "name": "Création de site internet sur mesure",
+      "description": "Création de sites vitrines sur mesure pour indépendants et PME : ce qui est compris, comment se déroule un projet, et à quel prix.",
+      "inLanguage": "fr-BE",
+      "isPartOf": { "@id": "https://fervia.be/#website" },
+      "about": { "@id": "https://fervia.be/#business" },
+      "breadcrumb": { "@id": "https://fervia.be/creation-site-internet/#crumb" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://fervia.be/creation-site-internet/#crumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://fervia.be/" },
+        { "@type": "ListItem", "position": 2, "name": "Création de site internet" }
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://fervia.be/creation-site-internet/#service",
+      "serviceType": "Création de site internet",
+      "name": "Création de site internet sur mesure",
+      "url": "https://fervia.be/creation-site-internet/",
+      "provider": { "@id": "https://fervia.be/#business" },
+      "areaServed": [
+        { "@type": "AdministrativeArea", "name": "Brabant wallon" },
+        { "@type": "Country", "name": "Belgique" }
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Formules de création de site",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "name": "Essentiel",
+            "priceCurrency": "EUR",
+            "price": "1200",
+            "description": "Un site d'une page, design sur mesure, nom de domaine et mise en ligne compris.",
+            "availability": "https://schema.org/InStock"
+          },
+          {
+            "@type": "Offer",
+            "name": "Signature",
+            "priceCurrency": "EUR",
+            "price": "2900",
+            "description": "Un site de 5 à 6 pages avec référencement local et fiche Google Business optimisée.",
+            "availability": "https://schema.org/InStock"
+          }
+        ]
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://fervia.be/creation-site-internet/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Qu'est-ce que je reçois exactement le jour de la livraison ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Un site en ligne à votre adresse, un nom de domaine déposé à votre nom, les accès à l'hébergement, et un point d'une demi-heure pour vous montrer comment tout fonctionne. Vous repartez propriétaire de l'ensemble, sans dépendre de moi pour continuer." }
+        },
+        {
+          "@type": "Question",
+          "name": "Combien de pages faut-il pour le site d'un indépendant ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Souvent une seule suffit. Une page bien construite qui présente l'activité, montre le travail, répond aux questions courantes et donne un moyen de contact convertit mieux qu'un site de dix pages à moitié remplies. Cinq à six pages se justifient quand plusieurs services méritent chacun leur page pour le référencement." }
+        },
+        {
+          "@type": "Question",
+          "name": "Puis-je modifier les textes moi-même après la mise en ligne ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Les petites modifications de contenu sont comprises dans le forfait mensuel : vous m'écrivez, c'est fait dans la journée ou presque. Si vous préférez être autonome, dites-le au cadrage, cela change la façon dont le site est construit et se décide avant, pas après." }
+        },
+        {
+          "@type": "Question",
+          "name": "Et si je veux ajouter une page dans six mois ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "C'est prévu et c'est normal. Une page supplémentaire se devise à l'unité, dans la continuité du design existant. Un site qui grandit avec l'activité est un bon signe, et la structure est faite pour ça dès le départ." }
+        },
+        {
+          "@type": "Question",
+          "name": "Faut-il que je fournisse les textes et les photos ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "C'est le poste le plus sous-estimé d'un projet. Si vous avez vos textes et vos photos, le site avance vite. Sinon je peux rédiger à partir d'un échange enregistré, et cela s'ajoute au devis. Dans tous les cas, c'est vous qui validez chaque mot." }
+        },
+        {
+          "@type": "Question",
+          "name": "Mon site sera-t-il rapide sur téléphone ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "C'est une exigence, pas une option. Le site que vous lisez pèse moins de 600 kilo-octets au total, images et polices comprises, là où beaucoup de sites vitrines dépassent les cinq mégaoctets. La vitesse se construit dès la conception : elle ne se rattrape pas à la fin." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <nav class="crumb rise" aria-label="Fil d'Ariane">
+      <a href="/">Fervia</a> · Création de site internet
+    </nav>
+    <div class="kicker rise d1" style="margin-top:26px">Le service</div>
+    <h1 class="rise d2">Création de site internet</h1>
+    <div class="sub rise d3">Dessiné pour votre activité, pas acheté sur étagère.</div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="rise d4">
+    <div class="answer">
+      <p>Un site vitrine conçu sur mesure, à partir de <strong>1&nbsp;200&nbsp;€</strong> pour une page et <strong>2&nbsp;900&nbsp;€</strong> pour cinq à six pages avec référencement local. Le nom de domaine, le design et la mise en ligne sont compris, le prix est écrit avant de commencer, et le site vous appartient.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="stitle">Deux formules, rien de plus</h2>
+    <div class="offres">
+      <div class="offre">
+        <div class="nom">Essentiel</div>
+        <div class="pour">Pour un indépendant ou un commerce qui doit exister en ligne et être joignable.</div>
+        <div class="prix">1 200 €</div>
+        <div class="hors">prix fixe, hors TVA</div>
+        <ul>
+          <li>Une page complète, structurée en sections</li>
+          <li>Design dessiné pour votre activité</li>
+          <li>Formulaire de contact</li>
+          <li>Nom de domaine déposé à votre nom</li>
+          <li>Mise en ligne et accès remis</li>
+        </ul>
+      </div>
+      <div class="offre offre--main">
+        <div class="nom">Signature</div>
+        <div class="pour">Pour une activité qui doit être trouvée sur les recherches de sa région.</div>
+        <div class="prix">2 900 €</div>
+        <div class="hors">prix fixe, hors TVA</div>
+        <ul>
+          <li>Cinq à six pages complètes</li>
+          <li>Tout ce que comprend l'Essentiel</li>
+          <li>Référencement local travaillé page par page</li>
+          <li>Fiche Google Business mise en place</li>
+          <li>Textes structurés pour les questions réelles</li>
+        </ul>
+      </div>
+    </div>
+    <p class="lead" style="margin-top:26px">Boutique en ligne, système de réservation, espace client ou connexion à votre logiciel de gestion : ce sont des projets d'une autre nature, chiffrés au cas par cas. <a href="/prix-site-internet-belgique/" style="color:var(--gold);text-decoration:none;border-bottom:1px solid var(--hair)">Le détail des prix et ce qui les fait varier</a>.</p>
+  </section>
+
+  <section>
+    <h2 class="stitle">Compris dans les deux</h2>
+    <div class="grid">
+      <div class="item">
+        <h3>Un site qui vous appartient</h3>
+        <p>Le nom de domaine est à votre nom. Si un jour vous partez ailleurs, vous emportez tout, sans négociation.</p>
+      </div>
+      <div class="item">
+        <h3>Les fondations du référencement</h3>
+        <p>Structure propre, balisage, données structurées, vitesse. Ce n'est pas une option payante, c'est le minimum d'un travail sérieux.</p>
+      </div>
+      <div class="item">
+        <h3>Lisible sur tous les écrans</h3>
+        <p>Conçu pour le téléphone d'abord, puisque c'est là que la majorité de vos visiteurs vous liront.</p>
+      </div>
+      <div class="item">
+        <h3>Un design qui n'existe pas ailleurs</h3>
+        <p>Pas de thème acheté et recoloré. Vos couleurs, votre typographie, votre façon de présenter les choses.</p>
+      </div>
+      <div class="item">
+        <h3>Un seul interlocuteur</h3>
+        <p>Celui qui comprend votre besoin est celui qui dessine et qui code. Du premier échange à la mise en ligne.</p>
+      </div>
+      <div class="item">
+        <h3>Un prix écrit d'avance</h3>
+        <p>Le devis détaille chaque poste. Ce qui n'y est pas ne vous sera pas facturé en cours de route.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="stitle">Comment se passe un projet</h2>
+    <div class="steps">
+      <div class="step"><div class="num">1</div><p><strong>Cadrage.</strong> Une heure ensemble pour clarifier l'objectif, le public et les contraintes. Rien n'est produit avant d'être compris. Vous repartez avec un devis détaillé et un délai écrit.</p></div>
+      <div class="step"><div class="num">2</div><p><strong>Conception.</strong> Direction visuelle et architecture des pages. Vous voyez à quoi ressemblera le site avant qu'une ligne de code soit écrite, et vous tranchez.</p></div>
+      <div class="step"><div class="num">3</div><p><strong>Production.</strong> Design et développement avancent ensemble. Vous suivez le site en construction sur une adresse privée, et vous commentez au fil de l'eau plutôt qu'à la fin.</p></div>
+      <div class="step"><div class="num">4</div><p><strong>Livraison.</strong> Mise en ligne, remise des accès, et une demi-heure pour vous montrer comment tout fonctionne. Le site est à vous, et vous savez vous en servir.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="stitle">Ce que je ne fais pas</h2>
+    <p class="lead" style="margin-bottom:24px">Autant le dire tout de suite : cela évite deux rendez-vous inutiles, au vôtre comme au mien.</p>
+    <div class="nots">
+      <div class="not"><span class="x">✕</span><p><strong>Le site à 300 €.</strong> À ce prix il faut un thème acheté et rempli à la hâte. Ça existe, ça se défend, mais ce n'est pas mon métier et je ne saurais pas le faire correctement.</p></div>
+      <div class="not"><span class="x">✕</span><p><strong>La location de site.</strong> Ces formules à quelques dizaines d'euros par mois où l'agence reste propriétaire du site et du domaine. Vous payez sans fin, et partir coûte cher.</p></div>
+      <div class="not"><span class="x">✕</span><p><strong>Les promesses de première place.</strong> Personne ne peut garantir un classement Google, et ceux qui le font vendent du vent. Je peux garantir des fondations correctes et un travail local sérieux, pas un résultat qui ne dépend pas de moi.</p></div>
+      <div class="not"><span class="x">✕</span><p><strong>Les gros projets à plusieurs équipes.</strong> Au-delà d'un certain périmètre, une agence structurée fera mieux qu'un artisan seul. Je le dirai plutôt que d'accepter et de mal le faire.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="stitle">Un exemple concret</h2>
+    <div class="case">
+      <p><strong>RTM Ready To Move</strong>, entreprise de déménagement à Bruxelles, avait besoin d'un site qui transforme une visite en demande de devis. La page est construite autour de cet objectif unique : formules tarifaires lisibles, preuve sociale visible dès l'écran d'accueil, et un formulaire accessible depuis n'importe quel endroit de la page.</p>
+      <p style="margin-top:14px"><a href="https://rtmreadytomove.com" target="_blank" rel="noopener" style="color:var(--gold);text-decoration:none;border-bottom:1px solid var(--hair)">Voir le site en ligne</a></p>
+      <figure>
+        <div class="stars" aria-hidden="true">★★★★★</div>
+        <blockquote>« Vous pouvez faire confiance à Fervia pour son travail et son accompagnement. J'ai été très satisfait de son aide pour ma campagne Google Ads et la création de mon site internet. »</blockquote>
+        <figcaption>Sylvain Manche · RTM Ready To Move · avis Google, 5/5</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="faq">
+    <h2 class="stitle">Questions fréquentes</h2>
+
+    <div class="qa">
+      <h3>Qu'est-ce que je reçois exactement le jour de la livraison&nbsp;?</h3>
+      <p>Un site en ligne à votre adresse, un nom de domaine déposé à votre nom, les accès à l'hébergement, et un point d'une demi-heure pour vous montrer comment tout fonctionne. Vous repartez propriétaire de l'ensemble, sans dépendre de moi pour continuer.</p>
+    </div>
+
+    <div class="qa">
+      <h3>Combien de pages faut-il pour le site d'un indépendant&nbsp;?</h3>
+      <p>Souvent une seule suffit. Une page bien construite qui présente l'activité, montre le travail, répond aux questions courantes et donne un moyen de contact convertit mieux qu'un site de dix pages à moitié remplies. Cinq à six pages se justifient quand plusieurs services méritent chacun leur page pour le référencement.</p>
+    </div>
+
+    <div class="qa">
+      <h3>Puis-je modifier les textes moi-même après la mise en ligne&nbsp;?</h3>
+      <p>Les petites modifications de contenu sont comprises dans le forfait mensuel : vous m'écrivez, c'est fait dans la journée ou presque. Si vous préférez être autonome, dites-le au cadrage, cela change la façon dont le site est construit et se décide avant, pas après.</p>
+    </div>
+
+    <div class="qa">
+      <h3>Et si je veux ajouter une page dans six mois&nbsp;?</h3>
+      <p>C'est prévu et c'est normal. Une page supplémentaire se devise à l'unité, dans la continuité du design existant. Un site qui grandit avec l'activité est un bon signe, et la structure est faite pour ça dès le départ.</p>
+    </div>
+
+    <div class="qa">
+      <h3>Faut-il que je fournisse les textes et les photos&nbsp;?</h3>
+      <p>C'est le poste le plus sous-estimé d'un projet. Si vous avez vos textes et vos photos, le site avance vite. Sinon je peux rédiger à partir d'un échange enregistré, et cela s'ajoute au devis. Dans tous les cas, c'est vous qui validez chaque mot.</p>
+    </div>
+
+    <div class="qa">
+      <h3>Mon site sera-t-il rapide sur téléphone&nbsp;?</h3>
+      <p>C'est une exigence, pas une option. Le site que vous lisez pèse moins de 600 kilo-octets au total, images et polices comprises, là où beaucoup de sites vitrines dépassent les cinq mégaoctets. La vitesse se construit dès la conception : elle ne se rattrape pas à la fin.</p>
+    </div>
+  </section>
+
+</main>
+
+<div class="contact">
+  <div class="wrap">
+    <div class="invite">Racontez-moi votre activité en quelques lignes.<br>Vous recevrez un prix écrit et un délai, pas une plaquette commerciale.</div>
+    <a class="cta" href="/#contact">Demander un devis</a>
+    <div class="coords">
+      <a href="tel:+32465935655">+32 465 93 56 55</a><span class="sep">·</span>
+      <a href="mailto:contact@fervia.be">contact@fervia.be</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="tagline">Forger votre voie digitale</div>
+  <div class="sub"><a href="/">Fervia</a> · Studio créatif digital · Wavre, Belgique</div>
+</footer>
+
+</body>
+</html>
