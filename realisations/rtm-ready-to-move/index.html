@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="fr-BE">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://fervia.be/realisations/rtm-ready-to-move/">
+<link rel="manifest" href="/site.webmanifest">
+<title>Site internet pour une entreprise de déménagement · RTM Ready To Move</title>
+<meta name="description" content="Comment le site de RTM Ready To Move a été conçu autour d'un seul objectif : transformer une visite en demande de devis. Les choix, les raisons, le retour du client.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Site internet pour une entreprise de déménagement · RTM Ready To Move">
+<meta property="og:description" content="Une étude de cas Fervia : un site vitrine construit autour d'un seul objectif, la demande de devis.">
+<meta property="og:locale" content="fr_BE">
+<meta property="og:url" content="https://fervia.be/realisations/rtm-ready-to-move/">
+<meta property="og:image" content="https://fervia.be/assets/work/rtm.webp">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="750">
+<meta property="og:image:alt" content="Page d'accueil du site RTM Ready To Move">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Site internet pour une entreprise de déménagement · RTM Ready To Move">
+<meta name="twitter:description" content="Une étude de cas Fervia : un site vitrine construit autour d'un seul objectif, la demande de devis.">
+<meta name="twitter:image" content="https://fervia.be/assets/work/rtm.webp">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="preload" as="font" type="font/woff2" href="/assets/fonts/jost-300.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="/assets/fonts/cormorant-garamond-500.woff2" crossorigin>
+<link rel="stylesheet" href="/assets/fonts/fonts.css">
+<style>
+  :root{
+    --navy:#1A2D45;
+    --navy-deep:#0E1C30;
+    --gold:#C9A84C;
+    --gold-hi:#F5D27A;
+    --gold-lo:#A8792A;
+    --cream:#F5F0E6;
+    --cream-70:rgba(245,240,230,.72);
+    --cream-50:rgba(245,240,230,.52);
+    --hair:rgba(201,168,76,.28);
+    --hair-soft:rgba(201,168,76,.16);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--navy-deep);color:var(--cream);
+    font-family:'Jost',sans-serif;font-weight:300;
+    font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:760px;margin:0 auto;padding:0 28px}
+
+  .rise{opacity:0;transform:translateY(14px);animation:rise .8s cubic-bezier(.22,.61,.36,1) forwards}
+  .d1{animation-delay:.08s}.d2{animation-delay:.18s}.d3{animation-delay:.28s}.d4{animation-delay:.38s}
+  @keyframes rise{to{opacity:1;transform:none}}
+  @media (prefers-reduced-motion: reduce){.rise{opacity:1;transform:none;animation:none}}
+
+  .crumb{padding:20px 0 0;font-size:13px;letter-spacing:.06em;color:var(--cream-50)}
+  .crumb a{color:var(--cream-50);text-decoration:none;border-bottom:1px solid var(--hair-soft)}
+  .crumb a:hover{color:var(--gold)}
+
+  .hero{background:var(--navy);border-bottom:1px solid var(--hair);padding:38px 0 52px;text-align:center}
+  .kicker{font-size:12px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);font-weight:400;margin-bottom:18px}
+  h1{
+    font-family:'Cormorant Garamond',serif;font-weight:500;
+    font-size:clamp(32px,5vw,46px);line-height:1.12;letter-spacing:.01em;color:var(--cream);
+  }
+  .hero .sub{
+    font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;
+    font-size:clamp(19px,3vw,24px);color:var(--gold);margin-top:14px;
+  }
+
+  .shot{margin:0 auto;max-width:1000px;padding:0 28px;margin-top:-34px;position:relative;z-index:2}
+  .shot img{
+    width:100%;height:auto;display:block;border-radius:4px;
+    border:1px solid var(--hair);box-shadow:0 24px 60px -24px rgba(0,0,0,.7);
+  }
+  .shot figcaption{margin-top:12px;font-size:13px;color:var(--cream-50);text-align:center}
+
+  section{padding:56px 0 0}
+  .stitle{
+    font-family:'Cormorant Garamond',serif;font-weight:500;font-size:29px;color:var(--cream);
+    display:flex;align-items:center;gap:18px;margin-bottom:24px;
+  }
+  .stitle::after{content:"";flex:1;height:1px;background:var(--hair-soft)}
+  p.lead{font-size:18.5px;color:var(--cream-70)}
+  p.lead strong{color:var(--cream);font-weight:400}
+  p + p{margin-top:16px}
+
+  .fiche{
+    background:var(--navy);border:1px solid var(--hair);border-radius:4px;padding:26px 28px;
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:20px 30px;
+  }
+  .fiche div span{display:block}
+  .fiche .k{font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:5px}
+  .fiche .v{font-size:16px;color:var(--cream-70);line-height:1.45}
+
+  .choix{border-top:1px solid var(--hair-soft)}
+  .ch{padding:24px 0;border-bottom:1px solid var(--hair-soft)}
+  .ch h3{
+    font-family:'Cormorant Garamond',serif;font-weight:500;font-size:22px;color:var(--gold);margin-bottom:8px;
+  }
+  .ch p{font-size:16.5px;color:var(--cream-70)}
+  .ch p strong{color:var(--cream);font-weight:400}
+  .ch .pourquoi{
+    margin-top:10px;padding-left:16px;border-left:1px solid var(--hair);
+    font-size:15.5px;color:var(--cream-50);font-style:italic;
+  }
+
+  .avis{background:var(--navy);border:1px solid var(--hair);border-radius:4px;padding:30px}
+  .avis .stars{color:var(--gold);letter-spacing:.25em;font-size:13px;margin-bottom:12px}
+  .avis blockquote{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:21px;line-height:1.45;color:var(--cream)}
+  .avis figcaption{margin-top:12px;font-size:12px;letter-spacing:.13em;text-transform:uppercase;color:var(--cream-50)}
+
+  .visit{
+    display:inline-block;margin-top:22px;font-size:16px;color:var(--gold);
+    text-decoration:none;border-bottom:1px solid var(--hair);
+  }
+  .visit:hover{border-bottom-color:var(--gold)}
+
+  .contact{margin-top:64px;background:var(--navy);border-top:1px solid var(--hair);padding:56px 0;text-align:center}
+  .contact .invite{
+    font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;
+    font-size:clamp(22px,4vw,27px);color:var(--cream);max-width:580px;margin:0 auto 30px;line-height:1.35;
+  }
+  .cta{
+    display:inline-block;font-family:'Jost',sans-serif;font-weight:400;font-size:15px;
+    letter-spacing:.12em;text-transform:uppercase;color:var(--navy-deep);text-decoration:none;
+    background:linear-gradient(135deg,var(--gold-hi),var(--gold) 55%,var(--gold-lo));
+    padding:15px 34px;border-radius:3px;transition:box-shadow .25s ease,transform .25s ease;
+  }
+  .cta:hover{box-shadow:0 6px 24px rgba(201,168,76,.35);transform:translateY(-1px)}
+  .coords{margin-top:26px;font-size:16px;color:var(--cream-70)}
+  .coords a{color:var(--cream-70);text-decoration:none;border-bottom:1px solid var(--hair)}
+  .coords a:hover{color:var(--gold)}
+  .coords .sep{color:var(--hair);margin:0 12px}
+
+  footer{padding:36px 0 44px;text-align:center}
+  footer .tagline{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:19px;color:var(--gold)}
+  footer .sub{font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--cream-50);margin-top:10px}
+  footer .sub a{color:var(--cream-50);text-decoration:none;border-bottom:1px solid var(--hair-soft)}
+  footer .sub a:hover{color:var(--gold)}
+
+  .inlink{color:var(--gold);text-decoration:none;border-bottom:1px solid var(--hair)}
+  :focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:2px}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://fervia.be/realisations/rtm-ready-to-move/#article",
+      "headline": "RTM Ready To Move : un site vitrine construit autour de la demande de devis",
+      "description": "Étude de cas : comment le site d'une entreprise de déménagement bruxelloise a été conçu pour transformer une visite en demande de devis.",
+      "datePublished": "2026-08-10",
+      "dateModified": "2026-08-10",
+      "inLanguage": "fr-BE",
+      "image": "https://fervia.be/assets/work/rtm.webp",
+      "author": { "@id": "https://fervia.be/#business" },
+      "publisher": { "@id": "https://fervia.be/#business" },
+      "mainEntityOfPage": "https://fervia.be/realisations/rtm-ready-to-move/",
+      "isPartOf": { "@id": "https://fervia.be/#website" },
+      "about": {
+        "@type": "Organization",
+        "name": "RTM Ready To Move",
+        "url": "https://rtmreadytomove.com",
+        "areaServed": "Bruxelles, Belgique"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://fervia.be/realisations/rtm-ready-to-move/#crumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://fervia.be/" },
+        { "@type": "ListItem", "position": 2, "name": "Réalisations", "item": "https://fervia.be/#realisations" },
+        { "@type": "ListItem", "position": 3, "name": "RTM Ready To Move" }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <nav class="crumb rise" aria-label="Fil d'Ariane">
+      <a href="/">Fervia</a> · <a href="/#realisations">Réalisations</a> · RTM Ready To Move
+    </nav>
+    <div class="kicker rise d1" style="margin-top:26px">Étude de cas · Déménagement · Bruxelles</div>
+    <h1 class="rise d2">Un site construit autour d'une seule action</h1>
+    <div class="sub rise d3">RTM Ready To Move, ou comment transformer une visite en demande de devis.</div>
+  </div>
+</header>
+
+<figure class="shot rise d4">
+  <img src="/assets/work/rtm.webp" alt="Page d'accueil du site RTM Ready To Move" width="1200" height="750">
+  <figcaption>La page d'accueil de rtmreadytomove.com</figcaption>
+</figure>
+
+<main class="wrap">
+
+  <section>
+    <h2 class="stitle">Le client</h2>
+    <div class="fiche">
+      <div><span class="k">Activité</span><span class="v">Déménagement, vide maison et transport</span></div>
+      <div><span class="k">Base</span><span class="v">Bruxelles, Belgique et international</span></div>
+      <div><span class="k">Besoin</span><span class="v">Un site vitrine orienté demande de devis</span></div>
+      <div><span class="k">Livré</span><span class="v">Site en ligne, puis campagne Google Ads</span></div>
+    </div>
+    <p class="lead" style="margin-top:24px">RTM Ready To Move est une entreprise de déménagement basée à Bruxelles, qui intervient dans toute la Belgique et à l'international. Elle propose aussi le vide maison, le transport d'objets fragiles et la location de monte-charge.</p>
+  </section>
+
+  <section>
+    <h2 class="stitle">Le problème</h2>
+    <p class="lead">Dans le déménagement, un prospect ne compare pas trois sites pendant une semaine. Il cherche un jour précis, souvent dans l'urgence, et il contacte le premier prestataire qui lui inspire confiance et qu'il peut joindre tout de suite.</p>
+    <p class="lead">Le site avait donc <strong>une seule mission</strong> : convaincre en quelques secondes, puis rendre le contact évident. Tout ce qui ne servait pas cet objectif devenait un obstacle.</p>
+  </section>
+
+  <section>
+    <h2 class="stitle">Les choix, et pourquoi</h2>
+    <div class="choix">
+
+      <div class="ch">
+        <h3>Dire le métier et la zone dès la première ligne</h3>
+        <p>Le titre annonce les trois prestations et le territoire couvert : déménagement, vide maison, transport, Bruxelles et Belgique. Pas de slogan abstrait, pas de promesse vague.</p>
+        <p class="pourquoi">Un visiteur qui cherche un déménageur à Bruxelles doit savoir en une seconde qu'il est au bon endroit. C'est aussi ce que Google lit en premier.</p>
+      </div>
+
+      <div class="ch">
+        <h3>Mettre la réassurance au niveau du titre</h3>
+        <p>À droite du titre, une carte affiche les trois arguments qui lèvent les vraies objections : couverture nationale et internationale, disponibilité continue, équipe professionnelle. Avec la mention des devis et visites gratuits.</p>
+        <p class="pourquoi">Ces trois questions sont exactement celles qu'un client se pose avant d'appeler. Y répondre avant qu'il ait à chercher évite qu'il reparte.</p>
+      </div>
+
+      <div class="ch">
+        <h3>Deux boutons, pas dix</h3>
+        <p>Un bouton principal pour appeler, un bouton secondaire pour voir les services. Rien d'autre dans le premier écran.</p>
+        <p class="pourquoi">Multiplier les appels à l'action, c'est demander au visiteur de choisir. Dans une décision d'urgence, chaque choix supplémentaire fait perdre du monde.</p>
+      </div>
+
+      <div class="ch">
+        <h3>La preuve avant l'argumentaire</h3>
+        <p>Sous les boutons, trois chiffres : le nombre de déménagements réalisés, la note de satisfaction, la couverture géographique. Visibles sans avoir à faire défiler la page.</p>
+        <p class="pourquoi">Une entreprise qui montre ses chiffres inspire davantage confiance qu'une entreprise qui se décrit. C'est vrai pour tout le monde, et particulièrement quand on confie ses meubles à quelqu'un.</p>
+      </div>
+
+      <div class="ch">
+        <h3>Des formules lisibles plutôt qu'un prix caché</h3>
+        <p>Les prestations sont organisées en formules, chacune détaillant ce qu'elle comprend, jusqu'au matériel d'emballage.</p>
+        <p class="pourquoi">Un déménagement ne se chiffre pas sans visite : le prix dépend du volume, des étages et de la distance. Mais montrer clairement les niveaux de service permet au client d'arriver au téléphone en sachant déjà ce qu'il veut.</p>
+      </div>
+
+      <div class="ch">
+        <h3>Rendre le contact possible de trois façons</h3>
+        <p>Un numéro visible en permanence dans la barre du haut, un formulaire détaillé, et WhatsApp.</p>
+        <p class="pourquoi">Certains appellent, d'autres n'appellent jamais. Proposer WhatsApp à côté du téléphone capte une partie des visiteurs qui seraient partis sans rien faire.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <h2 class="stitle">Le retour du client</h2>
+    <div class="avis">
+      <div class="stars" aria-hidden="true">★★★★★</div>
+      <blockquote>« Vous pouvez faire confiance à Fervia pour son travail et son accompagnement. J'ai été très satisfait de son aide pour ma campagne Google Ads et la création de mon site internet. »</blockquote>
+      <figcaption>Sylvain Manche · RTM Ready To Move · avis Google, 5/5</figcaption>
+    </div>
+    <a class="visit" href="https://rtmreadytomove.com" target="_blank" rel="noopener">Voir le site en ligne&nbsp;→</a>
+  </section>
+
+  <section>
+    <h2 class="stitle">Ce qui se transpose</h2>
+    <p class="lead">Ce site n'est pas réussi parce qu'il est beau. Il est réussi parce qu'il a été construit autour d'<strong>une seule action à obtenir</strong>, et que chaque élément a été jugé à cette aune.</p>
+    <p class="lead">La question à se poser avant de commencer n'est jamais « que veut-on mettre sur le site ». C'est « qu'est-ce qu'un visiteur doit faire avant de partir ». Pour un déménageur, demander un devis. Pour un thérapeute, prendre rendez-vous. Pour un artisan, laisser son numéro. Le reste du site n'existe que pour rendre ce geste évident.</p>
+    <p class="lead">C'est aussi le premier sujet du <a class="inlink" href="/creation-site-internet/">cadrage de chaque projet</a>, avant toute question de design.</p>
+  </section>
+
+</main>
+
+<div class="contact">
+  <div class="wrap">
+    <div class="invite">Votre activité mérite un site qui fasse une chose,<br>et qui la fasse bien.</div>
+    <a class="cta" href="/#contact">Parlons de votre projet</a>
+    <div class="coords">
+      <a href="tel:+32465935655">+32 465 93 56 55</a><span class="sep">·</span>
+      <a href="mailto:contact@fervia.be">contact@fervia.be</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="tagline">Forger votre voie digitale</div>
+  <div class="sub"><a href="/">Fervia</a> · Studio créatif digital · Wavre, Belgique</div>
+</footer>
+
+</body>
+</html>
