@@ -54,7 +54,8 @@
   .rise{opacity:0;transform:translateY(14px);animation:rise .8s cubic-bezier(.22,.61,.36,1) forwards}
   .d1{animation-delay:.08s}.d2{animation-delay:.18s}.d3{animation-delay:.28s}.d4{animation-delay:.38s}
   @keyframes rise{to{opacity:1;transform:none}}
-  @media (prefers-reduced-motion: reduce){.rise{opacity:1;transform:none;animation:none}}
+  @media (prefers-reduced-motion: reduce){.rise{opacity:1;transform:none;animation:none}
+    .cta:hover,.work:hover{transform:none}}
 
   .crumb{padding:20px 0 0;font-size:13px;letter-spacing:.06em;color:var(--cream-50)}
   .crumb a{color:var(--cream-50);text-decoration:none;border-bottom:1px solid var(--hair-soft)}
@@ -145,6 +146,9 @@
     padding:15px 34px;border-radius:3px;transition:box-shadow .25s ease,transform .25s ease;
   }
   .cta:hover{box-shadow:0 6px 24px rgba(201,168,76,.35);transform:translateY(-1px)}
+  .cta:active{transform:scale(.97);transition:transform .16s cubic-bezier(.22,.61,.36,1)}
+  /* le tactile declenche un faux survol au tap : l'etat resterait colle apres le doigt */
+  @media (hover:none){.cta:hover{transform:none}}
   .coords{margin-top:26px;font-size:16px;color:var(--cream-70)}
   .coords a{color:var(--cream-70);text-decoration:none;border-bottom:1px solid var(--hair)}
   .coords a:hover{color:var(--gold)}

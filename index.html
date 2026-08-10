@@ -60,7 +60,7 @@ a{color:inherit;}
   padding:13px clamp(20px,4vw,48px);
   background:rgba(14,28,48,0);
   transform:translateY(-100%);opacity:0;pointer-events:none;
-  transition:transform .45s ease,opacity .45s ease,background .45s ease,backdrop-filter .45s ease;
+  transition:transform .25s cubic-bezier(.22,.61,.36,1),opacity .25s cubic-bezier(.22,.61,.36,1),background .25s ease;
 }
 .topbar.visible{
   transform:none;opacity:1;pointer-events:auto;
@@ -92,6 +92,7 @@ a{color:inherit;}
 }
 .tbtn svg{width:17px;height:17px;}
 .tbtn:hover{transform:translateY(-2px);}
+.tbtn:active{transform:scale(.97);transition:transform .16s cubic-bezier(.22,.61,.36,1);}
 .tbtn--mail{
   background:linear-gradient(135deg,var(--or-light),var(--or-deep));
   color:var(--navy-deep);
@@ -349,6 +350,7 @@ a{color:inherit;}
   transition:background .35s,color .35s,border-color .35s,box-shadow .35s;
 }
 .offre-cta:hover{background:linear-gradient(135deg,var(--or-light),var(--or-deep));color:var(--navy-deep);border-color:transparent;}
+.offre-cta:active{transform:scale(.97);transition:transform .16s cubic-bezier(.22,.61,.36,1);}
 .offre-cta.plein{background:linear-gradient(135deg,var(--or-light),var(--or-deep));color:var(--navy-deep);border-color:transparent;}
 .offre-cta.plein:hover{box-shadow:0 10px 22px -10px rgba(201,168,76,.6);}
 .offre-note{
@@ -375,6 +377,7 @@ a{color:inherit;}
   border-color:rgba(201,168,76,.45);transform:translateY(-5px);
   box-shadow:0 28px 60px -30px rgba(0,0,0,.75);
 }
+.work:active{transform:translateY(-2px) scale(.99);transition:transform .16s cubic-bezier(.22,.61,.36,1);}
 .work:nth-child(even) .work-media{order:2;}
 .work-media{position:relative;overflow:hidden;min-height:100%;}
 .work-media::after{
@@ -490,10 +493,34 @@ a{color:inherit;}
 /* révélation au scroll (cascade) */
 .reveal > *{opacity:0;transform:translateY(22px);transition:opacity .75s cubic-bezier(.22,.61,.36,1),transform .75s cubic-bezier(.22,.61,.36,1);}
 .reveal.is-visible > *{opacity:1;transform:none;}
-.reveal.is-visible > *:nth-child(2){transition-delay:.09s;}
-.reveal.is-visible > *:nth-child(3){transition-delay:.18s;}
-.reveal.is-visible > *:nth-child(4){transition-delay:.27s;}
-.reveal.is-visible > *:nth-child(5){transition-delay:.36s;}
+.reveal.is-visible > *:nth-child(2){transition-delay:.06s;}
+.reveal.is-visible > *:nth-child(3){transition-delay:.12s;}
+.reveal.is-visible > *:nth-child(4){transition-delay:.18s;}
+.reveal.is-visible > *:nth-child(5){transition-delay:.24s;}
+/* les items des grilles sont des petits-enfants : sans ceci ils arrivent tous ensemble */
+.reveal .steps > *,.reveal .cards > *,.reveal .works > *,.reveal .faq-list > *,.reveal .temoignages > *{
+  opacity:0;transform:translateY(16px);
+  transition:opacity .6s cubic-bezier(.22,.61,.36,1),transform .6s cubic-bezier(.22,.61,.36,1);
+}
+.reveal.is-visible .steps > *,.reveal.is-visible .cards > *,.reveal.is-visible .works > *,
+.reveal.is-visible .faq-list > *,.reveal.is-visible .temoignages > *{opacity:1;transform:none;}
+.reveal.is-visible .steps > *:nth-child(1),.reveal.is-visible .cards > *:nth-child(1),
+.reveal.is-visible .works > *:nth-child(1),.reveal.is-visible .faq-list > *:nth-child(1),
+.reveal.is-visible .temoignages > *:nth-child(1){transition-delay:.24s;}
+.reveal.is-visible .steps > *:nth-child(2),.reveal.is-visible .cards > *:nth-child(2),
+.reveal.is-visible .works > *:nth-child(2),.reveal.is-visible .faq-list > *:nth-child(2),
+.reveal.is-visible .temoignages > *:nth-child(2){transition-delay:.30s;}
+.reveal.is-visible .steps > *:nth-child(3),.reveal.is-visible .cards > *:nth-child(3),
+.reveal.is-visible .works > *:nth-child(3),.reveal.is-visible .faq-list > *:nth-child(3){transition-delay:.36s;}
+.reveal.is-visible .steps > *:nth-child(4),.reveal.is-visible .works > *:nth-child(4),
+.reveal.is-visible .faq-list > *:nth-child(4){transition-delay:.42s;}
+.reveal.is-visible .faq-list > *:nth-child(5){transition-delay:.48s;}
+.reveal.is-visible .faq-list > *:nth-child(6){transition-delay:.54s;}
+/* le tactile déclenche un faux survol au tap : l'état resterait collé après le doigt */
+@media (hover:none){
+  .tbtn:hover,.card:hover,.offre-carte:hover,.work:hover{transform:none;}
+  .card:hover svg,.work:hover .work-img,.work:hover .work-link .ar{transform:none;}
+}
 
 @media (max-width:820px){
   .steps{grid-template-columns:1fr;}
@@ -510,8 +537,18 @@ a{color:inherit;}
 @media (prefers-reduced-motion:reduce){
   .logo-svg,.divider,.tagline,.accroche,.services,.scroll-cue{animation:none;opacity:1;transform:none;}
   .fervia-flame,.scroll-cue .arrow{animation:none;}
-  .reveal > *{opacity:1;transform:none;transition:none;}
+  /* on retire le déplacement, on garde le fondu : il aide à comprendre l'arrivée du contenu */
+  .reveal > *,
+  .reveal .steps > *,.reveal .cards > *,.reveal .works > *,.reveal .faq-list > *,.reveal .temoignages > *{
+    transform:none;transition:opacity .2s ease;
+  }
+  .reveal.is-visible > *,
+  .reveal.is-visible .steps > *,.reveal.is-visible .cards > *,.reveal.is-visible .works > *,
+  .reveal.is-visible .faq-list > *,.reveal.is-visible .temoignages > *{opacity:1;transition-delay:0s;}
   .hero-bg{transform:none!important;}
+  /* les survols ne doivent plus déplacer non plus */
+  .tbtn:hover,.card:hover,.offre-carte:hover,.work:hover,
+  .card:hover svg,.work:hover .work-img,.work:hover .work-link .ar{transform:none;}
 }
 /* ===== FORMULAIRE DE CONTACT ===== */
 .contact-form{max-width:34em;margin:0 auto clamp(30px,5vh,44px);text-align:left;}
@@ -540,6 +577,7 @@ a{color:inherit;}
   padding:12px 14px;cursor:pointer;transition:border-color .3s,background .3s;
 }
 .cf-select-trigger:hover{border-color:rgba(201,168,76,.55);}
+.cf-select-trigger:active{transform:scale(.99);transition:transform .16s cubic-bezier(.22,.61,.36,1);}
 .cf-select-trigger[aria-expanded="true"]{border-color:var(--or);background:rgba(14,28,48,.78);}
 .cf-select-arrow{
   width:8px;height:8px;flex:none;border-right:1.5px solid var(--or);border-bottom:1.5px solid var(--or);
@@ -597,6 +635,7 @@ a{color:inherit;}
   transition:transform .3s ease;
 }
 .faq-item[open] summary::after{transform:translateY(-30%) rotate(225deg);}
+.faq-item summary:active{transform:scale(.995);transition:transform .16s cubic-bezier(.22,.61,.36,1);}
 .faq-item summary:hover{color:var(--or-light);}
 .faq-answer{
   font-family:'Jost',system-ui,sans-serif;font-weight:300;

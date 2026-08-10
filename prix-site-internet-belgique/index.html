@@ -59,6 +59,7 @@
   @keyframes rise{to{opacity:1;transform:none}}
   @media (prefers-reduced-motion: reduce){
     .rise{opacity:1;transform:none;animation:none}
+    .cta:hover,.work:hover{transform:none}
   }
 
   /* fil d'ariane */
@@ -158,11 +159,12 @@
   }
   .cbar{
     position:absolute;top:5px;height:16px;border-radius:2px;
-    left:var(--s);width:0;
-    transition:width .95s cubic-bezier(.22,.61,.36,1);
+    left:var(--s);width:var(--w);
+    transform:scaleX(0);transform-origin:left center;
+    transition:transform .95s cubic-bezier(.22,.61,.36,1);
     transition-delay:var(--d,0s);
   }
-  .compare.in .cbar{width:var(--w)}
+  .compare.in .cbar{transform:scaleX(1)}
   .crow:not(.me) .cbar{
     background:rgba(245,240,230,.14);
     border:1px solid rgba(245,240,230,.22);
@@ -197,8 +199,9 @@
   .cscale span:last-child{transform:translateX(-100%)}
   .cnote{margin-top:34px;font-size:13.5px;color:var(--cream-50);line-height:1.55}
   @media (prefers-reduced-motion: reduce){
-    .cbar{width:var(--w);transition:none}
-    .cval{opacity:1;transition:none}
+    .cbar{transform:scaleX(1);transition:none}
+    /* le libellé est un fondu pur : on le garde, il n'y a pas de déplacement à supprimer */
+    .cval{transition:opacity .2s ease;transition-delay:0s}
   }
 
   /* facteurs */
@@ -268,6 +271,9 @@
     transition:box-shadow .25s ease,transform .25s ease;
   }
   .cta:hover{box-shadow:0 6px 24px rgba(201,168,76,.35);transform:translateY(-1px)}
+  .cta:active{transform:scale(.97);transition:transform .16s cubic-bezier(.22,.61,.36,1)}
+  /* le tactile declenche un faux survol au tap : l'etat resterait colle apres le doigt */
+  @media (hover:none){.cta:hover{transform:none}}
   .coords{margin-top:26px;font-size:16px;color:var(--cream-70)}
   .coords a{color:var(--cream-70);text-decoration:none;border-bottom:1px solid var(--hair)}
   .coords a:hover{color:var(--gold)}
