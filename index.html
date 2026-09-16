@@ -416,9 +416,11 @@ a{color:inherit;}
 }
 .offre-liens-info a{color:var(--creme);opacity:.85;text-decoration:underline;text-underline-offset:3px;}
 .offre-liens-info a:hover{color:var(--or);opacity:1;}
+/* Pas `.sep` : c'est le trait vertical doré du héros, la classe ne se partage pas. */
+.offre-liens-info .liens-sep{opacity:.5;}
 @media (max-width:480px){
   .offre-liens-info{display:flex;flex-direction:column;gap:6px;}
-  .offre-liens-info .sep{display:none;}
+  .offre-liens-info .liens-sep{display:none;}
 }
 
 /* Réalisations : une par ligne, en grand, alternées */
@@ -1064,7 +1066,7 @@ a{color:inherit;}
 
       <p class="offre-liens-info">
         Pour aller plus loin&nbsp;:
-        <a href="/creation-site-internet/">détail des formules</a><span class="sep"> · </span><a href="/prix-site-internet-belgique/">prix d'un site en Belgique</a><span class="sep"> · </span><a href="/aides-site-internet-wallonie/">aides en Wallonie</a>
+        <a href="/creation-site-internet/">détail des formules</a><span class="liens-sep"> · </span><a href="/prix-site-internet-belgique/">prix d'un site en Belgique</a><span class="liens-sep"> · </span><a href="/aides-site-internet-wallonie/">aides en Wallonie</a>
       </p>
     </div>
   </section>
