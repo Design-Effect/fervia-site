@@ -386,6 +386,41 @@ a{color:inherit;}
   .offre-vedette{order:-1;}
 }
 
+/* Deux approches différentes du site : agents IA, outil métier */
+.offres-secondaires{
+  display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,2vw,22px);
+  max-width:760px;margin:clamp(34px,5.5vh,54px) auto 0;
+}
+@media (max-width:620px){.offres-secondaires{grid-template-columns:1fr;}}
+.offre-mini{
+  border:1px solid rgba(201,168,76,.18);border-radius:4px;
+  padding:22px 24px;text-align:left;
+  transition:border-color var(--d-hover),background var(--d-hover);
+}
+.offre-mini:hover{border-color:rgba(201,168,76,.4);background:rgba(201,168,76,.04);}
+.offre-mini-eyebrow{
+  display:block;font-family:'Jost',system-ui,sans-serif;font-size:.66rem;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--or);opacity:.75;margin-bottom:8px;
+}
+.offre-mini h3{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.32rem;font-weight:500;color:var(--creme);margin-bottom:6px;}
+.offre-mini p{font-family:'Jost',system-ui,sans-serif;font-weight:300;font-size:.86rem;line-height:1.55;color:var(--creme);opacity:.78;}
+.offre-mini p strong{color:var(--or);font-weight:500;opacity:1;}
+.offre-mini-cta{
+  display:inline-block;margin-top:12px;font-family:'Jost',system-ui,sans-serif;
+  font-size:.78rem;font-weight:500;letter-spacing:.03em;color:var(--or);
+  text-decoration:underline;text-underline-offset:3px;
+}
+.offre-liens-info{
+  font-family:'Jost',system-ui,sans-serif;font-weight:300;text-align:center;
+  font-size:.85rem;color:var(--creme);opacity:.6;margin-top:clamp(24px,3.5vh,32px);
+}
+.offre-liens-info a{color:var(--creme);opacity:.85;text-decoration:underline;text-underline-offset:3px;}
+.offre-liens-info a:hover{color:var(--or);opacity:1;}
+@media (max-width:480px){
+  .offre-liens-info{display:flex;flex-direction:column;gap:6px;}
+  .offre-liens-info .sep{display:none;}
+}
+
 /* Réalisations : une par ligne, en grand, alternées */
 .works{display:flex;flex-direction:column;gap:clamp(36px,6vw,80px);}
 .work{
@@ -1011,25 +1046,25 @@ a{color:inherit;}
         Chaque offre inclut l'hébergement, la sécurité et la tranquillité d'esprit d'un interlocuteur unique.<br>
         <em>La retenue fait le premium : on construit l'essentiel, parfaitement, plutôt que l'accessoire, en trop.</em>
       </p>
-      <p class="offre-note" style="margin-top:14px">
-        Vous voulez déléguer un métier plutôt que construire un site&nbsp;?
-        <a class="gold" href="/agents-ia/" style="display:block;margin-top:10px;color:var(--or);font-weight:500;text-decoration:underline;text-underline-offset:3px">Découvrez les agents IA Fervia&nbsp;→</a>
-      </p>
-      <p class="offre-note" style="margin-top:14px">
-        Besoin d'un <strong>outil de gestion sur mesure</strong> pour votre activité, plutôt qu'un simple site&nbsp;?
-        <a class="gold" href="/outil-metier/" style="display:block;margin-top:10px;color:var(--or);font-weight:500;text-decoration:underline;text-underline-offset:3px">Découvrez l'outil métier Fervia&nbsp;→</a>
-      </p>
-      <p class="offre-note" style="margin-top:14px">
-        Vous voulez le détail de ce que comprend chaque formule, et comment se déroule un projet&nbsp;?
-        <a class="gold" href="/creation-site-internet/" style="display:block;margin-top:10px;color:var(--or);font-weight:500;text-decoration:underline;text-underline-offset:3px">Tout sur la création de site internet&nbsp;→</a>
-      </p>
-      <p class="offre-note" style="margin-top:14px">
-        Vous voulez situer ces montants&nbsp;? J'ai détaillé ce qui se pratique réellement en Belgique, et pourquoi les écarts sont si grands.
-        <a class="gold" href="/prix-site-internet-belgique/" style="display:block;margin-top:10px;color:var(--or);font-weight:500;text-decoration:underline;text-underline-offset:3px">Le prix d'un site internet en Belgique&nbsp;→</a>
-      </p>
-      <p class="offre-note" style="margin-top:14px">
-        Vous êtes indépendant ou PME en Wallonie&nbsp;? Des aides publiques peuvent financer une partie de votre site, et certaines ont été supprimées sans bruit.
-        <a class="gold" href="/aides-site-internet-wallonie/" style="display:block;margin-top:10px;color:var(--or);font-weight:500;text-decoration:underline;text-underline-offset:3px">Les aides pour financer un site en Wallonie&nbsp;→</a>
+
+      <div class="offres-secondaires">
+        <article class="offre-mini">
+          <span class="offre-mini-eyebrow">Une autre approche</span>
+          <h3>Agents IA</h3>
+          <p>Déléguer un métier plutôt que construire un site. <strong>500&nbsp;€</strong> par mois par agent.</p>
+          <a class="offre-mini-cta" href="/agents-ia/">Découvrir les agents IA&nbsp;→</a>
+        </article>
+        <article class="offre-mini">
+          <span class="offre-mini-eyebrow">Une autre approche</span>
+          <h3>Outil métier</h3>
+          <p>Une application de gestion sur mesure, prix fixe. Dès <strong>750&nbsp;€</strong>.</p>
+          <a class="offre-mini-cta" href="/outil-metier/">Découvrir l'outil métier&nbsp;→</a>
+        </article>
+      </div>
+
+      <p class="offre-liens-info">
+        Pour aller plus loin&nbsp;:
+        <a href="/creation-site-internet/">détail des formules</a><span class="sep"> · </span><a href="/prix-site-internet-belgique/">prix d'un site en Belgique</a><span class="sep"> · </span><a href="/aides-site-internet-wallonie/">aides en Wallonie</a>
       </p>
     </div>
   </section>
