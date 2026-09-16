@@ -1,16 +1,17 @@
 # Fervia
 
-> Studio digital indépendant installé à Wavre, en Brabant wallon (Belgique). Création de sites internet, d'applications web et mobiles, d'outils métier sur mesure et d'identités visuelles, pour les indépendants et les PME. Prix publics annoncés par écrit avant tout engagement.
+> Studio digital indépendant installé à Wavre, en Brabant wallon (Belgique). Création de sites internet, d'applications web et mobiles, d'outils métier sur mesure, d'agents IA et d'identités visuelles, pour les indépendants et les PME. Prix publics annoncés par écrit avant tout engagement.
 
 Fervia est mené par une seule personne : celui qui comprend le besoin est celui qui dessine et qui développe, sans commercial ni chef de projet intermédiaire. Le nom de domaine est déposé au nom du client et le site lui appartient. Les fondations techniques du référencement sont comprises dans chaque projet.
 
-Dernière mise à jour : 10 août 2026.
+Dernière mise à jour : 16 septembre 2026.
 
 ## Prix (hors TVA)
 
 - Site internet d'une page, design sur mesure : 1 200 € (prix fixe)
 - Site internet de 5 à 6 pages avec référencement local et fiche Google Business : 2 900 € (prix fixe)
 - Outil métier sur mesure, application de gestion : à partir de 750 €, livré en 7 jours ouvrables
+- Agent IA, un métier tenu par un agent installé chez le client et entretenu par Fervia : 500 € par mois par agent, mise en place à partir de 1 500 €
 - Boutique en ligne, système de réservation, application : sur devis
 - Hébergement et maintenance : 25 à 50 € par mois, facultatif et résiliable
 
@@ -26,6 +27,7 @@ Basé à Wavre (1300), chef-lieu du Brabant wallon. Déplacements dans les 27 co
 - [Prix d'un site internet en Belgique](https://fervia.be/prix-site-internet-belgique/) : fourchettes réellement pratiquées sur le marché belge, prix de Fervia, et les cinq facteurs qui font varier une facture
 - [Agence web en Brabant wallon](https://fervia.be/agence-web-brabant-wallon/) : zone d'intervention, façon de travailler, réalisations locales
 - [Outil métier sur mesure](https://fervia.be/outil-metier/) : applications de gestion pour indépendants et commerces, à partir de 750 €, fonctionnant hors connexion
+- [Agents IA](https://fervia.be/agents-ia/) : un agent par métier (prospection, courrier, contenus, publicité), installé sur un serveur du client, entretenu et formé par Fervia, rien n'est envoyé sans l'accord du client
 - [Aides pour financer un site internet en Wallonie](https://fervia.be/aides-site-internet-wallonie/) : état vérifié des chèques-entreprise et subsides wallons en 2026, y compris ceux qui ont été supprimés
 - [Étude de cas RTM Ready To Move](https://fervia.be/realisations/rtm-ready-to-move/) : site vitrine pour une entreprise de déménagement bruxelloise, construit autour de la demande de devis
 

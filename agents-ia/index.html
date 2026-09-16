@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="fr-BE">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://fervia.be/agents-ia/">
+<link rel="manifest" href="/site.webmanifest">
+<title>Agents IA pour votre entreprise, 500 € par mois · Fervia</title>
+<meta name="description" content="Un agent IA qui tient un métier : prospection, courrier, contenus, publicité. Installé chez vous, entretenu par Fervia. 500 € par mois, sans engagement.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Agents IA pour votre entreprise, 500 € par mois · Fervia">
+<meta property="og:description" content="Un agent IA qui tient un métier : prospection, courrier, contenus, publicité. Installé chez vous, entretenu par Fervia. 500 € par mois, sans engagement.">
+<meta property="og:locale" content="fr_BE">
+<meta property="og:url" content="https://fervia.be/agents-ia/">
+<meta property="og:image" content="https://fervia.be/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Agents IA · Fervia">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Agents IA pour votre entreprise, 500 € par mois · Fervia">
+<meta name="twitter:description" content="Un agent IA qui tient un métier : prospection, courrier, contenus, publicité. Installé chez vous, entretenu par Fervia. 500 € par mois, sans engagement.">
+<meta name="twitter:image" content="https://fervia.be/assets/og-image.png">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="preload" as="font" type="font/woff2" href="/assets/fonts/jost-300.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="/assets/fonts/cormorant-garamond-500.woff2" crossorigin>
+<link rel="stylesheet" href="/assets/fonts/fonts.css">
+<style>
+  :root{
+    --navy:#1A2D45;
+    --navy-deep:#0E1C30;
+    --gold:#C9A84C;
+    --gold-hi:#F5D27A;
+    --gold-lo:#A8792A;
+    --cream:#F5F0E6;
+    --cream-70:rgba(245,240,230,.72);
+    --cream-50:rgba(245,240,230,.62);
+    --hair:rgba(201,168,76,.28);
+    --hair-soft:rgba(201,168,76,.16);
+    /* motion : une seule courbe, quatre durees */
+    --ease:cubic-bezier(.22,.61,.36,1);
+    --d-press:.16s;
+    --d-hover:.25s;
+    --d-ui:.25s;
+    --d-enter:.6s;
+    --measure:36em;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+  body{
+    background:var(--navy-deep);
+    color:var(--cream);
+    font-family:'Jost',sans-serif;
+    font-weight:300;
+    font-size:17px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:760px;margin:0 auto;padding:0 28px}
+
+  /* animations sobres */
+  .rise{opacity:0;transform:translateY(14px);animation:rise .8s var(--ease) forwards}
+  .d1{animation-delay:.08s}.d2{animation-delay:.18s}.d3{animation-delay:.28s}.d4{animation-delay:.38s}
+  @keyframes rise{to{opacity:1;transform:none}}
+  /* revelation au scroll : les sections se posent quand on les atteint */
+  .rv{opacity:0;transform:translateY(18px);transition:opacity var(--d-enter) var(--ease),transform var(--d-enter) var(--ease)}
+  .rv.seen{opacity:1;transform:none}
+  .rv.seen > *:nth-child(2){transition-delay:.06s}
+  .rv.seen > *:nth-child(3){transition-delay:.12s}
+  .rv.seen > *:nth-child(4){transition-delay:.18s}
+  @media (prefers-reduced-motion: reduce){
+    .rise{opacity:1;transform:none;animation:none}
+    .cta:hover,.work:hover{transform:none}
+    .rv{transform:none;transition:opacity .2s ease}
+    .rv.seen{opacity:1;transition-delay:0s}
+  }
+
+  /* hero */
+  .hero{
+    background:var(--navy);
+    border-bottom:1px solid var(--hair);
+    padding:56px 0 64px;
+    text-align:center;
+  }
+  .hero img.logo{height:150px;width:auto;display:block;margin:0 auto 30px}
+  .kicker{
+    font-size:12px;letter-spacing:.32em;text-transform:uppercase;
+    color:var(--gold);font-weight:400;margin-bottom:18px;
+  }
+  h1{
+    font-family:'Cormorant Garamond',serif;font-weight:500;
+    font-size:clamp(38px,6vw,54px);line-height:1.14;letter-spacing:-.015em;
+    color:var(--cream);
+  }
+  .hero .sub{
+    font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;
+    font-size:clamp(20px,3vw,25px);color:var(--gold);margin-top:14px;
+  }
+
+  /* sections */
+  section{padding:58px 0 0}
+  .stitle{
+    font-family:'Cormorant Garamond',serif;font-weight:500;
+    font-size:29px;color:var(--cream);
+    display:flex;align-items:center;gap:18px;margin-bottom:26px;
+  }
+  .stitle::after{content:"";flex:1;height:1px;background:var(--hair-soft)}
+  p.lead{font-size:18.5px;color:var(--cream-70);max-width:var(--measure)}
+  p.lead strong{color:var(--cream);font-weight:400}
+  p + p{margin-top:16px}
+
+  /* grilles d'items */
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:22px 34px}
+  @media(max-width:620px){.grid{grid-template-columns:1fr}}
+  .item{border-top:1px solid var(--hair-soft);padding-top:14px}
+  .item h3{font-family:'Jost',sans-serif;font-weight:400;font-size:16.5px;color:var(--gold);letter-spacing:.02em;margin-bottom:5px}
+  .item h3 small{display:block;font-size:12.5px;font-weight:300;color:var(--cream-70);letter-spacing:.01em;margin-top:3px}
+  .item p{font-size:15.5px;color:var(--cream-70)}
+
+  /* prix */
+  .price-figure{
+    font-family:'Cormorant Garamond',serif;font-weight:600;
+    font-size:clamp(56px,9vw,76px);line-height:1;
+    padding:.15em 0;margin:-.15em 0;
+    background:linear-gradient(135deg,var(--gold-hi),var(--gold) 55%,var(--gold-lo));
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .price-figure .unit{
+    font-family:'Jost',sans-serif;font-weight:300;
+    font-size:.32em;
+    color:var(--cream-70);-webkit-text-fill-color:var(--cream-70);
+    background:none;
+    margin-left:10px;vertical-align:middle;
+  }
+  .price-note{
+    font-family:'Cormorant Garamond',serif;font-style:italic;
+    font-size:20px;color:var(--cream-70);margin-top:4px;
+  }
+  .price-lines{margin-top:26px;border-top:1px solid var(--hair-soft)}
+  .pline{
+    display:flex;gap:16px;align-items:baseline;
+    padding:15px 0;border-bottom:1px solid var(--hair-soft);
+  }
+  .pline .tick{color:var(--gold);font-size:13px;flex-shrink:0;transform:translateY(-1px)}
+  .pline p{font-size:16px;color:var(--cream-70)}
+  .pline p strong{color:var(--cream);font-weight:400}
+
+  /* etude de cas */
+  .case{
+    background:var(--navy);border:1px solid var(--hair);border-radius:4px;
+    padding:32px 30px;
+  }
+  .case p{font-size:16.5px;color:var(--cream-70)}
+  .case p strong{color:var(--cream);font-weight:400}
+
+  /* etapes */
+  .steps{counter-reset:step}
+  .step{
+    display:flex;gap:24px;align-items:baseline;
+    padding:20px 0;border-bottom:1px solid var(--hair-soft);
+  }
+  .step:last-child{border-bottom:none}
+  .step .num{
+    font-family:'Cormorant Garamond',serif;font-weight:600;font-size:30px;line-height:1;
+    background:linear-gradient(135deg,var(--gold-hi),var(--gold) 55%,var(--gold-lo));
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    min-width:34px;text-align:center;flex-shrink:0;
+  }
+  .step p{font-size:16.5px;color:var(--cream-70)}
+  .step p strong{color:var(--cream);font-weight:400}
+
+  /* contact */
+  .contact{
+    margin-top:64px;background:var(--navy);border-top:1px solid var(--hair);
+    padding:56px 0;text-align:center;
+  }
+  .contact .invite{
+    font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;
+    font-size:clamp(23px,4vw,28px);color:var(--cream);max-width:560px;margin:0 auto 30px;
+    line-height:1.35;
+  }
+  .cta{
+    display:inline-block;
+    font-family:'Jost',sans-serif;font-weight:400;font-size:15px;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--navy-deep);text-decoration:none;
+    background:linear-gradient(135deg,var(--gold-hi),var(--gold) 55%,var(--gold-lo));
+    padding:15px 34px;border-radius:3px;
+    transition:box-shadow .25s ease,transform .25s ease;
+  }
+  .cta:hover{box-shadow:0 6px 24px rgba(201,168,76,.35);transform:translateY(-1px)}
+  .cta:active{transform:scale(.97);transition:transform var(--d-press) var(--ease)}
+  /* le tactile declenche un faux survol au tap : l'etat resterait colle apres le doigt */
+  @media (hover:none){.cta:hover{transform:none}}
+  .coords{margin-top:26px;font-size:16px;color:var(--cream-70)}
+  .coords a{color:var(--cream-70);text-decoration:none;border-bottom:1px solid var(--hair)}
+  .coords a:hover{color:var(--gold)}
+  .coords .sep{color:var(--hair);margin:0 12px}
+
+  footer{padding:36px 0 44px;text-align:center}
+  footer .tagline{
+    font-family:'Cormorant Garamond',serif;font-style:italic;
+    font-size:19px;color:var(--gold);
+  }
+  footer .sub{font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--cream-50);margin-top:10px}
+
+  :focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:2px}
+
+  /* fil d'ariane */
+  .crumb{padding:0 0 22px;font-size:13px;letter-spacing:.06em;color:var(--cream-50)}
+  .crumb a{padding:8px 0;display:inline-block;color:var(--cream-50);text-decoration:none;border-bottom:1px solid var(--hair-soft)}
+  .crumb a:hover{color:var(--gold)}
+
+  /* reponse directe */
+  .answer{background:var(--navy);border:1px solid var(--hair);border-radius:4px;padding:30px}
+  .answer p{font-size:18.5px;color:var(--cream);line-height:1.6}
+  .answer p strong{color:var(--gold);font-weight:400}
+
+  /* faq */
+  .faq h3{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:22px;color:var(--gold);margin-bottom:8px}
+  .faq .qa{padding:22px 0;border-bottom:1px solid var(--hair-soft)}
+  .faq .qa:last-child{border-bottom:none}
+  .faq p{font-size:16.5px;color:var(--cream-70)}
+  .faq p strong{color:var(--cream);font-weight:400}
+  .faq a{color:var(--gold);text-decoration:none;border-bottom:1px solid var(--hair)}
+  .inlink{color:var(--gold);text-decoration:none;border-bottom:1px solid var(--hair)}
+
+  /* impression */
+  @media print{
+    body{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    .rise{opacity:1;transform:none;animation:none}
+    section{padding-top:38px}
+    .hero{padding:40px 0 44px}
+    .contact{margin-top:44px;padding:40px 0}
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "@id": "https://fervia.be/agents-ia/#service",
+      "name": "Agents IA Fervia",
+      "serviceType": "Agent IA pour entreprise",
+      "description": "Un agent IA qui tient un métier : prospection, courrier, contenus, publicité. Installé chez vous, entretenu par Fervia. 500 € par mois, sans engagement.",
+      "provider": {
+        "@type": "ProfessionalService",
+        "@id": "https://fervia.be/#business",
+        "name": "Fervia",
+        "url": "https://fervia.be/",
+        "email": "contact@fervia.be",
+        "telephone": "+32465935655",
+        "address": {
+          "@type": "PostalAddress",
+          "postalCode": "1300",
+          "addressLocality": "Wavre",
+          "addressRegion": "Brabant wallon",
+          "addressCountry": "BE"
+        }
+      },
+      "areaServed": [
+        { "@type": "Country", "name": "Belgique" },
+        { "@type": "AdministrativeArea", "name": "Brabant wallon" }
+      ],
+      "url": "https://fervia.be/agents-ia/",
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Abonnement, par agent",
+          "price": "500",
+          "priceCurrency": "EUR",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "500",
+            "priceCurrency": "EUR",
+            "unitText": "par mois, par agent",
+            "valueAddedTaxIncluded": false
+          },
+          "description": "500 € par mois, par agent, sans engagement, résiliable à tout moment.",
+          "availability": "https://schema.org/InStock"
+        },
+        {
+          "@type": "Offer",
+          "name": "Mise en place",
+          "priceCurrency": "EUR",
+          "priceSpecification": {
+            "@type": "PriceSpecification",
+            "minPrice": "1500",
+            "priceCurrency": "EUR",
+            "valueAddedTaxIncluded": false
+          },
+          "description": "Payée une fois, à partir de 1 500 € pour le premier agent.",
+          "availability": "https://schema.org/InStock"
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://fervia.be/agents-ia/#crumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://fervia.be/" },
+        { "@type": "ListItem", "position": 2, "name": "Agents IA", "item": "https://fervia.be/agents-ia/" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://fervia.be/agents-ia/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Qu'est-ce qu'un agent IA, concrètement ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Un programme qui tient un métier précis, avec des règles écrites : ce qu'il lit, ce qu'il prépare, ce qu'il ne fait jamais. Il travaille sur un serveur à vous et vous envoie son travail par mail : brouillons, rapports, propositions. Ce n'est pas un chatbot sur votre site et ce n'est pas un abonnement à un outil : c'est un poste de travail tenu." }
+        },
+        {
+          "@type": "Question",
+          "name": "Est-ce qu'il agit tout seul ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Pour lire, trier, préparer et se former, oui : c'est son travail. Pour tout ce qui sort de votre entreprise, un mail, une publication, une proposition, non : il prépare, vous relisez, vous envoyez. Cette règle est écrite dans sa fiche et ne change pas sans vous." }
+        },
+        {
+          "@type": "Question",
+          "name": "Où sont mes données ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Sur un serveur loué à votre nom, en Europe, que Fervia installe et sécurise. Pour lire et rédiger, l'agent fait appel au modèle Claude d'Anthropic par une clé à votre nom, dans le cadre de ses conditions commerciales : vos données ne servent pas à entraîner le modèle. Tout cela vous est expliqué par écrit avant la mise en place." }
+        },
+        {
+          "@type": "Question",
+          "name": "Que se passe-t-il si j'arrête ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "L'abonnement se résilie à tout moment et s'arrête à la fin du mois en cours. Le serveur est à votre nom : vos données y restent, vous en faites ce que vous voulez. La mise en place, elle, est payée une fois et couvre un travail déjà fait." }
+        },
+        {
+          "@type": "Question",
+          "name": "Puis-je avoir plusieurs agents ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Oui. Chaque agent a son métier et son abonnement de 500 € par mois. Installés en même temps, les suivants coûtent 500 € de mise en place chacun, parce que le serveur et les accès sont déjà en place." }
+        },
+        {
+          "@type": "Question",
+          "name": "Pourquoi une mise en place, si c'est un logiciel ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Parce que ce n'est pas un logiciel qu'on installe, c'est un poste qu'on met au travail dans votre entreprise. La mise en place comprend le serveur installé et sécurisé, l'agent réglé sur votre métier, votre ton et vos règles, vos accès branchés, et une heure de prise en main. C'est du travail, il se facture une fois." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <img class="logo rise" src="/assets/logo-fervia-outil.webp" alt="Fervia, studio créatif digital" width="446" height="440">
+    <div class="kicker rise d1">Agents IA</div>
+    <h1 class="rise d2">Un métier délégué à un agent IA, installé chez vous</h1>
+    <div class="sub rise d3">500 € par mois par agent. Il travaille chez Fervia avant de travailler chez vous.</div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <nav class="crumb rise d4" aria-label="Fil d'Ariane" style="padding-top:34px">
+    <a href="/">Fervia</a> · Agents IA
+  </nav>
+
+  <section class="rise d4" style="padding-top:0">
+    <div class="answer">
+      <p>Un agent IA Fervia fait un seul métier, tous les jours : il prospecte, trie votre courrier, rédige vos contenus ou prépare vos décisions publicitaires. Il tourne sur un serveur à votre nom, Fervia l'installe et l'entretient, et rien ne sort de votre entreprise sans votre accord. <strong>500 € par mois</strong>, mise en place à partir de <strong>1 500 €</strong>.</p>
+    </div>
+  </section>
+
+  <section>
+    <p class="lead">Vous savez quel travail vous n'arrivez plus à tenir : relancer des prospects, répondre au courrier, publier régulièrement, lire vos chiffres publicitaires. Embaucher pour cela n'a pas de sens, et le laisser de côté coûte des clients.</p>
+    <p class="lead">Je mets en place chez vous un agent qui tient ce métier : un programme qui lit, trie, rédige et prépare, sur un serveur à vous, avec vos règles écrites noir sur blanc. <strong>Ce qui doit être lu et préparé se fait sans vous. Ce qui doit partir, un mail, une publication, attend votre accord.</strong></p>
+    <p class="lead">Chaque agent de cette page travaille déjà pour Fervia : le SDR prospecte pour le studio, l'assistant administratif tient sa boîte mail, le copywriter prépare ses contenus. <strong>Je n'installe chez vous que ce qui tourne chez moi.</strong></p>
+  </section>
+
+  <section>
+    <h2 class="stitle">Six métiers, un agent chacun</h2>
+    <div class="grid">
+      <div class="item">
+        <h3>SDR<small>Sales Development Representative</small></h3>
+        <p>Trouve les entreprises qui ressemblent à vos clients, lit leur site, écrit un premier mail court et personnalisé. Vous relisez, vous envoyez.</p>
+      </div>
+      <div class="item">
+        <h3>Account Executive</h3>
+        <p>Quand un prospect répond, prépare une proposition personnalisée et le mail qui l'accompagne. Vous relisez, vous envoyez.</p>
+      </div>
+      <div class="item">
+        <h3>Assistant administratif</h3>
+        <p>Trie votre courrier deux fois par jour, signale l'urgent le jour même, résume le reste deux fois par semaine.</p>
+      </div>
+      <div class="item">
+        <h3>Copywriter</h3>
+        <p>Rédige vos posts, vos mails et vos scripts vidéo dans le ton de votre marque, prêts à relire. Rien n'est publié sans vous.</p>
+      </div>
+      <div class="item">
+        <h3>Social Media Manager</h3>
+        <p>Prépare les vidéos et visuels de vos produits, avec accroche, légende et date de publication. Vous validez avant chaque génération.</p>
+      </div>
+      <div class="item">
+        <h3>Traffic Manager</h3>
+        <p>Lit vos campagnes Google Ads et votre référencement, prépare chaque semaine les décisions à prendre, chiffres à l'appui. Vous gardez la main sur vos comptes.</p>
+      </div>
+    </div>
+    <p class="lead" style="font-size:16px;margin-top:24px">Un agent, un métier. Vous en prenez un, ou plusieurs : chacun a son abonnement et sa mise en place.</p>
+  </section>
+
+  <section>
+    <h2 class="stitle">Ce que vous recevez</h2>
+    <div class="grid">
+      <div class="item">
+        <h3>Installé chez vous</h3>
+        <p>Sur un serveur loué à votre nom, en Europe. Vos données, vos accès, vos règles : rien ne transite par une machine partagée.</p>
+      </div>
+      <div class="item">
+        <h3>Entretenu par Fervia</h3>
+        <p>Surveillance, mises à jour, corrections. Si quelque chose casse, c'est mon travail, pas le vôtre.</p>
+      </div>
+      <div class="item">
+        <h3>Formé chaque semaine</h3>
+        <p>Chaque agent se met à jour sur des sources officielles de son métier, listées par écrit, et relit ce qu'il a appris avant chaque mission.</p>
+      </div>
+      <div class="item">
+        <h3>Rien ne part sans vous</h3>
+        <p>Un mail, une publication, une proposition : l'agent prépare, vous relisez, vous envoyez. Rien ne quitte votre entreprise sans votre accord.</p>
+      </div>
+      <div class="item">
+        <h3>Un point chaque mois</h3>
+        <p>Un mail par mois : ce que l'agent a fait, ce qu'il a appris, ce qu'il propose de changer.</p>
+      </div>
+      <div class="item">
+        <h3>Une heure de prise en main</h3>
+        <p>À la mise en place : vos règles, votre ton, ce que l'agent fait et ne fait jamais, écrits sur une page.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="stitle">Le prix</h2>
+    <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:21px;color:var(--cream-70);margin-bottom:2px">par agent</div>
+    <div class="price-figure">500 €<span class="unit">par mois</span></div>
+    <div class="price-note">Abonnement mensuel, sans engagement, résiliable à tout moment. Prix hors TVA, annoncés par écrit avant de commencer.</div>
+    <div class="price-lines">
+      <div class="pline"><span class="tick">◆</span><p><strong>Mise en place : à partir de 1 500 €, payée une fois.</strong> Serveur installé et sécurisé, agent réglé sur votre métier, votre ton et vos règles, accès branchés, une heure de prise en main. Puis 500 € par agent supplémentaire installé en même temps.</p></div>
+      <div class="pline"><span class="tick">◆</span><p><strong>Le serveur est facturé à part, au coût réel</strong> : entre 10 et 25 € par mois selon la taille. Les crédits de génération d'images et de vidéos, pour le Social Media Manager, suivent la même règle.</p></div>
+      <div class="pline"><span class="tick">◆</span><p><strong>Un point mensuel, une formation hebdomadaire, l'entretien</strong> : tout est compris dans l'abonnement. Il n'y a pas d'option cachée.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="stitle">Déjà en service</h2>
+    <div class="case">
+      <p><strong>Le SDR de cette page prospecte pour Fervia.</strong> Il lit le site d'une entreprise, relève ce qu'elle publie, écrit un mail de cent vingt mots autour d'un fait précis, et attend mon accord pour qu'il parte. <strong>L'assistant administratif tient ma boîte mail depuis septembre 2026</strong> : deux tournées par jour, l'urgent signalé le jour même, un résumé le mercredi et le samedi. Le Traffic Manager prépare les décisions d'une campagne Google Ads réelle, celle d'un déménageur bruxellois. Ce que je vous propose n'est pas une démonstration : c'est ce qui tourne chez moi.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="stitle">Comment ça se passe</h2>
+    <div class="steps">
+      <div class="step"><div class="num">1</div><p><strong>Un échange de vingt minutes</strong> sur le métier à déléguer : ce que vous faites aujourd'hui, ce qui vous échappe, ce que vous voulez garder en main.</p></div>
+      <div class="step"><div class="num">2</div><p><strong>Une fiche d'une page</strong> : ce que l'agent fait, ce qu'il ne fait jamais, ce qui attend votre accord. Validée ensemble, par écrit, avant l'installation.</p></div>
+      <div class="step"><div class="num">3</div><p><strong>La mise en place</strong> : serveur à votre nom, agent installé et réglé sur vos règles, une heure de prise en main.</p></div>
+      <div class="step"><div class="num">4</div><p><strong>Chaque mois, un point par mail. Chaque semaine, l'agent se forme.</strong> À tout moment, vous arrêtez.</p></div>
+    </div>
+  </section>
+
+  <section class="faq">
+    <h2 class="stitle">Questions fréquentes</h2>
+
+    <div class="qa">
+      <h3>Qu'est-ce qu'un agent IA, concrètement&nbsp;?</h3>
+      <p>Un programme qui tient un métier précis, avec des règles écrites : ce qu'il lit, ce qu'il prépare, ce qu'il ne fait jamais. Il travaille sur un serveur à vous et vous envoie son travail par mail : brouillons, rapports, propositions. Ce n'est pas un chatbot sur votre site et ce n'est pas un abonnement à un outil : c'est un poste de travail tenu.</p>
+    </div>
+
+    <div class="qa">
+      <h3>Est-ce qu'il agit tout seul&nbsp;?</h3>
+      <p>Pour lire, trier, préparer et se former, oui : c'est son travail. Pour tout ce qui sort de votre entreprise, un mail, une publication, une proposition, non : il prépare, vous relisez, vous envoyez. Cette règle est écrite dans sa fiche et ne change pas sans vous.</p>
+    </div>
+
+    <div class="qa">
+      <h3>Où sont mes données&nbsp;?</h3>
+      <p>Sur un serveur loué à votre nom, en Europe, que Fervia installe et sécurise. Pour lire et rédiger, l'agent fait appel au modèle Claude d'Anthropic par une clé à votre nom, dans le cadre de ses conditions commerciales : vos données ne servent pas à entraîner le modèle. Tout cela vous est expliqué par écrit avant la mise en place.</p>
+    </div>
+
+    <div class="qa">
+      <h3>Que se passe-t-il si j'arrête&nbsp;?</h3>
+      <p>L'abonnement se résilie à tout moment et s'arrête à la fin du mois en cours. Le serveur est à votre nom : vos données y restent, vous en faites ce que vous voulez. La mise en place, elle, est payée une fois et couvre un travail déjà fait.</p>
+    </div>
+
+    <div class="qa">
+      <h3>Puis-je avoir plusieurs agents&nbsp;?</h3>
+      <p>Oui. Chaque agent a son métier et son abonnement de 500 € par mois. Installés en même temps, les suivants coûtent 500 € de mise en place chacun, parce que le serveur et les accès sont déjà en place.</p>
+    </div>
+
+    <div class="qa">
+      <h3>Pourquoi une mise en place, si c'est un logiciel&nbsp;?</h3>
+      <p>Parce que ce n'est pas un logiciel qu'on installe, c'est un poste qu'on met au travail dans votre entreprise. La mise en place comprend le serveur installé et sécurisé, l'agent réglé sur votre métier, votre ton et vos règles, vos accès branchés, et une heure de prise en main. C'est du travail, il se facture une fois.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="stitle">Vous cherchiez autre chose&nbsp;?</h2>
+    <p class="lead">Un agent IA n'est ni un site internet ni une application de gestion. Si votre besoin est d'être trouvé et joignable, regardez <a class="inlink" href="/creation-site-internet/">la création de site internet</a>. Si c'est de remplacer le carnet et le tableur, c'est <a class="inlink" href="/outil-metier/">l'outil métier</a>.</p>
+  </section>
+
+</main>
+
+<div class="contact">
+  <div class="wrap">
+    <div class="invite">Dites-moi quel métier vous n'arrivez plus à tenir.<br>Vingt minutes suffisent pour savoir si un agent peut le prendre.</div>
+    <a class="cta" href="mailto:contact@fervia.be?subject=Agent%20IA">Écrire à Fervia</a>
+    <div class="coords">
+      <a href="tel:+32465935655">+32 465 93 56 55</a><span class="sep">·</span>
+      <a href="https://fervia.be">fervia.be</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="tagline">Forger votre voie digitale</div>
+  <div class="sub">Fervia · Studio créatif digital · Wavre, Belgique</div>
+</footer>
+
+<script>
+(function(){
+  var els = document.querySelectorAll('section, .contact');
+  if (!els.length) return;
+  var start = 1; // on laisse le premier bloc a l'animation d'entree existante
+  var list = Array.prototype.slice.call(els, start);
+  if (!('IntersectionObserver' in window)) { list.forEach(function(el){ el.classList.add('rv','seen'); }); return; }
+  list.forEach(function(el){ el.classList.add('rv'); });
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (e.isIntersecting) { e.target.classList.add('seen'); io.unobserve(e.target); }
+    });
+  }, { rootMargin: '0px 0px -12% 0px', threshold: 0.05 });
+  list.forEach(function(el){ io.observe(el); });
+})();
+</script>
+</body>
+</html>
