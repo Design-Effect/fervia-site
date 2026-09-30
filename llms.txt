@@ -4,14 +4,14 @@
 
 Fervia est mené par une seule personne : celui qui comprend le besoin est celui qui dessine et qui développe, sans commercial ni chef de projet intermédiaire. Le nom de domaine est déposé au nom du client et le site lui appartient. Les fondations techniques du référencement sont comprises dans chaque projet.
 
-Dernière mise à jour : 16 septembre 2026.
+Dernière mise à jour : 30 septembre 2026.
 
 ## Prix (hors TVA)
 
-- Site internet d'une page, design sur mesure : 1 200 € (prix fixe)
-- Site internet de 5 à 6 pages avec référencement local et fiche Google Business : 2 900 € (prix fixe)
+- Site internet d'une page, design sur mesure : à partir de 1 200 €
+- Site internet de 5 à 6 pages avec référencement local et fiche Google Business : à partir de 2 900 €
 - Outil métier sur mesure, application de gestion : à partir de 750 €, livré en 7 jours ouvrables
-- Agent IA, un métier tenu par un agent installé chez le client et entretenu par Fervia : 500 € par mois par agent, mise en place à partir de 1 500 €
+- Agent IA, un métier tenu par un agent installé chez le client et entretenu par Fervia : prix selon le métier, 500 € par mois pour l'agent de prospection, les autres métiers sur devis ; mise en place à partir de 1 500 €, puis 500 € par agent supplémentaire installé en même temps ; le serveur, l'usage du modèle d'IA et les crédits de génération d'images et de vidéos sont facturés à part, au coût réel
 - Boutique en ligne, système de réservation, application : sur devis
 - Hébergement et maintenance : 25 à 50 € par mois, facultatif et résiliable
 
