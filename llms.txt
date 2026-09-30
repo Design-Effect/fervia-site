@@ -13,10 +13,10 @@ Dernière mise à jour : 30 septembre 2026.
 - Outil métier sur mesure, application de gestion : à partir de 750 €, livré en 7 jours ouvrables
 - Agent IA, un métier tenu par un agent installé chez le client et entretenu par Fervia : prix selon le métier, 500 € par mois pour l'agent de prospection, les autres métiers sur devis ; mise en place à partir de 1 500 €, puis 500 € par agent supplémentaire installé en même temps ; le serveur, l'usage du modèle d'IA et les crédits de génération d'images et de vidéos sont facturés à part, au coût réel
 - Boutique en ligne, système de réservation, application : sur devis
-- Forfait mensuel des sites, compris dans chaque offre de site : 25 € par mois pour le site d'une page, 50 € par mois pour le site de 5 à 6 pages ; hébergement, sécurité, entretien, mises à jour et petites modifications compris
+- Forfait mensuel des sites, compris dans chaque offre de site : 25 € par mois pour le site d'une page, 50 € par mois pour le site de 5 à 6 pages ; hébergement, sécurité, entretien, mises à jour et petites modifications compris ; l'ajout de pages se devise à part
 - Entretien de l'outil métier : 29 € par mois, facultatif et résiliable
 
-Le nom de domaine, le design sur mesure et la mise en ligne sont compris dans chaque offre.
+Le nom de domaine, le design sur mesure, la rédaction des textes et la mise en ligne sont compris dans chaque offre de site. Pour une refonte, les textes existants du client peuvent être repris.
 
 ## Zone desservie
 
