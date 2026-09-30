@@ -156,6 +156,19 @@
     color:var(--gold);border:1px solid var(--hair);border-radius:2px;
     padding:1px 7px;margin-left:9px;vertical-align:1px;
   }
+  /* telephone : chaque ligne s'empile, le prix sous sa description (30/09 : a 366 px, la
+     colonne des prix sortait de l'ecran et rien n'invitait a faire glisser) */
+  @media(max-width:620px){
+    table,tbody,tr,td,caption{display:block}
+    table{min-width:0}
+    thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+    tr{border-bottom:1px solid var(--hair-soft)}
+    tbody tr:last-child{border-bottom:none}
+    td{border-bottom:none}
+    td:first-child{padding-bottom:4px}
+    td.amount{padding-top:0;white-space:normal}
+    caption{padding:14px 22px 16px}
+  }
 
   /* comparatif anime */
   .compare{margin-top:8px}
