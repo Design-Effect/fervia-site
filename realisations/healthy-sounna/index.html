@@ -3,15 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- SQUELETTE NON PUBLIE : noindex tant que les textes {TEXTE: ...} ne sont pas ecrits et que la publication n'est pas decidee. A repasser en "index, follow" au moment de publier. -->
-<meta name="robots" content="noindex, nofollow">
+<meta name="robots" content="index, follow">
 <link rel="canonical" href="https://fervia.be/realisations/healthy-sounna/">
 <link rel="manifest" href="/site.webmanifest">
-<title>{TEXTE: titre de la page} · Healthy Sounna</title>
-<meta name="description" content="{TEXTE: meta description}">
+<title>Catalogue et application de stock sur mesure · Healthy Sounna</title>
+<meta name="description" content="Étude de cas : pour une boutique de produits naturels, un catalogue de 205 produits généré depuis un seul fichier de données, et une application de stock.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="{TEXTE: titre de la page} · Healthy Sounna">
-<meta property="og:description" content="{TEXTE: description pour les réseaux}">
+<meta property="og:title" content="Catalogue et application de stock sur mesure · Healthy Sounna">
+<meta property="og:description" content="Une étude de cas Fervia : un catalogue en deux formats généré depuis un seul fichier de données, et une application de stock qui s'installe sur le téléphone.">
 <meta property="og:locale" content="fr_BE">
 <meta property="og:url" content="https://fervia.be/realisations/healthy-sounna/">
 <meta property="og:image" content="https://fervia.be/assets/work/healthy-sounna.webp">
@@ -19,8 +18,8 @@
 <meta property="og:image:height" content="750">
 <meta property="og:image:alt" content="Une page du catalogue Healthy Sounna à côté d'un écran de l'outil de stock">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="{TEXTE: titre de la page} · Healthy Sounna">
-<meta name="twitter:description" content="{TEXTE: description pour les réseaux}">
+<meta name="twitter:title" content="Catalogue et application de stock sur mesure · Healthy Sounna">
+<meta name="twitter:description" content="Une étude de cas Fervia : un catalogue en deux formats généré depuis un seul fichier de données, et une application de stock qui s'installe sur le téléphone.">
 <meta name="twitter:image" content="https://fervia.be/assets/work/healthy-sounna.webp">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
@@ -165,8 +164,15 @@
   :focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:2px}
 
   /* ---- Propre a cette page ---- */
-  .ph{background:rgba(245,210,122,.14);border:1px dashed var(--gold);border-radius:3px;padding:1px 7px;
-    color:var(--gold-hi);font-style:normal;font-weight:400;font-size:.9em;line-height:1.9}
+  /* la ligne « pourquoi » en italique, comme .ch .pourquoi sur la page RTM */
+  .sous .pourquoi{
+    margin-top:14px;padding-left:16px;border-left:1px solid var(--hair);max-width:var(--measure);
+    font-size:15.5px;color:var(--cream-50);font-style:italic;
+  }
+  .mention{margin-top:2px;font-size:13px;letter-spacing:.04em;color:var(--cream-50);text-align:center}
+  .mention + p.lead{margin-top:24px}
+  .pages + .pages{margin-top:10px}
+  .video + .pages{margin-top:26px}
   .sous h3{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:25px;color:var(--gold);margin:40px 0 14px}
   .sous h3:first-of-type{margin-top:4px}
   .sous p.lead + .pages,.sous p.lead + .video{margin-top:26px}
@@ -211,8 +217,8 @@
     {
       "@type": "Article",
       "@id": "https://fervia.be/realisations/healthy-sounna/#article",
-      "headline": "{TEXTE: titre de l'article}",
-      "description": "{TEXTE: description de l'article}",
+      "headline": "Healthy Sounna : un catalogue de 205 produits et une application de stock",
+      "description": "Étude de cas : le catalogue d'une boutique de produits naturels, généré en deux formats depuis un seul fichier de données, et son application de stock.",
       "datePublished": "2026-10-05",
       "dateModified": "2026-10-05",
       "inLanguage": "fr-BE",
@@ -246,15 +252,15 @@
     <nav class="crumb rise" aria-label="Fil d'Ariane">
       <a href="/">Fervia</a> · <a href="/#realisations">Réalisations</a> · Healthy Sounna
     </nav>
-    <div class="kicker rise d1" style="margin-top:26px"><span class="ph">{TEXTE: surtitre}</span></div>
-    <h1 class="rise d2"><span class="ph">{TEXTE: titre}</span></h1>
-    <div class="sub rise d3"><span class="ph">{TEXTE: sous-titre}</span></div>
+    <div class="kicker rise d1" style="margin-top:26px">Étude de cas · Produits naturels · Catalogue et stock</div>
+    <h1 class="rise d2">Un catalogue de 205 produits et une application de stock</h1>
+    <div class="sub rise d3">Healthy Sounna vend des produits naturels en ligne.<br>Voici les deux outils que j'ai construits pour cette boutique : un catalogue généré depuis un seul fichier de données, et une application de stock qui s'installe sur le téléphone.</div>
   </div>
 </header>
 
 <figure class="shot rise d4">
   <img src="/assets/work/healthy-sounna.webp" alt="Une page du catalogue Healthy Sounna à côté d'un écran de l'outil de stock, sur fond bleu nuit" width="1200" height="750">
-  <figcaption><span class="ph">{TEXTE: légende de l'image d'ouverture}</span></figcaption>
+  <figcaption>Une page du catalogue et un écran de l'application de stock</figcaption>
 </figure>
 
 <main class="wrap">
@@ -262,41 +268,40 @@
   <section>
     <h2 class="stitle">Le client</h2>
     <div class="fiche">
-      <div><span class="k">Activité</span><span class="v"><span class="ph">{TEXTE: client, activité}</span></span></div>
-      <div><span class="k">Base</span><span class="v"><span class="ph">{TEXTE: client, base}</span></span></div>
-      <div><span class="k">Besoin</span><span class="v"><span class="ph">{TEXTE: client, besoin}</span></span></div>
-      <div><span class="k">Livré</span><span class="v"><span class="ph">{TEXTE: client, livré}</span></span></div>
+      <div><span class="k">Activité</span><span class="v">Produits naturels, vente en ligne</span></div>
+      <div><span class="k">Besoin</span><span class="v">Un catalogue et un outil de stock</span></div>
+      <div><span class="k">Livré</span><span class="v">Catalogue PDF en deux formats, application de stock</span></div>
     </div>
-    <p class="lead" style="margin-top:24px"><span class="ph">{TEXTE: le client}</span></p>
+    <p class="lead" style="margin-top:24px">Healthy Sounna est une boutique en ligne de produits naturels. Elle vend sur son site, et aussi par sa communauté et par WhatsApp. Le catalogue PDF compte 205 produits.</p>
   </section>
 
   <section>
     <h2 class="stitle">Le problème</h2>
-    <p class="lead"><span class="ph">{TEXTE: le problème, paragraphe 1}</span></p>
-    <p class="lead"><span class="ph">{TEXTE: le problème, paragraphe 2}</span></p>
+    <p class="lead">Pour le stock, il fallait pouvoir tenir un inventaire précis et détaillé de ses marchandises.</p>
+    <p class="lead">Pour le catalogue, il fallait présenter 205 produits sous deux formes à la fois : une version à imprimer ou à envoyer par mail, et une version à lire sur un téléphone et à partager par WhatsApp.</p>
   </section>
 
   <section class="sous">
     <h2 class="stitle">Ce qu'on a construit</h2>
 
-    <h3>Le catalogue</h3>
-    <p class="lead"><span class="ph">{TEXTE: le catalogue, présentation}</span></p>
+    <h3>Un seul fichier de données, deux formats</h3>
+    <p class="lead">Le catalogue présente 205 produits en 63 pages au format A4, pour l'impression et le mail, et en 114 pages dans une version téléphone, pour la lecture à l'écran et le partage par WhatsApp.</p>
     <div class="pages pages--a4">
       <figure><img src="/assets/work/healthy-sounna/catalogue-a4-couverture.webp" alt="Couverture du catalogue Healthy Sounna : quelques produits sur une étoffe, le logo et le titre « Catalogue des produits »" width="909" height="1287"><figcaption>Couverture</figcaption></figure>
       <figure><img src="/assets/work/healthy-sounna/catalogue-a4-sommaire.webp" alt="Page de sommaire du catalogue : la liste des sept univers de produits, chacun avec son numéro de page" width="909" height="1287"><figcaption>Sommaire</figcaption></figure>
       <figure><img src="/assets/work/healthy-sounna/catalogue-a4-categorie-huiles.webp" alt="Page d'ouverture de la catégorie Huiles : deux bouteilles d'huile en photo, le titre et le nombre de produits" width="909" height="1287"><figcaption>Une catégorie</figcaption></figure>
       <figure><img src="/assets/work/healthy-sounna/catalogue-a4-produits.webp" alt="Page de produits du catalogue : quatre compléments alimentaires, chacun avec sa photo, son prix, trois bénéfices et une courte description" width="909" height="1287"><figcaption>Une page de produits</figcaption></figure>
     </div>
-    <p class="lead"><span class="ph">{TEXTE: le catalogue, version téléphone}</span></p>
     <div class="pages pages--mobile">
       <figure><img src="/assets/work/healthy-sounna/catalogue-mobile-categorie.webp" alt="Version pour téléphone du catalogue : page d'ouverture de la catégorie Miels et produits de la ruche" width="828" height="1653"><figcaption>Une catégorie, sur téléphone</figcaption></figure>
       <figure><img src="/assets/work/healthy-sounna/catalogue-mobile-produits-miels.webp" alt="Version pour téléphone du catalogue : deux miels de jujubier avec leur photo, leur prix et leurs bénéfices" width="828" height="1653"><figcaption>Les miels</figcaption></figure>
       <figure><img src="/assets/work/healthy-sounna/catalogue-mobile-produits-complements.webp" alt="Version pour téléphone du catalogue : deux compléments alimentaires avec leur photo, leur prix et leurs bénéfices" width="828" height="1653"><figcaption>Les compléments</figcaption></figure>
     </div>
-    <p class="lead"><span class="ph">{TEXTE: le catalogue, fabrication et mise à jour}</span></p>
+    <p class="lead">Les deux versions sont générées automatiquement à partir d'un seul fichier de données. Pour mettre le catalogue à jour, on modifie ce fichier, puis on régénère les deux versions.</p>
+    <p class="pourquoi">Deux documents tenus séparément finissent par se contredire. Avec un seul fichier, une information se corrige à un seul endroit.</p>
 
-    <h3>L'outil de stock</h3>
-    <p class="lead"><span class="ph">{TEXTE: l'outil de stock, présentation}</span></p>
+    <h3>Une application qui s'installe sur le téléphone</h3>
+    <p class="lead">L'application s'installe depuis le navigateur du téléphone, et son icône apparaît comme celle d'une application ordinaire. On y recherche un produit, on ajuste sa quantité avec les boutons + et -, et on suit les ventes du jour. Les données s'exportent.</p>
     <figure class="video">
       <video autoplay muted loop playsinline preload="metadata" poster="/assets/work/healthy-sounna/app-video-poster.webp" width="732" height="1520" aria-label="Démonstration de l'outil de stock : une recherche, puis un produit ajouté et retiré, puis les ventes du jour">
         <source src="/assets/work/healthy-sounna/app-video.mp4" type="video/mp4">
@@ -304,15 +309,15 @@
       </video>
       <figcaption>Une recherche, un + et un −, les ventes du jour</figcaption>
     </figure>
-    <p class="lead"><span class="ph">{TEXTE: l'outil de stock, usage}</span></p>
     <div class="pages pages--app">
       <figure><img src="/assets/work/healthy-sounna/app-accueil.webp" alt="Écran d'accueil de l'outil de stock : le nombre de références, d'articles et la valeur du stock, les recettes du jour et les catégories" width="732" height="1520"><figcaption>L'accueil</figcaption></figure>
       <figure><img src="/assets/work/healthy-sounna/app-recherche.webp" alt="Écran de recherche de l'outil de stock : le mot « miel » saisi, les produits trouvés avec leur photo, leur prix et leurs boutons plus et moins" width="732" height="1520"><figcaption>La recherche</figcaption></figure>
       <figure><img src="/assets/work/healthy-sounna/app-produit.webp" alt="Écran d'une catégorie de l'outil de stock : un produit dont le stock vient de descendre à 5, avec son badge de stock bas et la bande qui confirme la vente" width="732" height="1520"><figcaption>Un produit</figcaption></figure>
       <figure><img src="/assets/work/healthy-sounna/app-ventes.webp" alt="Écran des recettes de l'outil de stock : nombre de ventes et chiffre d'affaires du jour, graphique des sept derniers jours et liste des ventes" width="732" height="1520"><figcaption>Les ventes du jour</figcaption></figure>
     </div>
-    <p class="lead"><span class="ph">{TEXTE: l'outil de stock, données et vie privée}</span></p>
-    <p class="lead"><span class="ph">{TEXTE: mention : visuels réalisés avec des données fictives}</span></p>
+    <p class="mention">Captures d'écran réalisées sur des données fictives.</p>
+    <p class="lead">Elle fonctionne hors connexion, une fois ouverte une première fois. Les données restent sur l'appareil : l'application n'envoie rien sur Internet.</p>
+    <p class="pourquoi">Un stock gardé sur le téléphone demande une sauvegarde régulière. L'application en propose une complète depuis son menu, qui se restaure sur un autre téléphone.</p>
   </section>
 
   <section>
@@ -326,15 +331,15 @@
 
   <section>
     <h2 class="stitle">Ce qui se transpose</h2>
-    <p class="lead"><span class="ph">{TEXTE: ce qui se transpose, paragraphe 1}</span></p>
-    <p class="lead"><span class="ph">{TEXTE: ce qui se transpose, paragraphe 2}</span></p>
+    <p class="lead">Ce qui vaut pour une boutique de produits naturels vaut pour tout commerce, artisan ou entreprise qui tient un stock ou un catalogue : des références nombreuses, et des informations qui doivent rester justes.</p>
+    <p class="lead">La question à se poser est la même partout : où se trouve l'information, et combien de fois faut-il la saisir&nbsp;? Pour un catalogue, ma réponse est un seul fichier de données. Pour un stock, c'est un outil qui s'ouvre sur le téléphone et garde vos données sur votre appareil.</p>
   </section>
 
 </main>
 
 <div class="contact">
   <div class="wrap">
-    <div class="invite"><span class="ph">{TEXTE: invitation de fin de page}</span></div>
+    <div class="invite">Vous tenez un stock ou un catalogue&nbsp;?<br>Parlons de l'outil qui vous convient.</div>
     <a class="cta" href="/#contact">Parlons de votre projet</a>
     <div class="coords">
       <a href="tel:+32465935655">+32 465 93 56 55</a><span class="sep">·</span>
