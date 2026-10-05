@@ -32,12 +32,13 @@ Basé à Wavre (1300), chef-lieu du Brabant wallon. Déplacements dans les 27 co
 - [Outil métier sur mesure](https://fervia.be/outil-metier/) : applications de gestion pour indépendants et commerces, à partir de 750 €, fonctionnant hors connexion
 - [Agents IA](https://fervia.be/agents-ia/) : un agent par métier (prospection, courrier, contenus, publicité), installé sur un serveur du client, entretenu et formé par Fervia, rien n'est envoyé sans l'accord du client
 - [Aides pour financer un site internet en Wallonie](https://fervia.be/aides-site-internet-wallonie/) : état vérifié des chèques-entreprise et subsides wallons en 2026, y compris ceux qui ont été supprimés
-- [Étude de cas RTM Ready To Move](https://fervia.be/realisations/rtm-ready-to-move/) : site vitrine pour une entreprise de déménagement bruxelloise, construit autour de la demande de devis
+- [Étude de cas RTM Ready To Move](https://fervia.be/realisations/rtm-ready-to-move/) : site vitrine pour une entreprise de déménagement bruxelloise, construit autour de la demande de devis, puis un outil de suivi des missions
+- [Étude de cas Healthy Sounna](https://fervia.be/realisations/healthy-sounna/) : catalogue de 205 produits et application de stock pour un commerce de produits naturels
 
 ## Réalisations
 
-- RTM Ready To Move (Bruxelles) : site vitrine pour une entreprise de déménagement, puis campagne Google Ads
-- Healthy Sounna : outil de gestion d'inventaire sur mesure, 110 références sorties d'un tableur
+- RTM Ready To Move (Bruxelles) : site vitrine pour une entreprise de déménagement, puis campagne Google Ads et outil de suivi des missions et des finances
+- Healthy Sounna : catalogue de 205 produits généré depuis un seul fichier de données, et application de stock installable qui fonctionne hors connexion
 - TimeCoach : application mobile de productivité, de la conception à la publication sur le Play Store
 - Keskonmange : application web installable, fonctionnant hors connexion
 - Identités de marque : logos et chartes graphiques, dont Nida Home et RTM
