@@ -43,6 +43,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://fervia.be/realisations/healthy-sounna/</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://fervia.be/aides-site-internet-wallonie/</loc>
     <lastmod>2026-08-10</lastmod>
     <changefreq>monthly</changefreq>
