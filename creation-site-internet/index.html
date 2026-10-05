@@ -35,8 +35,8 @@
     --gold-hi:#F5D27A;
     --gold-lo:#A8792A;
     --cream:#F5F0E6;
-    --cream-70:rgba(245,240,230,.72);
-    --cream-50:rgba(245,240,230,.62);
+    --cream-70:rgba(245,240,230,.92); /* lisibilité 05/10 */
+    --cream-50:rgba(245,240,230,.78); /* lisibilité 05/10 */
     --hair:rgba(201,168,76,.28);
     --hair-soft:rgba(201,168,76,.16);
     /* motion : une seule courbe, quatre durees */
@@ -53,7 +53,7 @@
   @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
   body{
     background:var(--navy-deep);color:var(--cream);
-    font-family:'Jost',sans-serif;font-weight:300;
+    font-family:'Jost',sans-serif;font-weight:400; /* lisibilité 05/10 */
     font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;
   }
   .wrap{max-width:760px;margin:0 auto;padding:0 28px}
@@ -94,12 +94,12 @@
   }
   .stitle::after{content:"";flex:1;height:1px;background:var(--hair-soft)}
   p.lead{font-size:18.5px;color:var(--cream-70);max-width:var(--measure)}
-  p.lead strong{color:var(--cream);font-weight:400}
+  p.lead strong{color:var(--cream);font-weight:500} /* lisibilité 05/10 */
   p + p{margin-top:16px}
 
   .answer{background:var(--navy);border:1px solid var(--hair);border-radius:4px;padding:30px}
   .answer p{font-size:18.5px;color:var(--cream);line-height:1.6}
-  .answer p strong{color:var(--gold);font-weight:400}
+  .answer p strong{color:var(--gold);font-weight:500} /* lisibilité 05/10 */
 
   /* offres */
   .offres{display:grid;grid-template-columns:1fr 1fr;gap:24px}
@@ -130,7 +130,7 @@
   .grid{display:grid;grid-template-columns:1fr 1fr;gap:22px 34px}
   @media(max-width:620px){.grid{grid-template-columns:1fr}}
   .item{border-top:1px solid var(--hair-soft);padding-top:14px}
-  .item h3{font-family:'Jost',sans-serif;font-weight:400;font-size:16.5px;color:var(--gold);letter-spacing:.02em;margin-bottom:5px}
+  .item h3{font-family:'Jost',sans-serif;font-weight:500;font-size:16.5px;color:var(--gold);letter-spacing:.02em;margin-bottom:5px} /* lisibilité 05/10 */
   .item p{font-size:15.5px;color:var(--cream-70)}
 
   /* etapes */
@@ -144,18 +144,18 @@
     min-width:34px;text-align:center;flex-shrink:0;
   }
   .step p{font-size:16.5px;color:var(--cream-70)}
-  .step p strong{color:var(--cream);font-weight:400}
+  .step p strong{color:var(--cream);font-weight:500} /* lisibilité 05/10 */
 
   /* ce que je ne fais pas */
   .nots{border-top:1px solid var(--hair-soft)}
   .not{display:flex;gap:16px;align-items:baseline;padding:16px 0;border-bottom:1px solid var(--hair-soft)}
   .not .x{color:var(--no);font-size:15px;flex-shrink:0;line-height:1}
   .not p{font-size:16px;color:var(--cream-70)}
-  .not p strong{color:var(--cream);font-weight:400}
+  .not p strong{color:var(--cream);font-weight:500} /* lisibilité 05/10 */
 
   .case{background:var(--navy);border:1px solid var(--hair);border-radius:4px;padding:30px}
   .case p{font-size:16.5px;color:var(--cream-70)}
-  .case p strong{color:var(--cream);font-weight:400}
+  .case p strong{color:var(--cream);font-weight:500} /* lisibilité 05/10 */
   .case .stars{color:var(--gold);letter-spacing:.25em;font-size:13px;margin-bottom:10px}
   .case blockquote{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:19px;line-height:1.45;color:var(--cream)}
   .case figcaption{margin-top:10px;font-size:12px;letter-spacing:.13em;text-transform:uppercase;color:var(--cream-50)}
@@ -165,7 +165,7 @@
   .faq .qa{padding:22px 0;border-bottom:1px solid var(--hair-soft)}
   .faq .qa:last-child{border-bottom:none}
   .faq p{font-size:16.5px;color:var(--cream-70)}
-  .faq p strong{color:var(--cream);font-weight:400}
+  .faq p strong{color:var(--cream);font-weight:500} /* lisibilité 05/10 */
   .faq a{color:var(--gold);text-decoration:none;border-bottom:1px solid var(--hair)}
 
   .contact{margin-top:64px;background:var(--navy);border-top:1px solid var(--hair);padding:56px 0;text-align:center}

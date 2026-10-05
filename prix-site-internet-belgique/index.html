@@ -35,8 +35,8 @@
     --gold-hi:#F5D27A;
     --gold-lo:#A8792A;
     --cream:#F5F0E6;
-    --cream-70:rgba(245,240,230,.72);
-    --cream-50:rgba(245,240,230,.62);
+    --cream-70:rgba(245,240,230,.92); /* lisibilité 05/10 */
+    --cream-50:rgba(245,240,230,.78); /* lisibilité 05/10 */
     --hair:rgba(201,168,76,.28);
     --hair-soft:rgba(201,168,76,.16);
     /* motion : une seule courbe, quatre durees */
@@ -54,7 +54,7 @@
     background:var(--navy-deep);
     color:var(--cream);
     font-family:'Jost',sans-serif;
-    font-weight:300;
+    font-weight:400; /* lisibilité 05/10 */
     font-size:17px;
     line-height:1.65;
     -webkit-font-smoothing:antialiased;
@@ -113,7 +113,7 @@
   }
   .stitle::after{content:"";flex:1;height:1px;background:var(--hair-soft)}
   p.lead{font-size:18.5px;color:var(--cream-70);max-width:var(--measure)}
-  p.lead strong{color:var(--cream);font-weight:400}
+  p.lead strong{color:var(--cream);font-weight:500} /* lisibilité 05/10 */
   p + p{margin-top:16px}
 
   /* la reponse directe */
@@ -122,7 +122,7 @@
     padding:30px 30px;
   }
   .answer p{font-size:18.5px;color:var(--cream);line-height:1.6}
-  .answer p strong{color:var(--gold);font-weight:400}
+  .answer p strong{color:var(--gold);font-weight:500} /* lisibilité 05/10 */
 
   /* tableaux de prix */
   .tablewrap{overflow-x:auto;border:1px solid var(--hair);border-radius:4px}
@@ -132,7 +132,7 @@
     font-size:13.5px;color:var(--cream-50);line-height:1.55;
   }
   th{
-    text-align:left;font-family:'Jost',sans-serif;font-weight:400;
+    text-align:left;font-family:'Jost',sans-serif;font-weight:500; /* lisibilité 05/10 : intertitre de colonne en 500 */
     font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);
     padding:15px 22px;border-bottom:1px solid var(--hair);background:var(--navy);
   }
@@ -167,8 +167,8 @@
     .crow{grid-template-columns:1fr;gap:7px;padding:15px 0}
   }
   .clabel{font-size:14.5px;color:var(--cream-70);line-height:1.35}
-  .crow.me .clabel{color:var(--cream)}
-  .crow.me .clabel strong{color:var(--gold);font-weight:400}
+  .crow.me .clabel{color:var(--cream);font-weight:500} /* lisibilité 05/10 */
+  .crow.me .clabel strong{color:var(--gold);font-weight:500} /* lisibilité 05/10 */
   .ctrack{
     position:relative;height:26px;
     border-left:1px solid var(--hair-soft);
@@ -234,7 +234,7 @@
     min-width:34px;text-align:center;flex-shrink:0;
   }
   .step p{font-size:16.5px;color:var(--cream-70)}
-  .step p strong{color:var(--cream);font-weight:400}
+  .step p strong{color:var(--cream);font-weight:500} /* lisibilité 05/10 */
 
   /* lignes a puce losange */
   .price-lines{border-top:1px solid var(--hair-soft)}
@@ -244,7 +244,7 @@
   }
   .pline .tick{color:var(--gold);font-size:13px;flex-shrink:0;transform:translateY(-1px)}
   .pline p{font-size:16px;color:var(--cream-70)}
-  .pline p strong{color:var(--cream);font-weight:400}
+  .pline p strong{color:var(--cream);font-weight:500} /* lisibilité 05/10 */
 
   /* preuve */
   .case{
@@ -265,7 +265,7 @@
   .faq .qa{padding:22px 0;border-bottom:1px solid var(--hair-soft)}
   .faq .qa:last-child{border-bottom:none}
   .faq p{font-size:16.5px;color:var(--cream-70)}
-  .faq p strong{color:var(--cream);font-weight:400}
+  .faq p strong{color:var(--cream);font-weight:500} /* lisibilité 05/10 */
   .faq a{color:var(--gold);text-decoration:none;border-bottom:1px solid var(--hair)}
 
   /* contact */

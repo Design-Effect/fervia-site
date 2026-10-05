@@ -35,8 +35,8 @@
     --gold-hi:#F5D27A;
     --gold-lo:#A8792A;
     --cream:#F5F0E6;
-    --cream-70:rgba(245,240,230,.72);
-    --cream-50:rgba(245,240,230,.62);
+    --cream-70:rgba(245,240,230,.92); /* lisibilité 05/10 */
+    --cream-50:rgba(245,240,230,.78); /* lisibilité 05/10 */
     --hair:rgba(201,168,76,.28);
     --hair-soft:rgba(201,168,76,.16);
     /* motion : une seule courbe, quatre durees */
@@ -54,7 +54,7 @@
     background:var(--navy-deep);
     color:var(--cream);
     font-family:'Jost',sans-serif;
-    font-weight:300;
+    font-weight:400; /* lisibilité 05/10 */
     font-size:17px;
     line-height:1.65;
     -webkit-font-smoothing:antialiased;
@@ -109,14 +109,14 @@
   }
   .stitle::after{content:"";flex:1;height:1px;background:var(--hair-soft)}
   p.lead{font-size:18.5px;color:var(--cream-70);max-width:var(--measure)}
-  p.lead strong{color:var(--cream);font-weight:400}
+  p.lead strong{color:var(--cream);font-weight:500} /* lisibilité 05/10 */
   p + p{margin-top:16px}
 
   /* ce que vous recevez */
   .grid{display:grid;grid-template-columns:1fr 1fr;gap:22px 34px}
   @media(max-width:620px){.grid{grid-template-columns:1fr}}
   .item{border-top:1px solid var(--hair-soft);padding-top:14px}
-  .item h3{font-family:'Jost',sans-serif;font-weight:400;font-size:16.5px;color:var(--gold);letter-spacing:.02em;margin-bottom:5px}
+  .item h3{font-family:'Jost',sans-serif;font-weight:500;font-size:16.5px;color:var(--gold);letter-spacing:.02em;margin-bottom:5px} /* lisibilité 05/10 */
   .item p{font-size:15.5px;color:var(--cream-70)}
 
   /* location / propriété */
@@ -158,7 +158,7 @@
   }
   .pline .tick{color:var(--gold);font-size:13px;flex-shrink:0;transform:translateY(-1px)}
   .pline p{font-size:16px;color:var(--cream-70)}
-  .pline p strong{color:var(--cream);font-weight:400}
+  .pline p strong{color:var(--cream);font-weight:500} /* lisibilité 05/10 */
 
   /* étude de cas */
   .case{
@@ -166,7 +166,7 @@
     padding:32px 30px;
   }
   .case p{font-size:16.5px;color:var(--cream-70)}
-  .case p strong{color:var(--cream);font-weight:400}
+  .case p strong{color:var(--cream);font-weight:500} /* lisibilité 05/10 */
   .case .figures{
     display:flex;gap:44px;margin-top:24px;flex-wrap:wrap;
   }
@@ -195,7 +195,7 @@
     min-width:34px;text-align:center;flex-shrink:0;
   }
   .step p{font-size:16.5px;color:var(--cream-70)}
-  .step p strong{color:var(--cream);font-weight:400}
+  .step p strong{color:var(--cream);font-weight:500} /* lisibilité 05/10 */
 
   /* contact */
   .contact{
@@ -241,14 +241,14 @@
   /* reponse directe */
   .answer{background:var(--navy);border:1px solid var(--hair);border-radius:4px;padding:30px}
   .answer p{font-size:18.5px;color:var(--cream);line-height:1.6}
-  .answer p strong{color:var(--gold);font-weight:400}
+  .answer p strong{color:var(--gold);font-weight:500} /* lisibilité 05/10 */
 
   /* faq */
   .faq h3{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:22px;color:var(--gold);margin-bottom:8px}
   .faq .qa{padding:22px 0;border-bottom:1px solid var(--hair-soft)}
   .faq .qa:last-child{border-bottom:none}
   .faq p{font-size:16.5px;color:var(--cream-70)}
-  .faq p strong{color:var(--cream);font-weight:400}
+  .faq p strong{color:var(--cream);font-weight:500} /* lisibilité 05/10 */
   .faq a{color:var(--gold);text-decoration:none;border-bottom:1px solid var(--hair)}
   .inlink{color:var(--gold);text-decoration:none;border-bottom:1px solid var(--hair)}
 
