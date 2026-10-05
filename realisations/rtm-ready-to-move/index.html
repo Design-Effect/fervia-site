@@ -162,6 +162,38 @@
 
   .inlink{color:var(--gold);text-decoration:none;border-bottom:1px solid var(--hair)}
   :focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:2px}
+
+  /* ---- Section « outil de suivi » (05/10/2026), sur le patron de la page Healthy Sounna ---- */
+  body{overflow-x:clip}
+  .outil p.lead + .video{margin-top:30px}
+  .video + p.lead{margin-top:28px}
+  .outil p.lead + .pages{margin-top:26px}
+  /* Bande de captures : defilement horizontal sur telephone, grille sur grand ecran.
+     Les captures n'ont pas toutes la meme hauteur : alignees en haut. */
+  .pages{
+    position:relative;width:min(1000px,100vw);margin-left:calc(50% - min(1000px,100vw) / 2);
+    display:flex;align-items:flex-start;gap:16px;overflow-x:auto;padding:6px 28px 18px;
+    scroll-snap-type:x mandatory;scroll-padding:0 28px;-webkit-overflow-scrolling:touch;
+    scrollbar-width:thin;scrollbar-color:var(--hair) transparent;
+  }
+  .pages figure{flex:0 0 auto;scroll-snap-align:start;margin:0}
+  .pages img{
+    display:block;width:100%;height:auto;border-radius:4px;
+    border:1px solid var(--hair);box-shadow:0 18px 40px -22px rgba(0,0,0,.75);background:var(--navy);
+  }
+  .pages figcaption,.video figcaption{margin-top:10px;font-size:13px;letter-spacing:.04em;color:var(--cream-50);text-align:center}
+  .pages--app figure{width:min(54vw,226px)}
+  @media (min-width:900px){
+    .pages{overflow-x:visible;display:grid;align-items:start;gap:20px;padding:6px 28px 8px}
+    .pages--app{grid-template-columns:repeat(4,1fr)}
+    .pages figure,.pages--app figure{width:auto}
+  }
+  .video{margin:30px auto 0;max-width:290px}
+  .video video{
+    display:block;width:100%;height:auto;aspect-ratio:732 / 1560;border-radius:22px;
+    border:1px solid var(--hair);box-shadow:0 24px 60px -24px rgba(0,0,0,.7);background:var(--navy);
+  }
+  .mention{margin-top:2px;font-size:13px;letter-spacing:.04em;color:var(--cream-50);text-align:center}
 </style>
 <script type="application/ld+json">
 {
@@ -173,7 +205,7 @@
       "headline": "RTM Ready To Move : un site vitrine construit autour de la demande de devis",
       "description": "Étude de cas : comment le site d'une entreprise de déménagement bruxelloise a été conçu pour transformer une visite en demande de devis.",
       "datePublished": "2026-08-10",
-      "dateModified": "2026-08-10",
+      "dateModified": "2026-10-05",
       "inLanguage": "fr-BE",
       "image": "https://fervia.be/assets/work/rtm.webp",
       "author": { "@id": "https://fervia.be/#business" },
@@ -280,6 +312,25 @@
     </div>
   </section>
 
+  <section class="outil">
+    <h2 class="stitle">Après le site, un outil de suivi</h2>
+    <p class="lead">Après le site, j'ai construit pour RTM un outil de suivi de ses missions et de ses finances. Il est en production depuis le 1er septembre 2026, et RTM le tient elle-même.</p>
+    <figure class="video">
+      <video autoplay muted loop playsinline preload="metadata" poster="/assets/work/rtm-outil/rtm-outil-parcours-poster.webp" width="732" height="1560" aria-label="Démonstration de l'outil de suivi : le calendrier du mois, une journée et ses dépenses, puis le mois au net">
+        <source src="/assets/work/rtm-outil/rtm-outil-parcours-366.mp4" type="video/mp4">
+      </video>
+      <figcaption>Le calendrier, une journée, puis le mois</figcaption>
+    </figure>
+    <p class="lead">Les demandes reçues y sont enregistrées, et une demande confirmée devient une mission au calendrier, avec la date et l'heure du chantier. Chaque mission garde ses adresses, les coordonnées du client et ses notes, et l'outil distingue ce qui est prévu de ce qui est réellement encaissé. Il s'utilise depuis le téléphone.</p>
+    <div class="pages pages--app">
+      <figure><img src="/assets/work/rtm-outil/rtm-outil-demandes-366.webp" alt="Écran des demandes de l'outil de suivi : trois demandes arrivées par le site, la première ouverte pour fixer la date du chantier et le prix" width="732" height="2222" loading="lazy"><figcaption>Les demandes</figcaption></figure>
+      <figure><img src="/assets/work/rtm-outil/rtm-outil-calendrier-366.webp" alt="Écran du calendrier de l'outil de suivi : le mois jour par jour avec le prix de chaque mission, et la mission d'un jeudi sélectionnée" width="732" height="1560" loading="lazy"><figcaption>Le calendrier</figcaption></figure>
+      <figure><img src="/assets/work/rtm-outil/rtm-outil-journee-366.webp" alt="Écran d'une journée de l'outil de suivi : la mission avec son heure, ses adresses, le client et une note, puis les dépenses rattachées et ce qu'il reste" width="732" height="2034" loading="lazy"><figcaption>Une journée</figcaption></figure>
+      <figure><img src="/assets/work/rtm-outil/rtm-outil-mois-366.webp" alt="Écran du mois de l'outil de suivi : ce qui est entré par type de mission, ce qui est sorti, et ce qu'il reste une fois tout payé" width="732" height="2496" loading="lazy"><figcaption>Le mois</figcaption></figure>
+    </div>
+    <p class="mention">Captures d'écran réalisées sur des données fictives.</p>
+  </section>
+
   <section>
     <h2 class="stitle">Le retour du client</h2>
     <div class="avis">
@@ -329,6 +380,14 @@
     });
   }, { rootMargin: '0px 0px -12% 0px', threshold: 0.05 });
   list.forEach(function(el){ io.observe(el); });
+})();
+</script>
+<script>
+(function(){
+  var v = document.querySelector('.video video');
+  if (v && window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    v.removeAttribute('autoplay'); v.pause(); v.setAttribute('controls', '');
+  }
 })();
 </script>
 </body>
