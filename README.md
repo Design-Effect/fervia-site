@@ -11,6 +11,7 @@ Site du studio créatif Fervia (page d'attente / hero, à étendre en site compl
 - `index.html` : page (hero : logo, tagline, accroche, 3 services, contact)
 - `assets/hero-bg.webp` : fond (navy + vagues dorées) ; `hero-bg-mobile.webp` pour ≤640px
 - `assets/icons/` : icônes services (web, mobile, design) en SVG dégradé or
+- `assets/hero-vivant.js` : fond animé du héros en WebGL (source lisible) ; la page charge `assets/hero-vivant.min.js`, à régénérer avec la commande notée en tête de la source
 
 ## Déploiement
 Hébergé sur Github . Domaine `fervia.be` connecté via enregistrement A

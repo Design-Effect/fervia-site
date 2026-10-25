@@ -138,6 +138,10 @@ a{color:inherit;}
   will-change:transform;
 }
 @media (max-width:640px){.hero-bg{background-image:url('assets/hero-bg-mobile.webp');}}
+/* héros vivant (assets/hero-vivant.js, après load) : le fond redessiné en WebGL, dans le calque de parallaxe ;
+   il apparaît en fondu au-dessus de l'image, qui reste seule sans WebGL ou en mouvement réduit */
+.hero-ondes{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:0;transition:opacity 1.6s var(--ease);}
+.hero-ondes.is-on{opacity:1;}
 /* vignette + dégradé sombre bas (lisibilité services) */
 .hero::before{
   content:"";position:absolute;inset:0;pointer-events:none;z-index:0;
@@ -605,6 +609,7 @@ a{color:inherit;}
   .reveal.is-visible .steps > *,.reveal.is-visible .cards > *,.reveal.is-visible .works > *,
   .reveal.is-visible .faq-list > *,.reveal.is-visible .temoignages > *{opacity:1;transition-delay:0s;}
   .hero-bg{transform:none!important;}
+  .hero-ondes{display:none;}
   /* les survols ne doivent plus déplacer non plus */
   .tbtn:hover,.card:hover,.offre-carte:hover,.work:hover,
   .card:hover svg,.work:hover .work-img,.work:hover .work-link .ar{transform:none;}
@@ -1407,5 +1412,6 @@ a{color:inherit;}
     }
   })();
 </script>
+<script src="assets/hero-vivant.min.js" defer></script>
 </body>
 </html>
