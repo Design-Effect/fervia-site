@@ -748,6 +748,112 @@ a{color:inherit;}
 .faq-item[open] .faq-answer{animation:faqOpen .28s var(--ease);}
 @keyframes faqOpen{from{opacity:0;transform:translateY(-6px);}to{opacity:1;transform:none;}} /* lisibilité 05/10 */
 .faq-answer strong{font-weight:500;color:var(--creme);} /* lisibilité 05/10 */
+
+/* ===== SECTIONS CLAIRES (25/10) : #methode, #offres, #realisations en blanc cassé =====
+   Couleurs pleines plutôt qu'opacité : chaque couple texte/fond garde un contraste calculé (AA).
+   encre 15,1:1 · encre-2 12,3:1 · encre-3 7,8:1 · encre-4 6,0:1 · or-encre 5,0:1 sur --creme */
+.section--alt{
+  --encre:var(--navy-deep);
+  --encre-2:#202D3F;
+  --encre-3:#414B58;
+  --encre-4:#535C67;
+  --or-encre:#87601F;
+  --carte:#FFFDF8;
+  --filet:rgba(135,96,31,.24);
+  --filet-fort:rgba(135,96,31,.5);
+  background:var(--creme);color:var(--encre);
+}
+.section--alt ::selection{background:rgba(168,121,42,.24);color:var(--encre);}
+.section--alt :focus-visible{outline-color:var(--or-encre);}
+/* #offres et #realisations se suivent toutes deux claires : un filet d'or profond, à la largeur du contenu */
+#realisations::before{
+  content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);
+  width:min(980px,calc(100% - 48px));height:1px;
+  background:linear-gradient(90deg,transparent,var(--or-deep) 18%,var(--or-deep) 82%,transparent);
+  opacity:.55;
+}
+.section--alt .eyebrow{color:var(--or-encre);opacity:1;}
+.section--alt .s-title .gold,
+.section--alt .lead .gold{color:var(--or-encre);}
+.section--alt .lead{color:var(--encre-2);opacity:1;}
+
+/* Méthode */
+.section--alt .step{border-top-color:var(--filet);}
+.section--alt .step::before{background:linear-gradient(90deg,var(--or-deep),var(--or-encre));}
+.section--alt .step-num{background-image:linear-gradient(135deg,var(--or-deep) 0%,var(--or-encre) 55%,#6F4F19 100%);}
+.section--alt .step-text{color:var(--encre-2);opacity:1;}
+
+/* Offres */
+.section--alt .offre-lancement{border-color:var(--or-deep);background:rgba(168,121,42,.07);}
+.section--alt .offre-lancement p{color:var(--encre-2);opacity:1;}
+.section--alt .offre-lancement strong{color:var(--or-encre);}
+.section--alt .offre-places{color:var(--encre-3);opacity:1;}
+.section--alt .offre-puce{border-color:var(--or-deep);}
+.section--alt .offre-puce.prise{background:var(--or-deep);}
+.section--alt .offre-carte{
+  background:var(--carte);border-color:var(--filet);
+  box-shadow:0 1px 2px rgba(14,28,48,.04),0 10px 28px -20px rgba(14,28,48,.18);
+}
+.section--alt .offre-carte:hover{border-color:var(--filet-fort);box-shadow:0 1px 2px rgba(14,28,48,.05),0 22px 44px -26px rgba(14,28,48,.28);}
+.section--alt .offre-vedette{
+  border-color:var(--or-deep);
+  background:linear-gradient(180deg,#FFFDF8 0%,#FAF4E6 100%);
+  box-shadow:0 1px 2px rgba(14,28,48,.05),0 18px 40px -24px rgba(135,96,31,.35);
+}
+.section--alt .offre-vedette:hover{border-color:var(--or-encre);}
+/* la flamme dorée garde son dégradé, décalé vers le foncé pour tenir sur fond clair */
+.section--alt .offre-palier-flamme stop:nth-child(1){stop-color:var(--or);}
+.section--alt .offre-palier-flamme stop:nth-child(2){stop-color:var(--or-deep);}
+.section--alt .offre-palier-flamme stop:nth-child(3){stop-color:#7A561B;}
+.section--alt .offre-palier-nom{color:var(--or-encre);}
+.section--alt .offre-palier-promesse{color:var(--encre-2);opacity:1;}
+.section--alt .offre-prix-bloc{border-bottom-color:var(--filet);}
+.section--alt .offre-prix-prefix{color:var(--encre-3);opacity:1;}
+.section--alt .offre-prix,
+.section--alt .offre-prix-sur-mesure{color:var(--encre);}
+.section--alt .offre-recurrent{color:var(--encre-3);}
+.section--alt .offre-recurrent strong{color:var(--encre);}
+.section--alt .offre-liste li{color:var(--encre-2);opacity:1;}
+.section--alt .offre-liste li::before{border-color:var(--or-encre);}
+.section--alt .offre-liste li.titre-sous{color:var(--or-encre);opacity:1;}
+.section--alt .offre-liste li.absent{color:var(--encre-4);opacity:1;}
+.section--alt .offre-liste li.absent::before{color:var(--encre-4);}
+.section--alt .offre-cta{border-color:var(--or-deep);color:var(--or-encre);}
+.section--alt .offre-cta:hover{color:var(--navy-deep);border-color:transparent;box-shadow:0 10px 22px -12px rgba(135,96,31,.55);}
+.section--alt .offre-cta.plein{color:var(--navy-deep);border-color:transparent;}
+.section--alt .offre-cta.plein:hover{box-shadow:0 10px 22px -12px rgba(135,96,31,.55);}
+.section--alt .offre-note{color:var(--encre-3);opacity:1;}
+.section--alt .offre-mini{border-color:var(--filet);background:rgba(255,253,248,.55);}
+.section--alt .offre-mini:hover{border-color:var(--filet-fort);background:var(--carte);}
+.section--alt .offre-mini-eyebrow{color:var(--or-encre);opacity:1;}
+.section--alt .offre-mini h3{color:var(--encre);}
+.section--alt .offre-mini p{color:var(--encre-2);opacity:1;}
+.section--alt .offre-mini p strong{color:var(--or-encre);}
+.section--alt .offre-mini-cta{color:var(--or-encre);}
+.section--alt .offre-liens-info{color:var(--encre-3);opacity:1;}
+.section--alt .offre-liens-info a{color:var(--encre);}
+.section--alt .offre-liens-info a:hover{color:var(--or-encre);}
+
+/* Réalisations */
+.section--alt .work{
+  background:var(--carte);border-color:var(--filet);
+  box-shadow:0 1px 2px rgba(14,28,48,.04),0 12px 32px -22px rgba(14,28,48,.2);
+}
+.section--alt .work:hover{border-color:var(--filet-fort);box-shadow:0 1px 2px rgba(14,28,48,.05),0 28px 54px -30px rgba(14,28,48,.32);}
+.section--alt .work-media::after{background:linear-gradient(180deg,transparent 60%,rgba(14,28,48,.22) 100%);}
+.section--alt .work-tag{color:var(--or-encre);opacity:1;}
+.section--alt .work p{color:var(--encre-2);opacity:1;}
+.section--alt .work-link{color:var(--or-encre);}
+.section--alt .work:hover .work-link{color:#6F4F19;}
+.section--alt .work--static:hover{border-color:var(--filet);box-shadow:0 1px 2px rgba(14,28,48,.04),0 12px 32px -22px rgba(14,28,48,.2);}
+.section--alt .work-link--static{color:var(--encre-3);opacity:1;}
+/* la vignette des logos reste sombre : les logos (or et crème) y ont été dessinés */
+.section--alt .temoignage-stars{color:var(--or-deep);}
+.section--alt .temoignage blockquote{color:var(--encre-2);opacity:1;}
+.section--alt .temoignage figcaption{color:var(--or-encre);opacity:1;}
+
+/* Barre de navigation au-dessus d'une section claire : reste sombre, plus couvrante, pour ne pas se laver */
+.topbar.visible.topbar--clair{background:rgba(14,28,48,.94);border-bottom-color:rgba(201,168,76,.28);}
 </style>
 <script type="application/ld+json">
 {
@@ -1318,11 +1424,24 @@ a{color:inherit;}
     var bg = document.querySelector('.hero-bg');
     var hero = document.querySelector('.hero');
     var topbar = document.getElementById('topbar');
+    var claires = document.querySelectorAll('.section--alt');
     var ticking = false;
+    function surClair(){
+      // milieu de la barre : est-il au-dessus d'une section blanc cassé ?
+      var m = topbar.offsetHeight / 2;
+      for (var i = 0; i < claires.length; i++){
+        var r = claires[i].getBoundingClientRect();
+        if (r.top <= m && r.bottom > m){ return true; }
+      }
+      return false;
+    }
     function update(){
       var y = window.pageYOffset || 0;
       var h = hero.offsetHeight;
-      if (topbar){ topbar.classList.toggle('visible', y > h * 0.7); }
+      if (topbar){
+        topbar.classList.toggle('visible', y > h * 0.7);
+        topbar.classList.toggle('topbar--clair', surClair());
+      }
       if (!reduce && bg && y < h){ bg.style.transform = 'translate3d(0,' + (y * 0.28) + 'px,0)'; }
       ticking = false;
     }
