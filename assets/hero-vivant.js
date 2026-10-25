@@ -6,11 +6,12 @@
 // fines qui ondulent (houle lente, chaque ligne déphasée de sa voisine : le ruban se tord et respire).
 // Par-dessus, les particules dorées sur trois plans, parallaxe souris ou inclinaison.
 // L'image reste affichée au chargement ; le canvas, posé dans le calque de parallaxe .hero-bg, apparaît
-// en fondu une fois sa première image dessinée, puis la recouvre. Sans WebGL, si l'appareil ne tient pas
-// la fluidité, ou en mouvement réduit : l'image fixe seule.
+// en fondu une fois sa première image dessinée, puis la recouvre. Sans WebGL, sans accélération graphique
+// (rendu logiciel), sur 2 cœurs ou moins, si l'appareil ne tient pas la fluidité, ou en mouvement réduit :
+// l'image fixe seule.
 (function(){
   var mq = matchMedia('(prefers-reduced-motion: reduce)'), mqS = matchMedia('(max-width:640px)');
-  if (mq.matches) return;
+  if (mq.matches || navigator.hardwareConcurrency <= 2) return;
   var hero = document.querySelector('.hero'), bg = hero && hero.querySelector('.hero-bg');
   if (!bg) return;
 
@@ -96,7 +97,8 @@
       FS = 'varying vec4 v;void main(){float r=dot(v.xy,v.xy);' +
         'gl_FragColor=vec4(vec3(1,.8,.5)*v.w*(v.z>0.?exp(-r*v.z):smoothstep(1.,.45,r)*.85+.15*exp(-3.*r)),1);}';
 
-  function prog(vs, fs, names){
+  // compile et lie sans attendre le résultat : le statut n'est lu qu'à la tâche suivante (voir pret)
+  function prog(vs, fs){
     var p = gl.createProgram(), j, s;
     for (j = 0; j < 2; j++){
       s = gl.createShader(j ? gl.FRAGMENT_SHADER : gl.VERTEX_SHADER);
@@ -109,10 +111,7 @@
     gl.bindAttribLocation(p, 3, 'e');
     gl.bindAttribLocation(p, 3, 'd');
     gl.linkProgram(p);
-    if (!gl.getProgramParameter(p, gl.LINK_STATUS)) throw 0;
     PR.push(p);
-    U.push({});
-    names.split(' ').forEach(function(n){ U[PR.length - 1][n] = gl.getUniformLocation(p, n); });
   }
 
   // Catmull-Rom sur les points d'un ruban (pas de 4), composante c, paramètre t de 0 à n - 1
@@ -316,14 +315,33 @@
   }
 
   function start(){
+    var x;
     cv = document.createElement('canvas');
     cv.className = 'hero-ondes';
     gl = cv.getContext('webgl', { alpha: false, antialias: false, depth: false, failIfMajorPerformanceCaveat: true });
     if (!gl) return;
+    // rendu logiciel (SwiftShader, llvmpipe… : pas de GPU) : l'animation saccaderait et écraserait le fil principal
+    x = gl.getExtension('WEBGL_debug_renderer_info');
+    if (/swiftshader|llvmpipe|softpipe|software|basic render/i.test(gl.getParameter(x ? x.UNMASKED_RENDERER_WEBGL : gl.RENDERER))) return;
+    prog(VF, FF);
+    prog(VL, FL);
+    prog(VS, FS);
+    pret(gl.getExtension('KHR_parallel_shader_compile'));
+  }
+
+  // la suite attend la fin de la compilation (en parallèle quand le navigateur le permet), dans une autre tâche
+  function pret(x){
+    x && !PR.every(function(p){ return gl.getProgramParameter(p, x.COMPLETION_STATUS_KHR); }) ? setTimeout(pret, 50, x) : setTimeout(fin);
+  }
+
+  function fin(){
     try {
-      prog(VF, FF, 'M R B');
-      prog(VL, FL, 'M R P A');
-      prog(VS, FS, 'M R Q');
+      // uniformes de chaque programme (une absente vaut null, et l'écrire ne fait rien)
+      PR.forEach(function(p, k){
+        if (!gl.getProgramParameter(p, gl.LINK_STATUS)) throw 0;
+        U[k] = {};
+        'MRBPAQ'.split('').forEach(function(n){ U[k][n] = gl.getUniformLocation(p, n); });
+      });
       for (i = 0; i < 4; i++) BU.push(gl.createBuffer());
       gl.bindBuffer(gl.ARRAY_BUFFER, BU[0]);
       gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 3, -1, -1, 3]), gl.STATIC_DRAW);   // un triangle couvre tout
@@ -352,6 +370,6 @@
   }
 
   // après load, puis au premier temps libre : le héros est déjà peint avec l'image, rien ne retarde l'affichage
-  function idle(){ window.requestIdleCallback ? requestIdleCallback(start, { timeout: 1500 }) : setTimeout(start, 200); }
+  function idle(){ window.requestIdleCallback ? requestIdleCallback(start, { timeout: 2e3 }) : setTimeout(start, 200); }
   document.readyState == 'complete' ? idle() : addEventListener('load', idle, { once: true });
 })();
