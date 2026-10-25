@@ -28,8 +28,24 @@
 <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/jost-300.woff2" crossorigin>
 <link rel="preload" as="image" href="assets/hero-bg.webp" media="(min-width:641px)">
 <link rel="preload" as="image" href="assets/hero-bg-mobile.webp" media="(max-width:640px)">
-<link rel="stylesheet" href="/assets/fonts/fonts.css">
 <style>
+/* Polices auto-hébergées (Cormorant Garamond + Jost) : licence OFL, en ligne pour ne pas bloquer le rendu */
+@font-face{font-family:'Cormorant Garamond';font-style:italic;font-weight:400;font-display:swap;src:url('/assets/fonts/cormorant-garamond-400i-ext.woff2') format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;}
+@font-face{font-family:'Cormorant Garamond';font-style:italic;font-weight:400;font-display:swap;src:url('/assets/fonts/cormorant-garamond-400i.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+@font-face{font-family:'Cormorant Garamond';font-style:italic;font-weight:500;font-display:swap;src:url('/assets/fonts/cormorant-garamond-500i-ext.woff2') format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;}
+@font-face{font-family:'Cormorant Garamond';font-style:italic;font-weight:500;font-display:swap;src:url('/assets/fonts/cormorant-garamond-500i.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:400;font-display:swap;src:url('/assets/fonts/cormorant-garamond-400-ext.woff2') format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;}
+@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:400;font-display:swap;src:url('/assets/fonts/cormorant-garamond-400.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:500;font-display:swap;src:url('/assets/fonts/cormorant-garamond-500-ext.woff2') format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;}
+@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:500;font-display:swap;src:url('/assets/fonts/cormorant-garamond-500.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:600;font-display:swap;src:url('/assets/fonts/cormorant-garamond-600-ext.woff2') format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;}
+@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:600;font-display:swap;src:url('/assets/fonts/cormorant-garamond-600.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+@font-face{font-family:'Jost';font-style:normal;font-weight:300;font-display:swap;src:url('/assets/fonts/jost-300-ext.woff2') format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;}
+@font-face{font-family:'Jost';font-style:normal;font-weight:300;font-display:swap;src:url('/assets/fonts/jost-300.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+@font-face{font-family:'Jost';font-style:normal;font-weight:400;font-display:swap;src:url('/assets/fonts/jost-400-ext.woff2') format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;}
+@font-face{font-family:'Jost';font-style:normal;font-weight:400;font-display:swap;src:url('/assets/fonts/jost-400.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+@font-face{font-family:'Jost';font-style:normal;font-weight:500;font-display:swap;src:url('/assets/fonts/jost-500-ext.woff2') format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;}
+@font-face{font-family:'Jost';font-style:normal;font-weight:500;font-display:swap;src:url('/assets/fonts/jost-500.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
 :root{
   --navy:#1A2D45;
   --navy-deep:#0E1C30;
@@ -539,17 +555,19 @@ a{color:inherit;}
 .site-foot-links a:hover{color:var(--or);opacity:1;}
 
 @keyframes fadeUp{from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:translateY(0);}}
+/* le titre est peint visible dès le premier rendu (candidat LCP) : il glisse seulement, sans fondu */
+@keyframes riseIn{from{transform:translateY(14px);}to{transform:translateY(0);}}
 @keyframes flameGlow{
   0%,100%{filter:drop-shadow(0 0 6px rgba(201,168,76,.22));}
   50%{filter:drop-shadow(0 0 16px rgba(245,210,122,.42));}
 }
 @keyframes bob{0%,100%{transform:translateY(0);}50%{transform:translateY(4px);}}
 .divider,.tagline,.services,.scroll-cue{animation:fadeUp .9s var(--ease) both;}
-.logo-svg,.accroche{animation:fadeUp .9s var(--ease) both;}
+.logo-svg{animation:fadeUp .9s var(--ease) both;}
+.accroche{animation:riseIn 1.1s var(--ease) both;}
 .logo-svg{animation-delay:.15s;}
 .tagline{animation-delay:.65s;}
 .divider{animation-delay:.45s;}
-.accroche{animation-delay:.85s;}
 .services{animation-delay:1.1s;}
 .scroll-cue{animation-delay:1.4s;}
 
@@ -1134,10 +1152,10 @@ a{color:inherit;}
         </a>
         <div class="work work--static">
           <div class="work-media work-media--logos">
-            <span class="lg"><img src="assets/work/design-effect.svg" alt="Logo Design Effect" loading="lazy"></span>
-            <span class="lg"><img src="assets/work/fervia.svg" alt="Logo Fervia" loading="lazy"></span>
-            <span class="lg lg--rtm"><img src="assets/work/rtm-logo.png" alt="Logo RTM Ready To Move" loading="lazy"></span>
-            <span class="lg lg--nida"><img src="assets/work/nida-home.svg" alt="Logo Nida Home" loading="lazy"></span>
+            <span class="lg"><img src="assets/work/design-effect.svg" alt="Logo Design Effect" loading="lazy" width="840" height="655"></span>
+            <span class="lg"><img src="assets/work/fervia.svg" alt="Logo Fervia" loading="lazy" width="2559" height="2523"></span>
+            <span class="lg lg--rtm"><img src="assets/work/rtm-logo.png" alt="Logo RTM Ready To Move" loading="lazy" width="526" height="200"></span>
+            <span class="lg lg--nida"><img src="assets/work/nida-home.svg" alt="Logo Nida Home" loading="lazy" width="680" height="440"></span>
           </div>
           <div class="work-body">
             <span class="work-tag">Identité visuelle · Logos &amp; chartes</span>
