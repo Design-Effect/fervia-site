@@ -26,8 +26,24 @@
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/jost-300.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/cormorant-garamond-500.woff2" crossorigin>
-<link rel="stylesheet" href="/assets/fonts/fonts.css">
 <style>
+/* Polices auto-hébergées (Cormorant Garamond + Jost) : licence OFL, en ligne pour ne pas bloquer le rendu */
+@font-face{font-family:'Cormorant Garamond';font-style:italic;font-weight:400;font-display:swap;src:url('/assets/fonts/cormorant-garamond-400i-ext.woff2') format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;}
+@font-face{font-family:'Cormorant Garamond';font-style:italic;font-weight:400;font-display:swap;src:url('/assets/fonts/cormorant-garamond-400i.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+@font-face{font-family:'Cormorant Garamond';font-style:italic;font-weight:500;font-display:swap;src:url('/assets/fonts/cormorant-garamond-500i-ext.woff2') format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;}
+@font-face{font-family:'Cormorant Garamond';font-style:italic;font-weight:500;font-display:swap;src:url('/assets/fonts/cormorant-garamond-500i.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:400;font-display:swap;src:url('/assets/fonts/cormorant-garamond-400-ext.woff2') format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;}
+@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:400;font-display:swap;src:url('/assets/fonts/cormorant-garamond-400.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:500;font-display:swap;src:url('/assets/fonts/cormorant-garamond-500-ext.woff2') format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;}
+@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:500;font-display:swap;src:url('/assets/fonts/cormorant-garamond-500.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:600;font-display:swap;src:url('/assets/fonts/cormorant-garamond-600-ext.woff2') format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;}
+@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:600;font-display:swap;src:url('/assets/fonts/cormorant-garamond-600.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+@font-face{font-family:'Jost';font-style:normal;font-weight:300;font-display:swap;src:url('/assets/fonts/jost-300-ext.woff2') format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;}
+@font-face{font-family:'Jost';font-style:normal;font-weight:300;font-display:swap;src:url('/assets/fonts/jost-300.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+@font-face{font-family:'Jost';font-style:normal;font-weight:400;font-display:swap;src:url('/assets/fonts/jost-400-ext.woff2') format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;}
+@font-face{font-family:'Jost';font-style:normal;font-weight:400;font-display:swap;src:url('/assets/fonts/jost-400.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+@font-face{font-family:'Jost';font-style:normal;font-weight:500;font-display:swap;src:url('/assets/fonts/jost-500-ext.woff2') format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;}
+@font-face{font-family:'Jost';font-style:normal;font-weight:500;font-display:swap;src:url('/assets/fonts/jost-500.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
   :root{
     --navy:#1A2D45;
     --navy-deep:#0E1C30;
@@ -314,6 +330,75 @@
     .hero{padding:30px 0 40px}
     .contact{margin-top:44px;padding:40px 0}
   }
+
+  /* ===== SECTIONS CLAIRES (27/10) : le mix de l'accueil, sombre et blanc cassé en alternance =====
+     Mêmes variables que l'accueil (index.html, bloc .section--alt). Couleurs pleines plutôt qu'opacité :
+     encre 15,1:1 · encre-2 12,3:1 · encre-3 7,8:1 · encre-4 6,0:1 · or-encre 5,0:1 sur --creme (sur --carte : 16,8 à 5,6:1) */
+  :root{--or:#C9A84C;--or-deep:#A8792A;--creme:#F5F0E6}
+  .section--alt{
+    --encre:var(--navy-deep);
+    --encre-2:#202D3F;
+    --encre-3:#414B58;
+    --encre-4:#535C67;
+    --or-encre:#87601F;
+    --carte:#FFFDF8;
+    --filet:rgba(135,96,31,.24);
+    --filet-fort:rgba(135,96,31,.5);
+    /* les variables de la page suivent celles de l'accueil : chaque règle existante passe d'elle-même en encre sur clair */
+    --cream:var(--encre);
+    --cream-70:var(--encre-2);
+    --cream-50:var(--encre-3);
+    --gold:var(--or-encre);
+    --hair:var(--filet-fort);
+    --hair-soft:var(--filet);
+    --no:#A3412A;
+    background:var(--creme);color:var(--encre);
+    /* pleine largeur sans toucher au HTML : la bande déborde du .wrap, bords nets en haut et en bas */
+    box-shadow:0 0 0 100vmax var(--creme);clip-path:inset(0 -100vmax);
+    margin-top:58px;padding-bottom:58px;
+  }
+  /* une bande claire en dernier touche directement le bloc contact et son filet d'or */
+  main:has(> .section--alt:last-child) + .contact{margin-top:0}
+  .section--alt ::selection{background:rgba(168,121,42,.24);color:var(--encre)}
+  /* la bande ne s'allume pas en fondu depuis le sombre : elle est là d'emblée, seul son contenu se pose */
+  .section--alt.rv{opacity:1;transform:none;transition:none}
+  .section--alt.rv > *{opacity:0;transform:translateY(18px);transition:opacity var(--d-enter) var(--ease),transform var(--d-enter) var(--ease)}
+  .section--alt.rv.seen > *{opacity:1;transform:none}
+  @media (prefers-reduced-motion: reduce){
+    .section--alt.rv > *{transform:none;transition:opacity .2s ease}
+    .section--alt.rv.seen > *{transition-delay:0s}
+  }
+
+  /* cartes et tableaux : blanc carte, filet d'or profond, ombre légère (recette des cartes de l'accueil) */
+  .section--alt .answer,
+  .section--alt .offre,
+  .section--alt .case,
+  .section--alt .tablewrap{
+    background:var(--carte);border-color:var(--filet);
+    box-shadow:0 1px 2px rgba(14,28,48,.04),0 10px 28px -20px rgba(14,28,48,.18);
+  }
+  .section--alt .offre--main{
+    border-color:var(--or-deep);
+    background:linear-gradient(180deg,#FFFDF8 0%,#FAF4E6 100%);
+    box-shadow:0 1px 2px rgba(14,28,48,.05),0 18px 40px -24px rgba(135,96,31,.35);
+  }
+  .section--alt th{background:#FAF4E6;border-bottom-color:var(--filet-fort)}
+  .section--alt tr.mine td{background:rgba(168,121,42,.07)}
+  .section--alt tr.mine td.amount{background:rgba(168,121,42,.07);color:var(--or-encre)}
+
+  /* chiffres dorés : le dégradé décalé vers le foncé, comme les numéros d'étape de l'accueil */
+  .section--alt .offre .prix,
+  .section--alt .step .num,
+  .section--alt .price-figure{background-image:linear-gradient(135deg,var(--or-deep) 0%,var(--or-encre) 55%,#6F4F19 100%)}
+
+  /* comparatif : barres du marché en encre légère, barres Fervia en or profond */
+  .section--alt .crow:not(.me) .cbar{background:rgba(14,28,48,.08);border-color:rgba(14,28,48,.5)}
+  .section--alt .crow.me .cbar{
+    background:linear-gradient(135deg,var(--or-deep),var(--or-encre));
+    box-shadow:0 0 14px -6px rgba(135,96,31,.5);
+  }
+
+  .section--alt .stars{color:var(--or-deep)}
 </style>
 <script type="application/ld+json">
 {
@@ -405,7 +490,7 @@
     <p class="lead" style="margin-top:26px">La plupart des pages qui répondent à cette question donnent des fourchettes sans jamais annoncer leurs propres tarifs. Cette page fait l'inverse : elle situe le marché belge honnêtement, puis affiche mes prix, pour que vous puissiez comparer avec autre chose que du vide.</p>
   </section>
 
-  <section>
+  <section class="section--alt">
     <h2 class="stitle">Ce qui se pratique en Belgique</h2>
     <div class="tablewrap">
       <table>
@@ -447,7 +532,7 @@
     </div>
   </section>
 
-  <section>
+  <section class="section--alt">
     <h2 class="stitle">Le même site, selon qui le fait</h2>
     <p class="lead" style="margin-bottom:28px">Un site vitrine, comparé sur une seule échelle. Les barres claires sont les fourchettes du marché belge, les barres dorées sont mes deux offres.</p>
 
@@ -518,7 +603,7 @@
     </div>
   </section>
 
-  <section>
+  <section class="section--alt">
     <h2 class="stitle">Les frais qu'on oublie de vous annoncer</h2>
     <div class="price-lines">
       <div class="pline"><span class="tick">◆</span><p><strong>Le nom de domaine :</strong> 15 à 25 € par an pour un .be. Vérifiez qu'il est déposé à votre nom, pas à celui du prestataire.</p></div>
@@ -546,7 +631,7 @@
     </div>
   </section>
 
-  <section class="faq">
+  <section class="faq section--alt">
     <h2 class="stitle">Questions fréquentes sur le prix</h2>
 
     <div class="qa">
