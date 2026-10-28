@@ -351,7 +351,7 @@ main,.ft{position:relative;z-index:1}
 .trust-logos{display:grid;grid-template-columns:repeat(2,minmax(0,240px));justify-content:center;gap:12px;margin:22px 0 0;padding:0;list-style:none}
 .trust-logos li{background:#0E2A31;border:1px solid rgba(176,214,214,.16);border-radius:14px;display:grid;place-items:center;padding:16px;min-height:88px}
 .trust-logos img{max-height:46px;max-width:100%;width:auto;object-fit:contain}
-.trust-logos + .ctas{margin-top:32px}
+.trust-logos + .ctas{margin-top:32px;display:flex;justify-content:center}
 .hero-call .hero-proof{display:inline-block;padding:0 0 10px;text-decoration:none;font-size:14px;color:var(--text)}
 .hero-call .hero-proof span{color:var(--teal);letter-spacing:2px}
 .logo-wall .fv-lock{height:36px}
