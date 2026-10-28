@@ -144,7 +144,7 @@ main,.ft{position:relative;z-index:1}
 .hd .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;height:76px}
 .nav{display:flex;gap:6px;padding:4px 6px;border-radius:14px;background:var(--glass);border:1px solid var(--line)}
 .nav a{display:inline-flex;align-items:center;min-height:44px;font-size:14.5px;font-weight:600;color:var(--text);padding:0 14px;border-radius:10px;transition:background .2s,color .2s}
-@media (hover:hover) and (pointer:fine){.nav a:hover{background:var(--white);color:var(--ink)}}
+@media (hover:hover) and (pointer:fine){.nav a:hover{background:var(--teal-soft);color:var(--teal-d)}}
 .hd-right{display:flex;align-items:center;gap:10px}
 .icon-btn{width:44px;height:44px;display:grid;place-items:center;border-radius:12px;background:var(--white);border:1px solid var(--line);color:var(--ink);transition:transform .2s var(--ease),border-color .2s;cursor:pointer}
 @media (hover:hover) and (pointer:fine){.icon-btn:hover{transform:translateY(-2px);border-color:var(--line-2)}}
@@ -177,7 +177,7 @@ main,.ft{position:relative;z-index:1}
 @keyframes pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(2.5);opacity:0}}
 .tagline{font-family:var(--mono);font-size:13px;color:var(--muted);margin:26px 0 14px;letter-spacing:.01em}
 .h1{font-size:clamp(42px,5.6vw,80px);font-weight:800;letter-spacing:-.045em;line-height:1.0;margin-bottom:24px}
-.h1 .ln{display:block;overflow:hidden;padding-bottom:.06em}
+.h1 .ln{display:block;overflow:hidden;padding-bottom:.16em;margin-bottom:-.06em}
 .h1 .ln > span{display:inline-block}
 .h1 em{font-style:normal;color:var(--teal)}
 .lede{font-size:clamp(17px,1.4vw,19px);max-width:31em;color:var(--text);margin-bottom:30px}
@@ -296,7 +296,13 @@ main,.ft{position:relative;z-index:1}
 .plan.feat li::before{background-color:rgba(143,211,199,.16);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18'%3E%3Cpath d='M5 9.4l2.6 2.4L13 6.4' fill='none' stroke='%238FD3C7' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")}
 .plan.feat li.hd2{color:#fff}
 .plan.feat .btn{background:#fff;color:var(--deep);box-shadow:none}
-@media (hover:hover) and (pointer:fine){.plan.feat .btn:hover{background:var(--teal-soft)}}
+/* Boutons des formules : pas de déplacement dans une carte qui pivote déjà (saccade), un vrai changement de couleur à la place (retour d'AbduLlah du 28/10) */
+.plan .btn,.plan .btn-soft{transition:background .2s,color .2s,border-color .2s,box-shadow .2s}
+@media (hover:hover) and (pointer:fine){
+  .plan .btn:hover,.plan .btn-soft:hover{transform:none}
+  .plan .btn-soft:hover{background:var(--teal);color:var(--on-teal);border-color:var(--teal)}
+  .plan.feat .btn:hover{background:var(--teal);color:var(--on-teal)}
+}
 .plan .devis{font-size:40px;font-weight:800;letter-spacing:-.04em;color:var(--ink);line-height:1.15;margin:8px 0 4px}
 .offers-note{margin:28px 0 0;font-size:15.5px;max-width:62em}
 .restraint{margin:56px auto 0;max-width:36em;text-align:center;font-size:clamp(22px,2.2vw,30px);font-weight:600;letter-spacing:-.02em;line-height:1.35;color:var(--ink)}
@@ -625,6 +631,14 @@ textarea.field{min-height:120px;resize:vertical}
 .cta-band .coords{display:flex;flex-wrap:wrap;gap:6px 22px;font-size:16px}
 .cta-band .coords a{display:inline-flex;align-items:center;min-height:44px;color:#C9DADB;border-bottom:1.5px solid rgba(143,211,199,.35)}
 .cta-band .btn{background:#fff;color:var(--deep)}
+/* Bandeau d'appel : titre et texte séparés, survols visibles (retours d'AbduLlah du 28/10) */
+.cta-band .h2 + .intro{margin-top:22px}
+.cta-band .btn{transition:background .2s,color .2s,transform .2s var(--ease),box-shadow .2s}
+.cta-band .coords a{transition:color .2s,border-color .2s}
+@media (hover:hover) and (pointer:fine){
+  .cta-band .btn:hover{background:var(--mint);color:var(--deep);box-shadow:0 16px 30px -12px rgba(143,211,199,.55)}
+  .cta-band .coords a:hover{color:#fff;border-bottom-color:var(--mint)}
+}
 
 .legal{max-width:calc(820px + 2*var(--pad));margin:0 auto;padding:clamp(112px,12vw,150px) var(--pad) clamp(56px,7vw,96px)}
 .legal .kick{margin-bottom:14px}
