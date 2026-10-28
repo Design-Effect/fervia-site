@@ -327,7 +327,7 @@ main,.ft{position:relative;z-index:1}
 .alt-card p{margin:0;font-size:15.5px}
 .alt-card .big{font-size:34px;font-weight:800;letter-spacing:-.04em;color:var(--ink);text-align:right;line-height:1}
 .alt-card .big small{display:block;font-size:13px;font-weight:600;letter-spacing:0;color:var(--muted);margin-top:4px}
-.alt-card .card-link{grid-column:1/-1;margin-top:10px}
+.alt-card .btn{grid-column:1/-1;justify-self:start;margin-top:10px}
 .further{margin-top:28px;font-size:15px;display:flex;flex-wrap:wrap;gap:6px 18px;align-items:center}
 .further span{color:var(--muted)}
 .further a{position:relative;font-weight:700;color:var(--teal);border-bottom:1.5px solid var(--teal-soft)}
@@ -526,6 +526,7 @@ textarea.field{min-height:120px;resize:vertical}
   .alts,.works,.quotes{grid-template-columns:1fr}
   .alt-card{grid-template-columns:1fr}
   .alt-card .big{text-align:left}
+  .alt-card .btn{justify-self:stretch}
   .logo-wall{grid-template-columns:repeat(2,1fr);padding:16px}
   .who-grid{grid-template-columns:1fr}
   .who-card{aspect-ratio:4/3;max-width:none;justify-self:stretch;padding:22px}
