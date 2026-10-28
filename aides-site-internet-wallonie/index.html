@@ -1,13 +1,11 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr-BE">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="robots" content="index, follow">
-<link rel="canonical" href="https://fervia.be/aides-site-internet-wallonie/">
-<link rel="manifest" href="/site.webmanifest">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Aides pour financer un site internet en Wallonie · Fervia</title>
 <meta name="description" content="Chèque entreprise, subsides, primes : ce qui existe encore en 2026 pour financer un site web en Wallonie, et pourquoi le « jusqu'à 90 % » est périmé.">
+<link rel="canonical" href="https://fervia.be/aides-site-internet-wallonie/">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Aides pour financer un site internet en Wallonie · Fervia">
 <meta property="og:description" content="Le point vérifié sur les chèques-entreprise et les subsides wallons pour un site web, à jour en août 2026.">
@@ -21,163 +19,14 @@
 <meta name="twitter:title" content="Aides pour financer un site internet en Wallonie · Fervia">
 <meta name="twitter:description" content="Le point vérifié sur les chèques-entreprise et les subsides wallons pour un site web, à jour en août 2026.">
 <meta name="twitter:image" content="https://fervia.be/assets/og-image.png">
-<link rel="icon" href="/favicon.ico" sizes="any">
-<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-<link rel="preload" as="font" type="font/woff2" href="/assets/fonts/jost-300.woff2" crossorigin>
-<link rel="preload" as="font" type="font/woff2" href="/assets/fonts/cormorant-garamond-500.woff2" crossorigin>
-<link rel="stylesheet" href="/assets/fonts/fonts.css">
-<style>
-  :root{
-    --navy:#1A2D45;
-    --navy-deep:#0E1C30;
-    --gold:#C9A84C;
-    --gold-hi:#F5D27A;
-    --gold-lo:#A8792A;
-    --cream:#F5F0E6;
-    --cream-70:rgba(245,240,230,.92); /* lisibilité 05/10 */
-    --cream-50:rgba(245,240,230,.78); /* lisibilité 05/10 */
-    --hair:rgba(201,168,76,.28);
-    --hair-soft:rgba(201,168,76,.16);
-    /* motion : une seule courbe, quatre durees */
-    --ease:cubic-bezier(.22,.61,.36,1);
-    --d-press:.16s;
-    --d-hover:.25s;
-    --d-ui:.25s;
-    --d-enter:.6s;
-    --measure:36em;
-    --dead:#E08A6B;
-    --live:#8FBF9C;
-  }
-  *{margin:0;padding:0;box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
-  body{
-    background:var(--navy-deep);color:var(--cream);
-    font-family:'Jost',sans-serif;font-weight:400; /* lisibilité 05/10 */
-    font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;
-  }
-  .wrap{max-width:760px;margin:0 auto;padding:0 28px}
-
-  .rise{opacity:0;transform:translateY(14px);animation:rise .8s var(--ease) forwards}
-  .d1{animation-delay:.08s}.d2{animation-delay:.18s}.d3{animation-delay:.28s}.d4{animation-delay:.38s}
-  @keyframes rise{to{opacity:1;transform:none}}
-  /* revelation au scroll : les sections se posent quand on les atteint */
-  .rv{opacity:0;transform:translateY(18px);transition:opacity var(--d-enter) var(--ease),transform var(--d-enter) var(--ease)}
-  .rv.seen{opacity:1;transform:none}
-  .rv.seen > *:nth-child(2){transition-delay:.06s}
-  .rv.seen > *:nth-child(3){transition-delay:.12s}
-  .rv.seen > *:nth-child(4){transition-delay:.18s}
-  @media (prefers-reduced-motion: reduce){.rise{opacity:1;transform:none;animation:none}
-    .cta:hover,.work:hover{transform:none}
-    .rv{transform:none;transition:opacity .2s ease}
-    .rv.seen{opacity:1;transition-delay:0s}}
-
-  .crumb{padding:20px 0 0;font-size:14px;letter-spacing:.04em;color:var(--cream-50)} /* tailles 05/10 */
-  .crumb a{padding:8px 0;display:inline-block;color:var(--cream-50);text-decoration:none;border-bottom:1px solid var(--hair-soft)}
-  .crumb a:hover{color:var(--gold)}
-
-  .hero{background:var(--navy);border-bottom:1px solid var(--hair);padding:38px 0 56px;text-align:center}
-  .kicker{font-size:12px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);font-weight:400;margin-bottom:18px}
-  h1{
-    font-family:'Cormorant Garamond',serif;font-weight:500;
-    font-size:clamp(32px,5vw,47px);line-height:1.12;letter-spacing:-.015em;color:var(--cream);
-  }
-  .hero .sub{
-    font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;
-    font-size:clamp(19px,3vw,24px);color:var(--gold);margin-top:14px;
-  }
-  .verif{
-    margin-top:20px;font-size:14px;letter-spacing:.03em;color:var(--cream-50); /* tailles 05/10 */
-  }
-
-  section{padding:58px 0 0}
-  .stitle{
-    font-family:'Cormorant Garamond',serif;font-weight:500;font-size:29px;color:var(--cream);
-    display:flex;align-items:center;gap:18px;margin-bottom:26px;
-  }
-  .stitle::after{content:"";flex:1;height:1px;background:var(--hair-soft)}
-  p.lead{font-size:18.5px;color:var(--cream-70);max-width:var(--measure)}
-  p.lead strong{color:var(--cream);font-weight:500} /* lisibilité 05/10 */
-  p + p{margin-top:16px}
-
-  .answer{background:var(--navy);border:1px solid var(--hair);border-radius:4px;padding:30px}
-  .answer p{font-size:18.5px;color:var(--cream);line-height:1.6}
-  .answer p strong{color:var(--gold);font-weight:500} /* lisibilité 05/10 */
-
-  .tablewrap{overflow-x:auto;border:1px solid var(--hair);border-radius:4px}
-  table{border-collapse:collapse;width:100%;min-width:520px}
-  caption{caption-side:bottom;text-align:left;padding:14px 22px 0;font-size:14px;color:var(--cream-50);line-height:1.55}
-  th{
-    text-align:left;font-weight:500;font-size:12px;letter-spacing:.16em;text-transform:uppercase; /* lisibilité 05/10 : intertitre de colonne en 500 */
-    color:var(--gold);padding:15px 22px;border-bottom:1px solid var(--hair);background:var(--navy);
-  }
-  td{padding:15px 22px;border-bottom:1px solid var(--hair-soft);font-size:16px;color:var(--cream-70);vertical-align:top}
-  tbody tr:last-child td{border-bottom:none}
-  td strong{color:var(--cream);font-weight:500} /* lisibilité 05/10 */
-  .tag{
-    display:inline-block;font-size:12px;letter-spacing:.1em;text-transform:uppercase;
-    padding:2px 9px;border-radius:2px;white-space:nowrap;
-  }
-  .tag--dead{color:var(--dead);border:1px solid rgba(224,138,107,.4)}
-  .tag--live{color:var(--live);border:1px solid rgba(143,191,156,.4)}
-
-  .steps{counter-reset:step}
-  .step{display:flex;gap:24px;align-items:baseline;padding:20px 0;border-bottom:1px solid var(--hair-soft)}
-  .step:last-child{border-bottom:none}
-  .step .num{
-    font-family:'Cormorant Garamond',serif;font-weight:600;font-size:30px;line-height:1;
-    background:linear-gradient(135deg,var(--gold-hi),var(--gold) 55%,var(--gold-lo));
-    -webkit-background-clip:text;background-clip:text;color:transparent;
-    min-width:34px;text-align:center;flex-shrink:0;
-  }
-  .step p{font-size:16.5px;color:var(--cream-70)}
-  .step p strong{color:var(--cream);font-weight:500} /* lisibilité 05/10 */
-
-  .callout{background:var(--navy);border-left:2px solid var(--gold);padding:24px 26px}
-  .callout > * + *{margin-top:12px}
-  .callout p{font-size:16.5px;color:var(--cream-70)}
-  .callout strong{color:var(--cream);font-weight:500} /* lisibilité 05/10 */
-
-  .faq h3{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:22px;color:var(--gold);margin-bottom:8px}
-  .faq .qa{padding:22px 0;border-bottom:1px solid var(--hair-soft)}
-  .faq .qa:last-child{border-bottom:none}
-  .faq p{font-size:16.5px;color:var(--cream-70)}
-  .faq p strong{color:var(--cream);font-weight:500} /* lisibilité 05/10 */
-  .faq a{color:var(--gold);text-decoration:none;border-bottom:1px solid var(--hair)}
-
-  .sources{font-size:16px;color:var(--cream-50);line-height:1.7}
-  .sources a{color:var(--cream-50);text-decoration:none;border-bottom:1px solid var(--hair-soft)}
-  .sources a:hover{color:var(--gold)}
-
-  .contact{margin-top:64px;background:var(--navy);border-top:1px solid var(--hair);padding:56px 0;text-align:center}
-  .contact .invite{
-    font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;
-    font-size:clamp(22px,4vw,27px);color:var(--cream);max-width:580px;margin:0 auto 30px;line-height:1.35;
-  }
-  .cta{
-    display:inline-block;font-family:'Jost',sans-serif;font-weight:400;font-size:15px;
-    letter-spacing:.12em;text-transform:uppercase;color:var(--navy-deep);text-decoration:none;
-    background:linear-gradient(135deg,var(--gold-hi),var(--gold) 55%,var(--gold-lo));
-    padding:15px 34px;border-radius:3px;transition:box-shadow .25s ease,transform .25s ease;
-  }
-  .cta:hover{box-shadow:0 6px 24px rgba(201,168,76,.35);transform:translateY(-1px)}
-  .cta:active{transform:scale(.97);transition:transform var(--d-press) var(--ease)}
-  /* le tactile declenche un faux survol au tap : l'etat resterait colle apres le doigt */
-  @media (hover:none){.cta:hover{transform:none}}
-  .coords{margin-top:26px;font-size:16px;color:var(--cream-70)}
-  .coords a{color:var(--cream-70);text-decoration:none;border-bottom:1px solid var(--hair)}
-  .coords a:hover{color:var(--gold)}
-  .coords .sep{color:var(--hair);margin:0 12px}
-
-  footer{padding:36px 0 44px;text-align:center}
-  footer .tagline{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:19px;color:var(--gold)}
-  footer .sub{font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--cream-50);margin-top:10px}
-  footer .sub a{color:var(--cream-50);text-decoration:none;border-bottom:1px solid var(--hair-soft)}
-  footer .sub a:hover{color:var(--gold)}
-
-  :focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:2px}
-</style>
+<meta name="theme-color" content="#F5F8F8">
+<link rel="icon" href="../favicon.ico" sizes="any">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="manifest" href="../site.webmanifest">
+<link rel="preload" href="../assets/fonts/manrope-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/ibm-plex-mono-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/site.css">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -242,34 +91,75 @@
   ]
 }
 </script>
+<script>document.documentElement.classList.add('js')</script>
+<script>/* Thème posé AVANT le premier rendu : aucun flash. Choix mémorisé > réglage système. */
+(function(){try{var r=document.documentElement,s=localStorage.getItem('fervia-theme'),
+sys=window.matchMedia&&window.matchMedia('(prefers-color-scheme:dark)').matches,
+t=(s==='dark'||s==='light')?s:(sys?'dark':'light');
+r.setAttribute('data-theme',t);
+var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute('content',t==='dark'?'#0E2A31':'#F5F8F8');
+}catch(e){}})();</script>
+
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true" focusable="false"><defs>
+  <linearGradient id="flg1" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(2.84217e-14,436.729,-647.489,5.68434e-14,500,187.124)"><stop offset="0" stop-color="#9BE3D6"/><stop offset=".5" stop-color="#14A39A"/><stop offset="1" stop-color="#0B5D66"/></linearGradient><linearGradient id="flg2" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(2.67419e-14,436.729,-647.489,3.96472e-14,500,187.124)"><stop offset="0" stop-color="#9BE3D6"/><stop offset=".5" stop-color="#14A39A"/><stop offset="1" stop-color="#0B5D66"/></linearGradient><g id="fv-flame"><path d="M567.317,347.521c35.36,50.817 49.883,138.235 17.301,204.89c-10.528,21.539 -26.089,44.373 -62.525,45.458c-42.8,1.275 -74.178,-48.506 -42.145,-88.042c30.053,-37.091 101.649,-54.984 87.369,-162.306Zm12.31,53.537c-5.963,35.591 -23.875,57.951 -43.408,75.76c-16.657,15.186 -34.89,26.477 -46.558,40.878c-24.577,30.333 -0.777,68.657 32.06,67.679c30.356,-0.904 42.895,-20.508 51.667,-38.453c22.104,-45.221 21.055,-100.62 6.239,-145.864Z" fill="url(#flg1)"/><path d="M490.391,237.971c-4.47,-3.855 111.996,76.729 40.025,155.3c-132.885,145.073 -57.458,199.556 -57.434,201.171c0.037,2.55 -142.56,-86.1 -36.644,-208.904c50.451,-58.495 74.523,-129.911 54.053,-147.567Zm-50.877,312.108c-2.892,-33.918 10.638,-87.687 81.685,-165.251c27.653,-30.189 22.608,-60.738 9.17,-84.896c-6.058,-10.892 -13.714,-20.584 -21.093,-28.559c-4.631,32.481 -27.498,80.619 -63.472,122.329c-26.092,30.251 -36.05,58.06 -36.107,82.744c-0.071,30.149 14.197,55.289 29.817,73.633Z" fill="url(#flg2)"/></g>
+  <!-- Lettrage FERVIA (R et V liés), tracés du kit logo, graisse moyenne = contour 3,5 % de la capitale. Couleurs : --fv-ink, --fv-accent (sur .fv-logo) ; flamme : --fv-f0/f1/f2 sur :root. -->
+  <linearGradient id="fvh-g1" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(2.84217e-14,436.729,-647.489,5.68434e-14,500,187.124)"><stop offset="0" style="stop-color:var(--fv-f0)"/><stop offset=".5" style="stop-color:var(--fv-f1)"/><stop offset="1" style="stop-color:var(--fv-f2)"/></linearGradient><linearGradient id="fvh-g2" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(2.84217e-14,436.729,-647.489,5.68434e-14,500,187.124)"><stop offset="0" style="stop-color:var(--fv-f0)"/><stop offset=".5" style="stop-color:var(--fv-f1)"/><stop offset="1" style="stop-color:var(--fv-f2)"/></linearGradient><linearGradient id="fvh-d1" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(2.84217e-14,436.729,-647.489,5.68434e-14,500,187.124)"><stop offset="0" stop-color="#8FD3C7"/><stop offset=".5" stop-color="#58C5B8"/><stop offset="1" stop-color="#2E9C98"/></linearGradient><linearGradient id="fvh-d2" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(2.84217e-14,436.729,-647.489,5.68434e-14,500,187.124)"><stop offset="0" stop-color="#8FD3C7"/><stop offset=".5" stop-color="#58C5B8"/><stop offset="1" stop-color="#2E9C98"/></linearGradient><g id="fv-lettrage-m"><path d="M203.778,794.949c-0.319,-0 -0.479,-0.353 -0.479,-1.058c-0,-0.705 0.16,-1.058 0.479,-1.058c4.124,0 7.196,-0.293 9.216,-0.881c2.02,-0.587 3.369,-1.763 4.049,-3.525c0.679,-1.763 1.019,-4.348 1.019,-7.756l-0,-81.615c-0,-3.408 -0.319,-5.964 -0.956,-7.668c-0.635,-1.704 -1.9,-2.879 -3.793,-3.525c-1.891,-0.647 -4.771,-0.97 -8.64,-0.97c-0.321,0 -0.482,-0.352 -0.482,-1.058c0,-0.705 0.161,-1.057 0.482,-1.057l73.382,-0c1.142,-0 1.713,0.529 1.713,1.586l0.353,22.864c-0,0.266 -0.302,0.442 -0.906,0.528c-0.602,0.085 -0.989,-0.049 -1.16,-0.402c-1.362,-6.707 -4.099,-11.709 -8.21,-15.005c-4.11,-3.296 -9.516,-4.944 -16.22,-4.944l-7.181,0c-4.3,0 -7.313,0.748 -9.039,2.245c-1.726,1.494 -2.589,4.022 -2.589,7.582l-0,80.733c-0,3.526 0.477,6.199 1.432,8.021c0.957,1.821 2.851,3.085 5.682,3.79c2.833,0.705 7.04,1.057 12.62,1.057c0.267,0 0.4,0.353 0.4,1.058c-0,0.705 -0.133,1.058 -0.4,1.058c-3.931,-0 -8.185,-0.059 -12.763,-0.177c-4.578,-0.117 -9.835,-0.176 -15.771,-0.176c-4.102,0 -8.087,0.059 -11.954,0.176c-3.865,0.118 -7.293,0.177 -10.284,0.177Zm65.414,-37.905c-0,-4.862 -1.668,-8.585 -5.005,-11.168c-3.334,-2.584 -8.404,-3.875 -15.209,-3.875l-22.147,-0l0,-4.501l22.47,0c6.707,0 11.669,-1.153 14.886,-3.459c3.219,-2.306 4.829,-5.548 4.829,-9.726c-0,-0.235 0.352,-0.352 1.057,-0.352c0.705,-0 1.058,0.117 1.058,0.352c0,3.834 -0.029,6.798 -0.088,8.891c-0.059,2.093 -0.088,4.283 -0.088,6.569c-0,2.841 0.058,5.631 0.176,8.37c0.118,2.74 0.176,5.706 0.176,8.899c0,0.322 -0.352,0.482 -1.057,0.482c-0.705,0 -1.058,-0.16 -1.058,-0.482Z" style="fill:var(--fv-ink);fill-rule:nonzero;stroke:var(--fv-ink);stroke-width:3.856;stroke-linejoin:round;paint-order:stroke"/><path d="M372.488,794.949l-76.505,-0c-0.322,-0 -0.482,-0.353 -0.482,-1.058c-0,-0.705 0.16,-1.058 0.482,-1.058c3.869,0 6.749,-0.293 8.64,-0.881c1.893,-0.587 3.157,-1.763 3.793,-3.525c0.637,-1.763 0.955,-4.348 0.955,-7.756l0,-81.615c0,-3.408 -0.318,-5.964 -0.955,-7.668c-0.636,-1.704 -1.9,-2.879 -3.793,-3.525c-1.891,-0.647 -4.771,-0.97 -8.64,-0.97c-0.322,0 -0.482,-0.352 -0.482,-1.058c-0,-0.705 0.16,-1.057 0.482,-1.057l73.382,-0c1.142,-0 1.713,0.529 1.713,1.586l0.353,22.864c-0,0.266 -0.302,0.442 -0.907,0.528c-0.602,0.085 -0.988,-0.049 -1.159,-0.402c-1.363,-6.707 -4.099,-11.709 -8.211,-15.005c-4.109,-3.296 -9.516,-4.944 -16.22,-4.944l-7.18,0c-2.899,0 -5.202,0.315 -6.908,0.945c-1.705,0.63 -2.919,1.69 -3.641,3.181c-0.72,1.491 -1.079,3.472 -1.079,5.944l-0,80.49c-0,2.523 0.317,4.565 0.953,6.126c0.637,1.561 1.68,2.677 3.128,3.349c1.451,0.672 3.455,1.008 6.013,1.008l8.679,0c7.937,0 14.377,-1.928 19.318,-5.784c4.941,-3.858 8.462,-9.562 10.563,-17.112c0.086,-0.353 0.46,-0.456 1.121,-0.311c0.663,0.143 0.994,0.348 0.994,0.614c-0.47,3.311 -0.873,7.239 -1.209,11.785c-0.336,4.545 -0.504,8.766 -0.504,12.665c-0,1.762 -0.898,2.644 -2.694,2.644Zm-9.871,-39.89c-0,-4.949 -1.628,-8.715 -4.883,-11.298c-3.254,-2.584 -8.213,-3.876 -14.876,-3.876l-24.717,0l-0,-4.5l24.989,-0c6.513,-0 11.36,-1.124 14.54,-3.371c3.181,-2.248 4.771,-5.476 4.771,-9.684c-0,-0.322 0.331,-0.482 0.994,-0.482c0.663,-0 0.994,0.16 0.994,0.482c0,3.747 -0.029,6.668 -0.088,8.761c-0.059,2.093 -0.088,4.283 -0.088,6.569c-0,2.84 0.08,5.631 0.24,8.37c0.159,2.74 0.239,5.749 0.239,9.029c0,0.235 -0.352,0.352 -1.057,0.352c-0.706,0 -1.058,-0.117 -1.058,-0.352Z" style="fill:var(--fv-ink);fill-rule:nonzero;stroke:var(--fv-ink);stroke-width:3.856;stroke-linejoin:round;paint-order:stroke"/><path d="M507.986,823.024c-1.827,0 -4.798,-2.227 -8.913,-6.682c-4.115,-4.456 -37.139,-38.955 -42.921,-47.347c-5.78,-8.393 -12.283,-18.407 -19.509,-30.041l14.086,-4.305c9.594,14.22 17.768,25.595 24.521,34.126c6.754,8.529 40.823,42.746 46.058,46.501c5.235,3.755 10.252,5.633 15.05,5.633c0.266,-0 0.399,0.352 0.399,1.058c-0,0.705 -0.133,1.057 -0.399,1.057l-28.372,0Zm-68.205,-138.775c10.326,0 18.253,2.025 23.78,6.076c5.527,4.049 8.29,9.583 8.29,16.603c0,6.738 -1.907,12.741 -5.72,18.007c-3.814,5.266 -8.747,9.368 -14.799,12.306c-6.052,2.938 -12.508,4.407 -19.368,4.407c-1.484,0 -3.037,-0.016 -4.66,-0.047c-1.623,-0.033 -3.108,-0.108 -4.454,-0.226l0,39.296c0,3.408 0.309,5.993 0.928,7.756c0.621,1.762 1.885,2.938 3.793,3.525c1.91,0.588 4.799,0.881 8.668,0.881c0.268,0 0.402,0.353 0.402,1.058c-0,0.705 -0.134,1.058 -0.402,1.058c-2.992,-0 -6.311,-0.059 -9.96,-0.177c-3.647,-0.117 -7.654,-0.176 -12.022,-0.176c-4.1,0 -8.02,0.059 -11.758,0.176c-3.739,0.118 -7.103,0.177 -10.095,0.177c-0.321,-0 -0.482,-0.353 -0.482,-1.058c0,-0.705 0.161,-1.058 0.482,-1.058c3.869,0 6.758,-0.293 8.665,-0.881c1.908,-0.587 3.209,-1.763 3.903,-3.525c0.696,-1.763 1.044,-4.348 1.044,-7.756l-0,-81.615c-0,-3.408 -0.319,-5.964 -0.956,-7.668c-0.635,-1.704 -1.898,-2.879 -3.79,-3.525c-1.891,-0.647 -4.772,-0.97 -8.643,-0.97c-0.266,0 -0.399,-0.352 -0.399,-1.058c0,-0.705 0.133,-1.057 0.399,-1.057c2.96,-0 6.28,0.088 9.96,0.264c3.68,0.177 7.57,0.265 11.67,0.265c3.814,-0 8.065,-0.177 12.755,-0.529c4.691,-0.353 8.948,-0.529 12.769,-0.529Zm14.785,28.843c-0,-6.772 -0.795,-11.995 -2.383,-15.669c-1.586,-3.676 -3.8,-6.239 -6.64,-7.687c-2.839,-1.449 -6.152,-2.174 -9.938,-2.174c-4.572,0 -7.841,0.85 -9.808,2.548c-1.965,1.699 -2.947,4.798 -2.947,9.299l0,37.273c1.645,0.202 3.416,0.362 5.313,0.479c1.897,0.118 3.566,0.177 5.007,0.177c7.808,-0 13.326,-1.966 16.554,-5.897c3.228,-3.933 4.842,-10.05 4.842,-18.349Z" style="fill:var(--fv-accent);fill-rule:nonzero;stroke:var(--fv-accent);stroke-width:3.856;stroke-linejoin:round;paint-order:stroke"/><path d="M611.609,684.778c0.352,-0 0.528,0.352 0.528,1.057c0,0.706 -0.176,1.058 -0.528,1.058c-4.154,0 -7.995,1.574 -11.524,4.721c-3.529,3.145 -6.436,7.714 -8.72,13.705l-34.307,89.453c-0.118,0.471 -0.735,0.706 -1.851,0.706c-1.117,-0 -1.792,-0.235 -2.028,-0.706l-62.161,-133.316c-1.997,-4.242 -4.07,-7.388 -6.219,-9.439c-2.146,-2.051 -4.716,-3.077 -7.709,-3.077c-0.353,0 -0.529,-0.352 -0.529,-1.057c0,-0.705 0.176,-1.058 0.529,-1.058c1.474,0 2.723,0.059 3.746,0.176c1.023,0.118 2.257,0.206 3.704,0.265c1.449,0.059 3.449,0.088 5.999,0.088c5.547,-0 10.135,-0.029 13.763,-0.088c3.629,-0.059 6.646,-0.147 9.054,-0.265c2.407,-0.117 4.534,-0.176 6.381,-0.176c0.353,0 0.529,0.353 0.529,1.058c-0,0.705 -0.176,1.057 -0.529,1.057c-4.89,0 -8.19,1.225 -9.901,3.675c-1.71,2.447 -1.48,5.999 0.688,10.656l51.714,111.536l-7.315,12.27l31.845,-82.433c1.985,-5.306 2.075,-9.591 0.27,-12.854c-1.805,-3.265 -5.7,-4.897 -11.684,-4.897c-0.352,0 -0.529,-0.352 -0.529,-1.058c0,-0.705 0.177,-1.057 0.529,-1.057c3.213,-0 6.275,0.088 9.186,0.264c2.91,0.177 6.746,0.265 11.507,0.265c3.323,-0 6.013,-0.088 8.07,-0.265c2.057,-0.176 4.554,-0.264 7.492,-0.264Z" style="fill:var(--fv-accent);fill-rule:nonzero;stroke:var(--fv-accent);stroke-width:3.856;stroke-linejoin:round;paint-order:stroke"/><path d="M649.155,780.671c-0,3.408 0.309,5.993 0.928,7.756c0.621,1.762 1.885,2.938 3.793,3.525c1.909,0.588 4.799,0.881 8.667,0.881c0.32,0 0.48,0.353 0.48,1.058c-0,0.705 -0.16,1.058 -0.48,1.058c-3.013,-0 -6.34,-0.059 -9.981,-0.177c-3.639,-0.117 -7.656,-0.176 -12.05,-0.176c-4.168,0 -8.116,0.059 -11.843,0.176c-3.726,0.118 -7.105,0.177 -10.136,0.177c-0.268,-0 -0.402,-0.353 -0.402,-1.058c-0,-0.705 0.15,-1.058 0.451,-1.058c3.82,0 6.709,-0.293 8.668,-0.881c1.959,-0.587 3.278,-1.763 3.955,-3.525c0.68,-1.763 1.019,-4.348 1.019,-7.756l0,-81.615c0,-3.408 -0.329,-5.964 -0.988,-7.668c-0.66,-1.704 -1.978,-2.879 -3.956,-3.525c-1.977,-0.647 -4.893,-0.97 -8.747,-0.97c-0.268,0 -0.402,-0.352 -0.402,-1.058c-0,-0.705 0.134,-1.057 0.402,-1.057c3.031,-0 6.41,0.088 10.136,0.264c3.727,0.177 7.675,0.265 11.843,0.265c4.394,-0 8.442,-0.088 12.144,-0.265c3.703,-0.176 6.999,-0.264 9.887,-0.264c0.32,-0 0.48,0.352 0.48,1.057c-0,0.706 -0.16,1.058 -0.48,1.058c-3.812,0 -6.67,0.353 -8.576,1.058c-1.905,0.705 -3.183,1.939 -3.834,3.702c-0.652,1.762 -0.978,4.348 -0.978,7.756l-0,81.262Z" style="fill:var(--fv-ink);fill-rule:nonzero;stroke:var(--fv-ink);stroke-width:3.856;stroke-linejoin:round;paint-order:stroke"/><path d="M702.142,751.77l2.354,-4.451l49.36,0l1.234,4.451l-52.948,0Zm93.725,41.063c0.556,0 0.834,0.353 0.834,1.058c0,0.705 -0.278,1.058 -0.834,1.058c-3.462,-0 -7.053,-0.118 -10.775,-0.353c-3.722,-0.235 -7.297,-0.352 -10.725,-0.352c-3.898,-0 -7.276,0.117 -10.133,0.352c-2.857,0.235 -6.043,0.353 -9.557,0.353c-0.471,-0 -0.706,-0.353 -0.706,-1.058c0,-0.705 0.235,-1.058 0.706,-1.058c5.302,0 8.465,-0.944 9.488,-2.834c1.023,-1.891 0.162,-5.603 -2.584,-11.135l-36.899,-74.806l7.184,-11.816l-34.787,78.596c-3.108,7.084 -3.216,12.521 -0.322,16.311c2.894,3.79 7.825,5.684 14.793,5.684c0.588,0 0.881,0.353 0.881,1.058c0,0.705 -0.293,1.058 -0.881,1.058c-3.525,-0 -6.757,-0.118 -9.695,-0.353c-2.938,-0.235 -6.64,-0.352 -11.105,-0.352c-4.453,-0 -8.028,0.117 -10.725,0.352c-2.698,0.235 -5.979,0.353 -9.844,0.353c-0.47,-0 -0.705,-0.353 -0.705,-1.058c-0,-0.705 0.235,-1.058 0.705,-1.058c3.173,0 5.912,-0.65 8.219,-1.952c2.308,-1.304 4.575,-3.675 6.803,-7.115c2.227,-3.439 4.729,-8.319 7.505,-14.641l37.863,-85.344c0.151,-0.353 0.639,-0.55 1.465,-0.592c0.827,-0.043 1.299,0.155 1.416,0.592l43.198,87.018c2.787,5.621 5.218,10.047 7.291,13.279c2.073,3.231 4.06,5.499 5.963,6.803c1.902,1.302 3.89,1.952 5.963,1.952Z" style="fill:var(--fv-ink);fill-rule:nonzero;stroke:var(--fv-ink);stroke-width:3.856;stroke-linejoin:round;paint-order:stroke"/></g><g id="fv-logo-h"><g transform="translate(-199.101 457.613) scale(0.61128)"><path d="M567.317,347.521c35.36,50.817 49.883,138.235 17.301,204.89c-10.528,21.539 -26.089,44.373 -62.525,45.458c-42.8,1.275 -74.178,-48.506 -42.145,-88.042c30.053,-37.091 101.649,-54.984 87.369,-162.306Zm12.31,53.537c-5.963,35.591 -23.875,57.951 -43.408,75.76c-16.657,15.186 -34.89,26.477 -46.558,40.878c-24.577,30.333 -0.777,68.657 32.06,67.679c30.356,-0.904 42.895,-20.508 51.667,-38.453c22.104,-45.221 21.055,-100.62 6.239,-145.864Z" style="fill:url(#fvh-g1);fill-rule:nonzero"/><path d="M490.391,237.971c-4.47,-3.855 111.996,76.729 40.025,155.3c-132.885,145.073 -57.458,199.556 -57.434,201.171c0.037,2.55 -142.56,-86.1 -36.644,-208.904c50.451,-58.495 74.523,-129.911 54.053,-147.567Zm-50.877,312.108c-2.892,-33.918 10.638,-87.687 81.685,-165.251c27.653,-30.189 22.608,-60.738 9.17,-84.896c-6.058,-10.892 -13.714,-20.584 -21.093,-28.559c-4.631,32.481 -27.498,80.619 -63.472,122.329c-26.092,30.251 -36.05,58.06 -36.107,82.744c-0.071,30.149 14.197,55.289 29.817,73.633Z" style="fill:url(#fvh-g2);fill-rule:nonzero"/></g><use href="#fv-lettrage-m"/></g></g><g id="fv-logo-hd"><g transform="translate(-199.101 457.613) scale(0.61128)"><path d="M567.317,347.521c35.36,50.817 49.883,138.235 17.301,204.89c-10.528,21.539 -26.089,44.373 -62.525,45.458c-42.8,1.275 -74.178,-48.506 -42.145,-88.042c30.053,-37.091 101.649,-54.984 87.369,-162.306Zm12.31,53.537c-5.963,35.591 -23.875,57.951 -43.408,75.76c-16.657,15.186 -34.89,26.477 -46.558,40.878c-24.577,30.333 -0.777,68.657 32.06,67.679c30.356,-0.904 42.895,-20.508 51.667,-38.453c22.104,-45.221 21.055,-100.62 6.239,-145.864Z" style="fill:url(#fvh-d1);fill-rule:nonzero"/><path d="M490.391,237.971c-4.47,-3.855 111.996,76.729 40.025,155.3c-132.885,145.073 -57.458,199.556 -57.434,201.171c0.037,2.55 -142.56,-86.1 -36.644,-208.904c50.451,-58.495 74.523,-129.911 54.053,-147.567Zm-50.877,312.108c-2.892,-33.918 10.638,-87.687 81.685,-165.251c27.653,-30.189 22.608,-60.738 9.17,-84.896c-6.058,-10.892 -13.714,-20.584 -21.093,-28.559c-4.631,32.481 -27.498,80.619 -63.472,122.329c-26.092,30.251 -36.05,58.06 -36.107,82.744c-0.071,30.149 14.197,55.289 29.817,73.633Z" style="fill:url(#fvh-d2);fill-rule:nonzero"/></g><use href="#fv-lettrage-m"/></g></g>
+  <symbol id="i-web" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="13" rx="2.5"/><path d="M8.5 21h7M12 17v4M10 8.6 8 10.5l2 1.9M14 8.6l2 1.9-2 1.9"/></symbol>
+  <symbol id="i-mob" viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="3"/><path d="M10.5 18.5h3"/></symbol>
+  <symbol id="i-ai" viewBox="0 0 24 24"><circle cx="10" cy="8.5" r="3.6"/><path d="M3.5 20.5c.8-3.7 3.4-5.6 6.5-5.6s5.7 1.9 6.5 5.6"/><path d="M18.2 2.8l.7 1.9 1.9.7-1.9.7-.7 1.9-.7-1.9-1.9-.7 1.9-.7z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7.5 8 5.5 8-5.5"/></symbol>
+  <symbol id="i-tel" viewBox="0 0 24 24"><path d="M6.6 3.5h2.6l1.4 4-2 1.4a12 12 0 0 0 6.5 6.5l1.4-2 4 1.4v2.6a2.2 2.2 0 0 1-2.4 2.1A17.5 17.5 0 0 1 4.5 5.9a2.2 2.2 0 0 1 2.1-2.4z"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-5.6-7-11.2A7 7 0 0 1 19 9.8C19 15.4 12 21 12 21z"/><circle cx="12" cy="9.8" r="2.6"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.2A8 8 0 0 1 9.8 4 7 7 0 1 0 20 14.2z"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"/></symbol>
+</defs></svg>
 
-<header class="hero">
+<a class="skip" href="#main">Aller au contenu</a>
+
+<header class="hd" id="hd">
   <div class="wrap">
-    <nav class="crumb rise" aria-label="Fil d'Ariane">
-      <a href="/">Fervia</a> · Aides pour financer un site internet en Wallonie
-    </nav>
-    <div class="kicker rise d1" style="margin-top:26px">Information vérifiée</div>
-    <h1 class="rise d2">Quelles aides pour financer un site internet en Wallonie&nbsp;?</h1>
-    <div class="sub rise d3">La réponse honnête, en 2026.</div>
-    <div class="verif rise d4">Vérifié le 10 août 2026 auprès des sources officielles wallonnes</div>
+    <a class="fv-logo" href="../index.html#top" aria-label="Fervia, haut de page"><svg class="fv-lock" viewBox="43.20 602.50 755.93 222.95" aria-hidden="true" focusable="false"><use href="#fv-logo-h"/></svg><span class="sr-only">Fervia</span></a>
+    <nav class="nav" aria-label="Sections du site"><a href="../index.html#methode">Méthode</a><a href="../index.html#services">Services</a><a href="../index.html#offres">Offres</a><a href="../realisations/">Réalisations</a><a href="../index.html#contact">Contact</a></nav>
+    <div class="hd-right">
+      <a class="icon-btn" href="mailto:contact@fervia.be" aria-label="Envoyer un e-mail à contact@fervia.be"><svg class="ico"><use href="#i-mail"/></svg></a>
+      <a class="icon-btn" href="tel:+32465935655" aria-label="Appeler Fervia au 0465 93 56 55"><svg class="ico"><use href="#i-tel"/></svg></a>
+      <a class="btn" href="../index.html#contact">Demander un devis</a>
+      <button class="icon-btn theme-btn" id="themeBtn" type="button" aria-label="Passer en mode sombre"><svg class="ico i-moon"><use href="#i-moon"/></svg><svg class="ico i-sun"><use href="#i-sun"/></svg></button>
+      <button class="icon-btn menu-btn" id="menuBtn" aria-label="Ouvrir le menu" aria-expanded="false"><svg class="ico" viewBox="0 0 24 24"><path d="M4 8h16M4 16h16"/></svg></button>
+    </div>
   </div>
 </header>
+<nav class="mnav" aria-label="Menu">
+  <a href="../index.html#methode">Méthode</a><a href="../index.html#services">Services</a><a href="../index.html#offres">Offres</a><a href="../realisations/">Réalisations</a><a href="../index.html#contact">Contact</a>
+  <a class="btn" href="tel:+32465935655"><svg class="ico" aria-hidden="true"><use href="#i-tel"/></svg>0465 93 56 55</a>
+</nav>
 
-<main class="wrap">
-
-  <section class="rise d4">
-    <div class="answer">
+<main id="main" class="pg">
+  <section class="phero">
+    <div class="wrap col">
+      <nav class="crumb" aria-label="Fil d'Ariane"><a href="../index.html">Fervia</a> · Aides pour financer un site internet en Wallonie</nav>
+      <p class="kick">Information vérifiée</p>
+      <h1 class="h1">Quelles aides pour financer un site internet en Wallonie&nbsp;?</h1>
+      <p class="lede">La réponse honnête, en 2026.</p>
+        <span class="pill"><span class="dot"></span>Vérifié le 10 août 2026 auprès des sources officielles wallonnes</span>
+    </div>
+  </section>
+  <section class="sec">
+    <div class="wrap col">
+<div class="answer">
       <p><strong>Presque aucune.</strong> Le chèque-entreprise « maturité numérique » est suspendu depuis juillet 2026, et depuis fin 2023 le dispositif wallon ne subsidiait déjà plus que le conseil stratégique, jamais la fabrication d'un site. Le « jusqu'à 90 % » que l'on lit encore partout renvoie à une mesure close depuis décembre 2023.</p>
     </div>
-    <p class="lead" style="margin-top:26px">Cette page existe parce que la quasi-totalité des pages belges qui répondent à cette question annoncent des aides qui n'existent plus. Ce n'est pas de la malveillance, c'est de la négligence : les dispositifs ont changé trois fois en quatre ans et personne n'a mis ses pages à jour.</p>
+    <p class="lead">Cette page existe parce que la quasi-totalité des pages belges qui répondent à cette question annoncent des aides qui n'existent plus. Ce n'est pas de la malveillance, c'est de la négligence : les dispositifs ont changé trois fois en quatre ans et personne n'a mis ses pages à jour.</p>
     <p class="lead">Voici l'état réel, avec les dates et les sources. Rien à vendre dans ce qui suit.</p>
+    </div>
   </section>
 
-  <section>
-    <h2 class="stitle">Ce qui est mort, ce qui vit encore</h2>
-    <div class="tablewrap">
+  <section class="sec alt">
+    <div class="wrap col">
+<div class="sh"><h2 class="h2 rv">Ce qui est mort, ce qui vit encore</h2></div>
+<div class="card tablewrap rv">
       <table>
         <thead>
           <tr><th scope="col">Dispositif</th><th scope="col">État</th><th scope="col">Ce qu'il couvre</th></tr>
@@ -307,109 +197,86 @@
           </tr>
         </tbody>
       </table>
-      <caption>État au 10 août 2026, d'après le portail officiel des chèques-entreprises et le SPW Économie. Les conditions évoluent vite : vérifiez au 1890 avant toute décision.</caption>
+    </div>
+<p class="tcap">État au 10 août 2026, d'après le portail officiel des chèques-entreprises et le SPW Économie. Les conditions évoluent vite : vérifiez au 1890 avant toute décision.</p>
     </div>
   </section>
 
-  <section>
-    <h2 class="stitle">Le point que personne n'explique</h2>
-    <p class="lead">C'est le plus important, et c'est celui qui manque partout : <strong>depuis fin 2023, le portefeuille wallon ne finance que le conseil stratégique.</strong> Les prestations de développement, d'implémentation et de paramétrage en sont explicitement exclues.</p>
+  <section class="sec">
+    <div class="wrap col">
+<div class="sh"><h2 class="h2 rv">Le point que personne n'explique</h2></div>
+<p class="lead">C'est le plus important, et c'est celui qui manque partout : <strong>depuis fin 2023, le portefeuille wallon ne finance que le conseil stratégique.</strong> Les prestations de développement, d'implémentation et de paramétrage en sont explicitement exclues.</p>
     <p class="lead">Concrètement, pour un projet de site internet, cela veut dire que l'audit de votre présence en ligne, le plan de digitalisation ou la rédaction d'un cahier des charges peuvent être subsidiés, mais que la conception et la fabrication du site ne le sont pas. Et ce n'est pas une question de prestataire : aucun agrément ne rend subsidiable une prestation que le décret exclut.</p>
-    <div class="callout">
+    <div class="card callout rv">
       <p><strong>La conséquence pratique.</strong> Si une agence vous annonce qu'elle peut faire subsidier votre site à 50 % ou 90 % via un chèque-entreprise, demandez-lui la date de la mesure qu'elle invoque et le nom exact du chèque. Dans la quasi-totalité des cas, elle cite une page qu'elle n'a pas relue depuis 2023.</p>
     </div>
-  </section>
-
-  <section>
-    <h2 class="stitle">Si vous voulez quand même vérifier</h2>
-    <p class="lead">Les conditions changent régulièrement, et une page web, y compris celle-ci, vieillit. Quatre réflexes qui coûtent dix minutes et évitent une mauvaise surprise.</p>
-    <div class="steps">
-      <div class="step"><div class="num">1</div><p><strong>Appelez le 1890</strong>, le numéro gratuit d'information aux entreprises wallonnes. C'est la source la plus rapide et la plus fiable, et elle est à jour.</p></div>
-      <div class="step"><div class="num">2</div><p><strong>Vérifiez la date de la page</strong> que vous consultez. Sur ce sujet, une page non datée ou datée d'avant 2024 est à considérer comme fausse par défaut.</p></div>
-      <div class="step"><div class="num">3</div><p><strong>Demandez le nom exact du chèque</strong>, pas seulement « le chèque entreprise ». Il en existe une dizaine, et ils ne couvrent pas du tout les mêmes prestations.</p></div>
-      <div class="step"><div class="num">4</div><p><strong>Introduisez la demande avant de commander.</strong> L'arrêté du 23 février 2017 exige que la demande précède le début de l'exécution. Une prestation commencée ne peut plus être rattachée à un chèque, et c'est irrattrapable.</p></div>
     </div>
   </section>
 
-  <section class="faq">
-    <h2 class="stitle">Questions fréquentes</h2>
-
-    <div class="qa">
-      <h3>Le chèque entreprise peut-il payer une partie de mon site internet&nbsp;?</h3>
-      <p>Non, plus depuis fin 2023. Le portefeuille wallon ne subsidie que le conseil stratégique : le développement, l'implémentation et le paramétrage en sont explicitement exclus. Un audit ou un cahier des charges peut être couvert, la fabrication du site elle-même ne l'est pas, même en passant par un prestataire labellisé.</p>
+  <section class="sec alt">
+    <div class="wrap col">
+<div class="sh"><h2 class="h2 rv">Si vous voulez quand même vérifier</h2></div>
+<p class="lead">Les conditions changent régulièrement, et une page web, y compris celle-ci, vieillit. Quatre réflexes qui coûtent dix minutes et évitent une mauvaise surprise.</p>
+    <div class="flow">
+      <div class="step card rv"><div class="num">1</div><p><strong>Appelez le 1890</strong>, le numéro gratuit d'information aux entreprises wallonnes. C'est la source la plus rapide et la plus fiable, et elle est à jour.</p></div>
+      <div class="step card rv"><div class="num">2</div><p><strong>Vérifiez la date de la page</strong> que vous consultez. Sur ce sujet, une page non datée ou datée d'avant 2024 est à considérer comme fausse par défaut.</p></div>
+      <div class="step card rv"><div class="num">3</div><p><strong>Demandez le nom exact du chèque</strong>, pas seulement « le chèque entreprise ». Il en existe une dizaine, et ils ne couvrent pas du tout les mêmes prestations.</p></div>
+      <div class="step card rv"><div class="num">4</div><p><strong>Introduisez la demande avant de commander.</strong> L'arrêté du 23 février 2017 exige que la demande précède le début de l'exécution. Une prestation commencée ne peut plus être rattachée à un chèque, et c'est irrattrapable.</p></div>
     </div>
-
-    <div class="qa">
-      <h3>D'où vient le « jusqu'à 90 % » que l'on lit sur beaucoup de sites d'agences&nbsp;?</h3>
-      <p>D'une thématique temporaire appelée Relance économique par le numérique, ouverte de janvier 2022 à décembre 2023, qui portait effectivement l'intervention à 90 %. Elle est close depuis plus de deux ans. Les pages qui l'affichent encore n'ont simplement jamais été mises à jour.</p>
-    </div>
-
-    <div class="qa">
-      <h3>Le chèque maturité numérique existe-t-il encore&nbsp;?</h3>
-      <p>Il est suspendu depuis le 12 juillet 2026, selon l'avis publié sur le portail officiel des chèques-entreprises. Les dossiers déposés avant cette date continuent d'être traités. Un dispositif de remplacement orienté intelligence artificielle est annoncé, mais il n'est à ce jour ni nommé, ni chiffré, ni daté.</p>
-    </div>
-
-    <div class="qa">
-      <h3>Quelles aides restent utilisables en 2026 pour une PME wallonne&nbsp;?</h3>
-      <p>Le chèque cybersécurité, à 75 %, pour du conseil en sécurisation. Les chèques création, pour se faire conseiller ou former au démarrage d'une activité. Et les chèques-formation, qui permettent d'acheter 30 euros de formation pour 15 euros. Aucun de ces trois ne finance la fabrication d'un site.</p>
-    </div>
-
-    <div class="qa">
-      <h3>Faut-il demander l'aide avant ou après avoir commandé la prestation&nbsp;?</h3>
-      <p>Impérativement avant. L'arrêté du 23 février 2017 impose que la demande soit introduite avant le début de l'exécution des services. Une prestation déjà commencée, ou déjà facturée, ne peut plus être rattachée à un chèque. C'est l'erreur la plus fréquente et elle est irrattrapable.</p>
-    </div>
-
-    <div class="qa">
-      <h3>Mon prestataire peut-il se faire labelliser pour que je bénéficie d'un chèque&nbsp;?</h3>
-      <p>Pas pour l'instant : le guichet de labellisation des prestataires est fermé depuis le 17 juillet 2025, sans date de réouverture annoncée. La réforme en préparation prévoit par ailleurs des critères plus stricts et une réduction du nombre de prestataires agréés.</p>
     </div>
   </section>
 
-  <section>
-    <h2 class="stitle">Sources</h2>
-    <p class="sources">
+  <section class="sec">
+    <div class="wrap col">
+<div class="sh"><h2 class="h2 rv">Questions fréquentes</h2></div>
+<div class="card faq rv">
+<details open><summary>Le chèque entreprise peut-il payer une partie de mon site internet&nbsp;?</summary><p>Non, plus depuis fin 2023. Le portefeuille wallon ne subsidie que le conseil stratégique : le développement, l'implémentation et le paramétrage en sont explicitement exclus. Un audit ou un cahier des charges peut être couvert, la fabrication du site elle-même ne l'est pas, même en passant par un prestataire labellisé.</p></details>
+<details><summary>D'où vient le « jusqu'à 90 % » que l'on lit sur beaucoup de sites d'agences&nbsp;?</summary><p>D'une thématique temporaire appelée Relance économique par le numérique, ouverte de janvier 2022 à décembre 2023, qui portait effectivement l'intervention à 90 %. Elle est close depuis plus de deux ans. Les pages qui l'affichent encore n'ont simplement jamais été mises à jour.</p></details>
+<details><summary>Le chèque maturité numérique existe-t-il encore&nbsp;?</summary><p>Il est suspendu depuis le 12 juillet 2026, selon l'avis publié sur le portail officiel des chèques-entreprises. Les dossiers déposés avant cette date continuent d'être traités. Un dispositif de remplacement orienté intelligence artificielle est annoncé, mais il n'est à ce jour ni nommé, ni chiffré, ni daté.</p></details>
+<details><summary>Quelles aides restent utilisables en 2026 pour une PME wallonne&nbsp;?</summary><p>Le chèque cybersécurité, à 75 %, pour du conseil en sécurisation. Les chèques création, pour se faire conseiller ou former au démarrage d'une activité. Et les chèques-formation, qui permettent d'acheter 30 euros de formation pour 15 euros. Aucun de ces trois ne finance la fabrication d'un site.</p></details>
+<details><summary>Faut-il demander l'aide avant ou après avoir commandé la prestation&nbsp;?</summary><p>Impérativement avant. L'arrêté du 23 février 2017 impose que la demande soit introduite avant le début de l'exécution des services. Une prestation déjà commencée, ou déjà facturée, ne peut plus être rattachée à un chèque. C'est l'erreur la plus fréquente et elle est irrattrapable.</p></details>
+<details><summary>Mon prestataire peut-il se faire labelliser pour que je bénéficie d'un chèque&nbsp;?</summary><p>Pas pour l'instant : le guichet de labellisation des prestataires est fermé depuis le 17 juillet 2025, sans date de réouverture annoncée. La réforme en préparation prévoit par ailleurs des critères plus stricts et une réduction du nombre de prestataires agréés.</p></details>
+</div>
+    </div>
+  </section>
+
+  <section class="sec alt">
+    <div class="wrap col">
+<div class="sh"><h2 class="h2 rv">Sources</h2></div>
+<p class="sources">
       <a href="https://www.cheques-entreprises.be/cheques/" target="_blank" rel="noopener">Portail officiel des chèques-entreprises, liste des chèques</a><br>
       <a href="https://www.cheques-entreprises.be/actualites/" target="_blank" rel="noopener">Chèques-entreprises, fil d'actualités</a> (suspension du chèque maturité numérique, 12 juillet 2026)<br>
       <a href="https://economie.wallonie.be/" target="_blank" rel="noopener">SPW Économie, Emploi, Recherche</a> (suspension des labellisations, 17 juillet 2025)<br>
       <a href="https://www.1890.be" target="_blank" rel="noopener">1890.be</a>, information aux entreprises wallonnes<br>
       Arrêté du Gouvernement wallon du 23 février 2017, article 17, sur l'antériorité de la demande
     </p>
-    <p class="lead" style="margin-top:22px;font-size:16px">Cette page est datée volontairement. Si vous la lisez longtemps après août 2026, considérez qu'elle a pu vieillir à son tour, et appelez le 1890.</p>
+    <p class="lead">Cette page est datée volontairement. Si vous la lisez longtemps après août 2026, considérez qu'elle a pu vieillir à son tour, et appelez le 1890.</p>
+    </div>
   </section>
 
+  <section class="sec contact cta-band">
+    <div class="wrap">
+      <p class="intro">Pas de subside en vue, mais un projet quand même&nbsp;?<br>Autant savoir ce qu'il coûte réellement.</p>
+      <div class="acts">
+        <a class="btn" href="../prix-site-internet-belgique/">Voir les prix, sans détour <span class="arr">→</span></a>
+        <div class="coords"><a href="tel:+32465935655">+32 465 93 56 55</a>
+      <a href="mailto:contact@fervia.be">contact@fervia.be</a></div>
+      </div>
+    </div>
+  </section>
 </main>
 
-<div class="contact">
+<footer class="ft">
   <div class="wrap">
-    <div class="invite">Pas de subside en vue, mais un projet quand même&nbsp;?<br>Autant savoir ce qu'il coûte réellement.</div>
-    <a class="cta" href="/prix-site-internet-belgique/">Voir les prix, sans détour</a>
-    <div class="coords">
-      <a href="tel:+32465935655">+32 465 93 56 55</a><span class="sep">·</span>
-      <a href="mailto:contact@fervia.be">contact@fervia.be</a>
+    <div class="top">
+      <div><a class="fv-logo" href="../index.html#top" aria-label="Fervia, haut de page"><svg class="fv-lock" viewBox="43.20 602.50 755.93 222.95" aria-hidden="true" focusable="false"><use href="#fv-logo-hd"/></svg><span class="sr-only">Fervia</span></a><p>Fervia · Studio créatif digital · Wavre (Brabant wallon) · Belgique</p></div>
+      <nav aria-label="Pied de page"><a href="../index.html#methode">Méthode</a><a href="../index.html#services">Services</a><a href="../index.html#offres">Offres</a><a href="../realisations/">Réalisations</a><a href="../index.html#contact">Contact</a></nav>
     </div>
+    <div class="bot"><span>© 2026 Fervia · Tous droits réservés · Conçu &amp; réalisé par Fervia</span><div><a href="../mentions-legales.html">Mentions légales</a><a href="../politique-confidentialite.html">Politique de confidentialité</a></div></div>
   </div>
-</div>
-
-<footer>
-  <div class="tagline">Forger votre voie digitale</div>
-  <div class="sub"><a href="/">Fervia</a> · Studio créatif digital · Wavre, Belgique</div>
 </footer>
 
-<script>
-(function(){
-  var els = document.querySelectorAll('section, .contact');
-  if (!els.length) return;
-  var start = 1; // on laisse le premier bloc a l'animation d'entree existante
-  var list = Array.prototype.slice.call(els, start);
-  if (!('IntersectionObserver' in window)) { list.forEach(function(el){ el.classList.add('rv','seen'); }); return; }
-  list.forEach(function(el){ el.classList.add('rv'); });
-  var io = new IntersectionObserver(function(entries){
-    entries.forEach(function(e){
-      if (e.isIntersecting) { e.target.classList.add('seen'); io.unobserve(e.target); }
-    });
-  }, { rootMargin: '0px 0px -12% 0px', threshold: 0.05 });
-  list.forEach(function(el){ io.observe(el); });
-})();
-</script>
+
+<script src="../assets/site.js"></script>
 </body>
 </html>

@@ -4,7 +4,7 @@
 
 Fervia est mené par une seule personne : celui qui comprend le besoin est celui qui dessine et qui développe, sans commercial ni chef de projet intermédiaire. Le nom de domaine est déposé au nom du client et le site lui appartient. Les fondations techniques du référencement sont comprises dans chaque projet.
 
-Dernière mise à jour : 5 octobre 2026.
+Dernière mise à jour : 27 octobre 2026.
 
 ## Prix (hors TVA)
 
@@ -32,6 +32,7 @@ Basé à Wavre (1300), chef-lieu du Brabant wallon. Déplacements dans les 27 co
 - [Outil métier sur mesure](https://fervia.be/outil-metier/) : applications de gestion pour indépendants et commerces, à partir de 750 €, fonctionnant hors connexion
 - [Agents IA](https://fervia.be/agents-ia/) : un agent par métier (prospection, courrier, contenus, publicité), installé sur un serveur du client, entretenu et formé par Fervia, rien n'est envoyé sans l'accord du client
 - [Aides pour financer un site internet en Wallonie](https://fervia.be/aides-site-internet-wallonie/) : état vérifié des chèques-entreprise et subsides wallons en 2026, y compris ceux qui ont été supprimés
+- [Réalisations](https://fervia.be/realisations/) : les quatre réalisations de Fervia (RTM Ready To Move, Healthy Sounna, TimeCoach, Keskonmange) et les identités de marque, avec deux études de cas détaillées
 - [Étude de cas RTM Ready To Move](https://fervia.be/realisations/rtm-ready-to-move/) : site vitrine pour une entreprise de déménagement bruxelloise, construit autour de la demande de devis, puis un outil de suivi des missions
 - [Étude de cas Healthy Sounna](https://fervia.be/realisations/healthy-sounna/) : catalogue de 205 produits et application de stock pour un commerce de produits naturels
 

@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr-BE">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Création de sites, applications et agents IA à Wavre · Fervia</title>
 <meta name="description" content="Studio digital à Wavre (Brabant wallon) : création de sites internet, applications web & mobiles, agents IA pour entreprises. Devis gratuit, réponse rapide.">
-<meta name="theme-color" content="#1A2D45">
+<link rel="canonical" href="https://fervia.be/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Création de sites, applications et agents IA à Wavre · Fervia">
 <meta property="og:description" content="Studio créatif digital à Wavre : sites web, applications et agents IA. L'artisanat du digital, accéléré par l'IA.">
@@ -19,848 +19,23 @@
 <meta name="twitter:title" content="Création de sites, applications et agents IA à Wavre · Fervia">
 <meta name="twitter:description" content="Studio créatif digital à Wavre : sites web, applications et agents IA. L'artisanat du digital, accéléré par l'IA.">
 <meta name="twitter:image" content="https://fervia.be/assets/og-image.png">
-<link rel="canonical" href="https://fervia.be/">
-<link rel="icon" href="/favicon.ico" sizes="any">
-<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-<link rel="manifest" href="/site.webmanifest">
-<link rel="preload" as="font" type="font/woff2" href="/assets/fonts/cormorant-garamond-400.woff2" crossorigin>
-<link rel="preload" as="font" type="font/woff2" href="/assets/fonts/jost-300.woff2" crossorigin>
-<link rel="preload" as="image" href="assets/hero-bg.webp" media="(min-width:641px)">
-<link rel="preload" as="image" href="assets/hero-bg-mobile.webp" media="(max-width:640px)">
-<style>
-/* Polices auto-hébergées (Cormorant Garamond + Jost) : licence OFL, en ligne pour ne pas bloquer le rendu */
-@font-face{font-family:'Cormorant Garamond';font-style:italic;font-weight:400;font-display:swap;src:url('/assets/fonts/cormorant-garamond-400i-ext.woff2') format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;}
-@font-face{font-family:'Cormorant Garamond';font-style:italic;font-weight:400;font-display:swap;src:url('/assets/fonts/cormorant-garamond-400i.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
-@font-face{font-family:'Cormorant Garamond';font-style:italic;font-weight:500;font-display:swap;src:url('/assets/fonts/cormorant-garamond-500i-ext.woff2') format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;}
-@font-face{font-family:'Cormorant Garamond';font-style:italic;font-weight:500;font-display:swap;src:url('/assets/fonts/cormorant-garamond-500i.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
-@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:400;font-display:swap;src:url('/assets/fonts/cormorant-garamond-400-ext.woff2') format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;}
-@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:400;font-display:swap;src:url('/assets/fonts/cormorant-garamond-400.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
-@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:500;font-display:swap;src:url('/assets/fonts/cormorant-garamond-500-ext.woff2') format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;}
-@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:500;font-display:swap;src:url('/assets/fonts/cormorant-garamond-500.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
-@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:600;font-display:swap;src:url('/assets/fonts/cormorant-garamond-600-ext.woff2') format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;}
-@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:600;font-display:swap;src:url('/assets/fonts/cormorant-garamond-600.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
-@font-face{font-family:'Jost';font-style:normal;font-weight:300;font-display:swap;src:url('/assets/fonts/jost-300-ext.woff2') format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;}
-@font-face{font-family:'Jost';font-style:normal;font-weight:300;font-display:swap;src:url('/assets/fonts/jost-300.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
-@font-face{font-family:'Jost';font-style:normal;font-weight:400;font-display:swap;src:url('/assets/fonts/jost-400-ext.woff2') format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;}
-@font-face{font-family:'Jost';font-style:normal;font-weight:400;font-display:swap;src:url('/assets/fonts/jost-400.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
-@font-face{font-family:'Jost';font-style:normal;font-weight:500;font-display:swap;src:url('/assets/fonts/jost-500-ext.woff2') format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;}
-@font-face{font-family:'Jost';font-style:normal;font-weight:500;font-display:swap;src:url('/assets/fonts/jost-500.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
-:root{
-  --navy:#1A2D45;
-  --navy-deep:#0E1C30;
-  --or:#C9A84C;
-  --or-light:#F5D27A;
-  --or-deep:#A8792A;
-  --creme:#F5F0E6;
-  /* motion : une seule courbe, quatre durées, pour tout le site */
-  --ease:cubic-bezier(.22,.61,.36,1);
-  --d-press:.16s;
-  --d-hover:.25s;
-  --d-ui:.25s;
-  --d-enter:.6s;
-}
-*{box-sizing:border-box;margin:0;padding:0;}
-html{scroll-behavior:smooth;overflow-x:hidden;}
-body{
-  min-height:100%;
-  background:var(--navy-deep);
-  color:var(--creme);
-  font-family:'Cormorant Garamond',Georgia,serif;
-  overflow-x:hidden;
-  -webkit-font-smoothing:antialiased;
-  text-rendering:optimizeLegibility;
-}
-::selection{background:rgba(201,168,76,.28);color:var(--creme);}
-:focus-visible{outline:2px solid var(--or);outline-offset:3px;border-radius:2px;}
-.skip-link{
-  position:absolute;left:12px;top:-60px;z-index:100;
-  background:var(--or);color:var(--navy-deep);text-decoration:none;
-  font-family:'Jost',system-ui,sans-serif;font-size:1rem; /* tailles 05/10 */
-  padding:12px 18px;border-radius:4px;
-  transition:top var(--d-ui) var(--ease);
-}
-.skip-link:focus{top:12px;}
-.site-footer{text-align:center;padding:0 clamp(20px,4vw,48px) clamp(30px,5vh,44px);}
-a{color:inherit;}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto;}}
-/* ===== BARRE DE NAVIGATION (apparaît au scroll) ===== */
-.topbar{
-  position:fixed;top:0;left:0;right:0;z-index:50;
-  display:flex;align-items:center;justify-content:space-between;
-  padding:13px clamp(20px,4vw,48px);
-  background:rgba(14,28,48,0);
-  transform:translateY(-100%);opacity:0;pointer-events:none;
-  /* sans visibility, les 8 contrôles restent dans l'ordre de tabulation alors qu'ils sont hors écran */
-  visibility:hidden;
-  transition:transform var(--d-ui) var(--ease),opacity var(--d-ui) var(--ease),background var(--d-ui) ease,border-color var(--d-ui) ease,visibility 0s linear var(--d-ui);
-}
-.topbar.visible{visibility:visible;transition-delay:0s;}
-.topbar.visible{
-  transform:none;opacity:1;pointer-events:auto;
-  background:rgba(14,28,48,.82);
-  -webkit-backdrop-filter:blur(11px);backdrop-filter:blur(11px);
-  border-bottom:1px solid rgba(201,168,76,.16);
-}
-.topbar-brand{
-  display:inline-flex;align-items:center;gap:9px;
-  text-decoration:none;transition:opacity .3s;
-}
-.topbar-brand:hover{opacity:.8;}
-.topbar-flame{height:1.5em;width:.88em;flex:none;display:block;}
-.topbar-wordmark{height:1.5em;width:5.01em;aspect-ratio:595.4/178.2;flex:none;display:block;}
-.topbar-nav{display:flex;gap:clamp(18px,2.4vw,34px);}
-.topbar-nav a{
-  font-family:'Jost',system-ui,sans-serif;text-transform:uppercase;
-  letter-spacing:.13em;font-size:.75rem;color:var(--creme);opacity:.9; /* tailles 05/10 */
-  text-decoration:none;transition:color .3s,opacity .3s;
-}
-.topbar-nav a:hover{color:var(--or);opacity:1;}
-@media (max-width:640px){.topbar-nav{display:none;}.topbar{padding-left:16px;padding-right:16px;}.topbar-flame{height:1.34em;width:.79em;}.topbar-wordmark{height:1.3em;width:4.34em;}.topbar-actions{gap:8px;}.tbtn{width:44px;height:44px;}.tbtn svg{width:15px;height:15px;}}
-.topbar-right{display:flex;align-items:center;gap:clamp(14px,2.4vw,28px);}
-.topbar-actions{display:flex;align-items:center;gap:10px;}
-.tbtn{
-  width:44px;height:44px;border-radius:50%;
-  display:flex;align-items:center;justify-content:center;text-decoration:none;
-  transition:background .3s,color .3s,transform .3s,box-shadow .3s,border-color .3s;
-}
-.tbtn svg{width:17px;height:17px;}
-.tbtn:hover{transform:translateY(-2px);}
-.tbtn:active{transform:scale(.97);transition:transform var(--d-press) var(--ease);}
-.tbtn--mail{
-  background:linear-gradient(135deg,var(--or-light),var(--or-deep));
-  color:var(--navy-deep);
-}
-.tbtn--mail:hover{box-shadow:0 10px 22px -10px rgba(201,168,76,.6);}
-.tbtn--phone{
-  background:transparent;border:1px solid rgba(201,168,76,.5);color:var(--or);
-}
-.tbtn--phone:hover{
-  background:linear-gradient(135deg,var(--or-light),var(--or-deep));
-  color:var(--navy-deep);border-color:transparent;
-}
-
-/* ===== HERO (premier écran) ===== */
-.hero{
-  position:relative;overflow:hidden;
-  display:flex;align-items:flex-start;justify-content:center;
-  min-height:100vh;min-height:100svh;
-  background:var(--navy-deep);
-}
-/* calque image (parallaxe) */
-.hero-bg{
-  position:absolute;left:0;right:0;top:-8%;height:116%;z-index:0;
-  background:url('assets/hero-bg.webp') center center / cover no-repeat;
-  will-change:transform;
-}
-@media (max-width:640px){.hero-bg{background-image:url('assets/hero-bg-mobile.webp');}}
-/* héros vivant (assets/hero-vivant.js, après load) : le fond redessiné en WebGL, dans le calque de parallaxe ;
-   il apparaît en fondu au-dessus de l'image, qui reste seule sans WebGL ou en mouvement réduit */
-.hero-ondes{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:0;transition:opacity 1.6s var(--ease);}
-.hero-ondes.is-on{opacity:1;}
-/* vignette + dégradé sombre bas (lisibilité services) */
-.hero::before{
-  content:"";position:absolute;inset:0;pointer-events:none;z-index:0;
-  background:
-    radial-gradient(125% 80% at 50% 40%, transparent 0%, rgba(10,18,32,.30) 72%, rgba(10,18,32,.62) 100%),
-    linear-gradient(180deg, rgba(14,28,48,.12) 0%, transparent 32%, transparent 58%, rgba(10,18,32,.55) 100%);
-}
-/* grain subtil */
-.hero::after{
-  content:"";position:absolute;inset:0;pointer-events:none;z-index:0;opacity:.05;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-}
-.hero-inner{
-  position:relative;z-index:1;
-  display:flex;flex-direction:column;align-items:center;justify-content:flex-start;
-  text-align:center;
-  width:100%;max-width:780px;
-  padding:clamp(4vh,6.5vh,9vh) 24px clamp(5vh,7vh,8vh);
-  gap:clamp(13px,2.3vh,24px);
-}
-.brand{display:flex;flex-direction:column;align-items:center;gap:clamp(6px,1vh,11px);}
-.logo-svg{width:clamp(112px,13.8vw,178px);height:auto;display:block;overflow:visible;}
-.fervia-flame{animation:flameGlow 4.6s ease-in-out infinite;}
-.tagline{
-  font-style:italic;font-weight:500;color:var(--or);
-  font-size:clamp(1rem,2.2vw,1.35rem); /* tailles 05/10 */
-  letter-spacing:.045em;opacity:.94;
-}
-.divider{
-  width:clamp(116px,14.2vw,184px);height:1px;
-  background:linear-gradient(90deg,transparent,var(--or) 10%,var(--or-light) 50%,var(--or) 90%,transparent);
-  opacity:.9;
-}
-.accroche{
-  font-weight:400;color:var(--creme);
-  font-size:clamp(1.75rem,5.6vw,3.55rem);
-  line-height:1.12;letter-spacing:-.015em;
-  max-width:14em;
-  text-shadow:0 1px 30px rgba(10,18,32,.45);
-}
-.accroche .gold{color:var(--or);font-style:italic;font-weight:500;}
-.services{
-  display:flex;align-items:center;justify-content:center;
-  gap:clamp(18px,3vw,42px);
-  margin-top:clamp(6px,1.4vh,16px);
-}
-.service{display:flex;flex-direction:column;align-items:center;gap:11px;}
-.service svg{
-  width:clamp(42px,5vw,50px);height:auto;display:block;
-}
-.service span{
-  font-family:'Jost',system-ui,sans-serif;font-weight:400;
-  text-transform:uppercase;letter-spacing:.16em; /* tailles 05/10 */
-  font-size:clamp(.75rem,1.25vw,.78rem);
-  color:var(--creme);opacity:.86;white-space:nowrap;
-}
-.sep{
-  width:1px;height:clamp(40px,5vw,54px);
-  background:linear-gradient(180deg,transparent,rgba(201,168,76,.5),transparent);
-}
-/* indice de scroll */
-.scroll-cue{
-  margin-top:clamp(18px,3.4vh,42px);
-  font-family:'Jost',system-ui,sans-serif;
-  text-transform:uppercase;letter-spacing:.2em; /* tailles 05/10 */
-  font-size:.75rem;
-  color:var(--creme);text-decoration:none;opacity:.78; /* lisibilité 05/10 */
-  display:inline-flex;flex-direction:column;align-items:center;gap:9px;
-  transition:opacity .3s;
-}
-.scroll-cue:hover{opacity:.95;}
-.scroll-cue .arrow{font-size:1.1rem;line-height:1;animation:bob 2.4s ease-in-out infinite;}
-
-/* ===== SECTIONS site complet ===== */
-.section{
-  position:relative;
-  padding:clamp(72px,11vh,140px) 24px;
-  scroll-margin-top:70px;
-}
-.section--alt{background:var(--navy);}
-.wrap{max-width:980px;margin:0 auto;}
-.eyebrow{
-  font-family:'Jost',system-ui,sans-serif;font-weight:400;
-  text-transform:uppercase;letter-spacing:.22em; /* tailles 05/10 */
-  font-size:.75rem;color:var(--or);opacity:.85;
-  display:block;margin-bottom:18px;
-}
-.s-title{
-  font-weight:400;line-height:1.12;letter-spacing:-.015em;
-  font-size:clamp(1.9rem,4.6vw,3rem);
-  max-width:14em;margin-bottom:clamp(28px,5vh,56px);
-}
-.s-title .gold{color:var(--or);font-style:italic;font-weight:500;}
-.lead{
-  font-size:clamp(1.18rem,2.5vw,1.6rem);line-height:1.5;
-  color:var(--creme);opacity:.92;max-width:30em; /* lisibilité 05/10 */
-  margin-bottom:clamp(36px,6vh,64px);
-}
-.lead .gold{color:var(--or);font-style:italic;}
-
-/* Méthode : étapes */
-.steps{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(30px,4vw,56px);}
-.step{position:relative;border-top:1px solid rgba(201,168,76,.22);padding-top:24px;}
-.step::before{
-  content:"";position:absolute;top:-1px;left:0;width:46px;height:1px;
-  background:linear-gradient(90deg,var(--or-light),var(--or));
-}
-.step-num{
-  display:block;font-family:'Cormorant Garamond',Georgia,serif;
-  font-weight:500;font-style:italic;line-height:1;
-  font-size:clamp(2.3rem,4.6vw,3.2rem);margin-bottom:8px;
-  background:linear-gradient(135deg,var(--or-light) 0%,var(--or) 50%,var(--or-deep) 100%);
-  -webkit-background-clip:text;background-clip:text;color:transparent;
-}
-.step-name{font-size:clamp(1.35rem,2.6vw,1.7rem);font-weight:500;margin:0 0 10px;}
-.step-text{
-  font-family:'Jost',system-ui,sans-serif;font-weight:400; /* lisibilité 05/10 */
-  font-size:1rem;line-height:1.65;color:var(--creme);opacity:.92; /* lisibilité 05/10 */ /* tailles 05/10 */
-}
-
-/* Services : cartes */
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,3vw,34px);}
-.card{
-  position:relative;overflow:hidden;
-  border:1px solid rgba(201,168,76,.20);border-radius:4px;
-  padding:clamp(28px,3vw,40px) clamp(22px,2.5vw,30px);
-  display:flex;flex-direction:column;gap:15px;
-  background:rgba(255,255,255,.012);
-  transition:border-color var(--d-hover),transform var(--d-hover),background var(--d-hover),box-shadow var(--d-hover);
-}
-.card::before{
-  content:"";position:absolute;top:0;left:0;right:0;height:1px;
-  background:linear-gradient(90deg,transparent,rgba(245,210,122,.7),transparent);
-  opacity:0;transition:opacity var(--d-hover);
-}
-.card:hover{
-  border-color:rgba(201,168,76,.42);
-  background:rgba(201,168,76,.045);
-  box-shadow:0 18px 44px -22px rgba(0,0,0,.65);
-}
-.card:hover::before{opacity:1;}
-.card svg{width:46px;height:auto;transition:transform var(--d-hover) ease;}
-.card:hover svg{transform:translateY(-3px);}
-.card h3{font-size:clamp(1.3rem,2.5vw,1.6rem);font-weight:500;}
-.card p{
-  font-family:'Jost',system-ui,sans-serif;font-weight:400; /* lisibilité 05/10 */
-  font-size:1rem;line-height:1.65;color:var(--creme);opacity:.92; /* lisibilité 05/10 */ /* tailles 05/10 */
-}
-.card-link{
-  display:inline-block;margin-top:14px;color:var(--or);font-weight:500;
-  text-decoration:underline;text-underline-offset:3px;
-}
-
-/* Offres : bandeau de lancement + cartes tarifs */
-.offre-lancement{
-  position:relative;border:1px solid var(--or);border-radius:4px;
-  background:rgba(201,168,76,.06);
-  padding:26px clamp(24px,3vw,36px);margin-bottom:clamp(34px,5.5vh,54px);text-align:center;
-}
-.offre-lancement-badge{
-  position:absolute;top:0;left:50%;transform:translate(-50%,-50%); /* tailles 05/10 */
-  background:linear-gradient(135deg,var(--or-light),var(--or-deep));color:var(--navy-deep);
-  font-family:'Jost',system-ui,sans-serif;font-size:.75rem;font-weight:500; /* tailles 05/10 */
-  letter-spacing:.13em;text-transform:uppercase;padding:4px 16px;border-radius:2px;white-space:nowrap;
-}
-.offre-lancement p{
-  font-family:'Jost',system-ui,sans-serif;font-weight:400;font-size:1rem;line-height:1.6; /* lisibilité 05/10 */
-  color:var(--creme);opacity:.92;max-width:680px;margin:0 auto;
-}
-.offre-lancement strong{color:var(--or);font-weight:500;}
-.offre-places{
-  display:inline-flex;align-items:center;gap:9px;margin-top:12px;
-  font-family:'Jost',system-ui,sans-serif;font-size:.875rem;letter-spacing:.04em;color:var(--creme);opacity:.78; /* lisibilité 05/10 */ /* tailles 05/10 */
-}
-.offre-puces{display:inline-flex;gap:6px;}
-.offre-puce{width:8px;height:8px;border-radius:50%;border:1px solid var(--or);}
-.offre-puce.prise{background:var(--or);}
-.offres-grille{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,2.4vw,26px);align-items:stretch;}
-.offre-carte{
-  position:relative;display:flex;flex-direction:column;
-  background:var(--navy-deep);border:1px solid rgba(201,168,76,.20);border-radius:4px;
-  padding:clamp(30px,3vw,40px) clamp(24px,2.5vw,30px) clamp(28px,3vw,34px);
-  transition:transform var(--d-hover) ease,border-color var(--d-hover) ease,box-shadow var(--d-hover) ease;
-}
-.offre-carte:hover{border-color:rgba(201,168,76,.5);box-shadow:0 22px 50px -26px rgba(0,0,0,.7);}
-.offre-vedette{border-color:var(--or);background:linear-gradient(180deg,var(--navy) 0%,var(--navy-deep) 100%);}
-.offre-vedette:hover{border-color:var(--or-light);}
-.offre-ruban{
-  position:absolute;top:0;left:50%;transform:translate(-50%,-50%); /* tailles 05/10 */
-  background:linear-gradient(135deg,var(--or-light),var(--or-deep));color:var(--navy-deep);
-  font-family:'Jost',system-ui,sans-serif;font-size:.75rem;font-weight:500; /* tailles 05/10 */
-  letter-spacing:.12em;text-transform:uppercase;padding:5px 18px;border-radius:2px;white-space:nowrap;
-}
-.offre-tete{margin-bottom:20px;}
-.offre-palier-flamme{height:44px;width:auto;margin-bottom:12px;display:block;}
-.offre-palier-nom{
-  font-family:'Cormorant Garamond',Georgia,serif;font-size:1.9rem;font-weight:500;
-  letter-spacing:.02em;color:var(--or);margin-bottom:4px;
-}
-.offre-palier-promesse{
-  font-family:'Jost',system-ui,sans-serif;font-weight:400;font-size:1rem;line-height:1.5; /* tailles 05/10 */
-  color:var(--creme);opacity:.92;min-height:34px; /* lisibilité 05/10 */
-}
-.offre-prix-bloc{margin:4px 0 22px;padding-bottom:20px;border-bottom:1px solid rgba(201,168,76,.18);}
-.offre-prix-prefix{display:block;font-family:'Jost',system-ui,sans-serif;font-weight:400;font-size:.875rem;letter-spacing:.04em;color:var(--creme);opacity:.78;margin-bottom:5px;} /* lisibilité 05/10 */ /* tailles 05/10 */
-.offre-prix{font-family:'Cormorant Garamond',Georgia,serif;font-size:2.9rem;font-weight:500;color:var(--creme);line-height:1;}
-.offre-prix .dev{font-size:1.5rem;vertical-align:super;margin-left:2px;opacity:.85;}
-.offre-prix-sur-mesure{font-family:'Cormorant Garamond',Georgia,serif;font-size:2.05rem;font-weight:500;font-style:italic;color:var(--creme);line-height:1.1;}
-.offre-recurrent{font-family:'Jost',system-ui,sans-serif;font-size:1rem;line-height:1.5;color:rgba(245,240,230,.78);margin-top:8px;} /* tailles 05/10 */ /* lisibilité 05/10 : couleur alpha et non opacité : le strong reste en crème pleine */
-.offre-recurrent strong{color:var(--creme);opacity:1;font-weight:500;}
-.offre-liste{list-style:none;flex-grow:1;margin-bottom:26px;}
-.offre-liste li{
-  font-family:'Jost',system-ui,sans-serif;font-weight:400;font-size:1rem;line-height:1.55; /* tailles 05/10 */
-  color:var(--creme);opacity:.92;padding:7px 0 7px 26px;position:relative; /* lisibilité 05/10 */
-}
-.offre-liste li::before{
-  content:"";position:absolute;left:0;top:14px;width:11px;height:6px; /* tailles 05/10 */
-  border-left:1.5px solid var(--or);border-bottom:1.5px solid var(--or);transform:rotate(-45deg);
-}
-.offre-liste li.titre-sous{
-  text-transform:uppercase;letter-spacing:.12em;font-size:.75rem;color:var(--or);opacity:.85; /* tailles 05/10 */
-  padding-left:0;padding-top:4px;padding-bottom:8px;
-}
-.offre-liste li.titre-sous::before{display:none;}
-.offre-liste li.absent{opacity:.7;} /* lisibilité 05/10 : ligne non incluse : le tiret la signale, la pâleur ne la rend plus illisible */
-.offre-liste li.absent::before{border:none;content:"–";color:var(--creme);left:2px;top:6px;width:auto;height:auto;transform:none;}
-.offre-cta{
-  display:block;text-align:center;padding:15px 20px;border-radius:4px;
-  font-family:'Jost',system-ui,sans-serif;font-size:.78rem;font-weight:400;
-  letter-spacing:.1em;text-transform:uppercase;text-decoration:none;
-  border:1px solid var(--or);color:var(--or);background:transparent;
-  transition:background var(--d-hover),color var(--d-hover),border-color var(--d-hover),box-shadow var(--d-hover);
-}
-.offre-cta:hover{background:linear-gradient(135deg,var(--or-light),var(--or-deep));color:var(--navy-deep);border-color:transparent;}
-.offre-cta:active{transform:scale(.97);transition:transform var(--d-press) var(--ease);}
-.offre-cta.plein{background:linear-gradient(135deg,var(--or-light),var(--or-deep));color:var(--navy-deep);border-color:transparent;}
-.offre-cta.plein:hover{box-shadow:0 10px 22px -10px rgba(201,168,76,.6);}
-.offre-note{
-  font-family:'Jost',system-ui,sans-serif;font-weight:400;text-align:center; /* lisibilité 05/10 */
-  max-width:34em;margin:clamp(30px,5vh,46px) auto 0;font-size:1rem;line-height:1.65; /* tailles 05/10 */
-  color:var(--creme);opacity:.78; /* lisibilité 05/10 */
-}
-.offre-note em{font-style:italic;opacity:1;}
-@media (max-width:820px){
-  .offres-grille{grid-template-columns:1fr;max-width:440px;margin:0 auto;}
-  .offre-vedette{order:-1;}
-}
-
-/* Deux approches différentes du site : agents IA, outil métier */
-.offres-secondaires{
-  display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,2vw,22px);
-  max-width:760px;margin:clamp(34px,5.5vh,54px) auto 0;
-}
-@media (max-width:620px){.offres-secondaires{grid-template-columns:1fr;}}
-.offre-mini{
-  border:1px solid rgba(201,168,76,.18);border-radius:4px;
-  padding:22px 24px;text-align:left;
-  transition:border-color var(--d-hover),background var(--d-hover);
-}
-.offre-mini:hover{border-color:rgba(201,168,76,.4);background:rgba(201,168,76,.04);}
-.offre-mini-eyebrow{
-  display:block;font-family:'Jost',system-ui,sans-serif;font-size:.75rem; /* tailles 05/10 */
-  letter-spacing:.11em;text-transform:uppercase;color:var(--or);opacity:.75;margin-bottom:8px;
-}
-.offre-mini h3{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.32rem;font-weight:500;color:var(--creme);margin-bottom:6px;}
-.offre-mini p{font-family:'Jost',system-ui,sans-serif;font-weight:400;font-size:1rem;line-height:1.55;color:var(--creme);opacity:.92;} /* lisibilité 05/10 */ /* tailles 05/10 */
-.offre-mini p strong{color:var(--or);font-weight:500;opacity:1;}
-.offre-mini-cta{
-  display:inline-block;margin-top:12px;font-family:'Jost',system-ui,sans-serif;
-  font-size:.875rem;font-weight:500;letter-spacing:.02em;color:var(--or); /* tailles 05/10 */
-  text-decoration:underline;text-underline-offset:3px;
-}
-.offre-liens-info{
-  font-family:'Jost',system-ui,sans-serif;font-weight:400;text-align:center; /* lisibilité 05/10 */
-  font-size:1rem;line-height:1.5;color:var(--creme);opacity:.78;margin-top:clamp(24px,3.5vh,32px); /* lisibilité 05/10 */ /* tailles 05/10 */
-}
-.offre-liens-info a{color:var(--creme);opacity:1;font-weight:500;text-decoration:underline;text-underline-offset:3px;} /* lisibilité 05/10 : le lien se distingue par la graisse, plus par la pâleur */
-.offre-liens-info a:hover{color:var(--or);opacity:1;}
-/* Pas `.sep` : c'est le trait vertical doré du héros, la classe ne se partage pas. */
-.offre-liens-info .liens-sep{opacity:.5;}
-@media (max-width:480px){
-  .offre-liens-info{display:flex;flex-direction:column;gap:6px;}
-  .offre-liens-info .liens-sep{display:none;}
-}
-
-/* Réalisations : une par ligne, en grand, alternées */
-.works{display:flex;flex-direction:column;gap:clamp(36px,6vw,80px);}
-.work{
-  display:grid;grid-template-columns:1.12fr .88fr;align-items:stretch;
-  text-decoration:none;color:inherit;
-  border:1px solid rgba(201,168,76,.18);border-radius:5px;overflow:hidden;
-  background:var(--navy-deep);
-  transition:border-color var(--d-hover),transform var(--d-hover),box-shadow var(--d-hover);
-}
-.work:hover{
-  border-color:rgba(201,168,76,.45);transform:translateY(-5px);
-  box-shadow:0 28px 60px -30px rgba(0,0,0,.75);
-}
-.work:active{transform:translateY(-2px) scale(.99);transition:transform var(--d-press) var(--ease);}
-.work:nth-child(even) .work-media{order:2;}
-.work-media{position:relative;overflow:hidden;min-height:100%;}
-.work-media::after{
-  content:"";position:absolute;inset:0;pointer-events:none;
-  background:linear-gradient(180deg,transparent 60%,rgba(10,18,32,.4) 100%);
-  opacity:.5;transition:opacity var(--d-hover);
-}
-.work:hover .work-media::after{opacity:.8;}
-.work-img{
-  display:block;width:100%;height:100%;aspect-ratio:16/10;object-fit:cover;
-  background:linear-gradient(135deg,var(--navy) 0%,var(--navy-deep) 100%);
-  transition:transform .3s var(--ease);
-}
-.work:hover .work-img{transform:scale(1.05);}
-.work-body{
-  padding:clamp(26px,3.2vw,46px);
-  display:flex;flex-direction:column;justify-content:center;
-}
-.work-tag{
-  font-family:'Jost',system-ui,sans-serif;text-transform:uppercase;
-  letter-spacing:.12em;font-size:.75rem;color:var(--or);opacity:.85;text-wrap:balance; /* tailles 05/10 */
-}
-.work h3{font-size:clamp(1.35rem,2.6vw,1.7rem);font-weight:500;margin:8px 0 10px;}
-.work p{
-  font-family:'Jost',system-ui,sans-serif;font-weight:400; /* lisibilité 05/10 */
-  font-size:1rem;line-height:1.6;color:var(--creme);opacity:.92;margin-bottom:16px; /* lisibilité 05/10 */ /* tailles 05/10 */
-}
-.work-link{
-  font-family:'Jost',system-ui,sans-serif;font-size:.875rem;letter-spacing:.03em; /* tailles 05/10 */
-  color:var(--or);display:inline-flex;align-items:center;gap:7px;
-  transition:color var(--d-hover);
-}
-.work:hover .work-link{color:var(--or-light);}
-.work-link .ar{display:inline-block;transition:transform var(--d-hover) ease;}
-.work:hover .work-link .ar{transform:translateX(5px);}
-/* carte vitrine non cliquable */
-.work--static{cursor:default;}
-.work--static:hover{transform:none;border-color:rgba(201,168,76,.18);box-shadow:none;}
-.work--static:hover .work-img{transform:none;}
-.work--static:hover .work-media::after{opacity:.5;}
-.work-link--static{color:var(--creme);opacity:.78;} /* lisibilité 05/10 */
-/* grille 2x2 de logos (remplace l'image figée) */
-.work-media--logos{
-  display:grid;grid-template-columns:1fr 1fr;grid-auto-rows:1fr;
-  min-height:100%;
-  background:linear-gradient(135deg,var(--navy) 0%,var(--navy-deep) 100%);
-}
-.work-media--logos::after{display:none;}
-.work-media--logos .lg{
-  display:flex;align-items:center;justify-content:center;
-  padding:clamp(20px,3.4vw,44px);
-  border-bottom:1px solid rgba(201,168,76,.16);
-}
-.work-media--logos .lg:nth-child(odd){border-right:1px solid rgba(201,168,76,.16);}
-.work-media--logos .lg:nth-child(n+3){border-bottom:none;}
-.work-media--logos .lg img,
-.work-media--logos .lg svg{
-  display:block;width:auto;height:clamp(40px,5vw,54px);max-width:90%;
-}
-.work-media--logos .lg--rtm img{height:clamp(32px,4vw,44px);}
-
-/* Contact */
-.section--contact{
-  text-align:center;position:relative;overflow:hidden;
-  background:url('assets/contact-bg.webp') center center / cover no-repeat;
-}
-.section--contact::before{
-  content:"";position:absolute;inset:0;pointer-events:none;
-  background:linear-gradient(180deg,rgba(14,28,48,.84) 0%,rgba(10,18,32,.92) 100%);
-}
-.section--contact .wrap{max-width:620px;position:relative;z-index:1;}
-.section--contact .s-title{margin:0 auto 22px;}
-.section--contact .lead{margin:0 auto clamp(30px,5vh,46px);}
-.contact{
-  font-family:'Jost',system-ui,sans-serif;letter-spacing:.05em;
-  font-size:clamp(1rem,2vw,1.2rem);
-  color:var(--or);text-decoration:none;
-  border-bottom:1px solid rgba(201,168,76,.32);
-  padding-bottom:3px;transition:color .3s,border-color .3s;
-}
-.contact:hover{color:var(--or-light);border-color:var(--or-light);}
-.contact-methods{display:flex;flex-direction:column;align-items:center;gap:16px;}
-.site-foot{
-  margin-top:clamp(40px,7vh,72px);
-  font-family:'Jost',system-ui,sans-serif;text-transform:uppercase;
-  letter-spacing:.16em;font-size:.75rem;color:var(--creme);opacity:.78; /* lisibilité 05/10 */ /* tailles 05/10 */
-}
-.site-foot--alt{margin-top:8px;opacity:.78;} /* lisibilité 05/10 */
-.site-foot-links{margin-top:10px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap;}
-.site-foot-links a{
-  padding:12px 10px;
-  font-family:'Jost',system-ui,sans-serif;text-transform:uppercase;
-  letter-spacing:.12em;font-size:.75rem;color:var(--creme);opacity:.82; /* tailles 05/10 */
-  text-decoration:none;transition:color .3s,opacity .3s;
-}
-.site-foot-links a:hover{color:var(--or);opacity:1;}
-
-@keyframes fadeUp{from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:translateY(0);}}
-/* le titre est peint visible dès le premier rendu (candidat LCP) : il glisse seulement, sans fondu */
-@keyframes riseIn{from{transform:translateY(14px);}to{transform:translateY(0);}}
-@keyframes flameGlow{
-  0%,100%{filter:drop-shadow(0 0 6px rgba(201,168,76,.22));}
-  50%{filter:drop-shadow(0 0 16px rgba(245,210,122,.42));}
-}
-@keyframes bob{0%,100%{transform:translateY(0);}50%{transform:translateY(4px);}}
-.divider,.tagline,.services,.scroll-cue{animation:fadeUp .9s var(--ease) both;}
-.logo-svg{animation:fadeUp .9s var(--ease) both;}
-.accroche{animation:riseIn 1.1s var(--ease) both;}
-.logo-svg{animation-delay:.15s;}
-.tagline{animation-delay:.65s;}
-.divider{animation-delay:.45s;}
-.services{animation-delay:1.1s;}
-.scroll-cue{animation-delay:1.4s;}
-
-/* révélation au scroll (cascade) */
-.reveal > *{opacity:0;transform:translateY(22px);transition:opacity .75s var(--ease),transform .75s var(--ease);}
-.reveal.is-visible > *{opacity:1;transform:none;}
-.reveal.is-visible > *:nth-child(2){transition-delay:.06s;}
-.reveal.is-visible > *:nth-child(3){transition-delay:.12s;}
-.reveal.is-visible > *:nth-child(4){transition-delay:.18s;}
-.reveal.is-visible > *:nth-child(5){transition-delay:.24s;}
-/* les items des grilles sont des petits-enfants : sans ceci ils arrivent tous ensemble */
-.reveal .steps > *,.reveal .cards > *,.reveal .works > *,.reveal .faq-list > *,.reveal .temoignages > *{
-  opacity:0;transform:translateY(16px);
-  transition:opacity var(--d-enter) var(--ease),transform var(--d-enter) var(--ease);
-}
-.reveal.is-visible .steps > *,.reveal.is-visible .cards > *,.reveal.is-visible .works > *,
-.reveal.is-visible .faq-list > *,.reveal.is-visible .temoignages > *{opacity:1;transform:none;}
-.reveal.is-visible .steps > *:nth-child(1),.reveal.is-visible .cards > *:nth-child(1),
-.reveal.is-visible .works > *:nth-child(1),.reveal.is-visible .faq-list > *:nth-child(1),
-.reveal.is-visible .temoignages > *:nth-child(1){transition-delay:.24s;}
-.reveal.is-visible .steps > *:nth-child(2),.reveal.is-visible .cards > *:nth-child(2),
-.reveal.is-visible .works > *:nth-child(2),.reveal.is-visible .faq-list > *:nth-child(2),
-.reveal.is-visible .temoignages > *:nth-child(2){transition-delay:.30s;}
-.reveal.is-visible .steps > *:nth-child(3),.reveal.is-visible .cards > *:nth-child(3),
-.reveal.is-visible .works > *:nth-child(3),.reveal.is-visible .faq-list > *:nth-child(3){transition-delay:.36s;}
-.reveal.is-visible .steps > *:nth-child(4),.reveal.is-visible .works > *:nth-child(4),
-.reveal.is-visible .faq-list > *:nth-child(4){transition-delay:.42s;}
-.reveal.is-visible .faq-list > *:nth-child(5){transition-delay:.48s;}
-.reveal.is-visible .faq-list > *:nth-child(6){transition-delay:.54s;}
-/* le tactile déclenche un faux survol au tap : l'état resterait collé après le doigt */
-@media (hover:none){
-  .tbtn:hover,.card:hover,.offre-carte:hover,.work:hover{transform:none;}
-  .card:hover svg,.work:hover .work-img,.work:hover .work-link .ar{transform:none;}
-}
-
-@media (max-width:820px){
-  .steps{grid-template-columns:1fr;}
-  .cards{grid-template-columns:1fr;}
-  .work{grid-template-columns:1fr;}
-  .work:nth-child(even) .work-media{order:0;}
-  .work-img{height:auto;}
-}
-@media (max-width:600px){
-  .services{flex-direction:column;gap:18px;}
-  .sep{display:none;}
-  .accroche{font-size:clamp(1.55rem,8vw,2.2rem);}
-}
-@media (prefers-reduced-motion:reduce){
-  .logo-svg,.divider,.tagline,.accroche,.services,.scroll-cue{animation:none;opacity:1;transform:none;}
-  .fervia-flame,.scroll-cue .arrow{animation:none;}
-  /* on retire le déplacement, on garde le fondu : il aide à comprendre l'arrivée du contenu */
-  .reveal > *,
-  .reveal .steps > *,.reveal .cards > *,.reveal .works > *,.reveal .faq-list > *,.reveal .temoignages > *{
-    transform:none;transition:opacity .2s ease;
-  }
-  .reveal.is-visible > *,
-  .reveal.is-visible .steps > *,.reveal.is-visible .cards > *,.reveal.is-visible .works > *,
-  .reveal.is-visible .faq-list > *,.reveal.is-visible .temoignages > *{opacity:1;transition-delay:0s;}
-  .hero-bg{transform:none!important;}
-  .hero-ondes{display:none;}
-  /* les survols ne doivent plus déplacer non plus */
-  .tbtn:hover,.card:hover,.offre-carte:hover,.work:hover,
-  .card:hover svg,.work:hover .work-img,.work:hover .work-link .ar{transform:none;}
-  /* on garde les fondus, on retire les déplacements et les mises à l'échelle */
-  .faq-item[open] .faq-answer{animation:none;}
-  .cf-status{transform:none;transition:opacity .2s ease;}
-  .cf-select-list{transform:none;transition:opacity .15s ease,display .15s allow-discrete;}
-  .cf-select-list[hidden]{transform:none;}
-  /* on remplace la mise à l'échelle par un retour d'opacité, plutôt que de tout supprimer */
-  .tbtn:active,.offre-cta:active,.work:active,.cf-select-trigger:active,.faq-item summary:active{
-    transform:none;opacity:.72;transition:opacity .1s ease;
-  }
-}
-/* ===== FORMULAIRE DE CONTACT ===== */
-.contact-form{max-width:34em;margin:0 auto clamp(30px,5vh,44px);text-align:left;}
-.cf-row{display:flex;gap:14px;flex-wrap:wrap;}
-.cf-field{margin-bottom:16px;flex:1 1 200px;display:flex;flex-direction:column;}
-.cf-field label,.cf-select-label{font-family:'Jost',system-ui,sans-serif;text-transform:uppercase;letter-spacing:.12em;font-size:.75rem;color:var(--or);opacity:1;margin-bottom:7px;} /* tailles 05/10 */
-.contact-form input,.contact-form textarea,.contact-form select{font-family:'Jost',system-ui,sans-serif;font-size:1rem;color:var(--creme);background:rgba(14,28,48,.55); /* tailles 05/10 */border:1px solid rgba(201,168,76,.3);border-radius:4px;padding:12px 14px;width:100%;transition:border-color .3s,background .3s;}
-.contact-form input:focus,.contact-form textarea:focus,.contact-form select:focus{border-color:var(--or);background:rgba(14,28,48,.78);}
-.contact-form textarea{min-height:128px;resize:vertical;line-height:1.5;} /* tailles 05/10 */
-.contact-form input::placeholder,.contact-form textarea::placeholder{color:rgba(245,240,230,.78);} /* lisibilité 05/10 */
-.cf-consent{display:flex;align-items:flex-start;gap:10px;margin:2px 0 20px;font-family:'Jost',system-ui,sans-serif;font-size:1rem;color:var(--creme);opacity:.92;line-height:1.5;} /* lisibilité 05/10 */ /* tailles 05/10 */
-.cf-consent input{width:auto;flex:none;margin-top:5px;accent-color:var(--or);}
-.cf-consent a{color:var(--or);}
-.contact-submit{cursor:pointer;width:100%;font-size:.8rem;font-family:'Jost',system-ui,sans-serif;}
-.contact-submit:disabled{opacity:.5;cursor:not-allowed;}
-.cf-hp{position:absolute!important;left:-9999px;width:1px;height:1px;overflow:hidden;}
-.cf-status{
-  font-family:'Jost',system-ui,sans-serif;font-size:1rem;line-height:1.5;margin-top:15px;min-height:1.5em;text-align:center; /* tailles 05/10 */
-  /* le moment le plus rare du site mérite mieux qu'une apparition sèche */
-  opacity:0;transform:translateY(8px);
-  transition:opacity .5s var(--ease),transform .5s var(--ease);
-}
-.cf-status.ok,.cf-status.err{opacity:1;transform:none;}
-.cf-status.ok{color:var(--or-light);}
-.cf-status.err{color:#e8a0a0;}
-.contact-submit.is-sending{opacity:.75;cursor:progress;}
-/* ===== MENU DÉROULANT SUR MESURE (couleurs Fervia) ===== */
-.cf-select{position:relative;}
-.cf-select-trigger{
-  width:100%;display:flex;align-items:center;justify-content:space-between;gap:10px;
-  font-family:'Jost',system-ui,sans-serif;font-size:1rem;text-align:left;color:var(--creme); /* tailles 05/10 */
-  background:rgba(14,28,48,.55);border:1px solid rgba(201,168,76,.3);border-radius:4px;
-  padding:12px 14px;cursor:pointer;transition:border-color .3s,background .3s;
-}
-.cf-select-trigger:hover{border-color:rgba(201,168,76,.55);}
-.cf-select-trigger:active{transform:scale(.98);transition:transform var(--d-press) var(--ease);}
-.cf-select-trigger[aria-expanded="true"]{border-color:var(--or);background:rgba(14,28,48,.78);}
-.cf-select-arrow{
-  width:8px;height:8px;flex:none;border-right:1.5px solid var(--or);border-bottom:1.5px solid var(--or);
-  transform:translateY(-2px) rotate(45deg);transition:transform var(--d-ui) var(--ease);
-}
-.cf-select-trigger[aria-expanded="true"] .cf-select-arrow{transform:translateY(-2px) rotate(225deg);}
-.cf-select-list{
-  position:absolute;top:calc(100% + 6px);left:0;right:0;z-index:30;
-  list-style:none;margin:0;padding:5px;
-  background:#0b1726;border:1px solid var(--or);border-radius:6px;
-  box-shadow:0 16px 40px rgba(0,0,0,.55);
-  max-height:260px;overflow-y:auto;
-  /* le panneau s'ouvre depuis son déclencheur, pas depuis nulle part */
-  opacity:1;transform:scale(1);transform-origin:top center;
-  transition:opacity var(--d-ui) var(--ease),transform var(--d-ui) var(--ease),display var(--d-ui) allow-discrete;
-}
-.cf-select-list[hidden]{display:none;opacity:0;transform:scale(.96);}
-@starting-style{.cf-select-list:not([hidden]){opacity:0;transform:scale(.96);}}
-.cf-select-opt{
-  font-family:'Jost',system-ui,sans-serif;font-size:1rem;line-height:1.5; /* tailles 05/10 */
-  color:var(--creme);padding:11px 12px;border-radius:4px;cursor:pointer;
-  transition:background .2s,color .2s;
-}
-.cf-select-opt:hover,.cf-select-opt.is-active{background:rgba(201,168,76,.16);color:var(--or-light);}
-.cf-select-opt.is-selected{color:var(--or);font-weight:500;}
-.cf-select-opt.is-selected::after{content:' ✓';color:var(--or);}
-.contact-sep{font-family:'Jost',system-ui,sans-serif;text-transform:uppercase;letter-spacing:.12em;font-size:.75rem;color:var(--creme);opacity:.78;margin:0 0 16px;} /* lisibilité 05/10 */ /* tailles 05/10 */
-/* ===== TÉMOIGNAGES ===== */
-.temoignages{
-  margin:clamp(40px,7vh,72px) auto 0;max-width:1000px;
-  display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(30px,4vw,52px);
-}
-@media (max-width:760px){.temoignages{grid-template-columns:1fr;gap:38px;}}
-.temoignage{text-align:center;}
-.temoignage-stars{color:var(--or);letter-spacing:.3em;font-size:.95rem;margin-bottom:14px;}
-.temoignage blockquote{
-  font-size:clamp(1.05rem,1.7vw,1.25rem);font-style:italic;line-height:1.55;
-  color:var(--creme);opacity:.92;
-}
-.temoignage figcaption{
-  margin-top:14px;font-family:'Jost',system-ui,sans-serif;
-  font-size:.82rem;letter-spacing:.11em;text-transform:uppercase; /* tailles 05/10 */
-  color:var(--or);opacity:.85;
-}
-/* ===== FAQ ===== */
-.faq-list{border-top:1px solid rgba(201,168,76,.22);}
-.faq-item{border-bottom:1px solid rgba(201,168,76,.22);}
-.faq-item summary{
-  list-style:none;cursor:pointer;position:relative;
-  padding:22px 44px 22px 0;
-  font-size:clamp(1.2rem,2.4vw,1.5rem);font-weight:500;line-height:1.3;
-  transition:color .3s;
-}
-.faq-item summary::-webkit-details-marker{display:none;}
-.faq-item summary::after{
-  content:"";position:absolute;right:6px;top:50%;
-  width:10px;height:10px;transform:translateY(-70%) rotate(45deg);
-  border-right:1.5px solid var(--or);border-bottom:1.5px solid var(--or);
-  transition:transform .3s ease;
-}
-.faq-item[open] summary::after{transform:translateY(-30%) rotate(225deg);}
-.faq-item summary:active{transform:scale(.98);transition:transform var(--d-press) var(--ease);}
-.faq-item summary:hover{color:var(--or-light);}
-.faq-answer{
-  font-family:'Jost',system-ui,sans-serif;font-weight:400; /* lisibilité 05/10 */
-  font-size:1rem;line-height:1.7;color:rgba(245,240,230,.92); /* tailles 05/10 */ /* lisibilité 05/10 : couleur alpha et non opacité : le strong reste en crème pleine */
-  padding:0 0 24px;max-width:34em;
-}
-/* la réponse se dépose au lieu de claquer d'un coup */
-.faq-item[open] .faq-answer{animation:faqOpen .28s var(--ease);}
-@keyframes faqOpen{from{opacity:0;transform:translateY(-6px);}to{opacity:1;transform:none;}} /* lisibilité 05/10 */
-.faq-answer strong{font-weight:500;color:var(--creme);} /* lisibilité 05/10 */
-
-/* ===== SECTIONS CLAIRES (25/10) : #methode, #offres, #realisations en blanc cassé =====
-   Couleurs pleines plutôt qu'opacité : chaque couple texte/fond garde un contraste calculé (AA).
-   encre 15,1:1 · encre-2 12,3:1 · encre-3 7,8:1 · encre-4 6,0:1 · or-encre 5,0:1 sur --creme */
-.section--alt{
-  --encre:var(--navy-deep);
-  --encre-2:#202D3F;
-  --encre-3:#414B58;
-  --encre-4:#535C67;
-  --or-encre:#87601F;
-  --carte:#FFFDF8;
-  --filet:rgba(135,96,31,.24);
-  --filet-fort:rgba(135,96,31,.5);
-  background:var(--creme);color:var(--encre);
-}
-.section--alt ::selection{background:rgba(168,121,42,.24);color:var(--encre);}
-.section--alt :focus-visible{outline-color:var(--or-encre);}
-/* #offres et #realisations se suivent toutes deux claires : un filet d'or profond, à la largeur du contenu */
-#realisations::before{
-  content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);
-  width:min(980px,calc(100% - 48px));height:1px;
-  background:linear-gradient(90deg,transparent,var(--or-deep) 18%,var(--or-deep) 82%,transparent);
-  opacity:.55;
-}
-.section--alt .eyebrow{color:var(--or-encre);opacity:1;}
-.section--alt .s-title .gold,
-.section--alt .lead .gold{color:var(--or-encre);}
-.section--alt .lead{color:var(--encre-2);opacity:1;}
-
-/* Méthode */
-.section--alt .step{border-top-color:var(--filet);}
-.section--alt .step::before{background:linear-gradient(90deg,var(--or-deep),var(--or-encre));}
-.section--alt .step-num{background-image:linear-gradient(135deg,var(--or-deep) 0%,var(--or-encre) 55%,#6F4F19 100%);}
-.section--alt .step-text{color:var(--encre-2);opacity:1;}
-
-/* Offres */
-.section--alt .offre-lancement{border-color:var(--or-deep);background:rgba(168,121,42,.07);}
-.section--alt .offre-lancement p{color:var(--encre-2);opacity:1;}
-.section--alt .offre-lancement strong{color:var(--or-encre);}
-.section--alt .offre-places{color:var(--encre-3);opacity:1;}
-.section--alt .offre-puce{border-color:var(--or-deep);}
-.section--alt .offre-puce.prise{background:var(--or-deep);}
-.section--alt .offre-carte{
-  background:var(--carte);border-color:var(--filet);
-  box-shadow:0 1px 2px rgba(14,28,48,.04),0 10px 28px -20px rgba(14,28,48,.18);
-}
-.section--alt .offre-carte:hover{border-color:var(--filet-fort);box-shadow:0 1px 2px rgba(14,28,48,.05),0 22px 44px -26px rgba(14,28,48,.28);}
-.section--alt .offre-vedette{
-  border-color:var(--or-deep);
-  background:linear-gradient(180deg,#FFFDF8 0%,#FAF4E6 100%);
-  box-shadow:0 1px 2px rgba(14,28,48,.05),0 18px 40px -24px rgba(135,96,31,.35);
-}
-.section--alt .offre-vedette:hover{border-color:var(--or-encre);}
-/* la flamme dorée garde son dégradé, décalé vers le foncé pour tenir sur fond clair */
-.section--alt .offre-palier-flamme stop:nth-child(1){stop-color:var(--or);}
-.section--alt .offre-palier-flamme stop:nth-child(2){stop-color:var(--or-deep);}
-.section--alt .offre-palier-flamme stop:nth-child(3){stop-color:#7A561B;}
-.section--alt .offre-palier-nom{color:var(--or-encre);}
-.section--alt .offre-palier-promesse{color:var(--encre-2);opacity:1;}
-.section--alt .offre-prix-bloc{border-bottom-color:var(--filet);}
-.section--alt .offre-prix-prefix{color:var(--encre-3);opacity:1;}
-.section--alt .offre-prix,
-.section--alt .offre-prix-sur-mesure{color:var(--encre);}
-.section--alt .offre-recurrent{color:var(--encre-3);}
-.section--alt .offre-recurrent strong{color:var(--encre);}
-.section--alt .offre-liste li{color:var(--encre-2);opacity:1;}
-.section--alt .offre-liste li::before{border-color:var(--or-encre);}
-.section--alt .offre-liste li.titre-sous{color:var(--or-encre);opacity:1;}
-.section--alt .offre-liste li.absent{color:var(--encre-4);opacity:1;}
-.section--alt .offre-liste li.absent::before{color:var(--encre-4);}
-.section--alt .offre-cta{border-color:var(--or-deep);color:var(--or-encre);}
-.section--alt .offre-cta:hover{color:var(--navy-deep);border-color:transparent;box-shadow:0 10px 22px -12px rgba(135,96,31,.55);}
-.section--alt .offre-cta.plein{color:var(--navy-deep);border-color:transparent;}
-.section--alt .offre-cta.plein:hover{box-shadow:0 10px 22px -12px rgba(135,96,31,.55);}
-.section--alt .offre-note{color:var(--encre-3);opacity:1;}
-.section--alt .offre-mini{border-color:var(--filet);background:rgba(255,253,248,.55);}
-.section--alt .offre-mini:hover{border-color:var(--filet-fort);background:var(--carte);}
-.section--alt .offre-mini-eyebrow{color:var(--or-encre);opacity:1;}
-.section--alt .offre-mini h3{color:var(--encre);}
-.section--alt .offre-mini p{color:var(--encre-2);opacity:1;}
-.section--alt .offre-mini p strong{color:var(--or-encre);}
-.section--alt .offre-mini-cta{color:var(--or-encre);}
-.section--alt .offre-liens-info{color:var(--encre-3);opacity:1;}
-.section--alt .offre-liens-info a{color:var(--encre);}
-.section--alt .offre-liens-info a:hover{color:var(--or-encre);}
-
-/* Réalisations */
-.section--alt .work{
-  background:var(--carte);border-color:var(--filet);
-  box-shadow:0 1px 2px rgba(14,28,48,.04),0 12px 32px -22px rgba(14,28,48,.2);
-}
-.section--alt .work:hover{border-color:var(--filet-fort);box-shadow:0 1px 2px rgba(14,28,48,.05),0 28px 54px -30px rgba(14,28,48,.32);}
-.section--alt .work-media::after{background:linear-gradient(180deg,transparent 60%,rgba(14,28,48,.22) 100%);}
-.section--alt .work-tag{color:var(--or-encre);opacity:1;}
-.section--alt .work p{color:var(--encre-2);opacity:1;}
-.section--alt .work-link{color:var(--or-encre);}
-.section--alt .work:hover .work-link{color:#6F4F19;}
-.section--alt .work--static:hover{border-color:var(--filet);box-shadow:0 1px 2px rgba(14,28,48,.04),0 12px 32px -22px rgba(14,28,48,.2);}
-.section--alt .work-link--static{color:var(--encre-3);opacity:1;}
-/* la vignette des logos reste sombre : les logos (or et crème) y ont été dessinés */
-.section--alt .temoignage-stars{color:var(--or-deep);}
-.section--alt .temoignage blockquote{color:var(--encre-2);opacity:1;}
-.section--alt .temoignage figcaption{color:var(--or-encre);opacity:1;}
-
-/* Barre de navigation au-dessus d'une section claire : reste sombre, plus couvrante, pour ne pas se laver */
-.topbar.visible.topbar--clair{background:rgba(14,28,48,.94);border-bottom-color:rgba(201,168,76,.28);}
-</style>
+<meta name="theme-color" content="#F5F8F8">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<link rel="preload" href="assets/fonts/manrope-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/ibm-plex-mono-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/site.css">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "ProfessionalService",
+      "@type": [
+        "Organization",
+        "ProfessionalService"
+      ],
       "@id": "https://fervia.be/#business",
       "name": "Fervia",
       "description": "Studio créatif digital à Wavre : développement web, applications mobiles et agents IA, l'artisanat du digital accéléré par l'IA.",
@@ -881,23 +56,133 @@ a{color:inherit;}
       "geo": {
         "@type": "GeoCoordinates",
         "latitude": 50.7167,
-        "longitude": 4.6000
+        "longitude": 4.6
       },
       "areaServed": [
-        { "@type": "Country", "name": "Belgique" },
-        { "@type": "AdministrativeArea", "name": "Brabant wallon" }
+        {
+          "@type": "Country",
+          "name": "Belgique"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Brabant wallon"
+        }
       ],
-      "knowsLanguage": ["fr", "en"],
+      "knowsLanguage": [
+        "fr",
+        "en"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "email": "contact@fervia.be",
+        "telephone": "+32465935655",
+        "availableLanguage": [
+          "fr",
+          "en"
+        ],
+        "areaServed": "BE"
+      },
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
         "name": "Services Fervia",
         "itemListElement": [
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Développement web", "description": "Sites vitrines et applications web sur mesure." } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Application mobile", "description": "Applications mobiles iOS et Android." } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Identité visuelle", "description": "Logo, charte graphique et identité de marque." } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Outil métier sur mesure", "description": "Application faite pour votre activité, prix fixe sans abonnement obligatoire." } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Agents IA", "description": "Un agent IA par métier, installé chez le client et entretenu par Fervia, prix selon le métier (500 € par mois pour la prospection).", "url": "https://fervia.be/agents-ia/" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pack SEO et Google Ads", "description": "Forfait mensuel du site, suivi du référencement, mise en place et gestion de la campagne Google Ads : 300 € par mois pour l'Essentiel, 400 € pour le Signature, hors budget publicitaire payé par le client à Google, trois mois minimum." } }
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Site internet Essentiel",
+              "description": "Site d'une page, design sur mesure, rédaction des textes, nom de domaine et mise en ligne. Puis 25 € par mois (hébergement, sécurité, entretien, petites modifications).",
+              "url": "https://fervia.be/creation-site-internet/"
+            },
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "minPrice": 1200,
+              "priceCurrency": "EUR",
+              "valueAddedTaxIncluded": false,
+              "description": "À partir de 1 200 € hors TVA, puis 25 € par mois"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Site internet Signature",
+              "description": "Site de 5 à 6 pages avec SEO local de départ et fiche Google Business optimisée. Puis 50 € par mois (hébergement, sécurité, entretien, petites modifications).",
+              "url": "https://fervia.be/creation-site-internet/"
+            },
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "minPrice": 2900,
+              "priceCurrency": "EUR",
+              "valueAddedTaxIncluded": false,
+              "description": "À partir de 2 900 € hors TVA, puis 50 € par mois"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Outil métier sur mesure",
+              "description": "Application faite pour votre activité, prix fixe, sans abonnement obligatoire, livrée en 7 jours ouvrables.",
+              "url": "https://fervia.be/outil-metier/"
+            },
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "minPrice": 750,
+              "priceCurrency": "EUR",
+              "valueAddedTaxIncluded": false,
+              "description": "À partir de 750 € hors TVA"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Agents IA",
+              "description": "Un agent IA par métier, installé chez le client et entretenu par Fervia, prix selon le métier (500 € par mois pour la prospection).",
+              "url": "https://fervia.be/agents-ia/"
+            },
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "minPrice": 500,
+              "priceCurrency": "EUR",
+              "valueAddedTaxIncluded": false,
+              "description": "500 € par mois hors TVA pour la prospection, les autres métiers sur devis"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Pack SEO et Google Ads",
+              "description": "Forfait mensuel du site, suivi du référencement, mise en place et gestion de la campagne Google Ads : 300 € par mois pour l'Essentiel, 400 € pour le Signature, hors budget publicitaire payé par le client à Google, trois mois minimum."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Application mobile",
+              "description": "Applications mobiles iOS et Android."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Identité visuelle",
+              "description": "Logo, charte graphique et identité de marque."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Boutique en ligne, réservation, application web",
+              "description": "Projets sur mesure, tarification dédiée sur devis."
+            }
+          }
         ]
       }
     },
@@ -907,7 +192,9 @@ a{color:inherit;}
       "url": "https://fervia.be/",
       "name": "Fervia",
       "inLanguage": "fr-BE",
-      "publisher": { "@id": "https://fervia.be/#business" }
+      "publisher": {
+        "@id": "https://fervia.be/#business"
+      }
     },
     {
       "@type": "FAQPage",
@@ -916,639 +203,343 @@ a{color:inherit;}
         {
           "@type": "Question",
           "name": "Combien coûte la création d'un site internet en Belgique ?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Un site une page élégant et complet démarre à 1 200 € (offre Essentiel). Un site de 5 à 6 pages avec SEO local et fiche Google Business optimisée : à partir de 2 900 € (offre Signature). Boutique en ligne, réservation ou application : sur devis. Chaque offre inclut le design sur mesure, la rédaction des textes, le nom de domaine et la mise en ligne." }
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Un site une page élégant et complet démarre à 1 200 € (offre Essentiel). Un site de 5 à 6 pages avec SEO local et fiche Google Business optimisée : à partir de 2 900 € (offre Signature). Boutique en ligne, réservation ou application : sur devis. Chaque offre inclut le design sur mesure, la rédaction des textes, le nom de domaine et la mise en ligne."
+          }
         },
         {
           "@type": "Question",
           "name": "En combien de temps mon site est-il en ligne ?",
-          "acceptedAnswer": { "@type": "Answer", "text": "La plupart des sites vitrines sont en ligne en quelques semaines. Le délai dépend surtout du nombre de pages et de la préparation de vos contenus. Il est fixé dès le cadrage, par écrit. Un outil métier sur mesure est livré en 7 jours ouvrables." }
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La plupart des sites vitrines sont en ligne en quelques semaines. Le délai dépend surtout du nombre de pages et de la préparation de vos contenus. Il est fixé dès le cadrage, par écrit. Un outil métier sur mesure est livré en 7 jours ouvrables."
+          }
         },
         {
           "@type": "Question",
           "name": "Travaillez-vous uniquement à Wavre ?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Fervia est basé à Wavre, au cœur du Brabant wallon, et travaille aussi bien en rendez-vous qu'à distance : Ottignies, Louvain-la-Neuve, Rixensart, Waterloo, Bruxelles et toute la Belgique francophone. Le détail de la zone desservie est sur la page consacrée au Brabant wallon." }
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Fervia est basé à Wavre, au cœur du Brabant wallon, et travaille aussi bien en rendez-vous qu'à distance : Ottignies, Louvain-la-Neuve, Rixensart, Waterloo, Bruxelles et toute la Belgique francophone. Le détail de la zone desservie est sur la page consacrée au Brabant wallon."
+          }
         },
         {
           "@type": "Question",
           "name": "Le référencement Google (SEO) est-il inclus ?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Les fondations techniques du référencement (structure propre, vitesse, balisage, données structurées) sont incluses dans chaque site. L'offre Signature ajoute un SEO local approfondi : optimisation pour les recherches dans votre ville et fiche Google Business. Ce travail est fait à la création du site. Le suivi mensuel du référencement est en option, en plus du forfait : +50 € par mois pour l'Essentiel, +100 € pour le Signature. Il comprend la fiche Google Business tenue (une publication par semaine, réponses aux avis) et un contrôle mensuel de vos chiffres Google, avec un court compte rendu. Aucune place sur Google ne peut être garantie : c'est un travail suivi, pas un classement promis." }
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Les fondations techniques du référencement (structure propre, vitesse, balisage, données structurées) sont incluses dans chaque site. L'offre Signature ajoute un SEO local approfondi : optimisation pour les recherches dans votre ville et fiche Google Business. Ce travail est fait à la création du site. Le suivi mensuel du référencement est en option, en plus du forfait : +50 € par mois pour l'Essentiel, +100 € pour le Signature. Il comprend la fiche Google Business tenue (une publication par semaine, réponses aux avis) et un contrôle mensuel de vos chiffres Google, avec un court compte rendu. Aucune place sur Google ne peut être garantie : c'est un travail suivi, pas un classement promis."
+          }
         },
         {
           "@type": "Question",
           "name": "Que comprend le forfait mensuel ?",
-          "acceptedAnswer": { "@type": "Answer", "text": "L'hébergement, la sécurité, l'entretien, les mises à jour et les petites modifications de contenu : 25 € par mois pour l'Essentiel, 50 € pour le Signature. Pour un site, ce forfait fait partie de l'offre ; l'ajout de pages n'y entre pas, il se devise à part, et le suivi du référencement est en option. Pour l'outil métier, l'entretien (29 € par mois) est facultatif : votre application continue de fonctionner sans lui." }
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "L'hébergement, la sécurité, l'entretien, les mises à jour et les petites modifications de contenu : 25 € par mois pour l'Essentiel, 50 € pour le Signature. Pour un site, ce forfait fait partie de l'offre ; l'ajout de pages n'y entre pas, il se devise à part, et le suivi du référencement est en option. Pour l'outil métier, l'entretien (29 € par mois) est facultatif : votre application continue de fonctionner sans lui."
+          }
         },
         {
           "@type": "Question",
           "name": "Pouvez-vous aussi gérer ma publicité sur Google ?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Oui, avec le pack SEO et Google Ads : 300 € par mois pour l'Essentiel, 400 € pour le Signature, hors TVA. Il remplace le forfait mensuel et comprend le suivi du référencement, la mise en place de votre campagne et sa gestion : lecture des recherches qui déclenchent vos annonces, exclusions, ajustements et un compte rendu chaque mois. Le budget publicitaire est payé par vous, directement à Google, sur un compte à votre nom. Une campagne se juge sur deux à trois mois : le pack se prend pour trois mois minimum." }
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui, avec le pack SEO et Google Ads : 300 € par mois pour l'Essentiel, 400 € pour le Signature, hors TVA. Il remplace le forfait mensuel et comprend le suivi du référencement, la mise en place de votre campagne et sa gestion : lecture des recherches qui déclenchent vos annonces, exclusions, ajustements et un compte rendu chaque mois. Le budget publicitaire est payé par vous, directement à Google, sur un compte à votre nom. Une campagne se juge sur deux à trois mois : le pack se prend pour trois mois minimum."
+          }
         },
         {
           "@type": "Question",
           "name": "L'IA remplace-t-elle le travail de création ?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Non. L'IA absorbe le répétitif (exploration de pistes, itérations, tests) pour que le temps aille à l'essentiel : comprendre votre besoin et soigner chaque détail. Chaque choix de design et chaque livraison restent validés par une main humaine." }
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Non. L'IA absorbe le répétitif (exploration de pistes, itérations, tests) pour que le temps aille à l'essentiel : comprendre votre besoin et soigner chaque détail. Chaque choix de design et chaque livraison restent validés par une main humaine."
+          }
         }
       ]
     }
   ]
 }
 </script>
-<noscript><style>
-/* sans JS, rien ne pose .is-visible : le corps de la page resterait invisible */
-.reveal > *,
-.reveal .steps > *,.reveal .cards > *,.reveal .works > *,.reveal .faq-list > *,.reveal .temoignages > *{
-  opacity:1 !important;transform:none !important;transition:none !important;
-}
-</style></noscript>
+<script>document.documentElement.classList.add('js')</script>
+<script>/* Thème posé AVANT le premier rendu : aucun flash. Choix mémorisé > réglage système. */
+(function(){try{var r=document.documentElement,s=localStorage.getItem('fervia-theme'),
+sys=window.matchMedia&&window.matchMedia('(prefers-color-scheme:dark)').matches,
+t=(s==='dark'||s==='light')?s:(sys?'dark':'light');
+r.setAttribute('data-theme',t);
+var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute('content',t==='dark'?'#0E2A31':'#F5F8F8');
+}catch(e){}})();</script>
+
 </head>
 <body>
-<a class="skip-link" href="#methode">Aller au contenu</a>
-<header class="topbar" id="topbar">
-  <a class="topbar-brand" href="#top" aria-label="Fervia, haut de page">
-    <svg class="topbar-flame" viewBox="388 226 226 384" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M567.317,347.521c35.36,50.817 49.883,138.235 17.301,204.89c-10.528,21.539 -26.089,44.373 -62.525,45.458c-42.8,1.275 -74.178,-48.506 -42.145,-88.042c30.053,-37.091 101.649,-54.984 87.369,-162.306Zm12.31,53.537c-5.963,35.591 -23.875,57.951 -43.408,75.76c-16.657,15.186 -34.89,26.477 -46.558,40.878c-24.577,30.333 -0.777,68.657 32.06,67.679c30.356,-0.904 42.895,-20.508 51.667,-38.453c22.104,-45.221 21.055,-100.62 6.239,-145.864Z" fill="url(#_tbFlame1)"/><path d="M490.391,237.971c-4.47,-3.855 111.996,76.729 40.025,155.3c-132.885,145.073 -57.458,199.556 -57.434,201.171c0.037,2.55 -142.56,-86.1 -36.644,-208.904c50.451,-58.495 74.523,-129.911 54.053,-147.567Zm-50.877,312.108c-2.892,-33.918 10.638,-87.687 81.685,-165.251c27.653,-30.189 22.608,-60.738 9.17,-84.896c-6.058,-10.892 -13.714,-20.584 -21.093,-28.559c-4.631,32.481 -27.498,80.619 -63.472,122.329c-26.092,30.251 -36.05,58.06 -36.107,82.744c-0.071,30.149 14.197,55.289 29.817,73.633Z" fill="url(#_tbFlame2)"/><defs><linearGradient id="_tbFlame1" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(2.84217e-14,436.729,-647.489,5.68434e-14,500,187.124)"><stop offset="0" stop-color="#f5d27a"/><stop offset="0.5" stop-color="#d4a84f"/><stop offset="1" stop-color="#a8792a"/></linearGradient><linearGradient id="_tbFlame2" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(2.67419e-14,436.729,-647.489,3.96472e-14,500,187.124)"><stop offset="0" stop-color="#f5d27a"/><stop offset="0.5" stop-color="#d4a84f"/><stop offset="1" stop-color="#a8792a"/></linearGradient></defs></svg>
-    <svg class="topbar-wordmark" viewBox="202.3 645.8 595.4 178.2" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M203.778,794.949c-0.319,-0 -0.479,-0.353 -0.479,-1.058c-0,-0.705 0.16,-1.058 0.479,-1.058c4.124,0 7.196,-0.293 9.216,-0.881c2.02,-0.587 3.369,-1.763 4.049,-3.525c0.679,-1.763 1.019,-4.348 1.019,-7.756l-0,-81.615c-0,-3.408 -0.319,-5.964 -0.956,-7.668c-0.635,-1.704 -1.9,-2.879 -3.793,-3.525c-1.891,-0.647 -4.771,-0.97 -8.64,-0.97c-0.321,0 -0.482,-0.352 -0.482,-1.058c0,-0.705 0.161,-1.057 0.482,-1.057l73.382,-0c1.142,-0 1.713,0.529 1.713,1.586l0.353,22.864c-0,0.266 -0.302,0.442 -0.906,0.528c-0.602,0.085 -0.989,-0.049 -1.16,-0.402c-1.362,-6.707 -4.099,-11.709 -8.21,-15.005c-4.11,-3.296 -9.516,-4.944 -16.22,-4.944l-7.181,0c-4.3,0 -7.313,0.748 -9.039,2.245c-1.726,1.494 -2.589,4.022 -2.589,7.582l-0,80.733c-0,3.526 0.477,6.199 1.432,8.021c0.957,1.821 2.851,3.085 5.682,3.79c2.833,0.705 7.04,1.057 12.62,1.057c0.267,0 0.4,0.353 0.4,1.058c-0,0.705 -0.133,1.058 -0.4,1.058c-3.931,-0 -8.185,-0.059 -12.763,-0.177c-4.578,-0.117 -9.835,-0.176 -15.771,-0.176c-4.102,0 -8.087,0.059 -11.954,0.176c-3.865,0.118 -7.293,0.177 -10.284,0.177Zm65.414,-37.905c-0,-4.862 -1.668,-8.585 -5.005,-11.168c-3.334,-2.584 -8.404,-3.875 -15.209,-3.875l-22.147,-0l0,-4.501l22.47,0c6.707,0 11.669,-1.153 14.886,-3.459c3.219,-2.306 4.829,-5.548 4.829,-9.726c-0,-0.235 0.352,-0.352 1.057,-0.352c0.705,-0 1.058,0.117 1.058,0.352c0,3.834 -0.029,6.798 -0.088,8.891c-0.059,2.093 -0.088,4.283 -0.088,6.569c-0,2.841 0.058,5.631 0.176,8.37c0.118,2.74 0.176,5.706 0.176,8.899c0,0.322 -0.352,0.482 -1.057,0.482c-0.705,0 -1.058,-0.16 -1.058,-0.482Z" style="fill:url(#_tbWord);fill-rule:nonzero;"/><path d="M372.488,794.949l-76.505,-0c-0.322,-0 -0.482,-0.353 -0.482,-1.058c-0,-0.705 0.16,-1.058 0.482,-1.058c3.869,0 6.749,-0.293 8.64,-0.881c1.893,-0.587 3.157,-1.763 3.793,-3.525c0.637,-1.763 0.955,-4.348 0.955,-7.756l0,-81.615c0,-3.408 -0.318,-5.964 -0.955,-7.668c-0.636,-1.704 -1.9,-2.879 -3.793,-3.525c-1.891,-0.647 -4.771,-0.97 -8.64,-0.97c-0.322,0 -0.482,-0.352 -0.482,-1.058c-0,-0.705 0.16,-1.057 0.482,-1.057l73.382,-0c1.142,-0 1.713,0.529 1.713,1.586l0.353,22.864c-0,0.266 -0.302,0.442 -0.907,0.528c-0.602,0.085 -0.988,-0.049 -1.159,-0.402c-1.363,-6.707 -4.099,-11.709 -8.211,-15.005c-4.109,-3.296 -9.516,-4.944 -16.22,-4.944l-7.18,0c-2.899,0 -5.202,0.315 -6.908,0.945c-1.705,0.63 -2.919,1.69 -3.641,3.181c-0.72,1.491 -1.079,3.472 -1.079,5.944l-0,80.49c-0,2.523 0.317,4.565 0.953,6.126c0.637,1.561 1.68,2.677 3.128,3.349c1.451,0.672 3.455,1.008 6.013,1.008l8.679,0c7.937,0 14.377,-1.928 19.318,-5.784c4.941,-3.858 8.462,-9.562 10.563,-17.112c0.086,-0.353 0.46,-0.456 1.121,-0.311c0.663,0.143 0.994,0.348 0.994,0.614c-0.47,3.311 -0.873,7.239 -1.209,11.785c-0.336,4.545 -0.504,8.766 -0.504,12.665c-0,1.762 -0.898,2.644 -2.694,2.644Zm-9.871,-39.89c-0,-4.949 -1.628,-8.715 -4.883,-11.298c-3.254,-2.584 -8.213,-3.876 -14.876,-3.876l-24.717,0l-0,-4.5l24.989,-0c6.513,-0 11.36,-1.124 14.54,-3.371c3.181,-2.248 4.771,-5.476 4.771,-9.684c-0,-0.322 0.331,-0.482 0.994,-0.482c0.663,-0 0.994,0.16 0.994,0.482c0,3.747 -0.029,6.668 -0.088,8.761c-0.059,2.093 -0.088,4.283 -0.088,6.569c-0,2.84 0.08,5.631 0.24,8.37c0.159,2.74 0.239,5.749 0.239,9.029c0,0.235 -0.352,0.352 -1.057,0.352c-0.706,0 -1.058,-0.117 -1.058,-0.352Z" style="fill:url(#_tbWord);fill-rule:nonzero;"/><path d="M507.986,823.024c-1.827,0 -4.798,-2.227 -8.913,-6.682c-4.115,-4.456 -37.139,-38.955 -42.921,-47.347c-5.78,-8.393 -12.283,-18.407 -19.509,-30.041l14.086,-4.305c9.594,14.22 17.768,25.595 24.521,34.126c6.754,8.529 40.823,42.746 46.058,46.501c5.235,3.755 10.252,5.633 15.05,5.633c0.266,-0 0.399,0.352 0.399,1.058c-0,0.705 -0.133,1.057 -0.399,1.057l-28.372,0Zm-68.205,-138.775c10.326,0 18.253,2.025 23.78,6.076c5.527,4.049 8.29,9.583 8.29,16.603c0,6.738 -1.907,12.741 -5.72,18.007c-3.814,5.266 -8.747,9.368 -14.799,12.306c-6.052,2.938 -12.508,4.407 -19.368,4.407c-1.484,0 -3.037,-0.016 -4.66,-0.047c-1.623,-0.033 -3.108,-0.108 -4.454,-0.226l0,39.296c0,3.408 0.309,5.993 0.928,7.756c0.621,1.762 1.885,2.938 3.793,3.525c1.91,0.588 4.799,0.881 8.668,0.881c0.268,0 0.402,0.353 0.402,1.058c-0,0.705 -0.134,1.058 -0.402,1.058c-2.992,-0 -6.311,-0.059 -9.96,-0.177c-3.647,-0.117 -7.654,-0.176 -12.022,-0.176c-4.1,0 -8.02,0.059 -11.758,0.176c-3.739,0.118 -7.103,0.177 -10.095,0.177c-0.321,-0 -0.482,-0.353 -0.482,-1.058c0,-0.705 0.161,-1.058 0.482,-1.058c3.869,0 6.758,-0.293 8.665,-0.881c1.908,-0.587 3.209,-1.763 3.903,-3.525c0.696,-1.763 1.044,-4.348 1.044,-7.756l-0,-81.615c-0,-3.408 -0.319,-5.964 -0.956,-7.668c-0.635,-1.704 -1.898,-2.879 -3.79,-3.525c-1.891,-0.647 -4.772,-0.97 -8.643,-0.97c-0.266,0 -0.399,-0.352 -0.399,-1.058c0,-0.705 0.133,-1.057 0.399,-1.057c2.96,-0 6.28,0.088 9.96,0.264c3.68,0.177 7.57,0.265 11.67,0.265c3.814,-0 8.065,-0.177 12.755,-0.529c4.691,-0.353 8.948,-0.529 12.769,-0.529Zm14.785,28.843c-0,-6.772 -0.795,-11.995 -2.383,-15.669c-1.586,-3.676 -3.8,-6.239 -6.64,-7.687c-2.839,-1.449 -6.152,-2.174 -9.938,-2.174c-4.572,0 -7.841,0.85 -9.808,2.548c-1.965,1.699 -2.947,4.798 -2.947,9.299l0,37.273c1.645,0.202 3.416,0.362 5.313,0.479c1.897,0.118 3.566,0.177 5.007,0.177c7.808,-0 13.326,-1.966 16.554,-5.897c3.228,-3.933 4.842,-10.05 4.842,-18.349Z" style="fill:url(#_tbWord);fill-rule:nonzero;"/><path d="M611.609,684.778c0.352,-0 0.528,0.352 0.528,1.057c0,0.706 -0.176,1.058 -0.528,1.058c-4.154,0 -7.995,1.574 -11.524,4.721c-3.529,3.145 -6.436,7.714 -8.72,13.705l-34.307,89.453c-0.118,0.471 -0.735,0.706 -1.851,0.706c-1.117,-0 -1.792,-0.235 -2.028,-0.706l-62.161,-133.316c-1.997,-4.242 -4.07,-7.388 -6.219,-9.439c-2.146,-2.051 -4.716,-3.077 -7.709,-3.077c-0.353,0 -0.529,-0.352 -0.529,-1.057c0,-0.705 0.176,-1.058 0.529,-1.058c1.474,0 2.723,0.059 3.746,0.176c1.023,0.118 2.257,0.206 3.704,0.265c1.449,0.059 3.449,0.088 5.999,0.088c5.547,-0 10.135,-0.029 13.763,-0.088c3.629,-0.059 6.646,-0.147 9.054,-0.265c2.407,-0.117 4.534,-0.176 6.381,-0.176c0.353,0 0.529,0.353 0.529,1.058c-0,0.705 -0.176,1.057 -0.529,1.057c-4.89,0 -8.19,1.225 -9.901,3.675c-1.71,2.447 -1.48,5.999 0.688,10.656l51.714,111.536l-7.315,12.27l31.845,-82.433c1.985,-5.306 2.075,-9.591 0.27,-12.854c-1.805,-3.265 -5.7,-4.897 -11.684,-4.897c-0.352,0 -0.529,-0.352 -0.529,-1.058c0,-0.705 0.177,-1.057 0.529,-1.057c3.213,-0 6.275,0.088 9.186,0.264c2.91,0.177 6.746,0.265 11.507,0.265c3.323,-0 6.013,-0.088 8.07,-0.265c2.057,-0.176 4.554,-0.264 7.492,-0.264Z" style="fill:url(#_tbWord);fill-rule:nonzero;"/><path d="M649.155,780.671c-0,3.408 0.309,5.993 0.928,7.756c0.621,1.762 1.885,2.938 3.793,3.525c1.909,0.588 4.799,0.881 8.667,0.881c0.32,0 0.48,0.353 0.48,1.058c-0,0.705 -0.16,1.058 -0.48,1.058c-3.013,-0 -6.34,-0.059 -9.981,-0.177c-3.639,-0.117 -7.656,-0.176 -12.05,-0.176c-4.168,0 -8.116,0.059 -11.843,0.176c-3.726,0.118 -7.105,0.177 -10.136,0.177c-0.268,-0 -0.402,-0.353 -0.402,-1.058c-0,-0.705 0.15,-1.058 0.451,-1.058c3.82,0 6.709,-0.293 8.668,-0.881c1.959,-0.587 3.278,-1.763 3.955,-3.525c0.68,-1.763 1.019,-4.348 1.019,-7.756l0,-81.615c0,-3.408 -0.329,-5.964 -0.988,-7.668c-0.66,-1.704 -1.978,-2.879 -3.956,-3.525c-1.977,-0.647 -4.893,-0.97 -8.747,-0.97c-0.268,0 -0.402,-0.352 -0.402,-1.058c-0,-0.705 0.134,-1.057 0.402,-1.057c3.031,-0 6.41,0.088 10.136,0.264c3.727,0.177 7.675,0.265 11.843,0.265c4.394,-0 8.442,-0.088 12.144,-0.265c3.703,-0.176 6.999,-0.264 9.887,-0.264c0.32,-0 0.48,0.352 0.48,1.057c-0,0.706 -0.16,1.058 -0.48,1.058c-3.812,0 -6.67,0.353 -8.576,1.058c-1.905,0.705 -3.183,1.939 -3.834,3.702c-0.652,1.762 -0.978,4.348 -0.978,7.756l-0,81.262Z" style="fill:url(#_tbWord);fill-rule:nonzero;"/><path d="M702.142,751.77l2.354,-4.451l49.36,0l1.234,4.451l-52.948,0Zm93.725,41.063c0.556,0 0.834,0.353 0.834,1.058c0,0.705 -0.278,1.058 -0.834,1.058c-3.462,-0 -7.053,-0.118 -10.775,-0.353c-3.722,-0.235 -7.297,-0.352 -10.725,-0.352c-3.898,-0 -7.276,0.117 -10.133,0.352c-2.857,0.235 -6.043,0.353 -9.557,0.353c-0.471,-0 -0.706,-0.353 -0.706,-1.058c0,-0.705 0.235,-1.058 0.706,-1.058c5.302,0 8.465,-0.944 9.488,-2.834c1.023,-1.891 0.162,-5.603 -2.584,-11.135l-36.899,-74.806l7.184,-11.816l-34.787,78.596c-3.108,7.084 -3.216,12.521 -0.322,16.311c2.894,3.79 7.825,5.684 14.793,5.684c0.588,0 0.881,0.353 0.881,1.058c0,0.705 -0.293,1.058 -0.881,1.058c-3.525,-0 -6.757,-0.118 -9.695,-0.353c-2.938,-0.235 -6.64,-0.352 -11.105,-0.352c-4.453,-0 -8.028,0.117 -10.725,0.352c-2.698,0.235 -5.979,0.353 -9.844,0.353c-0.47,-0 -0.705,-0.353 -0.705,-1.058c-0,-0.705 0.235,-1.058 0.705,-1.058c3.173,0 5.912,-0.65 8.219,-1.952c2.308,-1.304 4.575,-3.675 6.803,-7.115c2.227,-3.439 4.729,-8.319 7.505,-14.641l37.863,-85.344c0.151,-0.353 0.639,-0.55 1.465,-0.592c0.827,-0.043 1.299,0.155 1.416,0.592l43.198,87.018c2.787,5.621 5.218,10.047 7.291,13.279c2.073,3.231 4.06,5.499 5.963,6.803c1.902,1.302 3.89,1.952 5.963,1.952Z" style="fill:url(#_tbWord);fill-rule:nonzero;"/><defs><linearGradient id="_tbWord" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(3.01874,214.03,-214.03,3.01874,507.44,632.939)"><stop offset="0" stop-color="#f5d27a"/><stop offset="0.5" stop-color="#d4a84f"/><stop offset="1" stop-color="#a8792a"/></linearGradient></defs></svg>
-  </a>
-  <div class="topbar-right">
-    <nav class="topbar-nav" aria-label="Sections du site">
-      <a href="#methode">Méthode</a>
-      <a href="#services">Services</a>
-      <a href="#offres">Offres</a>
-      <a href="#realisations">Réalisations</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    <div class="topbar-actions">
-      <a class="tbtn tbtn--mail" href="mailto:contact@fervia.be" aria-label="Envoyer un email à contact@fervia.be">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-      </a>
-      <a class="tbtn tbtn--phone" href="tel:+32465935655" aria-label="Appeler Fervia au 0465 93 56 55">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-      </a>
+<svg width="0" height="0" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true" focusable="false"><defs>
+  <linearGradient id="flg1" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(2.84217e-14,436.729,-647.489,5.68434e-14,500,187.124)"><stop offset="0" stop-color="#9BE3D6"/><stop offset=".5" stop-color="#14A39A"/><stop offset="1" stop-color="#0B5D66"/></linearGradient><linearGradient id="flg2" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(2.67419e-14,436.729,-647.489,3.96472e-14,500,187.124)"><stop offset="0" stop-color="#9BE3D6"/><stop offset=".5" stop-color="#14A39A"/><stop offset="1" stop-color="#0B5D66"/></linearGradient><g id="fv-flame"><path d="M567.317,347.521c35.36,50.817 49.883,138.235 17.301,204.89c-10.528,21.539 -26.089,44.373 -62.525,45.458c-42.8,1.275 -74.178,-48.506 -42.145,-88.042c30.053,-37.091 101.649,-54.984 87.369,-162.306Zm12.31,53.537c-5.963,35.591 -23.875,57.951 -43.408,75.76c-16.657,15.186 -34.89,26.477 -46.558,40.878c-24.577,30.333 -0.777,68.657 32.06,67.679c30.356,-0.904 42.895,-20.508 51.667,-38.453c22.104,-45.221 21.055,-100.62 6.239,-145.864Z" fill="url(#flg1)"/><path d="M490.391,237.971c-4.47,-3.855 111.996,76.729 40.025,155.3c-132.885,145.073 -57.458,199.556 -57.434,201.171c0.037,2.55 -142.56,-86.1 -36.644,-208.904c50.451,-58.495 74.523,-129.911 54.053,-147.567Zm-50.877,312.108c-2.892,-33.918 10.638,-87.687 81.685,-165.251c27.653,-30.189 22.608,-60.738 9.17,-84.896c-6.058,-10.892 -13.714,-20.584 -21.093,-28.559c-4.631,32.481 -27.498,80.619 -63.472,122.329c-26.092,30.251 -36.05,58.06 -36.107,82.744c-0.071,30.149 14.197,55.289 29.817,73.633Z" fill="url(#flg2)"/></g>
+  <!-- Lettrage FERVIA (R et V liés), tracés du kit logo, graisse moyenne = contour 3,5 % de la capitale. Couleurs : --fv-ink, --fv-accent (sur .fv-logo) ; flamme : --fv-f0/f1/f2 sur :root. -->
+  <linearGradient id="fvh-g1" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(2.84217e-14,436.729,-647.489,5.68434e-14,500,187.124)"><stop offset="0" style="stop-color:var(--fv-f0)"/><stop offset=".5" style="stop-color:var(--fv-f1)"/><stop offset="1" style="stop-color:var(--fv-f2)"/></linearGradient><linearGradient id="fvh-g2" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(2.84217e-14,436.729,-647.489,5.68434e-14,500,187.124)"><stop offset="0" style="stop-color:var(--fv-f0)"/><stop offset=".5" style="stop-color:var(--fv-f1)"/><stop offset="1" style="stop-color:var(--fv-f2)"/></linearGradient><linearGradient id="fvh-d1" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(2.84217e-14,436.729,-647.489,5.68434e-14,500,187.124)"><stop offset="0" stop-color="#8FD3C7"/><stop offset=".5" stop-color="#58C5B8"/><stop offset="1" stop-color="#2E9C98"/></linearGradient><linearGradient id="fvh-d2" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(2.84217e-14,436.729,-647.489,5.68434e-14,500,187.124)"><stop offset="0" stop-color="#8FD3C7"/><stop offset=".5" stop-color="#58C5B8"/><stop offset="1" stop-color="#2E9C98"/></linearGradient><g id="fv-lettrage-m"><path d="M203.778,794.949c-0.319,-0 -0.479,-0.353 -0.479,-1.058c-0,-0.705 0.16,-1.058 0.479,-1.058c4.124,0 7.196,-0.293 9.216,-0.881c2.02,-0.587 3.369,-1.763 4.049,-3.525c0.679,-1.763 1.019,-4.348 1.019,-7.756l-0,-81.615c-0,-3.408 -0.319,-5.964 -0.956,-7.668c-0.635,-1.704 -1.9,-2.879 -3.793,-3.525c-1.891,-0.647 -4.771,-0.97 -8.64,-0.97c-0.321,0 -0.482,-0.352 -0.482,-1.058c0,-0.705 0.161,-1.057 0.482,-1.057l73.382,-0c1.142,-0 1.713,0.529 1.713,1.586l0.353,22.864c-0,0.266 -0.302,0.442 -0.906,0.528c-0.602,0.085 -0.989,-0.049 -1.16,-0.402c-1.362,-6.707 -4.099,-11.709 -8.21,-15.005c-4.11,-3.296 -9.516,-4.944 -16.22,-4.944l-7.181,0c-4.3,0 -7.313,0.748 -9.039,2.245c-1.726,1.494 -2.589,4.022 -2.589,7.582l-0,80.733c-0,3.526 0.477,6.199 1.432,8.021c0.957,1.821 2.851,3.085 5.682,3.79c2.833,0.705 7.04,1.057 12.62,1.057c0.267,0 0.4,0.353 0.4,1.058c-0,0.705 -0.133,1.058 -0.4,1.058c-3.931,-0 -8.185,-0.059 -12.763,-0.177c-4.578,-0.117 -9.835,-0.176 -15.771,-0.176c-4.102,0 -8.087,0.059 -11.954,0.176c-3.865,0.118 -7.293,0.177 -10.284,0.177Zm65.414,-37.905c-0,-4.862 -1.668,-8.585 -5.005,-11.168c-3.334,-2.584 -8.404,-3.875 -15.209,-3.875l-22.147,-0l0,-4.501l22.47,0c6.707,0 11.669,-1.153 14.886,-3.459c3.219,-2.306 4.829,-5.548 4.829,-9.726c-0,-0.235 0.352,-0.352 1.057,-0.352c0.705,-0 1.058,0.117 1.058,0.352c0,3.834 -0.029,6.798 -0.088,8.891c-0.059,2.093 -0.088,4.283 -0.088,6.569c-0,2.841 0.058,5.631 0.176,8.37c0.118,2.74 0.176,5.706 0.176,8.899c0,0.322 -0.352,0.482 -1.057,0.482c-0.705,0 -1.058,-0.16 -1.058,-0.482Z" style="fill:var(--fv-ink);fill-rule:nonzero;stroke:var(--fv-ink);stroke-width:3.856;stroke-linejoin:round;paint-order:stroke"/><path d="M372.488,794.949l-76.505,-0c-0.322,-0 -0.482,-0.353 -0.482,-1.058c-0,-0.705 0.16,-1.058 0.482,-1.058c3.869,0 6.749,-0.293 8.64,-0.881c1.893,-0.587 3.157,-1.763 3.793,-3.525c0.637,-1.763 0.955,-4.348 0.955,-7.756l0,-81.615c0,-3.408 -0.318,-5.964 -0.955,-7.668c-0.636,-1.704 -1.9,-2.879 -3.793,-3.525c-1.891,-0.647 -4.771,-0.97 -8.64,-0.97c-0.322,0 -0.482,-0.352 -0.482,-1.058c-0,-0.705 0.16,-1.057 0.482,-1.057l73.382,-0c1.142,-0 1.713,0.529 1.713,1.586l0.353,22.864c-0,0.266 -0.302,0.442 -0.907,0.528c-0.602,0.085 -0.988,-0.049 -1.159,-0.402c-1.363,-6.707 -4.099,-11.709 -8.211,-15.005c-4.109,-3.296 -9.516,-4.944 -16.22,-4.944l-7.18,0c-2.899,0 -5.202,0.315 -6.908,0.945c-1.705,0.63 -2.919,1.69 -3.641,3.181c-0.72,1.491 -1.079,3.472 -1.079,5.944l-0,80.49c-0,2.523 0.317,4.565 0.953,6.126c0.637,1.561 1.68,2.677 3.128,3.349c1.451,0.672 3.455,1.008 6.013,1.008l8.679,0c7.937,0 14.377,-1.928 19.318,-5.784c4.941,-3.858 8.462,-9.562 10.563,-17.112c0.086,-0.353 0.46,-0.456 1.121,-0.311c0.663,0.143 0.994,0.348 0.994,0.614c-0.47,3.311 -0.873,7.239 -1.209,11.785c-0.336,4.545 -0.504,8.766 -0.504,12.665c-0,1.762 -0.898,2.644 -2.694,2.644Zm-9.871,-39.89c-0,-4.949 -1.628,-8.715 -4.883,-11.298c-3.254,-2.584 -8.213,-3.876 -14.876,-3.876l-24.717,0l-0,-4.5l24.989,-0c6.513,-0 11.36,-1.124 14.54,-3.371c3.181,-2.248 4.771,-5.476 4.771,-9.684c-0,-0.322 0.331,-0.482 0.994,-0.482c0.663,-0 0.994,0.16 0.994,0.482c0,3.747 -0.029,6.668 -0.088,8.761c-0.059,2.093 -0.088,4.283 -0.088,6.569c-0,2.84 0.08,5.631 0.24,8.37c0.159,2.74 0.239,5.749 0.239,9.029c0,0.235 -0.352,0.352 -1.057,0.352c-0.706,0 -1.058,-0.117 -1.058,-0.352Z" style="fill:var(--fv-ink);fill-rule:nonzero;stroke:var(--fv-ink);stroke-width:3.856;stroke-linejoin:round;paint-order:stroke"/><path d="M507.986,823.024c-1.827,0 -4.798,-2.227 -8.913,-6.682c-4.115,-4.456 -37.139,-38.955 -42.921,-47.347c-5.78,-8.393 -12.283,-18.407 -19.509,-30.041l14.086,-4.305c9.594,14.22 17.768,25.595 24.521,34.126c6.754,8.529 40.823,42.746 46.058,46.501c5.235,3.755 10.252,5.633 15.05,5.633c0.266,-0 0.399,0.352 0.399,1.058c-0,0.705 -0.133,1.057 -0.399,1.057l-28.372,0Zm-68.205,-138.775c10.326,0 18.253,2.025 23.78,6.076c5.527,4.049 8.29,9.583 8.29,16.603c0,6.738 -1.907,12.741 -5.72,18.007c-3.814,5.266 -8.747,9.368 -14.799,12.306c-6.052,2.938 -12.508,4.407 -19.368,4.407c-1.484,0 -3.037,-0.016 -4.66,-0.047c-1.623,-0.033 -3.108,-0.108 -4.454,-0.226l0,39.296c0,3.408 0.309,5.993 0.928,7.756c0.621,1.762 1.885,2.938 3.793,3.525c1.91,0.588 4.799,0.881 8.668,0.881c0.268,0 0.402,0.353 0.402,1.058c-0,0.705 -0.134,1.058 -0.402,1.058c-2.992,-0 -6.311,-0.059 -9.96,-0.177c-3.647,-0.117 -7.654,-0.176 -12.022,-0.176c-4.1,0 -8.02,0.059 -11.758,0.176c-3.739,0.118 -7.103,0.177 -10.095,0.177c-0.321,-0 -0.482,-0.353 -0.482,-1.058c0,-0.705 0.161,-1.058 0.482,-1.058c3.869,0 6.758,-0.293 8.665,-0.881c1.908,-0.587 3.209,-1.763 3.903,-3.525c0.696,-1.763 1.044,-4.348 1.044,-7.756l-0,-81.615c-0,-3.408 -0.319,-5.964 -0.956,-7.668c-0.635,-1.704 -1.898,-2.879 -3.79,-3.525c-1.891,-0.647 -4.772,-0.97 -8.643,-0.97c-0.266,0 -0.399,-0.352 -0.399,-1.058c0,-0.705 0.133,-1.057 0.399,-1.057c2.96,-0 6.28,0.088 9.96,0.264c3.68,0.177 7.57,0.265 11.67,0.265c3.814,-0 8.065,-0.177 12.755,-0.529c4.691,-0.353 8.948,-0.529 12.769,-0.529Zm14.785,28.843c-0,-6.772 -0.795,-11.995 -2.383,-15.669c-1.586,-3.676 -3.8,-6.239 -6.64,-7.687c-2.839,-1.449 -6.152,-2.174 -9.938,-2.174c-4.572,0 -7.841,0.85 -9.808,2.548c-1.965,1.699 -2.947,4.798 -2.947,9.299l0,37.273c1.645,0.202 3.416,0.362 5.313,0.479c1.897,0.118 3.566,0.177 5.007,0.177c7.808,-0 13.326,-1.966 16.554,-5.897c3.228,-3.933 4.842,-10.05 4.842,-18.349Z" style="fill:var(--fv-accent);fill-rule:nonzero;stroke:var(--fv-accent);stroke-width:3.856;stroke-linejoin:round;paint-order:stroke"/><path d="M611.609,684.778c0.352,-0 0.528,0.352 0.528,1.057c0,0.706 -0.176,1.058 -0.528,1.058c-4.154,0 -7.995,1.574 -11.524,4.721c-3.529,3.145 -6.436,7.714 -8.72,13.705l-34.307,89.453c-0.118,0.471 -0.735,0.706 -1.851,0.706c-1.117,-0 -1.792,-0.235 -2.028,-0.706l-62.161,-133.316c-1.997,-4.242 -4.07,-7.388 -6.219,-9.439c-2.146,-2.051 -4.716,-3.077 -7.709,-3.077c-0.353,0 -0.529,-0.352 -0.529,-1.057c0,-0.705 0.176,-1.058 0.529,-1.058c1.474,0 2.723,0.059 3.746,0.176c1.023,0.118 2.257,0.206 3.704,0.265c1.449,0.059 3.449,0.088 5.999,0.088c5.547,-0 10.135,-0.029 13.763,-0.088c3.629,-0.059 6.646,-0.147 9.054,-0.265c2.407,-0.117 4.534,-0.176 6.381,-0.176c0.353,0 0.529,0.353 0.529,1.058c-0,0.705 -0.176,1.057 -0.529,1.057c-4.89,0 -8.19,1.225 -9.901,3.675c-1.71,2.447 -1.48,5.999 0.688,10.656l51.714,111.536l-7.315,12.27l31.845,-82.433c1.985,-5.306 2.075,-9.591 0.27,-12.854c-1.805,-3.265 -5.7,-4.897 -11.684,-4.897c-0.352,0 -0.529,-0.352 -0.529,-1.058c0,-0.705 0.177,-1.057 0.529,-1.057c3.213,-0 6.275,0.088 9.186,0.264c2.91,0.177 6.746,0.265 11.507,0.265c3.323,-0 6.013,-0.088 8.07,-0.265c2.057,-0.176 4.554,-0.264 7.492,-0.264Z" style="fill:var(--fv-accent);fill-rule:nonzero;stroke:var(--fv-accent);stroke-width:3.856;stroke-linejoin:round;paint-order:stroke"/><path d="M649.155,780.671c-0,3.408 0.309,5.993 0.928,7.756c0.621,1.762 1.885,2.938 3.793,3.525c1.909,0.588 4.799,0.881 8.667,0.881c0.32,0 0.48,0.353 0.48,1.058c-0,0.705 -0.16,1.058 -0.48,1.058c-3.013,-0 -6.34,-0.059 -9.981,-0.177c-3.639,-0.117 -7.656,-0.176 -12.05,-0.176c-4.168,0 -8.116,0.059 -11.843,0.176c-3.726,0.118 -7.105,0.177 -10.136,0.177c-0.268,-0 -0.402,-0.353 -0.402,-1.058c-0,-0.705 0.15,-1.058 0.451,-1.058c3.82,0 6.709,-0.293 8.668,-0.881c1.959,-0.587 3.278,-1.763 3.955,-3.525c0.68,-1.763 1.019,-4.348 1.019,-7.756l0,-81.615c0,-3.408 -0.329,-5.964 -0.988,-7.668c-0.66,-1.704 -1.978,-2.879 -3.956,-3.525c-1.977,-0.647 -4.893,-0.97 -8.747,-0.97c-0.268,0 -0.402,-0.352 -0.402,-1.058c-0,-0.705 0.134,-1.057 0.402,-1.057c3.031,-0 6.41,0.088 10.136,0.264c3.727,0.177 7.675,0.265 11.843,0.265c4.394,-0 8.442,-0.088 12.144,-0.265c3.703,-0.176 6.999,-0.264 9.887,-0.264c0.32,-0 0.48,0.352 0.48,1.057c-0,0.706 -0.16,1.058 -0.48,1.058c-3.812,0 -6.67,0.353 -8.576,1.058c-1.905,0.705 -3.183,1.939 -3.834,3.702c-0.652,1.762 -0.978,4.348 -0.978,7.756l-0,81.262Z" style="fill:var(--fv-ink);fill-rule:nonzero;stroke:var(--fv-ink);stroke-width:3.856;stroke-linejoin:round;paint-order:stroke"/><path d="M702.142,751.77l2.354,-4.451l49.36,0l1.234,4.451l-52.948,0Zm93.725,41.063c0.556,0 0.834,0.353 0.834,1.058c0,0.705 -0.278,1.058 -0.834,1.058c-3.462,-0 -7.053,-0.118 -10.775,-0.353c-3.722,-0.235 -7.297,-0.352 -10.725,-0.352c-3.898,-0 -7.276,0.117 -10.133,0.352c-2.857,0.235 -6.043,0.353 -9.557,0.353c-0.471,-0 -0.706,-0.353 -0.706,-1.058c0,-0.705 0.235,-1.058 0.706,-1.058c5.302,0 8.465,-0.944 9.488,-2.834c1.023,-1.891 0.162,-5.603 -2.584,-11.135l-36.899,-74.806l7.184,-11.816l-34.787,78.596c-3.108,7.084 -3.216,12.521 -0.322,16.311c2.894,3.79 7.825,5.684 14.793,5.684c0.588,0 0.881,0.353 0.881,1.058c0,0.705 -0.293,1.058 -0.881,1.058c-3.525,-0 -6.757,-0.118 -9.695,-0.353c-2.938,-0.235 -6.64,-0.352 -11.105,-0.352c-4.453,-0 -8.028,0.117 -10.725,0.352c-2.698,0.235 -5.979,0.353 -9.844,0.353c-0.47,-0 -0.705,-0.353 -0.705,-1.058c-0,-0.705 0.235,-1.058 0.705,-1.058c3.173,0 5.912,-0.65 8.219,-1.952c2.308,-1.304 4.575,-3.675 6.803,-7.115c2.227,-3.439 4.729,-8.319 7.505,-14.641l37.863,-85.344c0.151,-0.353 0.639,-0.55 1.465,-0.592c0.827,-0.043 1.299,0.155 1.416,0.592l43.198,87.018c2.787,5.621 5.218,10.047 7.291,13.279c2.073,3.231 4.06,5.499 5.963,6.803c1.902,1.302 3.89,1.952 5.963,1.952Z" style="fill:var(--fv-ink);fill-rule:nonzero;stroke:var(--fv-ink);stroke-width:3.856;stroke-linejoin:round;paint-order:stroke"/></g><g id="fv-logo-h"><g transform="translate(-199.101 457.613) scale(0.61128)"><path d="M567.317,347.521c35.36,50.817 49.883,138.235 17.301,204.89c-10.528,21.539 -26.089,44.373 -62.525,45.458c-42.8,1.275 -74.178,-48.506 -42.145,-88.042c30.053,-37.091 101.649,-54.984 87.369,-162.306Zm12.31,53.537c-5.963,35.591 -23.875,57.951 -43.408,75.76c-16.657,15.186 -34.89,26.477 -46.558,40.878c-24.577,30.333 -0.777,68.657 32.06,67.679c30.356,-0.904 42.895,-20.508 51.667,-38.453c22.104,-45.221 21.055,-100.62 6.239,-145.864Z" style="fill:url(#fvh-g1);fill-rule:nonzero"/><path d="M490.391,237.971c-4.47,-3.855 111.996,76.729 40.025,155.3c-132.885,145.073 -57.458,199.556 -57.434,201.171c0.037,2.55 -142.56,-86.1 -36.644,-208.904c50.451,-58.495 74.523,-129.911 54.053,-147.567Zm-50.877,312.108c-2.892,-33.918 10.638,-87.687 81.685,-165.251c27.653,-30.189 22.608,-60.738 9.17,-84.896c-6.058,-10.892 -13.714,-20.584 -21.093,-28.559c-4.631,32.481 -27.498,80.619 -63.472,122.329c-26.092,30.251 -36.05,58.06 -36.107,82.744c-0.071,30.149 14.197,55.289 29.817,73.633Z" style="fill:url(#fvh-g2);fill-rule:nonzero"/></g><use href="#fv-lettrage-m"/></g></g><g id="fv-logo-hd"><g transform="translate(-199.101 457.613) scale(0.61128)"><path d="M567.317,347.521c35.36,50.817 49.883,138.235 17.301,204.89c-10.528,21.539 -26.089,44.373 -62.525,45.458c-42.8,1.275 -74.178,-48.506 -42.145,-88.042c30.053,-37.091 101.649,-54.984 87.369,-162.306Zm12.31,53.537c-5.963,35.591 -23.875,57.951 -43.408,75.76c-16.657,15.186 -34.89,26.477 -46.558,40.878c-24.577,30.333 -0.777,68.657 32.06,67.679c30.356,-0.904 42.895,-20.508 51.667,-38.453c22.104,-45.221 21.055,-100.62 6.239,-145.864Z" style="fill:url(#fvh-d1);fill-rule:nonzero"/><path d="M490.391,237.971c-4.47,-3.855 111.996,76.729 40.025,155.3c-132.885,145.073 -57.458,199.556 -57.434,201.171c0.037,2.55 -142.56,-86.1 -36.644,-208.904c50.451,-58.495 74.523,-129.911 54.053,-147.567Zm-50.877,312.108c-2.892,-33.918 10.638,-87.687 81.685,-165.251c27.653,-30.189 22.608,-60.738 9.17,-84.896c-6.058,-10.892 -13.714,-20.584 -21.093,-28.559c-4.631,32.481 -27.498,80.619 -63.472,122.329c-26.092,30.251 -36.05,58.06 -36.107,82.744c-0.071,30.149 14.197,55.289 29.817,73.633Z" style="fill:url(#fvh-d2);fill-rule:nonzero"/></g><use href="#fv-lettrage-m"/></g></g>
+  <symbol id="i-web" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="13" rx="2.5"/><path d="M8.5 21h7M12 17v4M10 8.6 8 10.5l2 1.9M14 8.6l2 1.9-2 1.9"/></symbol>
+  <symbol id="i-mob" viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="3"/><path d="M10.5 18.5h3"/></symbol>
+  <symbol id="i-ai" viewBox="0 0 24 24"><circle cx="10" cy="8.5" r="3.6"/><path d="M3.5 20.5c.8-3.7 3.4-5.6 6.5-5.6s5.7 1.9 6.5 5.6"/><path d="M18.2 2.8l.7 1.9 1.9.7-1.9.7-.7 1.9-.7-1.9-1.9-.7 1.9-.7z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7.5 8 5.5 8-5.5"/></symbol>
+  <symbol id="i-tel" viewBox="0 0 24 24"><path d="M6.6 3.5h2.6l1.4 4-2 1.4a12 12 0 0 0 6.5 6.5l1.4-2 4 1.4v2.6a2.2 2.2 0 0 1-2.4 2.1A17.5 17.5 0 0 1 4.5 5.9a2.2 2.2 0 0 1 2.1-2.4z"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-5.6-7-11.2A7 7 0 0 1 19 9.8C19 15.4 12 21 12 21z"/><circle cx="12" cy="9.8" r="2.6"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.2A8 8 0 0 1 9.8 4 7 7 0 1 0 20 14.2z"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"/></symbol>
+</defs></svg>
+<canvas id="depth" aria-hidden="true"></canvas>
+<a class="skip" href="#methode">Aller au contenu</a>
+
+<header class="hd" id="hd">
+  <div class="wrap">
+    <a class="fv-logo" href="#top" aria-label="Fervia, haut de page"><svg class="fv-lock" viewBox="43.20 602.50 755.93 222.95" aria-hidden="true" focusable="false"><use href="#fv-logo-h"/></svg><span class="sr-only">Fervia</span></a>
+    <nav class="nav" aria-label="Sections du site"><a href="#methode">Méthode</a><a href="#services">Services</a><a href="#offres">Offres</a><a href="realisations/">Réalisations</a><a href="#contact">Contact</a></nav>
+    <div class="hd-right">
+      <a class="icon-btn" href="mailto:contact@fervia.be" aria-label="Envoyer un e-mail à contact@fervia.be"><svg class="ico"><use href="#i-mail"/></svg></a>
+      <a class="icon-btn" href="tel:+32465935655" aria-label="Appeler Fervia au 0465 93 56 55"><svg class="ico"><use href="#i-tel"/></svg></a>
+      <a class="btn" href="#contact">Demander un devis</a>
+      <button class="icon-btn theme-btn" id="themeBtn" type="button" aria-label="Passer en mode sombre"><svg class="ico i-moon"><use href="#i-moon"/></svg><svg class="ico i-sun"><use href="#i-sun"/></svg></button>
+      <button class="icon-btn menu-btn" id="menuBtn" aria-label="Ouvrir le menu" aria-expanded="false"><svg class="ico" viewBox="0 0 24 24"><path d="M4 8h16M4 16h16"/></svg></button>
     </div>
   </div>
 </header>
-
-<section class="hero" id="top">
-  <div class="hero-bg" aria-hidden="true"></div>
-  <div class="hero-inner">
-  <div class="brand">
-  <svg class="logo-svg" role="img" aria-label="Logo Fervia" viewBox="185 219 630 622" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"><g class="fervia-flame"><path d="M567.317,347.521c35.36,50.817 49.883,138.235 17.301,204.89c-10.528,21.539 -26.089,44.373 -62.525,45.458c-42.8,1.275 -74.178,-48.506 -42.145,-88.042c30.053,-37.091 101.649,-54.984 87.369,-162.306Zm12.31,53.537c-5.963,35.591 -23.875,57.951 -43.408,75.76c-16.657,15.186 -34.89,26.477 -46.558,40.878c-24.577,30.333 -0.777,68.657 32.06,67.679c30.356,-0.904 42.895,-20.508 51.667,-38.453c22.104,-45.221 21.055,-100.62 6.239,-145.864Z" style="fill:url(#_Linear1);"/><path d="M490.391,237.971c-4.47,-3.855 111.996,76.729 40.025,155.3c-132.885,145.073 -57.458,199.556 -57.434,201.171c0.037,2.55 -142.56,-86.1 -36.644,-208.904c50.451,-58.495 74.523,-129.911 54.053,-147.567Zm-50.877,312.108c-2.892,-33.918 10.638,-87.687 81.685,-165.251c27.653,-30.189 22.608,-60.738 9.17,-84.896c-6.058,-10.892 -13.714,-20.584 -21.093,-28.559c-4.631,32.481 -27.498,80.619 -63.472,122.329c-26.092,30.251 -36.05,58.06 -36.107,82.744c-0.071,30.149 14.197,55.289 29.817,73.633Z" style="fill:url(#_Linear2);"/></g><g class="fervia-word"><path d="M203.778,794.949c-0.319,-0 -0.479,-0.353 -0.479,-1.058c-0,-0.705 0.16,-1.058 0.479,-1.058c4.124,0 7.196,-0.293 9.216,-0.881c2.02,-0.587 3.369,-1.763 4.049,-3.525c0.679,-1.763 1.019,-4.348 1.019,-7.756l-0,-81.615c-0,-3.408 -0.319,-5.964 -0.956,-7.668c-0.635,-1.704 -1.9,-2.879 -3.793,-3.525c-1.891,-0.647 -4.771,-0.97 -8.64,-0.97c-0.321,0 -0.482,-0.352 -0.482,-1.058c0,-0.705 0.161,-1.057 0.482,-1.057l73.382,-0c1.142,-0 1.713,0.529 1.713,1.586l0.353,22.864c-0,0.266 -0.302,0.442 -0.906,0.528c-0.602,0.085 -0.989,-0.049 -1.16,-0.402c-1.362,-6.707 -4.099,-11.709 -8.21,-15.005c-4.11,-3.296 -9.516,-4.944 -16.22,-4.944l-7.181,0c-4.3,0 -7.313,0.748 -9.039,2.245c-1.726,1.494 -2.589,4.022 -2.589,7.582l-0,80.733c-0,3.526 0.477,6.199 1.432,8.021c0.957,1.821 2.851,3.085 5.682,3.79c2.833,0.705 7.04,1.057 12.62,1.057c0.267,0 0.4,0.353 0.4,1.058c-0,0.705 -0.133,1.058 -0.4,1.058c-3.931,-0 -8.185,-0.059 -12.763,-0.177c-4.578,-0.117 -9.835,-0.176 -15.771,-0.176c-4.102,0 -8.087,0.059 -11.954,0.176c-3.865,0.118 -7.293,0.177 -10.284,0.177Zm65.414,-37.905c-0,-4.862 -1.668,-8.585 -5.005,-11.168c-3.334,-2.584 -8.404,-3.875 -15.209,-3.875l-22.147,-0l0,-4.501l22.47,0c6.707,0 11.669,-1.153 14.886,-3.459c3.219,-2.306 4.829,-5.548 4.829,-9.726c-0,-0.235 0.352,-0.352 1.057,-0.352c0.705,-0 1.058,0.117 1.058,0.352c0,3.834 -0.029,6.798 -0.088,8.891c-0.059,2.093 -0.088,4.283 -0.088,6.569c-0,2.841 0.058,5.631 0.176,8.37c0.118,2.74 0.176,5.706 0.176,8.899c0,0.322 -0.352,0.482 -1.057,0.482c-0.705,0 -1.058,-0.16 -1.058,-0.482Z" style="fill:url(#_Linear3);fill-rule:nonzero;"/><path d="M372.488,794.949l-76.505,-0c-0.322,-0 -0.482,-0.353 -0.482,-1.058c-0,-0.705 0.16,-1.058 0.482,-1.058c3.869,0 6.749,-0.293 8.64,-0.881c1.893,-0.587 3.157,-1.763 3.793,-3.525c0.637,-1.763 0.955,-4.348 0.955,-7.756l0,-81.615c0,-3.408 -0.318,-5.964 -0.955,-7.668c-0.636,-1.704 -1.9,-2.879 -3.793,-3.525c-1.891,-0.647 -4.771,-0.97 -8.64,-0.97c-0.322,0 -0.482,-0.352 -0.482,-1.058c-0,-0.705 0.16,-1.057 0.482,-1.057l73.382,-0c1.142,-0 1.713,0.529 1.713,1.586l0.353,22.864c-0,0.266 -0.302,0.442 -0.907,0.528c-0.602,0.085 -0.988,-0.049 -1.159,-0.402c-1.363,-6.707 -4.099,-11.709 -8.211,-15.005c-4.109,-3.296 -9.516,-4.944 -16.22,-4.944l-7.18,0c-2.899,0 -5.202,0.315 -6.908,0.945c-1.705,0.63 -2.919,1.69 -3.641,3.181c-0.72,1.491 -1.079,3.472 -1.079,5.944l-0,80.49c-0,2.523 0.317,4.565 0.953,6.126c0.637,1.561 1.68,2.677 3.128,3.349c1.451,0.672 3.455,1.008 6.013,1.008l8.679,0c7.937,0 14.377,-1.928 19.318,-5.784c4.941,-3.858 8.462,-9.562 10.563,-17.112c0.086,-0.353 0.46,-0.456 1.121,-0.311c0.663,0.143 0.994,0.348 0.994,0.614c-0.47,3.311 -0.873,7.239 -1.209,11.785c-0.336,4.545 -0.504,8.766 -0.504,12.665c-0,1.762 -0.898,2.644 -2.694,2.644Zm-9.871,-39.89c-0,-4.949 -1.628,-8.715 -4.883,-11.298c-3.254,-2.584 -8.213,-3.876 -14.876,-3.876l-24.717,0l-0,-4.5l24.989,-0c6.513,-0 11.36,-1.124 14.54,-3.371c3.181,-2.248 4.771,-5.476 4.771,-9.684c-0,-0.322 0.331,-0.482 0.994,-0.482c0.663,-0 0.994,0.16 0.994,0.482c0,3.747 -0.029,6.668 -0.088,8.761c-0.059,2.093 -0.088,4.283 -0.088,6.569c-0,2.84 0.08,5.631 0.24,8.37c0.159,2.74 0.239,5.749 0.239,9.029c0,0.235 -0.352,0.352 -1.057,0.352c-0.706,0 -1.058,-0.117 -1.058,-0.352Z" style="fill:url(#_Linear4);fill-rule:nonzero;"/><path d="M507.986,823.024c-1.827,0 -4.798,-2.227 -8.913,-6.682c-4.115,-4.456 -37.139,-38.955 -42.921,-47.347c-5.78,-8.393 -12.283,-18.407 -19.509,-30.041l14.086,-4.305c9.594,14.22 17.768,25.595 24.521,34.126c6.754,8.529 40.823,42.746 46.058,46.501c5.235,3.755 10.252,5.633 15.05,5.633c0.266,-0 0.399,0.352 0.399,1.058c-0,0.705 -0.133,1.057 -0.399,1.057l-28.372,0Zm-68.205,-138.775c10.326,0 18.253,2.025 23.78,6.076c5.527,4.049 8.29,9.583 8.29,16.603c0,6.738 -1.907,12.741 -5.72,18.007c-3.814,5.266 -8.747,9.368 -14.799,12.306c-6.052,2.938 -12.508,4.407 -19.368,4.407c-1.484,0 -3.037,-0.016 -4.66,-0.047c-1.623,-0.033 -3.108,-0.108 -4.454,-0.226l0,39.296c0,3.408 0.309,5.993 0.928,7.756c0.621,1.762 1.885,2.938 3.793,3.525c1.91,0.588 4.799,0.881 8.668,0.881c0.268,0 0.402,0.353 0.402,1.058c-0,0.705 -0.134,1.058 -0.402,1.058c-2.992,-0 -6.311,-0.059 -9.96,-0.177c-3.647,-0.117 -7.654,-0.176 -12.022,-0.176c-4.1,0 -8.02,0.059 -11.758,0.176c-3.739,0.118 -7.103,0.177 -10.095,0.177c-0.321,-0 -0.482,-0.353 -0.482,-1.058c0,-0.705 0.161,-1.058 0.482,-1.058c3.869,0 6.758,-0.293 8.665,-0.881c1.908,-0.587 3.209,-1.763 3.903,-3.525c0.696,-1.763 1.044,-4.348 1.044,-7.756l-0,-81.615c-0,-3.408 -0.319,-5.964 -0.956,-7.668c-0.635,-1.704 -1.898,-2.879 -3.79,-3.525c-1.891,-0.647 -4.772,-0.97 -8.643,-0.97c-0.266,0 -0.399,-0.352 -0.399,-1.058c0,-0.705 0.133,-1.057 0.399,-1.057c2.96,-0 6.28,0.088 9.96,0.264c3.68,0.177 7.57,0.265 11.67,0.265c3.814,-0 8.065,-0.177 12.755,-0.529c4.691,-0.353 8.948,-0.529 12.769,-0.529Zm14.785,28.843c-0,-6.772 -0.795,-11.995 -2.383,-15.669c-1.586,-3.676 -3.8,-6.239 -6.64,-7.687c-2.839,-1.449 -6.152,-2.174 -9.938,-2.174c-4.572,0 -7.841,0.85 -9.808,2.548c-1.965,1.699 -2.947,4.798 -2.947,9.299l0,37.273c1.645,0.202 3.416,0.362 5.313,0.479c1.897,0.118 3.566,0.177 5.007,0.177c7.808,-0 13.326,-1.966 16.554,-5.897c3.228,-3.933 4.842,-10.05 4.842,-18.349Z" style="fill:url(#_Linear5);fill-rule:nonzero;"/><path d="M611.609,684.778c0.352,-0 0.528,0.352 0.528,1.057c0,0.706 -0.176,1.058 -0.528,1.058c-4.154,0 -7.995,1.574 -11.524,4.721c-3.529,3.145 -6.436,7.714 -8.72,13.705l-34.307,89.453c-0.118,0.471 -0.735,0.706 -1.851,0.706c-1.117,-0 -1.792,-0.235 -2.028,-0.706l-62.161,-133.316c-1.997,-4.242 -4.07,-7.388 -6.219,-9.439c-2.146,-2.051 -4.716,-3.077 -7.709,-3.077c-0.353,0 -0.529,-0.352 -0.529,-1.057c0,-0.705 0.176,-1.058 0.529,-1.058c1.474,0 2.723,0.059 3.746,0.176c1.023,0.118 2.257,0.206 3.704,0.265c1.449,0.059 3.449,0.088 5.999,0.088c5.547,-0 10.135,-0.029 13.763,-0.088c3.629,-0.059 6.646,-0.147 9.054,-0.265c2.407,-0.117 4.534,-0.176 6.381,-0.176c0.353,0 0.529,0.353 0.529,1.058c-0,0.705 -0.176,1.057 -0.529,1.057c-4.89,0 -8.19,1.225 -9.901,3.675c-1.71,2.447 -1.48,5.999 0.688,10.656l51.714,111.536l-7.315,12.27l31.845,-82.433c1.985,-5.306 2.075,-9.591 0.27,-12.854c-1.805,-3.265 -5.7,-4.897 -11.684,-4.897c-0.352,0 -0.529,-0.352 -0.529,-1.058c0,-0.705 0.177,-1.057 0.529,-1.057c3.213,-0 6.275,0.088 9.186,0.264c2.91,0.177 6.746,0.265 11.507,0.265c3.323,-0 6.013,-0.088 8.07,-0.265c2.057,-0.176 4.554,-0.264 7.492,-0.264Z" style="fill:url(#_Linear6);fill-rule:nonzero;"/><path d="M649.155,780.671c-0,3.408 0.309,5.993 0.928,7.756c0.621,1.762 1.885,2.938 3.793,3.525c1.909,0.588 4.799,0.881 8.667,0.881c0.32,0 0.48,0.353 0.48,1.058c-0,0.705 -0.16,1.058 -0.48,1.058c-3.013,-0 -6.34,-0.059 -9.981,-0.177c-3.639,-0.117 -7.656,-0.176 -12.05,-0.176c-4.168,0 -8.116,0.059 -11.843,0.176c-3.726,0.118 -7.105,0.177 -10.136,0.177c-0.268,-0 -0.402,-0.353 -0.402,-1.058c-0,-0.705 0.15,-1.058 0.451,-1.058c3.82,0 6.709,-0.293 8.668,-0.881c1.959,-0.587 3.278,-1.763 3.955,-3.525c0.68,-1.763 1.019,-4.348 1.019,-7.756l0,-81.615c0,-3.408 -0.329,-5.964 -0.988,-7.668c-0.66,-1.704 -1.978,-2.879 -3.956,-3.525c-1.977,-0.647 -4.893,-0.97 -8.747,-0.97c-0.268,0 -0.402,-0.352 -0.402,-1.058c-0,-0.705 0.134,-1.057 0.402,-1.057c3.031,-0 6.41,0.088 10.136,0.264c3.727,0.177 7.675,0.265 11.843,0.265c4.394,-0 8.442,-0.088 12.144,-0.265c3.703,-0.176 6.999,-0.264 9.887,-0.264c0.32,-0 0.48,0.352 0.48,1.057c-0,0.706 -0.16,1.058 -0.48,1.058c-3.812,0 -6.67,0.353 -8.576,1.058c-1.905,0.705 -3.183,1.939 -3.834,3.702c-0.652,1.762 -0.978,4.348 -0.978,7.756l-0,81.262Z" style="fill:url(#_Linear7);fill-rule:nonzero;"/><path d="M702.142,751.77l2.354,-4.451l49.36,0l1.234,4.451l-52.948,0Zm93.725,41.063c0.556,0 0.834,0.353 0.834,1.058c0,0.705 -0.278,1.058 -0.834,1.058c-3.462,-0 -7.053,-0.118 -10.775,-0.353c-3.722,-0.235 -7.297,-0.352 -10.725,-0.352c-3.898,-0 -7.276,0.117 -10.133,0.352c-2.857,0.235 -6.043,0.353 -9.557,0.353c-0.471,-0 -0.706,-0.353 -0.706,-1.058c0,-0.705 0.235,-1.058 0.706,-1.058c5.302,0 8.465,-0.944 9.488,-2.834c1.023,-1.891 0.162,-5.603 -2.584,-11.135l-36.899,-74.806l7.184,-11.816l-34.787,78.596c-3.108,7.084 -3.216,12.521 -0.322,16.311c2.894,3.79 7.825,5.684 14.793,5.684c0.588,0 0.881,0.353 0.881,1.058c0,0.705 -0.293,1.058 -0.881,1.058c-3.525,-0 -6.757,-0.118 -9.695,-0.353c-2.938,-0.235 -6.64,-0.352 -11.105,-0.352c-4.453,-0 -8.028,0.117 -10.725,0.352c-2.698,0.235 -5.979,0.353 -9.844,0.353c-0.47,-0 -0.705,-0.353 -0.705,-1.058c-0,-0.705 0.235,-1.058 0.705,-1.058c3.173,0 5.912,-0.65 8.219,-1.952c2.308,-1.304 4.575,-3.675 6.803,-7.115c2.227,-3.439 4.729,-8.319 7.505,-14.641l37.863,-85.344c0.151,-0.353 0.639,-0.55 1.465,-0.592c0.827,-0.043 1.299,0.155 1.416,0.592l43.198,87.018c2.787,5.621 5.218,10.047 7.291,13.279c2.073,3.231 4.06,5.499 5.963,6.803c1.902,1.302 3.89,1.952 5.963,1.952Z" style="fill:url(#_Linear8);fill-rule:nonzero;"/></g><defs><linearGradient id="_Linear1" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(2.84217e-14,436.729,-647.489,5.68434e-14,500,187.124)"><stop offset="0" style="stop-color:#f5d27a;stop-opacity:1"/><stop offset="0.5" style="stop-color:#d4a84f;stop-opacity:1"/><stop offset="1" style="stop-color:#a8792a;stop-opacity:1"/></linearGradient><linearGradient id="_Linear2" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(2.67419e-14,436.729,-647.489,3.96472e-14,500,187.124)"><stop offset="0" style="stop-color:#f5d27a;stop-opacity:1"/><stop offset="0.5" style="stop-color:#d4a84f;stop-opacity:1"/><stop offset="1" style="stop-color:#a8792a;stop-opacity:1"/></linearGradient><linearGradient id="_Linear3" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(3.01874,214.03,-214.03,3.01874,507.44,632.939)"><stop offset="0" style="stop-color:#f5d27a;stop-opacity:1"/><stop offset="0.5" style="stop-color:#d4a84f;stop-opacity:1"/><stop offset="1" style="stop-color:#a8792a;stop-opacity:1"/></linearGradient><linearGradient id="_Linear4" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(3.01874,214.03,-214.03,3.01874,507.44,632.939)"><stop offset="0" style="stop-color:#f5d27a;stop-opacity:1"/><stop offset="0.5" style="stop-color:#d4a84f;stop-opacity:1"/><stop offset="1" style="stop-color:#a8792a;stop-opacity:1"/></linearGradient><linearGradient id="_Linear5" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(3.01874,214.03,-214.03,3.01874,507.44,632.939)"><stop offset="0" style="stop-color:#f5d27a;stop-opacity:1"/><stop offset="0.5" style="stop-color:#d4a84f;stop-opacity:1"/><stop offset="1" style="stop-color:#a8792a;stop-opacity:1"/></linearGradient><linearGradient id="_Linear6" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(3.01874,214.03,-214.03,3.01874,507.44,632.939)"><stop offset="0" style="stop-color:#f5d27a;stop-opacity:1"/><stop offset="0.5" style="stop-color:#d4a84f;stop-opacity:1"/><stop offset="1" style="stop-color:#a8792a;stop-opacity:1"/></linearGradient><linearGradient id="_Linear7" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(3.01874,214.03,-214.03,3.01874,507.44,632.939)"><stop offset="0" style="stop-color:#f5d27a;stop-opacity:1"/><stop offset="0.5" style="stop-color:#d4a84f;stop-opacity:1"/><stop offset="1" style="stop-color:#a8792a;stop-opacity:1"/></linearGradient><linearGradient id="_Linear8" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(3.01874,214.03,-214.03,3.01874,507.44,632.939)"><stop offset="0" style="stop-color:#f5d27a;stop-opacity:1"/><stop offset="0.5" style="stop-color:#d4a84f;stop-opacity:1"/><stop offset="1" style="stop-color:#a8792a;stop-opacity:1"/></linearGradient></defs></svg>
-  <div class="divider"></div>
-  <p class="tagline">Forger votre voie digitale</p>
-  </div>
-
-  <h1 class="accroche">L'artisanat du digital,<br>accéléré par <span class="gold">l'IA</span></h1>
-
-  <div class="services">
-    <div class="service">
-      <svg xmlns="http://www.w3.org/2000/svg" version="1.1" aria-hidden="true" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;" viewBox="242.55 452.05 97.90 97.90"><g><circle cx="291.342" cy="519.214" r="0.375" style="fill:none;stroke:url(#gold-web);stroke-width:3.33px;"/><path d="M279.824,538.135c-0.457,0.27 3.678,-4.776 2.945,-12.149" style="fill:none;stroke:url(#gold-web);stroke-width:3.33px;"/><path d="M302.863,538.135c0.457,0.27 -3.679,-4.776 -2.945,-12.149" style="fill:none;stroke:url(#gold-web);stroke-width:3.33px;"/><path d="M272.268,538.135l38.898,0" style="fill:none;stroke:url(#gold-web);stroke-width:3.33px;"/><path d="M248.207,515.172l86.27,0" style="fill:none;stroke:url(#gold-web);stroke-width:3.33px;"/><path d="M295.687,478.523l-10.501,24.844" style="fill:none;stroke:url(#gold-web);stroke-width:3.33px;"/><path d="M279.89,482.743l-9.405,9.405l8.705,8.704" style="fill:none;stroke:url(#gold-web);stroke-width:3.33px;"/><path d="M301.761,482.743l9.405,9.405l-8.704,8.704" style="fill:none;stroke:url(#gold-web);stroke-width:3.33px;"/><path d="M334.477,468.359l0,53.524c0,2.265 -1.838,4.103 -4.103,4.103l-78.063,0c-2.265,0 -4.104,-1.838 -4.104,-4.103l0,-53.524c0,-2.265 1.839,-4.104 4.104,-4.104l78.063,0c2.265,0 4.103,1.839 4.103,4.104Z" style="fill:none;stroke:url(#gold-web);stroke-width:3.33px;"/></g><defs><linearGradient id="gold-web" gradientUnits="userSpaceOnUse" x1="291.5" y1="463.0" x2="291.5" y2="539.0"><stop offset="0" stop-color="#f5d27a"/><stop offset="0.5" stop-color="#d4a84f"/><stop offset="1" stop-color="#a8792a"/></linearGradient></defs></svg>
-      <span>Développement web</span>
-    </div>
-    <span class="sep"></span>
-    <div class="service">
-      <svg xmlns="http://www.w3.org/2000/svg" version="1.1" aria-hidden="true" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;" viewBox="452.05 451.05 97.90 97.90"><g><path d="M520.863,464.938l-0,70.114c-0,1.702 -1.382,3.083 -3.084,3.083l-33.351,0c-1.702,0 -3.084,-1.381 -3.084,-3.083l-0,-70.114c-0,-1.702 1.382,-3.084 3.084,-3.084l33.351,0c1.702,0 3.084,1.382 3.084,3.084Z" style="fill:none;stroke:url(#gold-mobile);stroke-width:3.33px;"/><path d="M495.405,468.006l11.526,-0" style="fill:none;stroke:url(#gold-mobile);stroke-width:3.33px;"/><circle cx="501.168" cy="529.693" r="2.373" style="fill:none;stroke:url(#gold-mobile);stroke-width:3.33px;"/></g><defs><linearGradient id="gold-mobile" gradientUnits="userSpaceOnUse" x1="501.0" y1="461.0" x2="501.0" y2="539.0"><stop offset="0" stop-color="#f5d27a"/><stop offset="0.5" stop-color="#d4a84f"/><stop offset="1" stop-color="#a8792a"/></linearGradient></defs></svg>
-      <span>Application mobile</span>
-    </div>
-    <span class="sep"></span>
-    <div class="service">
-      <svg xmlns="http://www.w3.org/2000/svg" version="1.1" aria-hidden="true" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;" viewBox="0 0 97.9 97.9"><g><circle cx="44" cy="37" r="12.5" style="fill:none;stroke:url(#gold-agent);stroke-width:3.33px;"/><path d="M19,80c0,-15.5 11.2,-25 25,-25c13.8,0 25,9.5 25,25" style="fill:none;stroke:url(#gold-agent);stroke-width:3.33px;"/><path d="M19,80l50,0" style="fill:none;stroke:url(#gold-agent);stroke-width:3.33px;"/><path d="M75,15l3.2,7.8l7.8,3.2l-7.8,3.2l-3.2,7.8l-3.2,-7.8l-7.8,-3.2l7.8,-3.2z" style="fill:none;stroke:url(#gold-agent);stroke-width:3.33px;"/></g><defs><linearGradient id="gold-agent" gradientUnits="userSpaceOnUse" x1="49" y1="14" x2="49" y2="81"><stop offset="0" stop-color="#f5d27a"/><stop offset="0.5" stop-color="#d4a84f"/><stop offset="1" stop-color="#a8792a"/></linearGradient></defs></svg>
-      <span>Agents IA</span>
-    </div>
-  </div>
-
-  <a class="scroll-cue" href="#methode" aria-label="Découvrir le studio">
-    <span>Découvrir</span>
-    <span class="arrow" aria-hidden="true">↓</span>
-  </a>
-  </div>
-</section>
+<nav class="mnav" aria-label="Menu">
+  <a href="#methode">Méthode</a><a href="#services">Services</a><a href="#offres">Offres</a><a href="realisations/">Réalisations</a><a href="#contact">Contact</a>
+  <a class="btn" href="tel:+32465935655"><svg class="ico" aria-hidden="true"><use href="#i-tel"/></svg>0465 93 56 55</a>
+</nav>
 
 <main>
-  <!-- ===== MÉTHODE ===== -->
-  <section id="methode" class="section section--alt">
-    <div class="wrap reveal">
-      <span class="eyebrow">La méthode</span>
-      <h2 class="s-title">L'artisanat, <span class="gold">accéléré</span></h2>
-      <p class="lead">L'IA ne remplace pas le métier : elle le <span class="gold">libère</span>. Elle absorbe le répétitif pour que le temps aille à l'essentiel : comprendre votre besoin, soigner chaque détail, livrer vite et juste. La main reste humaine. La cadence, augmentée.</p>
+  <section class="hero" id="top">
+    <div class="wrap hero-grid">
+      <div class="hero-txt" id="heroTxt">
+        <span class="pill"><span class="dot"></span>Studio créatif digital · Wavre (Brabant wallon)</span>
+        <p class="tagline">Forger votre voie digitale</p>
+        <h1 class="h1"><span class="ln"><span>L'artisanat du digital,</span></span><span class="ln"><span>accéléré par <em>l'IA</em></span></span></h1>
+        <p class="lede">Création de sites internet, applications web &amp; mobiles et agents IA pour les entreprises, à Wavre. Devis gratuit, réponse rapide.</p>
+        <ul class="chips">
+          <li><svg class="ico"><use href="#i-web"/></svg>Développement web</li>
+          <li><svg class="ico"><use href="#i-mob"/></svg>Application mobile</li>
+          <li><svg class="ico"><use href="#i-ai"/></svg>Agents IA</li>
+        </ul>
+        <div class="ctas"><a class="btn" href="#contact">Demander un devis gratuit <span class="arr">→</span></a><a class="btn-soft" href="#methode">Découvrir</a></div>
+      </div>
+      <div class="scene-wrap" id="sceneWrap" aria-hidden="true">
+        <div id="scene"></div>
+        <svg class="fb-flame" viewBox="388 226 226 384"><use href="#fv-flame"/></svg>
+        <div class="forge-status"><span>atelier · assemblage</span><span class="track"><i id="forgeBar"></i></span><span id="forgePct">0 %</span></div>
+        <div class="orb-label" data-orb="0"><svg class="ico"><use href="#i-web"/></svg>Développement web</div>
+        <div class="orb-label" data-orb="1"><svg class="ico"><use href="#i-mob"/></svg>Application mobile</div>
+        <div class="orb-label" data-orb="2"><svg class="ico"><use href="#i-ai"/></svg>Agents IA</div>
+      </div>
+    </div>
+    <div class="hero-foot"><div class="wrap"><a class="scroll-cue" href="#methode"><i></i>Découvrir</a><span class="geo">Wavre · 50.7167° N · 4.6000° E</span></div></div>
+  </section>
+
+  <section class="sec" id="methode">
+    <div class="wrap">
+      <div class="sec-head">
+        <div><p class="kick">La méthode</p><h2 class="h2 rv">L'artisanat, <em>accéléré</em></h2></div>
+        <p class="method-intro rv">L'IA ne remplace pas le métier&nbsp;: elle le <em>libère</em>. Elle absorbe le répétitif pour que le temps aille à l'essentiel&nbsp;: comprendre votre besoin, soigner chaque détail, livrer vite et juste. La main reste humaine. La cadence, augmentée.</p>
+      </div>
       <div class="steps">
-        <div class="step">
-          <span class="step-num">01</span>
-          <h3 class="step-name">Cadrage</h3>
-          <p class="step-text">On clarifie l'objectif, l'audience et les contraintes. Rien n'est produit avant d'être compris.</p>
-        </div>
-        <div class="step">
-          <span class="step-num">02</span>
-          <h3 class="step-name">Conception</h3>
-          <p class="step-text">Direction visuelle et architecture. L'IA explore les pistes, l'œil tranche.</p>
-        </div>
-        <div class="step">
-          <span class="step-num">03</span>
-          <h3 class="step-name">Production</h3>
-          <p class="step-text">Design et développement, main dans la main. Itérations rapides, exigence constante.</p>
-        </div>
-        <div class="step">
-          <span class="step-num">04</span>
-          <h3 class="step-name">Livraison</h3>
-          <p class="step-text">Mise en ligne, transmission et accompagnement. Vous repartez autonome.</p>
-        </div>
+        <span class="runner" aria-hidden="true"></span>
+        <div class="card step tilt rv"><div class="num lift">01</div><h3>Cadrage</h3><p>On clarifie l'objectif, l'audience et les contraintes. Rien n'est produit avant d'être compris.</p></div>
+        <div class="card step tilt rv" style="--d:.1s"><div class="num lift">02</div><h3>Conception</h3><p>Direction visuelle et architecture. L'IA explore les pistes, l'œil tranche.</p></div>
+        <div class="card step tilt rv" style="--d:.2s"><div class="num lift">03</div><h3>Production</h3><p>Design et développement, main dans la main. Itérations rapides, exigence constante.</p></div>
+        <div class="card step tilt rv" style="--d:.3s"><div class="num lift">04</div><h3>Livraison</h3><p>Mise en ligne, transmission et accompagnement. Vous repartez autonome.</p></div>
       </div>
     </div>
   </section>
 
-  <!-- ===== SERVICES ===== -->
-  <section id="services" class="section">
-    <div class="wrap reveal">
-      <span class="eyebrow">Savoir-faire</span>
-      <h2 class="s-title">Trois métiers, <span class="gold">une exigence</span></h2>
-      <div class="cards">
-        <article class="card">
-          <svg xmlns="http://www.w3.org/2000/svg" version="1.1" aria-hidden="true" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;" viewBox="242.55 452.05 97.90 97.90"><g><circle cx="291.342" cy="519.214" r="0.375" style="fill:none;stroke:url(#gold-web2);stroke-width:3.33px;"/><path d="M279.824,538.135c-0.457,0.27 3.678,-4.776 2.945,-12.149" style="fill:none;stroke:url(#gold-web2);stroke-width:3.33px;"/><path d="M302.863,538.135c0.457,0.27 -3.679,-4.776 -2.945,-12.149" style="fill:none;stroke:url(#gold-web2);stroke-width:3.33px;"/><path d="M272.268,538.135l38.898,0" style="fill:none;stroke:url(#gold-web2);stroke-width:3.33px;"/><path d="M248.207,515.172l86.27,0" style="fill:none;stroke:url(#gold-web2);stroke-width:3.33px;"/><path d="M295.687,478.523l-10.501,24.844" style="fill:none;stroke:url(#gold-web2);stroke-width:3.33px;"/><path d="M279.89,482.743l-9.405,9.405l8.705,8.704" style="fill:none;stroke:url(#gold-web2);stroke-width:3.33px;"/><path d="M301.761,482.743l9.405,9.405l-8.704,8.704" style="fill:none;stroke:url(#gold-web2);stroke-width:3.33px;"/><path d="M334.477,468.359l0,53.524c0,2.265 -1.838,4.103 -4.103,4.103l-78.063,0c-2.265,0 -4.104,-1.838 -4.104,-4.103l0,-53.524c0,-2.265 1.839,-4.104 4.104,-4.104l78.063,0c2.265,0 4.103,1.839 4.103,4.104Z" style="fill:none;stroke:url(#gold-web2);stroke-width:3.33px;"/></g><defs><linearGradient id="gold-web2" gradientUnits="userSpaceOnUse" x1="291.5" y1="463.0" x2="291.5" y2="539.0"><stop offset="0" stop-color="#f5d27a"/><stop offset="0.5" stop-color="#d4a84f"/><stop offset="1" stop-color="#a8792a"/></linearGradient></defs></svg>
-          <h3>Développement web</h3>
-          <p>Sites vitrines et sur-mesure. Rapides, durables, taillés pour être trouvés sur Google.</p>
+  <section class="sec alt" id="services">
+    <div class="wave-band" data-view="wave" aria-hidden="true"></div>
+    <div class="wrap">
+      <div class="sec-head">
+        <div><p class="kick">Savoir-faire</p><h2 class="h2 rv">Trois métiers, <em>une exigence</em></h2></div>
+      </div>
+      <div class="trades">
+        <article class="card trade rv">
+          <div class="ill" data-view="web" aria-hidden="true"><div class="win"><i></i><i class="b2"></i><i></i><i class="b4"></i></div></div>
+          <div class="trade-body"><p class="tn">01 · Web</p><h3>Développement web</h3><p>Sites vitrines et sur-mesure. Rapides, durables, taillés pour être trouvés sur Google.</p><a class="card-link" href="creation-site-internet/">Découvrir la création de site <span>→</span></a></div>
         </article>
-        <article class="card">
-          <svg xmlns="http://www.w3.org/2000/svg" version="1.1" aria-hidden="true" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;" viewBox="452.05 451.05 97.90 97.90"><g><path d="M520.863,464.938l-0,70.114c-0,1.702 -1.382,3.083 -3.084,3.083l-33.351,0c-1.702,0 -3.084,-1.381 -3.084,-3.083l-0,-70.114c-0,-1.702 1.382,-3.084 3.084,-3.084l33.351,0c1.702,0 3.084,1.382 3.084,3.084Z" style="fill:none;stroke:url(#gold-mobile2);stroke-width:3.33px;"/><path d="M495.405,468.006l11.526,-0" style="fill:none;stroke:url(#gold-mobile2);stroke-width:3.33px;"/><circle cx="501.168" cy="529.693" r="2.373" style="fill:none;stroke:url(#gold-mobile2);stroke-width:3.33px;"/></g><defs><linearGradient id="gold-mobile2" gradientUnits="userSpaceOnUse" x1="501.0" y1="461.0" x2="501.0" y2="539.0"><stop offset="0" stop-color="#f5d27a"/><stop offset="0.5" stop-color="#d4a84f"/><stop offset="1" stop-color="#a8792a"/></linearGradient></defs></svg>
-          <h3>Application mobile</h3>
-          <p>iOS et Android. De l'idée au store, une app pensée pour qu'on la garde.</p>
+        <article class="card trade rv" style="--d:.1s">
+          <div class="ill" data-view="mobile" aria-hidden="true"><div class="phone-s"></div></div>
+          <div class="trade-body"><p class="tn">02 · Mobile</p><h3>Application mobile</h3><p>iOS et Android. De l'idée au store, une app pensée pour qu'on la garde.</p><a class="card-link" href="outil-metier/">Découvrir l'outil métier <span>→</span></a></div>
         </article>
-        <article class="card">
-          <svg xmlns="http://www.w3.org/2000/svg" version="1.1" aria-hidden="true" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;" viewBox="0 0 97.9 97.9"><g><circle cx="44" cy="37" r="12.5" style="fill:none;stroke:url(#gold-agent2);stroke-width:3.33px;"/><path d="M19,80c0,-15.5 11.2,-25 25,-25c13.8,0 25,9.5 25,25" style="fill:none;stroke:url(#gold-agent2);stroke-width:3.33px;"/><path d="M19,80l50,0" style="fill:none;stroke:url(#gold-agent2);stroke-width:3.33px;"/><path d="M75,15l3.2,7.8l7.8,3.2l-7.8,3.2l-3.2,7.8l-3.2,-7.8l-7.8,-3.2l7.8,-3.2z" style="fill:none;stroke:url(#gold-agent2);stroke-width:3.33px;"/></g><defs><linearGradient id="gold-agent2" gradientUnits="userSpaceOnUse" x1="49" y1="14" x2="49" y2="81"><stop offset="0" stop-color="#f5d27a"/><stop offset="0.5" stop-color="#d4a84f"/><stop offset="1" stop-color="#a8792a"/></linearGradient></defs></svg>
-          <h3>Agents IA</h3>
-          <p>Un métier délégué à un agent installé chez vous : prospection, courrier, contenus, publicité. Prix selon le métier, 500&nbsp;€ par mois pour la prospection.</p>
-          <a class="card-link" href="/agents-ia/">Découvrir les agents IA&nbsp;→</a>
+        <article class="card trade rv" style="--d:.2s">
+          <div class="ill" data-view="ai" aria-hidden="true"><div class="core-s"></div></div>
+          <div class="trade-body"><p class="tn">03 · IA</p><h3>Agents IA</h3><p>Un métier délégué à un agent installé chez vous&nbsp;: prospection, courrier, contenus, publicité. Prix selon le métier, 500&nbsp;€ par mois pour la prospection.</p><a class="card-link" href="agents-ia/">Découvrir les agents IA <span>→</span></a></div>
         </article>
       </div>
     </div>
   </section>
 
-  <!-- ===== OFFRES ===== -->
-  <section id="offres" class="section section--alt">
-    <div class="wrap reveal">
-      <span class="eyebrow">Nos offres</span>
-      <h2 class="s-title">Des formules <span class="gold">claires</span></h2>
-
-      <div class="offre-lancement">
-        <span class="offre-lancement-badge">Offre de lancement</span>
-        <p>Fervia lance son activité dans la région. Pour ses <strong>5 premiers clients pilotes</strong>, l'offre Signature passe de 2&nbsp;900&nbsp;€ à <strong>1&nbsp;900&nbsp;€</strong>, le temps de constituer mes premières références dans la région.</p>
-        <span class="offre-places">
-          Places restantes
-          <span class="offre-puces">
-            <span class="offre-puce prise"></span>
-            <span class="offre-puce"></span>
-            <span class="offre-puce"></span>
-            <span class="offre-puce"></span>
-            <span class="offre-puce"></span>
-          </span>
-          4 sur 5
-        </span>
+  <section class="sec" id="offres">
+    <div class="wrap">
+      <div class="sec-head">
+        <div><p class="kick">Nos offres</p><h2 class="h2 rv">Des formules <em>claires</em></h2></div>
       </div>
-
-      <div class="offres-grille">
-
-        <!-- ESSENTIEL -->
-        <article class="offre-carte">
-          <div class="offre-tete">
-            <svg class="offre-palier-flamme" viewBox="388 226 226 384" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M567.317,347.521c35.36,50.817 49.883,138.235 17.301,204.89c-10.528,21.539 -26.089,44.373 -62.525,45.458c-42.8,1.275 -74.178,-48.506 -42.145,-88.042c30.053,-37.091 101.649,-54.984 87.369,-162.306Zm12.31,53.537c-5.963,35.591 -23.875,57.951 -43.408,75.76c-16.657,15.186 -34.89,26.477 -46.558,40.878c-24.577,30.333 -0.777,68.657 32.06,67.679c30.356,-0.904 42.895,-20.508 51.667,-38.453c22.104,-45.221 21.055,-100.62 6.239,-145.864Z" fill="url(#_ofFlame)"/><path d="M490.391,237.971c-4.47,-3.855 111.996,76.729 40.025,155.3c-132.885,145.073 -57.458,199.556 -57.434,201.171c0.037,2.55 -142.56,-86.1 -36.644,-208.904c50.451,-58.495 74.523,-129.911 54.053,-147.567Zm-50.877,312.108c-2.892,-33.918 10.638,-87.687 81.685,-165.251c27.653,-30.189 22.608,-60.738 9.17,-84.896c-6.058,-10.892 -13.714,-20.584 -21.093,-28.559c-4.631,32.481 -27.498,80.619 -63.472,122.329c-26.092,30.251 -36.05,58.06 -36.107,82.744c-0.071,30.149 14.197,55.289 29.817,73.633Z" fill="url(#_ofFlame)"/><defs><linearGradient id="_ofFlame" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(2.84217e-14,436.729,-647.489,5.68434e-14,500,187.124)"><stop offset="0" stop-color="#f5d27a"/><stop offset="0.5" stop-color="#d4a84f"/><stop offset="1" stop-color="#a8792a"/></linearGradient></defs></svg>
-            <h3 class="offre-palier-nom">Essentiel</h3>
-            <div class="offre-palier-promesse">Une présence en ligne propre et professionnelle.</div>
-          </div>
-          <div class="offre-prix-bloc">
-            <span class="offre-prix-prefix">à partir de</span>
-            <div class="offre-prix">1&nbsp;200<span class="dev">€</span></div>
-            <div class="offre-recurrent">puis <strong>25&nbsp;€</strong>/mois</div>
-          </div>
-          <ul class="offre-liste">
-            <li>Site une page, élégant et complet</li>
-            <li>Design Fervia sur-mesure</li>
-            <li>Rédaction de vos textes incluse</li>
-            <li>Parfait sur mobile et ordinateur</li>
-            <li>Nom de domaine + mise en ligne</li>
-            <li>Formulaire de contact</li>
-            <li>Hébergement, sécurité et petites modifications</li>
-            <li class="absent">Pages multiples</li>
-            <li class="absent">SEO local approfondi</li>
+      <div class="plans">
+        <article class="card plan tilt rv">
+          <div class="ph"><h3><a href="creation-site-internet/">Essentiel</a></h3></div>
+          <p class="sub">Une présence en ligne propre et professionnelle.</p>
+          <p class="from">à partir de</p>
+          <div class="amt">1&#8239;200<small>€</small></div>
+          <div class="per">puis 25&nbsp;€/mois</div>
+          <ul>
+            <li>Site une page, élégant et complet</li><li>Design Fervia sur-mesure</li><li>Rédaction de vos textes incluse</li><li>Parfait sur mobile et ordinateur</li><li>Nom de domaine + mise en ligne</li><li>Formulaire de contact</li><li>Hébergement, sécurité et petites modifications</li><li class="no">Pages multiples</li><li class="no">SEO local approfondi</li>
           </ul>
-          <a class="offre-cta" href="mailto:contact@fervia.be?subject=Demande%20%C2%B7%20offre%20Essentiel&body=Bonjour%2C%0A%0AJe%20suis%20int%C3%A9ress%C3%A9%28e%29%20par%20l%27offre%20Essentiel%20de%20Fervia.%0A%0A">Choisir l'Essentiel</a>
+          <a class="btn-soft" href="#contact">Choisir l'Essentiel</a>
         </article>
-
-        <!-- SIGNATURE -->
-        <article class="offre-carte offre-vedette">
-          <span class="offre-ruban">Le plus choisi</span>
-          <div class="offre-tete">
-            <svg class="offre-palier-flamme" viewBox="388 226 226 384" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M567.317,347.521c35.36,50.817 49.883,138.235 17.301,204.89c-10.528,21.539 -26.089,44.373 -62.525,45.458c-42.8,1.275 -74.178,-48.506 -42.145,-88.042c30.053,-37.091 101.649,-54.984 87.369,-162.306Zm12.31,53.537c-5.963,35.591 -23.875,57.951 -43.408,75.76c-16.657,15.186 -34.89,26.477 -46.558,40.878c-24.577,30.333 -0.777,68.657 32.06,67.679c30.356,-0.904 42.895,-20.508 51.667,-38.453c22.104,-45.221 21.055,-100.62 6.239,-145.864Z" fill="url(#_ofFlame)"/><path d="M490.391,237.971c-4.47,-3.855 111.996,76.729 40.025,155.3c-132.885,145.073 -57.458,199.556 -57.434,201.171c0.037,2.55 -142.56,-86.1 -36.644,-208.904c50.451,-58.495 74.523,-129.911 54.053,-147.567Zm-50.877,312.108c-2.892,-33.918 10.638,-87.687 81.685,-165.251c27.653,-30.189 22.608,-60.738 9.17,-84.896c-6.058,-10.892 -13.714,-20.584 -21.093,-28.559c-4.631,32.481 -27.498,80.619 -63.472,122.329c-26.092,30.251 -36.05,58.06 -36.107,82.744c-0.071,30.149 14.197,55.289 29.817,73.633Z" fill="url(#_ofFlame)"/></svg>
-            <h3 class="offre-palier-nom">Signature</h3>
-            <div class="offre-palier-promesse">Le site qui fait de vous une référence.</div>
-          </div>
-          <div class="offre-prix-bloc">
-            <span class="offre-prix-prefix">à partir de</span>
-            <div class="offre-prix">2&nbsp;900<span class="dev">€</span></div>
-            <div class="offre-recurrent">puis <strong>50&nbsp;€</strong>/mois</div>
-          </div>
-          <ul class="offre-liste">
-            <li class="titre-sous">Tout l'Essentiel, plus :</li>
-            <li>Jusqu'à 5 à 6 pages complètes</li>
-            <li>SEO local de départ : visible sur Google dans votre ville</li>
-            <li>Fiche Google Business optimisée</li>
-            <li>Galerie, menu ou prise de rendez-vous</li>
-            <li>Maintenance et support prioritaire</li>
+        <article class="card plan feat tilt rv" style="--d:.1s">
+          <div class="ph"><h3><a href="creation-site-internet/">Signature</a></h3><span class="best">Le plus choisi</span></div>
+          <p class="sub">Le site qui fait de vous une référence.</p>
+          <p class="from">à partir de</p>
+          <div class="amt">2&#8239;900<small>€</small></div>
+          <div class="per">puis 50&nbsp;€/mois</div>
+          <ul>
+            <li class="hd2">Tout l'Essentiel, plus&nbsp;:</li><li>Jusqu'à 5 à 6 pages complètes</li><li>SEO local de départ&nbsp;: visible sur Google dans votre ville</li><li>Fiche Google Business optimisée</li><li>Galerie, menu ou prise de rendez-vous</li><li>Maintenance et support prioritaire</li>
           </ul>
-          <a class="offre-cta plein" href="mailto:contact@fervia.be?subject=Demande%20%C2%B7%20offre%20Signature&body=Bonjour%2C%0A%0AJe%20suis%20int%C3%A9ress%C3%A9%28e%29%20par%20l%27offre%20Signature%20de%20Fervia.%0A%0A">Choisir le Signature</a>
+          <a class="btn" href="#contact">Choisir le Signature</a>
         </article>
-
-        <!-- SUR-MESURE -->
-        <article class="offre-carte">
-          <div class="offre-tete">
-            <svg class="offre-palier-flamme" viewBox="388 226 226 384" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M567.317,347.521c35.36,50.817 49.883,138.235 17.301,204.89c-10.528,21.539 -26.089,44.373 -62.525,45.458c-42.8,1.275 -74.178,-48.506 -42.145,-88.042c30.053,-37.091 101.649,-54.984 87.369,-162.306Zm12.31,53.537c-5.963,35.591 -23.875,57.951 -43.408,75.76c-16.657,15.186 -34.89,26.477 -46.558,40.878c-24.577,30.333 -0.777,68.657 32.06,67.679c30.356,-0.904 42.895,-20.508 51.667,-38.453c22.104,-45.221 21.055,-100.62 6.239,-145.864Z" fill="url(#_ofFlame)"/><path d="M490.391,237.971c-4.47,-3.855 111.996,76.729 40.025,155.3c-132.885,145.073 -57.458,199.556 -57.434,201.171c0.037,2.55 -142.56,-86.1 -36.644,-208.904c50.451,-58.495 74.523,-129.911 54.053,-147.567Zm-50.877,312.108c-2.892,-33.918 10.638,-87.687 81.685,-165.251c27.653,-30.189 22.608,-60.738 9.17,-84.896c-6.058,-10.892 -13.714,-20.584 -21.093,-28.559c-4.631,32.481 -27.498,80.619 -63.472,122.329c-26.092,30.251 -36.05,58.06 -36.107,82.744c-0.071,30.149 14.197,55.289 29.817,73.633Z" fill="url(#_ofFlame)"/></svg>
-            <h3 class="offre-palier-nom">Sur-mesure</h3>
-            <div class="offre-palier-promesse">L'ambition, sans aucune limite technique.</div>
-          </div>
-          <div class="offre-prix-bloc">
-            <div class="offre-prix-sur-mesure">Sur devis</div>
-            <div class="offre-recurrent">tarification dédiée à votre projet</div>
-          </div>
-          <ul class="offre-liste">
-            <li>Application web ou mobile</li>
-            <li>Agents IA installés chez vous</li>
-            <li>Boutique en ligne / réservation</li>
-            <li>Système de commande</li>
-            <li>Identité de marque complète</li>
-            <li>Intégrations et fonctions spécifiques</li>
-            <li>Accompagnement sur la durée</li>
+        <article class="card plan tilt rv" style="--d:.2s">
+          <div class="ph"><h3 class="nb"><a href="prix-site-internet-belgique/">Sur-mesure</a></h3></div>
+          <p class="sub">L'ambition, sans aucune limite technique.</p>
+          <div class="devis">Sur devis</div>
+          <div class="per">tarification dédiée à votre projet</div>
+          <ul>
+            <li>Application web ou mobile</li><li>Agents IA installés chez vous</li><li>Boutique en ligne / réservation</li><li>Système de commande</li><li>Identité de marque complète</li><li>Intégrations et fonctions spécifiques</li><li>Accompagnement sur la durée</li>
           </ul>
-          <a class="offre-cta" href="mailto:contact@fervia.be?subject=Demande%20%C2%B7%20offre%20Sur-mesure&body=Bonjour%2C%0A%0AJe%20suis%20int%C3%A9ress%C3%A9%28e%29%20par%20l%27offre%20Sur-mesure%20de%20Fervia.%0A%0A">Discutons de votre projet</a>
-        </article>
-
-      </div>
-
-      <p class="offre-note">
-        Chaque offre inclut l'hébergement, la sécurité et la tranquillité d'esprit d'un interlocuteur unique. Le suivi mensuel du référencement est en option : +50 € par mois pour l'Essentiel, +100 € pour le Signature. Pour faire venir des clients, le pack SEO et Google Ads : 300 € par mois pour l'Essentiel, 400 € pour le Signature, hors budget publicitaire.<br>
-        <em>La retenue fait le premium : on construit l'essentiel, parfaitement, plutôt que l'accessoire, en trop.</em>
-      </p>
-
-      <div class="offres-secondaires">
-        <article class="offre-mini">
-          <span class="offre-mini-eyebrow">Une autre approche</span>
-          <h3>Agents IA</h3>
-          <p>Déléguer un métier plutôt que construire un site. <strong>500&nbsp;€</strong> par mois pour la prospection, les autres métiers sur devis.</p>
-          <a class="offre-mini-cta" href="/agents-ia/">Découvrir les agents IA&nbsp;→</a>
-        </article>
-        <article class="offre-mini">
-          <span class="offre-mini-eyebrow">Une autre approche</span>
-          <h3>Outil métier</h3>
-          <p>Une application de gestion sur mesure, prix fixe. Dès <strong>750&nbsp;€</strong>.</p>
-          <a class="offre-mini-cta" href="/outil-metier/">Découvrir l'outil métier&nbsp;→</a>
+          <a class="btn-soft" href="#contact">Discutons de votre projet</a>
         </article>
       </div>
-
-      <p class="offre-liens-info">
-        Pour aller plus loin&nbsp;:
-        <a href="/creation-site-internet/">détail des formules</a><span class="liens-sep"> · </span><a href="/prix-site-internet-belgique/">prix d'un site en Belgique</a><span class="liens-sep"> · </span><a href="/aides-site-internet-wallonie/">aides en Wallonie</a>
-      </p>
+      <p class="offers-note rv">Chaque offre inclut l'hébergement, la sécurité et la tranquillité d'esprit d'un interlocuteur unique. Le suivi mensuel du référencement est en option&nbsp;: +50&nbsp;€ par mois pour l'Essentiel, +100&nbsp;€ pour le Signature. Pour faire venir des clients, le pack SEO et Google Ads&nbsp;: 300&nbsp;€ par mois pour l'Essentiel, 400&nbsp;€ pour le Signature, hors budget publicitaire.</p>
+      <p class="restraint rv">La retenue fait le premium&nbsp;: on construit l'essentiel, parfaitement, plutôt que l'accessoire, en trop.</p>
+      <div class="alts">
+        <article class="card alt-card tilt rv">
+          <span class="k">Une autre approche</span>
+          <div><h3>Agents IA</h3><p>Déléguer un métier plutôt que construire un site.</p></div>
+          <div class="big">500&nbsp;€<small>par mois pour la prospection, les autres métiers sur devis</small></div>
+          <a class="card-link" href="agents-ia/">Découvrir les agents IA <span>→</span></a>
+        </article>
+        <article class="card alt-card tilt rv" style="--d:.1s">
+          <span class="k">Une autre approche</span>
+          <div><h3>Outil métier</h3><p>Une application de gestion sur mesure, prix fixe.</p></div>
+          <div class="big">750&nbsp;€<small>dès</small></div>
+          <a class="card-link" href="outil-metier/">Découvrir l'outil métier <span>→</span></a>
+        </article>
+      </div>
+      <p class="further rv"><span>Pour aller plus loin&nbsp;:</span><a href="creation-site-internet/">détail des formules</a><a href="prix-site-internet-belgique/">prix d'un site en Belgique</a><a href="aides-site-internet-wallonie/">aides en Wallonie</a><a href="agence-web-brabant-wallon/">agence web en Brabant wallon</a></p>
     </div>
   </section>
 
-  <!-- ===== RÉALISATIONS ===== -->
-  <section id="realisations" class="section section--alt">
-    <div class="wrap reveal">
-      <span class="eyebrow">Réalisations</span>
-      <h2 class="s-title">Du concret, <span class="gold">en ligne</span></h2>
+  <section class="sec alt" id="realisations">
+    <div class="wrap">
+      <div class="sec-head">
+        <div><p class="kick">Réalisations</p><h2 class="h2 rv">Du concret, <em>en ligne</em></h2></div>
+      </div>
       <div class="works">
-        <a class="work" href="/realisations/rtm-ready-to-move/">
-          <div class="work-media">
-            <img class="work-img" src="assets/work/rtm.webp" alt="Site RTM Ready To Move" loading="lazy" width="1200" height="750">
-          </div>
-          <div class="work-body">
-            <span class="work-tag">Déménagement · Bruxelles</span>
-            <h3>RTM · Ready To Move</h3>
-            <p>Site vitrine orienté conversion, campagne Google Ads, puis un outil de suivi des missions et des finances.</p>
-            <span class="work-link">Lire l'étude de cas <span class="ar">→</span></span>
-          </div>
+        <a class="card work tilt rv" href="realisations/rtm-ready-to-move/">
+          <div class="media"><img src="assets/img/rtm-ready-to-move.webp" alt="Site RTM Ready To Move" loading="lazy" width="1200" height="750"></div>
+          <div class="work-body"><p class="work-tag">Déménagement · Bruxelles</p><h3>RTM · Ready To Move</h3><p>Site vitrine orienté conversion, campagne Google Ads, puis un outil de suivi des missions et des finances.</p><span class="card-link">Lire l'étude de cas <span>→</span></span></div>
         </a>
-        <a class="work" href="/realisations/healthy-sounna/">
-          <div class="work-media">
-            <img class="work-img" src="assets/work/healthy-sounna.webp" alt="Une page du catalogue Healthy Sounna et un écran de l'outil de stock" loading="lazy" width="1200" height="750">
-          </div>
-          <div class="work-body">
-            <span class="work-tag">Produits naturels · Catalogue et stock</span>
-            <h3>Healthy Sounna</h3>
-            <p>Catalogue et stock sur mesure : 205 produits générés depuis un seul fichier de données, et une application installable qui fonctionne hors connexion.</p>
-            <span class="work-link">Lire l'étude de cas <span class="ar">→</span></span>
-          </div>
+        <a class="card work tilt rv" href="realisations/healthy-sounna/" style="--d:.1s">
+          <div class="media"><img src="assets/img/healthy-sounna.webp" alt="Une page du catalogue Healthy Sounna et un écran de l'outil de stock" loading="lazy" width="1200" height="750"></div>
+          <div class="work-body"><p class="work-tag">Produits naturels · Catalogue et stock</p><h3>Healthy Sounna</h3><p>Catalogue et stock sur mesure&nbsp;: 205 produits générés depuis un seul fichier de données, et une application installable qui fonctionne hors connexion.</p><span class="card-link">Lire l'étude de cas <span>→</span></span></div>
         </a>
-        <a class="work" href="https://play.google.com/store/apps/details?id=com.designeffect.timecoach" target="_blank" rel="noopener">
-          <div class="work-media">
-            <img class="work-img" src="assets/work/timecoach.webp" alt="Application mobile TimeCoach" loading="lazy" width="1200" height="750">
-          </div>
-          <div class="work-body">
-            <span class="work-tag">Application mobile · Productivité</span>
-            <h3>TimeCoach</h3>
-            <p>App de productivité gamifiée avec coach IA intégré. De la conception au Play Store.</p>
-            <span class="work-link">Voir sur le Play Store <span class="ar">→</span></span>
-          </div>
+        <a class="card work tilt rv" href="https://play.google.com/store/apps/details?id=com.designeffect.timecoach" target="_blank" rel="noopener">
+          <div class="media"><img src="assets/img/timecoach.webp" alt="Application mobile TimeCoach" loading="lazy" width="1200" height="750"></div>
+          <div class="work-body"><p class="work-tag">Application mobile · Productivité</p><h3>TimeCoach</h3><p>App de productivité gamifiée avec coach IA intégré. De la conception au Play Store.</p><span class="card-link">Voir sur le Play Store <span>→</span></span></div>
         </a>
-        <a class="work" href="https://design-effect.github.io/keskonmange/" target="_blank" rel="noopener">
-          <div class="work-media">
-            <img class="work-img" src="assets/work/keskonmange.webp" alt="Keskonmange, application web de recettes" loading="lazy" width="1200" height="750">
-          </div>
-          <div class="work-body">
-            <span class="work-tag">Application web · Installable</span>
-            <h3>Keskonmange</h3>
-            <p>Application installable sur mobile, qui fonctionne hors ligne : recettes filtrables, quantités ajustées au nombre de convives et liste de courses générée automatiquement.</p>
-            <span class="work-link">Ouvrir l'application <span class="ar">→</span></span>
-          </div>
+        <a class="card work tilt rv" href="https://design-effect.github.io/keskonmange/" target="_blank" rel="noopener" style="--d:.1s">
+          <div class="media"><img src="assets/img/keskonmange.webp" alt="Keskonmange, application web de recettes" loading="lazy" width="1200" height="750"></div>
+          <div class="work-body"><p class="work-tag">Application web · Installable</p><h3>Keskonmange</h3><p>Application installable sur mobile, qui fonctionne hors ligne&nbsp;: recettes filtrables, quantités ajustées au nombre de convives et liste de courses générée automatiquement.</p><span class="card-link">Ouvrir l'application <span>→</span></span></div>
         </a>
-        <div class="work work--static">
-          <div class="work-media work-media--logos">
-            <span class="lg lg--alvoil"><img src="assets/work/alv-oil.svg" alt="Logo ALV&amp;OIL" loading="lazy" width="946" height="690"></span>
-            <span class="lg"><img src="assets/work/fervia.svg" alt="Logo Fervia" loading="lazy" width="2559" height="2523"></span>
-            <span class="lg lg--rtm"><img src="assets/work/rtm-logo.png" alt="Logo RTM Ready To Move" loading="lazy" width="526" height="200"></span>
-            <span class="lg lg--nida"><img src="assets/work/nida-home.svg" alt="Logo Nida Home" loading="lazy" width="680" height="440"></span>
-          </div>
-          <div class="work-body">
-            <span class="work-tag">Identité visuelle · Logos &amp; chartes</span>
-            <h3>Identités de marque</h3>
-            <p>Logos, déclinaisons et univers visuels : de l'identité de mon propre studio, Fervia, à l'optimisation de logos clients comme RTM, jusqu'à la création de marques comme Nida Home et ALV&amp;OIL.</p>
-            <span class="work-link work-link--static">Fervia · ALV&amp;OIL · RTM · Nida Home</span>
+        <div class="card work logos rv">
+          <div class="work-body"><p class="work-tag">Identité visuelle · Logos &amp; chartes</p><h3>Identités de marque</h3><p>Logos, déclinaisons et univers visuels&nbsp;: de l'identité de mon propre studio, Fervia, à l'optimisation de logos clients comme RTM, jusqu'à la création de marques comme Nida Home et ALV&amp;OIL.</p><p class="work-tag" style="margin:auto 0 0">Fervia · ALV&amp;OIL · RTM · Nida Home</p></div>
+          <div class="logo-wall">
+            <div><span class="fv-logo" role="img" aria-label="Logo Fervia"><svg class="fv-lock" viewBox="43.20 602.50 755.93 222.95" aria-hidden="true" focusable="false"><use href="#fv-logo-hd"/></svg></span></div>
+            <div><img src="assets/img/logo-alvoil.png" alt="Logo ALV&amp;OIL" loading="lazy"></div>
+            <div><img src="assets/img/logo-rtm.png" alt="Logo RTM Ready To Move" loading="lazy"></div>
+            <div><img src="assets/img/logo-nida-home.png" alt="Logo Nida Home" loading="lazy"></div>
           </div>
         </div>
       </div>
-      <div class="temoignages">
-        <figure class="temoignage">
-          <div class="temoignage-stars" aria-hidden="true">★★★★★</div>
-          <blockquote>« Fervia, travail pro, soigné, sur mesure. L'outil que Fervia m'a fourni m'a énormément aidé à faire l'inventaire précis et détaillé de mon stock de marchandises. Je recommande tous leurs services, ils sont polyvalents et multifacettes. »</blockquote>
-          <figcaption>Julien Manna · Healthy Sounna · avis Google, 5/5</figcaption>
+      <p class="further rv"><a href="realisations/">Toutes les réalisations</a></p>
+      <div class="quotes">
+        <figure class="card quote tilt rv">
+          <div class="stars" aria-label="5 étoiles sur 5">★★★★★</div>
+          <blockquote>«&nbsp;Fervia, travail pro, soigné, sur mesure. L'outil que Fervia m'a fourni m'a énormément aidé à faire l'inventaire précis et détaillé de mon stock de marchandises. Je recommande tous leurs services, ils sont polyvalents et multifacettes.&nbsp;»</blockquote>
+          <figcaption class="who"><span class="av">JM</span><span><b>Julien Manna</b><span>Healthy Sounna · avis Google, 5/5</span></span></figcaption>
         </figure>
-        <figure class="temoignage">
-          <div class="temoignage-stars" aria-hidden="true">★★★★★</div>
-          <blockquote>« Vous pouvez faire confiance à Fervia pour son travail et son accompagnement. J'ai été très satisfait de son aide pour ma campagne Google Ads et la création de mon site internet. »</blockquote>
-          <figcaption>Sylvain Manche · RTM Ready To Move · avis Google, 5/5</figcaption>
+        <figure class="card quote tilt rv" style="--d:.1s">
+          <div class="stars" aria-label="5 étoiles sur 5">★★★★★</div>
+          <blockquote>«&nbsp;Vous pouvez faire confiance à Fervia pour son travail et son accompagnement. J'ai été très satisfait de son aide pour ma campagne Google Ads et la création de mon site internet.&nbsp;»</blockquote>
+          <figcaption class="who"><span class="av">SM</span><span><b>Sylvain Manche</b><span>RTM Ready To Move · avis Google, 5/5</span></span></figcaption>
         </figure>
       </div>
     </div>
   </section>
 
-  <!-- ===== FAQ ===== -->
-  <section id="faq" class="section">
-    <div class="wrap reveal">
-      <span class="eyebrow">Questions fréquentes</span>
-      <h2 class="s-title">Ce qu'on me demande <span class="gold">souvent</span></h2>
-      <div class="faq-list">
-        <details class="faq-item">
-          <summary>Combien coûte la création d'un site internet en Belgique ?</summary>
-          <p class="faq-answer">Un site une page élégant et complet démarre à <strong>1 200 €</strong> (offre Essentiel). Un site de 5 à 6 pages avec SEO local et fiche Google Business optimisée : à partir de <strong>2 900 €</strong> (offre Signature). Boutique en ligne, réservation ou application : sur devis. Chaque offre inclut le design sur mesure, la rédaction des textes, le nom de domaine et la mise en ligne.</p>
-        </details>
-        <details class="faq-item">
-          <summary>En combien de temps mon site est-il en ligne ?</summary>
-          <p class="faq-answer">La plupart des sites vitrines sont en ligne en quelques semaines. Le délai dépend surtout du nombre de pages et de la préparation de vos contenus. Il est fixé dès le cadrage, par écrit. Un outil métier sur mesure est livré en <strong>7 jours ouvrables</strong>.</p>
-        </details>
-        <details class="faq-item">
-          <summary>Travaillez-vous uniquement à Wavre ?</summary>
-          <p class="faq-answer">Fervia est basé à <strong>Wavre, au cœur du Brabant wallon</strong>, et travaille aussi bien en rendez-vous qu'à distance : Ottignies, Louvain-la-Neuve, Rixensart, Waterloo, Bruxelles et toute la Belgique francophone. <a href="/agence-web-brabant-wallon/" style="color:var(--or);text-decoration:underline;text-underline-offset:3px">Le détail de la zone desservie est sur la page consacrée au Brabant wallon</a>.</p>
-        </details>
-        <details class="faq-item">
-          <summary>Le référencement Google (SEO) est-il inclus ?</summary>
-          <p class="faq-answer">Les fondations techniques du référencement (structure propre, vitesse, balisage, données structurées) sont incluses dans chaque site. L'offre Signature ajoute un <strong>SEO local approfondi</strong> : optimisation pour les recherches dans votre ville et fiche Google Business. Ce travail est fait à la création du site. Le suivi mensuel du référencement est en option, en plus du forfait : +50 € par mois pour l'Essentiel, +100 € pour le Signature. Il comprend la fiche Google Business tenue (une publication par semaine, réponses aux avis) et un contrôle mensuel de vos chiffres Google, avec un court compte rendu. Aucune place sur Google ne peut être garantie : c'est un travail suivi, pas un classement promis.</p>
-        </details>
-        <details class="faq-item">
-          <summary>Que comprend le forfait mensuel ?</summary>
-          <p class="faq-answer">L'hébergement, la sécurité, l'entretien, les mises à jour et les petites modifications de contenu : <strong>25 € par mois</strong> pour l'Essentiel, <strong>50 €</strong> pour le Signature. Pour un site, ce forfait fait partie de l'offre ; l'ajout de pages n'y entre pas, il se devise à part, et le suivi du référencement est en option. Pour l'outil métier, l'entretien (29 € par mois) est facultatif : votre application continue de fonctionner sans lui.</p>
-        </details>
-        <details class="faq-item">
-          <summary>Pouvez-vous aussi gérer ma publicité sur Google ?</summary>
-          <p class="faq-answer">Oui, avec le pack SEO et Google Ads : <strong>300 € par mois</strong> pour l'Essentiel, <strong>400 €</strong> pour le Signature, hors TVA. Il remplace le forfait mensuel et comprend le suivi du référencement, la mise en place de votre campagne et sa gestion : lecture des recherches qui déclenchent vos annonces, exclusions, ajustements et un compte rendu chaque mois. Le budget publicitaire est payé par vous, directement à Google, sur un compte à votre nom. Une campagne se juge sur deux à trois mois : le pack se prend pour trois mois minimum.</p>
-        </details>
-        <details class="faq-item">
-          <summary>L'IA remplace-t-elle le travail de création ?</summary>
-          <p class="faq-answer">Non. L'IA absorbe le répétitif (exploration de pistes, itérations, tests) pour que le temps aille à l'essentiel : comprendre votre besoin et soigner chaque détail. Chaque choix de design et chaque livraison restent validés par une main humaine.</p>
-        </details>
+  <section class="sec" id="questions">
+    <div class="wrap">
+      <div class="sec-head center">
+        <div><p class="kick">Questions fréquentes</p><h2 class="h2 rv">Ce qu'on me demande <em>souvent</em></h2></div>
+      </div>
+      <div class="card faq rv">
+        <details open><summary>Combien coûte la création d'un site internet en Belgique&nbsp;?</summary><p>Un site une page élégant et complet démarre à <b>1&#8239;200&nbsp;€</b> (offre Essentiel). Un site de 5 à 6 pages avec SEO local et fiche Google Business optimisée&nbsp;: à partir de <b>2&#8239;900&nbsp;€</b> (offre Signature). Boutique en ligne, réservation ou application&nbsp;: sur devis. Chaque offre inclut le design sur mesure, la rédaction des textes, le nom de domaine et la mise en ligne.</p></details>
+        <details><summary>En combien de temps mon site est-il en ligne&nbsp;?</summary><p>La plupart des sites vitrines sont en ligne en quelques semaines. Le délai dépend surtout du nombre de pages et de la préparation de vos contenus. Il est fixé dès le cadrage, par écrit. Un outil métier sur mesure est livré en <b>7 jours ouvrables</b>.</p></details>
+        <details><summary>Travaillez-vous uniquement à Wavre&nbsp;?</summary><p>Fervia est basé à <b>Wavre, au cœur du Brabant wallon</b>, et travaille aussi bien en rendez-vous qu'à distance&nbsp;: Ottignies, Louvain-la-Neuve, Rixensart, Waterloo, Bruxelles et toute la Belgique francophone. <a href="agence-web-brabant-wallon/">Le détail de la zone desservie est sur la page consacrée au Brabant wallon</a>.</p></details>
+        <details><summary>Le référencement Google (SEO) est-il inclus&nbsp;?</summary><p>Les fondations techniques du référencement (structure propre, vitesse, balisage, données structurées) sont incluses dans chaque site. L'offre Signature ajoute un <b>SEO local approfondi</b>&nbsp;: optimisation pour les recherches dans votre ville et fiche Google Business. Ce travail est fait à la création du site. Le suivi mensuel du référencement est en option, en plus du forfait&nbsp;: +50&nbsp;€ par mois pour l'Essentiel, +100&nbsp;€ pour le Signature. Il comprend la fiche Google Business tenue (une publication par semaine, réponses aux avis) et un contrôle mensuel de vos chiffres Google, avec un court compte rendu. Aucune place sur Google ne peut être garantie&nbsp;: c'est un travail suivi, pas un classement promis.</p></details>
+        <details><summary>Que comprend le forfait mensuel&nbsp;?</summary><p>L'hébergement, la sécurité, l'entretien, les mises à jour et les petites modifications de contenu&nbsp;: <b>25&nbsp;€ par mois</b> pour l'Essentiel, <b>50&nbsp;€</b> pour le Signature. Pour un site, ce forfait fait partie de l'offre&nbsp;; l'ajout de pages n'y entre pas, il se devise à part, et le suivi du référencement est en option. Pour l'outil métier, l'entretien (29&nbsp;€ par mois) est facultatif&nbsp;: votre application continue de fonctionner sans lui.</p></details>
+        <details><summary>Pouvez-vous aussi gérer ma publicité sur Google&nbsp;?</summary><p>Oui, avec le pack SEO et Google Ads&nbsp;: <b>300&nbsp;€ par mois</b> pour l'Essentiel, <b>400&nbsp;€</b> pour le Signature, hors TVA. Il remplace le forfait mensuel et comprend le suivi du référencement, la mise en place de votre campagne et sa gestion&nbsp;: lecture des recherches qui déclenchent vos annonces, exclusions, ajustements et un compte rendu chaque mois. Le budget publicitaire est payé par vous, directement à Google, sur un compte à votre nom. Une campagne se juge sur deux à trois mois&nbsp;: le pack se prend pour trois mois minimum.</p></details>
+        <details><summary>L'IA remplace-t-elle le travail de création&nbsp;?</summary><p>Non. L'IA absorbe le répétitif (exploration de pistes, itérations, tests) pour que le temps aille à l'essentiel&nbsp;: comprendre votre besoin et soigner chaque détail. Chaque choix de design et chaque livraison restent validés par une main humaine.</p></details>
       </div>
     </div>
   </section>
 
-  <!-- ===== CONTACT ===== -->
-  <section id="contact" class="section section--contact">
-    <div class="wrap reveal">
-      <span class="eyebrow">Contact</span>
-      <h2 class="s-title">Un projet <span class="gold">en tête</span> ?</h2>
-      <p class="lead">Parlons-en. Une idée, un devis, une question : j'y réponds personnellement.</p>
-
-      <form class="contact-form" id="contactForm" action="https://formsubmit.co/contact@fervia.be" method="POST">
-        <div class="cf-row">
-          <div class="cf-field">
-            <label for="cf-nom">Votre nom</label>
-            <input type="text" id="cf-nom" name="Nom" autocomplete="name" placeholder="Prénom et nom" required>
-          </div>
-          <div class="cf-field">
-            <label for="cf-email">Votre e-mail</label>
-            <input type="email" id="cf-email" name="Email" autocomplete="email" placeholder="vous@exemple.be" required>
-          </div>
+  <section class="sec contact" id="contact">
+    <div class="wrap">
+      <div>
+        <p class="kick">Contact</p>
+        <h2 class="h2 rv">Un projet <em>en tête&nbsp;?</em></h2>
+        <p class="intro rv">Parlons-en. Une idée, un devis, une question&nbsp;: j'y réponds personnellement.</p>
+        <div class="v-globe" data-view="globe" aria-hidden="true"></div>
+        <div class="direct rv">
+          <a href="mailto:contact@fervia.be"><svg class="ico"><use href="#i-mail"/></svg><span><small>ou directement</small>contact@fervia.be</span></a>
+          <a href="tel:+32465935655"><svg class="ico"><use href="#i-tel"/></svg><span><small>téléphone</small>0465.93.56.55</span></a>
+          <a href="#contact"><svg class="ico"><use href="#i-pin"/></svg><span><small>studio</small>Wavre (Brabant wallon) · Belgique</span></a>
         </div>
-        <div class="cf-field">
-          <span class="cf-select-label" id="cf-sujet-label">Votre besoin</span>
-          <div class="cf-select" id="cfSelect">
-            <button type="button" class="cf-select-trigger" id="cfSelectBtn" role="combobox"
-                    aria-haspopup="listbox" aria-expanded="false" aria-controls="cfSelectList"
-                    aria-labelledby="cf-sujet-label cfSelectValue">
-              <span id="cfSelectValue">Un site vitrine</span>
-              <span class="cf-select-arrow" aria-hidden="true"></span>
-            </button>
-            <ul class="cf-select-list" id="cfSelectList" role="listbox" aria-labelledby="cf-sujet-label" hidden>
-              <li class="cf-select-opt is-selected" role="option" id="cfopt0" aria-selected="true"  data-value="Site vitrine">Un site vitrine</li>
-              <li class="cf-select-opt"             role="option" id="cfopt1" aria-selected="false" data-value="Application / outil métier">Une application / un outil métier</li>
-              <li class="cf-select-opt"             role="option" id="cfopt2" aria-selected="false" data-value="Agent IA">Un agent IA (un métier délégué)</li>
-              <li class="cf-select-opt"             role="option" id="cfopt3" aria-selected="false" data-value="Identité visuelle">Une identité visuelle (logo, marque)</li>
-              <li class="cf-select-opt"             role="option" id="cfopt4" aria-selected="false" data-value="Autre / je ne sais pas encore">Autre / je ne sais pas encore</li>
-            </ul>
-            <input type="hidden" name="Type de projet" id="cfSujetInput" value="Site vitrine">
-          </div>
-        </div>
-        <div class="cf-field">
-          <label for="cf-message">Votre message</label>
-          <textarea id="cf-message" name="Message" placeholder="Parlez-moi de votre projet en quelques lignes…" required></textarea>
-        </div>
-        <label class="cf-consent" for="cf-consent">
-          <input type="checkbox" id="cf-consent" name="Consentement RGPD" value="Accepté" required>
-          <span>J'accepte que mes données soient utilisées pour traiter ma demande, conformément à la <a href="politique-confidentialite.html">politique de confidentialité</a>.</span>
-        </label>
-        <!-- anti-spam : ne pas remplir -->
-        <input type="text" class="cf-hp" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+      </div>
+      <form class="form rv" id="contactForm" action="https://formsubmit.co/contact@fervia.be" method="POST">
+        <p class="sent full" id="envoye" role="status" hidden>Merci, votre message est bien parti. Je vous réponds personnellement, en général sous 24&nbsp;h ouvrables.</p>
+        <div><label for="f-nom">Votre nom</label><input class="field" id="f-nom" name="Nom" required placeholder="Prénom et nom" autocomplete="name"></div>
+        <div><label for="f-mail">Votre e-mail</label><input class="field" id="f-mail" name="Email" type="email" required placeholder="vous@exemple.be" autocomplete="email"></div>
+        <div class="full"><label for="f-besoin">Votre besoin</label><select class="field" id="f-besoin" name="Type de projet" required><option value="" disabled selected>Choisissez un service</option><option>Un site vitrine</option><option>Une application / un outil métier</option><option>Un agent IA (un métier délégué)</option><option>Une identité visuelle (logo, marque)</option><option>Autre / je ne sais pas encore</option></select></div>
+        <div class="full"><label for="f-msg">Votre message</label><textarea class="field" id="f-msg" name="Message" required placeholder="Parlez-moi de votre projet en quelques lignes."></textarea></div>
+        <label class="consent full"><input type="checkbox" name="Consentement RGPD" value="Accepté" required>J'accepte que mes données soient utilisées pour traiter ma demande, conformément à la <a href="politique-confidentialite.html">politique de confidentialité</a>.</label>
+        <input type="text" class="hp" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
         <input type="hidden" name="_subject" value="Nouveau contact via fervia.be">
         <input type="hidden" name="_template" value="table">
         <input type="hidden" name="_captcha" value="false">
         <input type="hidden" name="_next" value="https://fervia.be/?envoye=1#contact">
-        <button type="submit" class="offre-cta plein contact-submit">Envoyer ma demande</button>
-        <p class="cf-status" id="cfStatus" role="status" aria-live="polite"></p>
+        <button class="btn full" type="submit">Envoyer ma demande <span class="arr">→</span></button>
+        <p class="form-note full">Ou écrivez directement à <a href="mailto:contact@fervia.be">contact@fervia.be</a></p>
       </form>
-
-      <p class="contact-sep">ou directement</p>
-      <div class="contact-methods">
-        <a class="contact" href="mailto:contact@fervia.be">contact@fervia.be</a>
-        <a class="contact" href="tel:+32465935655">0465.93.56.55</a>
-      </div>
     </div>
   </section>
 </main>
 
-<footer class="site-footer">
-  <p class="site-foot">Fervia · Studio créatif digital · Wavre (Brabant wallon) · Belgique</p>
-  <p class="site-foot site-foot--alt">© 2026 Fervia · Tous droits réservés · Conçu &amp; réalisé par Fervia</p>
-  <nav class="site-foot-links" aria-label="Informations légales">
-    <a href="mentions-legales.html">Mentions légales</a>
-    <a href="politique-confidentialite.html">Politique de confidentialité</a>
-  </nav>
+<footer class="ft">
+  <div class="wrap">
+    <div class="top">
+      <div><a class="fv-logo" href="#top" aria-label="Fervia, haut de page"><svg class="fv-lock" viewBox="43.20 602.50 755.93 222.95" aria-hidden="true" focusable="false"><use href="#fv-logo-hd"/></svg><span class="sr-only">Fervia</span></a><p>Fervia · Studio créatif digital · Wavre (Brabant wallon) · Belgique</p></div>
+      <nav aria-label="Pied de page"><a href="#methode">Méthode</a><a href="#services">Services</a><a href="#offres">Offres</a><a href="realisations/">Réalisations</a><a href="#contact">Contact</a></nav>
+    </div>
+    <div class="bot"><span>© 2026 Fervia · Tous droits réservés · Conçu &amp; réalisé par Fervia</span><div><a href="mentions-legales.html">Mentions légales</a><a href="politique-confidentialite.html">Politique de confidentialité</a></div></div>
+  </div>
 </footer>
+<canvas id="fx" aria-hidden="true"></canvas>
 
-<script>
-  (function(){
-    // URL propre : /index.html -> / (ignoré en local file://, et protégé pour ne jamais bloquer le script)
-    if (location.protocol !== 'file:' && location.pathname.endsWith('/index.html')) {
-      try {
-        history.replaceState(null, '', location.pathname.slice(0, -'index.html'.length) + location.search + location.hash);
-      } catch (e) { /* origine opaque / restriction navigateur : on ignore */ }
-    }
-    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-    // Révélation des sections au scroll
-    var els = document.querySelectorAll('.reveal');
-    if (!('IntersectionObserver' in window)) {
-      els.forEach(function(el){ el.classList.add('is-visible'); });
-    } else {
-      var io = new IntersectionObserver(function(entries){
-        entries.forEach(function(e){
-          if (e.isIntersecting){ e.target.classList.add('is-visible'); io.unobserve(e.target); }
-        });
-      }, { threshold: 0.15 });
-      els.forEach(function(el){ io.observe(el); });
-    }
-
-    // Barre de navigation + parallaxe au scroll
-    var bg = document.querySelector('.hero-bg');
-    var hero = document.querySelector('.hero');
-    var topbar = document.getElementById('topbar');
-    var claires = document.querySelectorAll('.section--alt');
-    var ticking = false;
-    function surClair(){
-      // milieu de la barre : est-il au-dessus d'une section blanc cassé ?
-      var m = topbar.offsetHeight / 2;
-      for (var i = 0; i < claires.length; i++){
-        var r = claires[i].getBoundingClientRect();
-        if (r.top <= m && r.bottom > m){ return true; }
-      }
-      return false;
-    }
-    function update(){
-      var y = window.pageYOffset || 0;
-      var h = hero.offsetHeight;
-      if (topbar){
-        topbar.classList.toggle('visible', y > h * 0.7);
-        topbar.classList.toggle('topbar--clair', surClair());
-      }
-      if (!reduce && bg && y < h){ bg.style.transform = 'translate3d(0,' + (y * 0.28) + 'px,0)'; }
-      ticking = false;
-    }
-    window.addEventListener('scroll', function(){
-      if (!ticking){ window.requestAnimationFrame(update); ticking = true; }
-    }, { passive: true });
-    update();
-  })();
-</script>
-<script>
-  (function(){
-    // Menu déroulant sur mesure : les <select> natifs ne sont pas stylables à l'ouverture
-    var root = document.getElementById('cfSelect');
-    if (!root) return;
-    var btn   = document.getElementById('cfSelectBtn');
-    var list  = document.getElementById('cfSelectList');
-    var label = document.getElementById('cfSelectValue');
-    var input = document.getElementById('cfSujetInput');
-    var opts  = Array.prototype.slice.call(list.querySelectorAll('.cf-select-opt'));
-    var active = 0;
-
-    function setActive(i){
-      active = (i + opts.length) % opts.length;
-      opts.forEach(function(o, n){ o.classList.toggle('is-active', n === active); });
-      btn.setAttribute('aria-activedescendant', opts[active].id);
-      opts[active].scrollIntoView({ block: 'nearest' });
-    }
-    function open(){
-      list.hidden = false;
-      btn.setAttribute('aria-expanded', 'true');
-      setActive(opts.findIndex(function(o){ return o.getAttribute('aria-selected') === 'true'; }));
-    }
-    function close(){
-      list.hidden = true;
-      btn.setAttribute('aria-expanded', 'false');
-      btn.removeAttribute('aria-activedescendant');
-    }
-    function choose(i){
-      opts.forEach(function(o, n){
-        var sel = n === i;
-        o.setAttribute('aria-selected', sel ? 'true' : 'false');
-        o.classList.toggle('is-selected', sel);
-      });
-      label.textContent = opts[i].textContent;
-      input.value = opts[i].getAttribute('data-value');
-      close();
-      btn.focus();
-    }
-
-    btn.addEventListener('click', function(){ list.hidden ? open() : close(); });
-    opts.forEach(function(o, i){
-      o.addEventListener('click', function(){ choose(i); });
-      o.addEventListener('mousemove', function(){ setActive(i); });
-    });
-    btn.addEventListener('keydown', function(e){
-      var k = e.key;
-      if (k === 'ArrowDown' || k === 'ArrowUp' || k === 'Enter' || k === ' ') {
-        if (list.hidden) { e.preventDefault(); open(); return; }
-      }
-      if (list.hidden) return;
-      if (k === 'ArrowDown') { e.preventDefault(); setActive(active + 1); }
-      else if (k === 'ArrowUp') { e.preventDefault(); setActive(active - 1); }
-      else if (k === 'Home') { e.preventDefault(); setActive(0); }
-      else if (k === 'End') { e.preventDefault(); setActive(opts.length - 1); }
-      else if (k === 'Enter' || k === ' ') { e.preventDefault(); choose(active); }
-      else if (k === 'Escape') { e.preventDefault(); close(); }
-      else if (k === 'Tab') { close(); }
-    });
-    document.addEventListener('click', function(e){
-      if (!list.hidden && !root.contains(e.target)) close();
-    });
-  })();
-</script>
-<script>
-  (function(){
-    // Au retour de FormSubmit (redirection _next -> /?envoye=1#contact), afficher la confirmation
-    var params = new URLSearchParams(window.location.search);
-    // Pendant l'envoi, le bouton dit ce qui se passe : la page part chez FormSubmit
-    var cForm = document.getElementById('contactForm');
-    if (cForm) {
-      cForm.addEventListener('submit', function(){
-        var b = cForm.querySelector('.contact-submit');
-        if (b) {
-          b.classList.add('is-sending');
-          b.textContent = 'Envoi en cours…';
-          // le disabled doit venir apres la serialisation, sinon le champ n'est pas envoye
-          setTimeout(function(){ b.disabled = true; }, 0);
-        }
-      });
-    }
-
-    if (params.get('envoye') === '1') {
-      var status = document.getElementById('cfStatus');
-      if (status) {
-        status.textContent = 'Merci ! Votre message est bien parti. Je vous réponds au plus vite.';
-        // une frame d'attente, sinon le navigateur peint l'état final sans transition
-        requestAnimationFrame(function(){
-          requestAnimationFrame(function(){ status.className = 'cf-status ok'; });
-        });
-      }
-      // Nettoyer l'URL sans recharger la page
-      try {
-        window.history.replaceState(null, '', window.location.pathname + '#contact');
-      } catch (e) { /* restriction navigateur : on ignore */ }
-    }
-  })();
-</script>
-<script src="assets/hero-vivant.min.js" defer></script>
+<script src="assets/vendor/three.min.js"></script>
+<script src="assets/site.js"></script>
 </body>
 </html>
