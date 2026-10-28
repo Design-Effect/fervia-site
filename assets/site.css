@@ -448,7 +448,7 @@ textarea.field{min-height:120px;resize:vertical}
 @media (max-width:1080px){
   .nav{display:none}
   .hero-grid{grid-template-columns:1fr;gap:0}
-  .scene-wrap{height:460px;min-height:0;order:-1;margin:-20px 0 -10px}
+  .scene-wrap{height:460px;min-height:0;margin:28px 0 -10px}
   .hero{padding-top:96px}
   .steps{grid-template-columns:repeat(2,1fr)}
   .steps::before,.steps .runner{display:none}
@@ -460,7 +460,7 @@ textarea.field{min-height:120px;resize:vertical}
 /* Tablette (721 à 1080 px) : une seule colonne ; la scène se cadre comme au téléphone et le texte se centre sous la flamme */
 @media (min-width:721px) and (max-width:1080px){
   #scene{inset:0}
-  .scene-wrap{margin:-20px 0 28px}
+  .scene-wrap{margin:16px 0 28px}
   .hero-txt{max-width:720px;margin:0 auto;text-align:center}
   .hero-txt .lede{margin-left:auto;margin-right:auto}
   .hero-txt .chips,.hero-txt .ctas{justify-content:center}
@@ -477,13 +477,12 @@ textarea.field{min-height:120px;resize:vertical}
   .hd .l-long{display:none}.hd .l-short{display:inline}
   .menu-btn{display:grid!important}
   .hero{padding:80px 0 40px;min-height:0}
-  .scene-wrap{height:380px;margin:0 -20px 10px}
+  .scene-wrap{height:250px;margin:8px -20px 10px}
   #scene{inset:0}
   .forge-status{bottom:auto;top:4px}
   .h1{font-size:40px}
   .tagline{margin-top:20px}
-  .chips{margin-bottom:28px}
-  .chips li{font-size:13.5px;padding:7px 11px 7px 8px}
+  .chips{display:none}
   .ctas .btn,.ctas .btn-soft{width:100%}
   /* Au téléphone le bouton « Découvrir » pleine largeur double l'indicateur de défilement (le texte du héros descend de 90 px en défilant et passe dessus) : on ne garde que l'indicateur */
   .hero .ctas .btn-soft{display:none}
