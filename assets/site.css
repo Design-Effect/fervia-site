@@ -177,7 +177,7 @@ main,.ft{position:relative;z-index:1}
 .hero{position:relative;min-height:min(100svh,940px);padding:116px 0 56px;display:flex;flex-direction:column;justify-content:center;overflow:hidden;
   background:var(--hero-bg)}
 .hero::after{content:"";position:absolute;inset:auto 0 0;height:140px;background:var(--hero-fade);pointer-events:none}
-.hero-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:24px;align-items:center;position:relative;z-index:2}
+.hero-grid{display:grid;grid-template-columns:1.2fr .95fr;gap:24px;align-items:center;position:relative;z-index:2}
 .hero-txt{will-change:transform,opacity}
 .pill{display:inline-flex;align-items:center;gap:10px;background:var(--glass);border:1px solid var(--line);border-radius:999px;padding:7px 14px 7px 8px;font-size:13.5px;font-weight:600;color:var(--text);box-shadow:var(--shadow)}
 .pill .dot{position:relative;width:20px;height:20px;border-radius:50%;background:var(--teal-soft);display:grid;place-items:center}
@@ -189,6 +189,10 @@ main,.ft{position:relative;z-index:1}
 .h1 .ln{display:block;overflow:hidden;padding-bottom:.16em;margin-bottom:-.06em}
 .h1 .ln > span{display:inline-block}
 .h1 em{font-style:normal;color:var(--teal)}
+.hero .h1{font-size:clamp(40px,4.7vw,66px)}
+.hero-call{margin:6px 0 0;font-size:15px;color:var(--muted)}
+.hero-call a{display:inline-block;padding:12px 0;font-weight:700;color:var(--teal);text-decoration:underline;text-decoration-color:var(--teal-soft);text-decoration-thickness:1.5px;text-underline-offset:4px;transition:text-decoration-color .2s}
+@media (hover:hover) and (pointer:fine){.hero-call a:hover{text-decoration-color:var(--teal)}}
 .lede{font-size:clamp(17px,1.4vw,19px);max-width:31em;color:var(--text);margin-bottom:30px}
 .chips{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 34px;padding:0;list-style:none}
 .chips li{display:flex;align-items:center;gap:9px;background:var(--white);border:1px solid var(--line);border-radius:12px;padding:9px 14px 9px 10px;font-size:14.5px;font-weight:600;color:var(--ink);box-shadow:var(--shadow)}
@@ -480,7 +484,7 @@ textarea.field{min-height:120px;resize:vertical}
   .scene-wrap{height:250px;margin:8px -20px 10px}
   #scene{inset:0}
   .forge-status{bottom:auto;top:4px}
-  .h1{font-size:40px}
+  .hero .h1{font-size:36px}
   .tagline{margin-top:20px}
   .chips{display:none}
   .ctas .btn,.ctas .btn-soft{width:100%}
