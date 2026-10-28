@@ -494,6 +494,8 @@ textarea.field{min-height:120px;resize:vertical}
 /* Téléphone */
 @media (max-width:720px){
   body{font-size:16px}
+  /* Les libellés longs passent à la ligne au lieu de faire déborder la page */
+  .btn,.btn-soft{white-space:normal;text-align:center}
   .hd .wrap{height:66px}
   .hd .fv-lock{height:30px}
   /* En-tête du téléphone : appel direct et « Devis → » restent visibles ; l'e-mail et la bascule de thème passent dans le menu */
@@ -501,6 +503,7 @@ textarea.field{min-height:120px;resize:vertical}
   .hd-right a.icon-btn[href^="mailto:"],.hd-right .theme-btn{display:none}
   .hd .btn{padding:0 14px;min-height:44px;font-size:15px}
   .hd .l-long{display:none}.hd .l-short{display:inline}
+  .hd .btn{white-space:nowrap}
   .menu-btn{display:grid!important}
   .hero{padding:80px 0 40px;min-height:0}
   .scene-wrap{height:250px;margin:8px -20px 10px}
