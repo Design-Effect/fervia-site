@@ -442,6 +442,14 @@ textarea.field{min-height:120px;resize:vertical}
   .logo-wall{border-left:0;border-top:1px solid var(--line)}
   .contact .wrap{grid-template-columns:1fr}
 }
+/* Tablette (721 à 1080 px) : une seule colonne ; la scène se cadre comme au téléphone et le texte se centre sous la flamme */
+@media (min-width:721px) and (max-width:1080px){
+  #scene{inset:0}
+  .scene-wrap{margin:-20px 0 28px}
+  .hero-txt{max-width:720px;margin:0 auto;text-align:center}
+  .hero-txt .lede{margin-left:auto;margin-right:auto}
+  .hero-txt .chips,.hero-txt .ctas{justify-content:center}
+}
 /* Téléphone */
 @media (max-width:720px){
   body{font-size:16px}
