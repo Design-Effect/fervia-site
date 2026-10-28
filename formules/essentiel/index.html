@@ -26,7 +26,7 @@
 <link rel="manifest" href="../../site.webmanifest">
 <link rel="preload" href="../../assets/fonts/manrope-var-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../../assets/fonts/ibm-plex-mono-400-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="../../assets/site.css?v=bf66c0f3">
+<link rel="stylesheet" href="../../assets/site.css?v=f7047e74">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -98,8 +98,7 @@
         "priceSpecification": {
           "@type": "PriceSpecification",
           "priceCurrency": "EUR",
-          "minPrice": "1200",
-          "valueAddedTaxIncluded": false
+          "minPrice": "1200"
         },
         "description": "Un site d'une page, design sur mesure, rédaction des textes, nom de domaine et mise en ligne compris, puis 25 € par mois pour l'hébergement, la sécurité et les petites modifications.",
         "availability": "https://schema.org/InStock"
@@ -122,7 +121,7 @@
           "name": "Le forfait mensuel est-il obligatoire ?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Oui, il fait partie de l'offre de site : 25 € par mois, hors TVA. C'est lui qui garantit que votre site reste en ligne, protégé et à jour. Le suivi du référencement, lui, est une option."
+            "text": "Oui, il fait partie de l'offre de site : 25 € par mois. C'est lui qui garantit que votre site reste en ligne, protégé et à jour. Le suivi du référencement, lui, est une option."
           }
         },
         {
@@ -148,14 +147,6 @@
             "@type": "Answer",
             "text": "Une page supplémentaire se devise à l'unité. Pour passer à une structure de cinq à six pages avec référencement local, c'est la formule Signature : le passage se chiffre au moment de la demande, sans promesse de déduction."
           }
-        },
-        {
-          "@type": "Question",
-          "name": "Les prix incluent-ils la TVA ?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Non, tous les prix sont hors TVA et annoncés par écrit avant de commencer."
-          }
         }
       ]
     }
@@ -163,13 +154,11 @@
 }
 </script>
 <script>document.documentElement.classList.add('js')</script>
-<script>/* Thème posé AVANT le premier rendu : aucun flash. Décision d'AbduLlah du 28/10 : clair d'office ;
-   sombre seulement si le téléphone est en sombre ET qu'il est le soir (19 h à 7 h) ; le bouton vaut pour la visite. */
-(function(){try{var r=document.documentElement,s=sessionStorage.getItem('fervia-theme'),
-h=new Date().getHours(),soir=(h>=19||h<7),
-sys=window.matchMedia&&window.matchMedia('(prefers-color-scheme:dark)').matches;
+<script>/* Thème posé AVANT le premier rendu : aucun flash. Décision du 28/10 (20 h 25) : clair par défaut, quels que soient l'heure et le réglage du téléphone ;
+   sombre seulement si le visiteur a appuyé sur le bouton de thème (choix gardé le temps de la visite). */
+(function(){try{var r=document.documentElement,s=sessionStorage.getItem('fervia-theme');
 try{localStorage.removeItem('fervia-theme')}catch(x){}
-var t=(s==='dark'||s==='light')?s:((sys&&soir)?'dark':'light');
+var t=(s==='dark')?'dark':'light';
 r.setAttribute('data-theme',t);
 var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute('content',t==='dark'?'#0E2A31':'#F5F8F8');
 }catch(e){}})();</script>
@@ -195,11 +184,11 @@ var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute('co
 <header class="hd" id="hd">
   <div class="wrap">
     <a class="fv-logo" href="../../index.html#top" aria-label="Fervia, haut de page"><svg class="fv-lock" viewBox="43.20 602.50 755.93 222.95" aria-hidden="true" focusable="false"><use href="#fv-logo-h"/></svg><span class="sr-only">Fervia</span></a>
-    <nav class="nav" aria-label="Sections du site"><a href="../../index.html#methode">Méthode</a><a href="../../index.html#services">Services</a><a href="../../index.html#offres">Offres</a><a href="../../realisations/">Réalisations</a><a href="../../index.html#contact">Contact</a></nav>
+    <nav class="nav" aria-label="Sections du site"><a href="../../index.html#methode">Méthode</a><a href="../../index.html#services">Services</a><a href="../../index.html#offres">Offres</a><a href="../../realisations/">Réalisations</a><a href="../../a-propos/">À propos</a><a href="../../index.html#contact">Contact</a></nav>
     <div class="hd-right">
       <a class="icon-btn" href="mailto:contact@fervia.be" aria-label="Envoyer un e-mail à contact@fervia.be"><svg class="ico"><use href="#i-mail"/></svg></a>
       <a class="icon-btn" href="tel:+32465935655" aria-label="Appeler Fervia au 0465 93 56 55"><svg class="ico"><use href="#i-tel"/></svg></a>
-      <a class="btn" href="../../index.html#contact">Demander un devis</a>
+      <a class="btn" href="../../index.html#contact"><span class="l-long">Demander un devis</span><span class="l-short">Devis</span> <span class="arr" aria-hidden="true">→</span></a>
       <button class="icon-btn theme-btn" id="themeBtn" type="button" aria-label="Passer en mode sombre"><svg class="ico i-moon"><use href="#i-moon"/></svg><svg class="ico i-sun"><use href="#i-sun"/></svg></button>
       <button class="icon-btn menu-btn" id="menuBtn" aria-label="Ouvrir le menu" aria-expanded="false"><svg class="ico" viewBox="0 0 24 24"><path d="M4 8h16M4 16h16"/></svg></button>
     </div>
@@ -208,6 +197,7 @@ var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute('co
 <nav class="mnav" aria-label="Menu">
   <a href="../../index.html#methode">Méthode</a><a href="../../index.html#services">Services</a><a href="../../index.html#offres">Offres</a><a href="../../realisations/">Réalisations</a><a href="../../a-propos/">À propos</a><a href="../../index.html#contact">Contact</a>
   <a class="btn" href="tel:+32465935655"><svg class="ico" aria-hidden="true"><use href="#i-tel"/></svg>0465 93 56 55</a>
+  <button class="mnav-theme" id="themeBtnM" type="button"><svg class="ico i-moon" aria-hidden="true"><use href="#i-moon"/></svg><svg class="ico i-sun" aria-hidden="true"><use href="#i-sun"/></svg><span class="t-dark">Passer en mode sombre</span><span class="t-light">Passer en mode clair</span></button>
 </nav>
 
 <main id="main" class="pg">
@@ -221,7 +211,7 @@ var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute('co
   <section class="sec">
     <div class="wrap col">
 <div class="answer">
-  <p>Un site d'une page, dessiné pour votre activité, avec vos textes écrits, votre nom de domaine et la mise en ligne. À partir de <strong>1&nbsp;200&nbsp;€</strong>, puis <strong>25&nbsp;€ par mois</strong> pour l'hébergement, la sécurité et les petites modifications. Prix hors TVA, écrit avant de commencer.</p>
+  <p>Un site d'une page, dessiné pour votre activité, avec vos textes écrits, votre nom de domaine et la mise en ligne. À partir de <strong>1&nbsp;200&nbsp;€</strong>, puis <strong>25&nbsp;€ par mois</strong> pour l'hébergement, la sécurité et les petites modifications. Prix annoncés par écrit avant de commencer.</p>
 </div>
 <p class="btnrow"><a class="btn" href="../../?formule=essentiel#contact">Demander un devis pour l'Essentiel <span class="arr">→</span></a></p>
     </div>
@@ -285,7 +275,7 @@ var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute('co
   <li>l'entretien et les mises à jour&nbsp;;</li>
   <li>les petites modifications de contenu&nbsp;: vous m'écrivez, c'est fait dans la journée ou presque.</li>
 </ul>
-<p class="lead">Il ne comprend pas l'ajout de pages (devisé à part) ni le suivi du référencement (option ci-dessous). Le prix est hors TVA.</p>
+<p class="lead">Il ne comprend pas l'ajout de pages (devisé à part) ni le suivi du référencement (option ci-dessous).</p>
     </div>
   </section>
   <section class="sec" id="etre-trouve">
@@ -323,11 +313,10 @@ var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute('co
 <div class="sh"><h2 class="h2 rv">Questions fréquentes</h2></div>
 <div class="card faq rv">
 <details open><summary>Une seule page, est-ce suffisant pour être trouvé sur Google&nbsp;?</summary><p>Les fondations techniques du référencement sont comprises, donc votre page est lisible par Google. Mais une page ne peut cibler bien qu'un sujet principal&nbsp;: elle peut apparaître quand on cherche votre nom ou votre activité, sans que je puisse garantir une place. Si vous voulez être trouvé pour plusieurs services ou dans votre ville en particulier, la formule Signature est faite pour cela.</p></details>
-<details><summary>Le forfait mensuel est-il obligatoire&nbsp;?</summary><p>Oui, il fait partie de l'offre de site&nbsp;: 25&nbsp;€ par mois, hors TVA. C'est lui qui garantit que votre site reste en ligne, protégé et à jour. Le suivi du référencement, lui, est une option.</p></details>
+<details><summary>Le forfait mensuel est-il obligatoire&nbsp;?</summary><p>Oui, il fait partie de l'offre de site&nbsp;: 25&nbsp;€ par mois. C'est lui qui garantit que votre site reste en ligne, protégé et à jour. Le suivi du référencement, lui, est une option.</p></details>
 <details><summary>Quelle différence entre le suivi du référencement et le pack avec Google Ads&nbsp;?</summary><p>Le suivi (+50&nbsp;€ par mois) travaille votre présence naturelle sur Google&nbsp;: fiche Google Business et contrôle de vos chiffres. Le pack (300&nbsp;€ par mois) y ajoute des annonces payantes, mises en place et gérées pour vous. Le suivi fait durer, les annonces peuvent faire venir plus vite.</p></details>
 <details><summary>Qui paie la publicité Google&nbsp;?</summary><p>Vous, directement à Google, sur un compte à votre nom. Je ne prends aucune commission sur ce budget&nbsp;: mes honoraires sont le prix mensuel fixe du pack.</p></details>
 <details><summary>Et si mon activité grandit&nbsp;?</summary><p>Une page supplémentaire se devise à l'unité. Pour passer à une structure de cinq à six pages avec référencement local, c'est la formule Signature&nbsp;: le passage se chiffre au moment de la demande, sans promesse de déduction.</p></details>
-<details><summary>Les prix incluent-ils la TVA&nbsp;?</summary><p>Non, tous les prix sont hors TVA et annoncés par écrit avant de commencer.</p></details>
 </div>
     </div>
   </section>
@@ -351,7 +340,7 @@ var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute('co
 <footer class="ft">
   <div class="wrap">
     <div class="top">
-      <div><a class="fv-logo" href="../../index.html#top" aria-label="Fervia, haut de page"><svg class="fv-lock" viewBox="43.20 602.50 755.93 222.95" aria-hidden="true" focusable="false"><use href="#fv-logo-hd"/></svg><span class="sr-only">Fervia</span></a><p>Fervia · Studio créatif digital · Wavre (Brabant wallon) · Belgique</p></div>
+      <div><a class="fv-logo" href="../../index.html#top" aria-label="Fervia, haut de page"><svg class="fv-lock" viewBox="43.20 602.50 755.93 222.95" aria-hidden="true" focusable="false"><use href="#fv-logo-hd"/></svg><span class="sr-only">Fervia</span></a><p>Fervia · Studio créatif digital · Wavre (Brabant wallon) · Belgique</p><p class="ft-contact"><a href="tel:+32465935655">0465&nbsp;93&nbsp;56&nbsp;55</a><a href="mailto:contact@fervia.be">contact@fervia.be</a></p></div>
       <nav aria-label="Pied de page"><a href="../../index.html#methode">Méthode</a><a href="../../index.html#services">Services</a><a href="../../index.html#offres">Offres</a><a href="../../realisations/">Réalisations</a><a href="../../a-propos/">À propos</a><a href="../../index.html#contact">Contact</a></nav>
     </div>
     <div class="bot"><span>© 2026 Fervia · Tous droits réservés · Conçu &amp; réalisé par Fervia</span><div><a href="../../mentions-legales.html">Mentions légales</a><a href="../../politique-confidentialite.html">Politique de confidentialité</a></div></div>
@@ -359,6 +348,6 @@ var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute('co
 </footer>
 
 
-<script src="../../assets/site.js?v=b73a099f"></script>
+<script src="../../assets/site.js?v=ea03c435"></script>
 </body>
 </html>

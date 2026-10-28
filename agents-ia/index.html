@@ -26,7 +26,7 @@
 <link rel="manifest" href="../site.webmanifest">
 <link rel="preload" href="../assets/fonts/manrope-var-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../assets/fonts/ibm-plex-mono-400-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="../assets/site.css?v=bf66c0f3">
+<link rel="stylesheet" href="../assets/site.css?v=f7047e74">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -67,8 +67,7 @@
             "@type": "UnitPriceSpecification",
             "price": "500",
             "priceCurrency": "EUR",
-            "unitText": "par mois",
-            "valueAddedTaxIncluded": false
+            "unitText": "par mois"
           },
           "description": "500 € par mois pour l'agent de prospection, sans engagement, résiliable à tout moment.",
           "availability": "https://schema.org/InStock"
@@ -87,8 +86,7 @@
           "priceSpecification": {
             "@type": "PriceSpecification",
             "minPrice": "1500",
-            "priceCurrency": "EUR",
-            "valueAddedTaxIncluded": false
+            "priceCurrency": "EUR"
           },
           "description": "Payée une fois, à partir de 1 500 € pour le premier agent.",
           "availability": "https://schema.org/InStock"
@@ -143,13 +141,11 @@
 }
 </script>
 <script>document.documentElement.classList.add('js')</script>
-<script>/* Thème posé AVANT le premier rendu : aucun flash. Décision d'AbduLlah du 28/10 : clair d'office ;
-   sombre seulement si le téléphone est en sombre ET qu'il est le soir (19 h à 7 h) ; le bouton vaut pour la visite. */
-(function(){try{var r=document.documentElement,s=sessionStorage.getItem('fervia-theme'),
-h=new Date().getHours(),soir=(h>=19||h<7),
-sys=window.matchMedia&&window.matchMedia('(prefers-color-scheme:dark)').matches;
+<script>/* Thème posé AVANT le premier rendu : aucun flash. Décision du 28/10 (20 h 25) : clair par défaut, quels que soient l'heure et le réglage du téléphone ;
+   sombre seulement si le visiteur a appuyé sur le bouton de thème (choix gardé le temps de la visite). */
+(function(){try{var r=document.documentElement,s=sessionStorage.getItem('fervia-theme');
 try{localStorage.removeItem('fervia-theme')}catch(x){}
-var t=(s==='dark'||s==='light')?s:((sys&&soir)?'dark':'light');
+var t=(s==='dark')?'dark':'light';
 r.setAttribute('data-theme',t);
 var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute('content',t==='dark'?'#0E2A31':'#F5F8F8');
 }catch(e){}})();</script>
@@ -175,11 +171,11 @@ var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute('co
 <header class="hd" id="hd">
   <div class="wrap">
     <a class="fv-logo" href="../index.html#top" aria-label="Fervia, haut de page"><svg class="fv-lock" viewBox="43.20 602.50 755.93 222.95" aria-hidden="true" focusable="false"><use href="#fv-logo-h"/></svg><span class="sr-only">Fervia</span></a>
-    <nav class="nav" aria-label="Sections du site"><a href="../index.html#methode">Méthode</a><a href="../index.html#services">Services</a><a href="../index.html#offres">Offres</a><a href="../realisations/">Réalisations</a><a href="../index.html#contact">Contact</a></nav>
+    <nav class="nav" aria-label="Sections du site"><a href="../index.html#methode">Méthode</a><a href="../index.html#services">Services</a><a href="../index.html#offres">Offres</a><a href="../realisations/">Réalisations</a><a href="../a-propos/">À propos</a><a href="../index.html#contact">Contact</a></nav>
     <div class="hd-right">
       <a class="icon-btn" href="mailto:contact@fervia.be" aria-label="Envoyer un e-mail à contact@fervia.be"><svg class="ico"><use href="#i-mail"/></svg></a>
       <a class="icon-btn" href="tel:+32465935655" aria-label="Appeler Fervia au 0465 93 56 55"><svg class="ico"><use href="#i-tel"/></svg></a>
-      <a class="btn" href="../index.html#contact">Demander un devis</a>
+      <a class="btn" href="../index.html#contact"><span class="l-long">Demander un devis</span><span class="l-short">Devis</span> <span class="arr" aria-hidden="true">→</span></a>
       <button class="icon-btn theme-btn" id="themeBtn" type="button" aria-label="Passer en mode sombre"><svg class="ico i-moon"><use href="#i-moon"/></svg><svg class="ico i-sun"><use href="#i-sun"/></svg></button>
       <button class="icon-btn menu-btn" id="menuBtn" aria-label="Ouvrir le menu" aria-expanded="false"><svg class="ico" viewBox="0 0 24 24"><path d="M4 8h16M4 16h16"/></svg></button>
     </div>
@@ -188,6 +184,7 @@ var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute('co
 <nav class="mnav" aria-label="Menu">
   <a href="../index.html#methode">Méthode</a><a href="../index.html#services">Services</a><a href="../index.html#offres">Offres</a><a href="../realisations/">Réalisations</a><a href="../a-propos/">À propos</a><a href="../index.html#contact">Contact</a>
   <a class="btn" href="tel:+32465935655"><svg class="ico" aria-hidden="true"><use href="#i-tel"/></svg>0465 93 56 55</a>
+  <button class="mnav-theme" id="themeBtnM" type="button"><svg class="ico i-moon" aria-hidden="true"><use href="#i-moon"/></svg><svg class="ico i-sun" aria-hidden="true"><use href="#i-sun"/></svg><span class="t-dark">Passer en mode sombre</span><span class="t-light">Passer en mode clair</span></button>
 </nav>
 
 <main id="main" class="pg">
@@ -280,7 +277,7 @@ var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute('co
 <div class="sh"><h2 class="h2 rv">Le prix</h2></div>
 <p class="price-pre">l'agent de prospection</p>
     <div class="price-figure">500 €<span class="unit">par mois</span></div>
-    <div class="price-note">Abonnement mensuel, sans engagement, résiliable à tout moment. Les autres métiers sont chiffrés selon le métier, sur devis. Prix hors TVA, annoncés par écrit avant de commencer.</div>
+    <div class="price-note">Abonnement mensuel, sans engagement, résiliable à tout moment. Les autres métiers sont chiffrés selon le métier, sur devis. Prix annoncés par écrit avant de commencer.</div>
     <div class="price-lines">
       <div class="pline"><span class="tick">◆</span><p><strong>Mise en place : à partir de 1 500 €, payée une fois.</strong> Serveur installé et sécurisé, agent réglé sur votre métier, votre ton et vos règles, accès branchés, une heure de prise en main. Puis 500 € par agent supplémentaire installé en même temps.</p></div>
       <div class="pline"><span class="tick">◆</span><p><strong>Les frais externes sont facturés à part, au coût réel</strong> : le serveur, entre 10 et 25 € par mois selon la taille, et l'usage du modèle d'IA, qui suit le volume de travail de l'agent. Les crédits de génération d'images et de vidéos, pour le Social Media Manager, suivent la même règle.</p></div>
@@ -346,7 +343,7 @@ var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute('co
 <footer class="ft">
   <div class="wrap">
     <div class="top">
-      <div><a class="fv-logo" href="../index.html#top" aria-label="Fervia, haut de page"><svg class="fv-lock" viewBox="43.20 602.50 755.93 222.95" aria-hidden="true" focusable="false"><use href="#fv-logo-hd"/></svg><span class="sr-only">Fervia</span></a><p>Fervia · Studio créatif digital · Wavre (Brabant wallon) · Belgique</p></div>
+      <div><a class="fv-logo" href="../index.html#top" aria-label="Fervia, haut de page"><svg class="fv-lock" viewBox="43.20 602.50 755.93 222.95" aria-hidden="true" focusable="false"><use href="#fv-logo-hd"/></svg><span class="sr-only">Fervia</span></a><p>Fervia · Studio créatif digital · Wavre (Brabant wallon) · Belgique</p><p class="ft-contact"><a href="tel:+32465935655">0465&nbsp;93&nbsp;56&nbsp;55</a><a href="mailto:contact@fervia.be">contact@fervia.be</a></p></div>
       <nav aria-label="Pied de page"><a href="../index.html#methode">Méthode</a><a href="../index.html#services">Services</a><a href="../index.html#offres">Offres</a><a href="../realisations/">Réalisations</a><a href="../a-propos/">À propos</a><a href="../index.html#contact">Contact</a></nav>
     </div>
     <div class="bot"><span>© 2026 Fervia · Tous droits réservés · Conçu &amp; réalisé par Fervia</span><div><a href="../mentions-legales.html">Mentions légales</a><a href="../politique-confidentialite.html">Politique de confidentialité</a></div></div>
@@ -354,6 +351,6 @@ var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute('co
 </footer>
 
 
-<script src="../assets/site.js?v=b73a099f"></script>
+<script src="../assets/site.js?v=ea03c435"></script>
 </body>
 </html>

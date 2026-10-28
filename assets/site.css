@@ -40,29 +40,9 @@
 /* === MODE SOMBRE ===========================================================
    Base : les sections déjà sombres du site (contact / pied, teal profond).
    Un seul jeu de jetons, la peau change, pas le design.
-   - Repli sans JS : bascule automatique par @media (prefers-color-scheme:dark).
-   - Avec JS (toujours le cas ici) : data-theme posé avant le rendu, l'override
-     manuel prime. Les surcharges de composants sont scopées [data-theme=dark]. */
-@media (prefers-color-scheme:dark){
-  :root:not([data-theme="light"]){
-    --bg:#0E2A31; --bg-2:#0A2027; --white:#15333C;
-    --ink:#ECF3F2; --text:#C6D7D7; --muted:#95AEB0; --line:rgba(176,214,214,.16); --line-2:rgba(176,214,214,.28); --field-line:rgba(176,214,214,.34); --ph:#8AA1A4;
-    --teal:#58C5B8; --teal-d:#7AD6C9; --teal-soft:rgba(88,197,184,.15); --mint:#8FD3C7; --sky:#20404F;
-    --deep:#081C22; --deep-2:#0E2A31; --deep-line:rgba(255,255,255,.1);
-    --shadow:0 1px 2px rgba(0,0,0,.3),0 18px 40px -18px rgba(0,0,0,.6);
-    --shadow-lg:0 2px 4px rgba(0,0,0,.3),0 40px 80px -30px rgba(0,0,0,.7);
-    --on-teal:#06231F;
-    --hero-bg:radial-gradient(55% 65% at 72% 46%,#143A42 0%,rgba(20,58,66,0) 70%),radial-gradient(40% 50% at 92% 10%,#15323D 0%,rgba(21,50,61,0) 70%),linear-gradient(180deg,#0C262D 0%,#0E2A31 100%);
-    --hero-fade:linear-gradient(180deg,rgba(14,42,49,0),var(--bg));
-    --hd-glass:rgba(10,32,39,.82);
-    --glass:rgba(21,51,60,.72);
-    --glass-strong:rgba(21,51,60,.9);
-    --num-grad:linear-gradient(145deg,#1A3B45,#102C34);
-    --blueprint:#0C2730; --ill-bg:#103540; --ill-grid:rgba(143,211,199,.2);
-    --field-bg:#102C34;
-    color-scheme:dark;
-  }
-}
+   - Clair par défaut (décision du 28/10) : jamais de bascule automatique par
+     prefers-color-scheme ; le sombre vient du seul bouton de thème (data-theme),
+     posé avant le rendu. Les surcharges de composants sont scopées [data-theme=dark]. */
 :root[data-theme="dark"]{
   --bg:#0E2A31; --bg-2:#0A2027; --white:#15333C;
   --ink:#ECF3F2; --text:#C6D7D7; --muted:#95AEB0; --line:rgba(176,214,214,.16); --line-2:rgba(176,214,214,.28); --field-line:rgba(176,214,214,.34); --ph:#8AA1A4;
@@ -128,8 +108,6 @@ main,.ft{position:relative;z-index:1}
 /* Flamme du lettrage : les dégradés lisent ces variables sur :root (pas sur .fv-logo) */
 :root{--fv-f0:#0F9890;--fv-f1:#0E7C86;--fv-f2:#0A636B}
 :root[data-theme="dark"]{--fv-f0:#8FD3C7;--fv-f1:#58C5B8;--fv-f2:#2E9C98}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--fv-f0:#8FD3C7;--fv-f1:#58C5B8;--fv-f2:#2E9C98}}
-
 /* Boutons */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--teal);color:var(--on-teal);font-weight:700;font-size:16px;padding:15px 24px;border-radius:14px;border:0;cursor:pointer;white-space:nowrap;box-shadow:0 10px 24px -10px rgba(14,124,134,.6);transition:background .2s,transform .2s var(--ease),box-shadow .2s}
 @media (hover:hover) and (pointer:fine){.btn:hover{background:var(--teal-d);transform:translateY(-2px);box-shadow:0 16px 30px -12px rgba(14,124,134,.65)}}
@@ -150,6 +128,8 @@ main,.ft{position:relative;z-index:1}
 @media (hover:hover) and (pointer:fine){.icon-btn:hover{transform:translateY(-2px);border-color:var(--line-2)}}
 .btn:active,.btn-soft:active,.icon-btn:active{transform:scale(.97);transition-duration:.12s}
 .hd .btn{padding:12px 18px;font-size:15px;border-radius:12px}
+.hd .l-short{display:none}
+.mnav-theme{display:none}
 .menu-btn{display:none}
 /* Interrupteur clair/sombre : lune en mode clair (clic vers sombre), soleil en mode sombre */
 .theme-btn{position:relative}
@@ -163,12 +143,19 @@ main,.ft{position:relative;z-index:1}
 .mnav .btn{margin-top:24px;align-self:flex-start;font-size:17px;min-height:48px;padding:12px 24px;color:var(--on-teal)}
 .mnav .btn .ico{width:20px;height:20px;flex:none}
 .hd.open + .mnav{opacity:1;pointer-events:auto}
+.mnav-theme{align-items:center;gap:10px;align-self:flex-start;min-height:48px;margin-top:6px;padding:0;background:none;border:0;font:inherit;font-size:16px;font-weight:600;color:var(--muted);cursor:pointer}
+.mnav-theme .ico{width:20px;height:20px;flex:none}
+.mnav-theme .i-sun,.mnav-theme .t-light{display:none}
+:root[data-theme="dark"] .mnav-theme .i-sun,:root[data-theme="dark"] .mnav-theme .t-light{display:inline-block}
+:root[data-theme="dark"] .mnav-theme .i-moon,:root[data-theme="dark"] .mnav-theme .t-dark{display:none}
+.mnav-theme:active{transform:scale(.97)}
+@media (max-width:720px){.mnav-theme{display:flex}}
 
 /* Premier écran */
 .hero{position:relative;min-height:min(100svh,940px);padding:116px 0 56px;display:flex;flex-direction:column;justify-content:center;overflow:hidden;
   background:var(--hero-bg)}
 .hero::after{content:"";position:absolute;inset:auto 0 0;height:140px;background:var(--hero-fade);pointer-events:none}
-.hero-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:24px;align-items:center;position:relative;z-index:2}
+.hero-grid{display:grid;grid-template-columns:1.2fr .95fr;gap:24px;align-items:center;position:relative;z-index:2}
 .hero-txt{will-change:transform,opacity}
 .pill{display:inline-flex;align-items:center;gap:10px;background:var(--glass);border:1px solid var(--line);border-radius:999px;padding:7px 14px 7px 8px;font-size:13.5px;font-weight:600;color:var(--text);box-shadow:var(--shadow)}
 .pill .dot{position:relative;width:20px;height:20px;border-radius:50%;background:var(--teal-soft);display:grid;place-items:center}
@@ -180,6 +167,10 @@ main,.ft{position:relative;z-index:1}
 .h1 .ln{display:block;overflow:hidden;padding-bottom:.16em;margin-bottom:-.06em}
 .h1 .ln > span{display:inline-block}
 .h1 em{font-style:normal;color:var(--teal)}
+.hero .h1{font-size:clamp(40px,4.7vw,66px)}
+.hero-call{margin:6px 0 0;font-size:15px;color:var(--muted)}
+.hero-call a{display:inline-block;padding:12px 0;font-weight:700;color:var(--teal);text-decoration:underline;text-decoration-color:var(--teal-soft);text-decoration-thickness:1.5px;text-underline-offset:4px;transition:text-decoration-color .2s}
+@media (hover:hover) and (pointer:fine){.hero-call a:hover{text-decoration-color:var(--teal)}}
 .lede{font-size:clamp(17px,1.4vw,19px);max-width:31em;color:var(--text);margin-bottom:30px}
 .chips{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 34px;padding:0;list-style:none}
 .chips li{display:flex;align-items:center;gap:9px;background:var(--white);border:1px solid var(--line);border-radius:12px;padding:9px 14px 9px 10px;font-size:14.5px;font-weight:600;color:var(--ink);box-shadow:var(--shadow)}
@@ -314,7 +305,7 @@ main,.ft{position:relative;z-index:1}
 .alt-card p{margin:0;font-size:15.5px}
 .alt-card .big{font-size:34px;font-weight:800;letter-spacing:-.04em;color:var(--ink);text-align:right;line-height:1}
 .alt-card .big small{display:block;font-size:13px;font-weight:600;letter-spacing:0;color:var(--muted);margin-top:4px}
-.alt-card .card-link{grid-column:1/-1;margin-top:10px}
+.alt-card .btn{grid-column:1/-1;justify-self:start;margin-top:10px}
 .further{margin-top:28px;font-size:15px;display:flex;flex-wrap:wrap;gap:6px 18px;align-items:center}
 .further span{color:var(--muted)}
 .further a{position:relative;font-weight:700;color:var(--teal);border-bottom:1.5px solid var(--teal-soft)}
@@ -334,6 +325,35 @@ main,.ft{position:relative;z-index:1}
 .logo-wall{display:grid;align-content:center;grid-template-columns:repeat(4,1fr);gap:12px;padding:24px;background:var(--blueprint);border-left:1px solid var(--line)}
 .logo-wall div{background:#0E2A31;border:1px solid rgba(176,214,214,.16);border-radius:14px;display:grid;place-items:center;padding:18px;min-height:120px}
 .logo-wall img{max-height:64px;width:auto;object-fit:contain}
+.who-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(32px,5vw,80px);align-items:center}
+.who-role{margin:18px 0 14px;font-family:var(--mono);font-size:13px;color:var(--muted)}
+.who-lead{font-size:clamp(17px,1.4vw,19px);max-width:34em;margin:0 0 18px}
+.who-pledges{margin:0 0 28px;padding:0;list-style:none;display:grid;gap:10px}
+.who-pledges li{position:relative;padding-left:28px;font-weight:600;color:var(--ink)}
+.who-pledges li::before{content:"";position:absolute;left:2px;top:.5em;width:12px;height:7px;border-left:2.5px solid var(--teal);border-bottom:2.5px solid var(--teal);transform:rotate(-45deg)}
+.who-card{position:relative;margin:0;aspect-ratio:4/5;max-width:440px;width:100%;justify-self:end;display:flex;flex-direction:column;justify-content:space-between;padding:28px;border-radius:18px;border:1px solid var(--line);background:var(--deep);overflow:hidden}
+.who-flame{position:relative;z-index:1;width:132px;height:226px;flex:none;align-self:center;margin-top:9%;transform-origin:50% 100%}
+.who-card figcaption{position:relative;z-index:1}
+.who-card::before,.who-card::after{content:"";position:absolute;pointer-events:none;border-radius:50%}
+.who-card::before{left:5%;top:-6%;width:90%;aspect-ratio:1;background:radial-gradient(closest-side,rgba(14,124,134,.55),rgba(14,124,134,.18) 55%,transparent);opacity:.8}
+.who-card::after{right:-30%;bottom:-40%;width:85%;aspect-ratio:1;background:radial-gradient(closest-side,rgba(143,211,199,.22),transparent);opacity:.6}
+@keyframes who-breathe{0%,100%{transform:scale(1);opacity:.65}50%{transform:scale(1.14);opacity:1}}
+@keyframes who-drift{0%,100%{transform:translate3d(0,0,0)}50%{transform:translate3d(-14%,-12%,0) scale(1.1)}}
+@keyframes who-sway{0%,100%{transform:rotate(-1.2deg) scaleY(1)}50%{transform:rotate(1.2deg) scaleY(1.025)}}
+.who-card::before,.who-card::after,.who-flame{animation-play-state:paused}
+.who-card.in::before{animation:who-breathe 6s ease-in-out infinite;animation-play-state:running}
+.who-card.in::after{animation:who-drift 11s ease-in-out infinite;animation-play-state:running}
+.who-card.in .who-flame{animation:who-sway 7s ease-in-out infinite;animation-play-state:running}
+.who-phrase{margin:0 0 14px;font-size:26px;line-height:1.2;font-weight:700;letter-spacing:-.02em;color:#fff}
+.who-name{margin:0;font-family:var(--mono);font-size:13px;color:var(--mint)}
+.sec.tight{padding:clamp(48px,6vw,80px) 0}
+.sec.tight .sec-head{margin-bottom:clamp(24px,3vw,36px)}
+.trust-logos{display:grid;grid-template-columns:repeat(2,minmax(0,240px));justify-content:center;gap:12px;margin:22px 0 0;padding:0;list-style:none}
+.trust-logos li{background:#0E2A31;border:1px solid rgba(176,214,214,.16);border-radius:14px;display:grid;place-items:center;padding:16px;min-height:88px}
+.trust-logos img{max-height:46px;max-width:100%;width:auto;object-fit:contain}
+.trust-logos + .ctas{margin-top:32px;display:flex;justify-content:center}
+.hero-call .hero-proof{display:inline-block;padding:0 0 10px;text-decoration:none;font-size:14px;color:var(--text)}
+.hero-call .hero-proof span{color:var(--teal);letter-spacing:2px}
 .logo-wall .fv-lock{height:36px}
 .logo-wall .fv-logo{--fv-ink:#ECF3F2;--fv-accent:#58C5B8}
 .quotes{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:22px;perspective:1400px}
@@ -370,6 +390,8 @@ main,.ft{position:relative;z-index:1}
 .contact .h2 em{color:var(--mint)}
 .contact .intro{font-size:19px;margin:22px 0 30px;max-width:26em}
 .v-globe{aspect-ratio:1/1;width:min(100%,360px);margin:0 auto 26px}
+.reply-pill{display:inline-flex;align-items:center;gap:10px;margin:0 0 14px;padding:9px 16px 9px 10px;border-radius:999px;border:1px solid var(--deep-line);background:rgba(255,255,255,.06);color:#fff;font-size:14.5px;font-weight:600}
+.reply-pill .dot{width:10px;height:10px;margin-left:4px;border-radius:50%;background:var(--mint);box-shadow:0 0 0 4px rgba(143,211,199,.2)}
 .direct{display:flex;flex-direction:column;gap:12px}
 .direct a{display:flex;align-items:center;gap:14px;padding:16px 18px;border:1px solid var(--deep-line);border-radius:16px;background:rgba(255,255,255,.04);color:#fff;font-weight:700;font-size:17px;transition:background .2s,transform .2s var(--ease)}
 @media (hover:hover) and (pointer:fine){.direct a:hover{background:rgba(255,255,255,.08);transform:translateX(4px)}}
@@ -429,6 +451,9 @@ textarea.field{min-height:120px;resize:vertical}
 .ft .fv-logo{--fv-ink:#ECF3F2;--fv-accent:#58C5B8}
 .ft .fv-lock{height:36px}
 .ft .top p{margin:14px 0 0;max-width:26em}
+.ft .top .ft-contact{display:flex;flex-wrap:wrap;gap:0 24px;margin-top:6px}
+.ft .top .ft-contact a{display:inline-flex;align-items:center;min-height:44px;font-weight:600;color:#C9DCDC}
+@media (hover:hover) and (pointer:fine){.ft .top .ft-contact a:hover{color:#fff}}
 .ft nav{display:flex;flex-wrap:wrap;gap:0 28px}
 .ft nav a,.ft .bot a{display:inline-flex;align-items:center;min-height:44px}
 @media (hover:hover) and (pointer:fine){.ft nav a:hover,.ft .bot a:hover{color:#fff}}
@@ -439,7 +464,7 @@ textarea.field{min-height:120px;resize:vertical}
 @media (max-width:1080px){
   .nav{display:none}
   .hero-grid{grid-template-columns:1fr;gap:0}
-  .scene-wrap{height:460px;min-height:0;order:-1;margin:-20px 0 -10px}
+  .scene-wrap{height:460px;min-height:0;margin:28px 0 -10px}
   .hero{padding-top:96px}
   .steps{grid-template-columns:repeat(2,1fr)}
   .steps::before,.steps .runner{display:none}
@@ -451,7 +476,7 @@ textarea.field{min-height:120px;resize:vertical}
 /* Tablette (721 à 1080 px) : une seule colonne ; la scène se cadre comme au téléphone et le texte se centre sous la flamme */
 @media (min-width:721px) and (max-width:1080px){
   #scene{inset:0}
-  .scene-wrap{margin:-20px 0 28px}
+  .scene-wrap{margin:16px 0 28px}
   .hero-txt{max-width:720px;margin:0 auto;text-align:center}
   .hero-txt .lede{margin-left:auto;margin-right:auto}
   .hero-txt .chips,.hero-txt .ctas{justify-content:center}
@@ -459,23 +484,30 @@ textarea.field{min-height:120px;resize:vertical}
 /* Téléphone */
 @media (max-width:720px){
   body{font-size:16px}
+  /* Les libellés longs passent à la ligne au lieu de faire déborder la page */
+  .btn,.btn-soft{white-space:normal;text-align:center}
   .hd .wrap{height:66px}
   .hd .fv-lock{height:30px}
-  .hd-right .icon-btn,.hd-right .btn{display:none}
-  .menu-btn,.theme-btn{display:grid!important}
+  /* En-tête du téléphone : appel direct et « Devis → » restent visibles ; l'e-mail et la bascule de thème passent dans le menu */
+  .hd-right{gap:8px}
+  .hd-right a.icon-btn[href^="mailto:"],.hd-right .theme-btn{display:none}
+  .hd .btn{padding:0 14px;min-height:44px;font-size:15px}
+  .hd .l-long{display:none}.hd .l-short{display:inline}
+  .hd .btn{white-space:nowrap}
+  .menu-btn{display:grid!important}
   .hero{padding:80px 0 40px;min-height:0}
-  .scene-wrap{height:380px;margin:0 -20px 10px}
+  .scene-wrap{height:380px;margin:8px -20px 10px}
   #scene{inset:0}
   .forge-status{bottom:auto;top:4px}
-  .h1{font-size:40px}
+  .hero .h1{font-size:36px}
   .tagline{margin-top:20px}
   .chips{margin-bottom:28px}
   .chips li{font-size:13.5px;padding:7px 11px 7px 8px}
   .ctas .btn,.ctas .btn-soft{width:100%}
-  /* Au téléphone le bouton « Découvrir » pleine largeur double l'indicateur de défilement (le texte du héros descend de 90 px en défilant et passe dessus) : on ne garde que l'indicateur */
   .hero .ctas .btn-soft{display:none}
   .hero-foot{margin-top:56px}
   .hero-foot .geo{display:none}
+  .hero{padding-bottom:24px}
   .sec-head{grid-template-columns:1fr;margin-bottom:34px}
   .sec-head p{font-size:16.5px}
   .steps{grid-template-columns:1fr;gap:14px}
@@ -484,7 +516,16 @@ textarea.field{min-height:120px;resize:vertical}
   .alts,.works,.quotes{grid-template-columns:1fr}
   .alt-card{grid-template-columns:1fr}
   .alt-card .big{text-align:left}
+  .alt-card .btn{justify-self:stretch}
   .logo-wall{grid-template-columns:repeat(2,1fr);padding:16px}
+  .who-grid{grid-template-columns:1fr}
+  .who-card{aspect-ratio:auto;gap:26px;max-width:none;justify-self:stretch;padding:22px}
+  .who-flame{width:66px;height:113px;align-self:flex-start;margin-top:0}
+  .who-card::before{left:-18%;top:-22%}
+  .who-phrase{font-size:20px}
+  .trust-logos{grid-template-columns:repeat(2,1fr);gap:8px}
+  .trust-logos li{padding:12px;min-height:72px}
+  .trust-logos img{max-height:36px}
   .faq{padding:0 20px}
   .form{grid-template-columns:1fr}
   .ft .bot{flex-direction:column}
@@ -500,7 +541,6 @@ textarea.field{min-height:120px;resize:vertical}
    .h2, .btn, .plan, .faq, .work) + quelques briques propres. Jetons seuls,
    donc clair et sombre suivent le socle. */
 :root{--bad:#A23A24;--bad-soft:rgba(200,80,60,.12);--good:#0A636B}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bad:#F2A18C;--bad-soft:rgba(242,161,140,.14);--good:#8FE8DA}}
 :root[data-theme="dark"]{--bad:#F2A18C;--bad-soft:rgba(242,161,140,.14);--good:#8FE8DA}
 
 .phero{position:relative;padding:clamp(112px,12vw,150px) 0 clamp(40px,5vw,64px);background:var(--hero-bg);border-bottom:1px solid var(--line)}

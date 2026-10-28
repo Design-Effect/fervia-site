@@ -26,7 +26,7 @@
 <link rel="manifest" href="site.webmanifest">
 <link rel="preload" href="assets/fonts/manrope-var-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/ibm-plex-mono-400-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/site.css?v=bf66c0f3">
+<link rel="stylesheet" href="assets/site.css?v=f7047e74">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -99,8 +99,7 @@
               "@type": "PriceSpecification",
               "minPrice": 1200,
               "priceCurrency": "EUR",
-              "valueAddedTaxIncluded": false,
-              "description": "À partir de 1 200 € hors TVA, puis 25 € par mois"
+              "description": "À partir de 1 200 €, puis 25 € par mois"
             }
           },
           {
@@ -115,8 +114,7 @@
               "@type": "PriceSpecification",
               "minPrice": 2900,
               "priceCurrency": "EUR",
-              "valueAddedTaxIncluded": false,
-              "description": "À partir de 2 900 € hors TVA, puis 50 € par mois"
+              "description": "À partir de 2 900 €, puis 50 € par mois"
             }
           },
           {
@@ -131,8 +129,7 @@
               "@type": "PriceSpecification",
               "minPrice": 750,
               "priceCurrency": "EUR",
-              "valueAddedTaxIncluded": false,
-              "description": "À partir de 750 € hors TVA"
+              "description": "À partir de 750 €"
             }
           },
           {
@@ -147,8 +144,7 @@
               "@type": "PriceSpecification",
               "minPrice": 500,
               "priceCurrency": "EUR",
-              "valueAddedTaxIncluded": false,
-              "description": "500 € par mois hors TVA pour la prospection, les autres métiers sur devis"
+              "description": "500 € par mois pour la prospection, les autres métiers sur devis"
             }
           },
           {
@@ -245,7 +241,7 @@
           "name": "Pouvez-vous aussi gérer ma publicité sur Google ?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Oui, avec le pack SEO et Google Ads : 300 € par mois pour l'Essentiel, 400 € pour le Signature, hors TVA. Il remplace le forfait mensuel et comprend le suivi du référencement, la mise en place de votre campagne et sa gestion : lecture des recherches qui déclenchent vos annonces, exclusions, ajustements et un compte rendu chaque mois. Le budget publicitaire est payé par vous, directement à Google, sur un compte à votre nom. Une campagne se juge sur deux à trois mois : le pack se prend pour trois mois minimum."
+            "text": "Oui, avec le pack SEO et Google Ads : 300 € par mois pour l'Essentiel, 400 € pour le Signature. Il remplace le forfait mensuel et comprend le suivi du référencement, la mise en place de votre campagne et sa gestion : lecture des recherches qui déclenchent vos annonces, exclusions, ajustements et un compte rendu chaque mois. Le budget publicitaire est payé par vous, directement à Google, sur un compte à votre nom. Une campagne se juge sur deux à trois mois : le pack se prend pour trois mois minimum."
           }
         },
         {
@@ -262,13 +258,11 @@
 }
 </script>
 <script>document.documentElement.classList.add('js')</script>
-<script>/* Thème posé AVANT le premier rendu : aucun flash. Décision d'AbduLlah du 28/10 : clair d'office ;
-   sombre seulement si le téléphone est en sombre ET qu'il est le soir (19 h à 7 h) ; le bouton vaut pour la visite. */
-(function(){try{var r=document.documentElement,s=sessionStorage.getItem('fervia-theme'),
-h=new Date().getHours(),soir=(h>=19||h<7),
-sys=window.matchMedia&&window.matchMedia('(prefers-color-scheme:dark)').matches;
+<script>/* Thème posé AVANT le premier rendu : aucun flash. Décision du 28/10 (20 h 25) : clair par défaut, quels que soient l'heure et le réglage du téléphone ;
+   sombre seulement si le visiteur a appuyé sur le bouton de thème (choix gardé le temps de la visite). */
+(function(){try{var r=document.documentElement,s=sessionStorage.getItem('fervia-theme');
 try{localStorage.removeItem('fervia-theme')}catch(x){}
-var t=(s==='dark'||s==='light')?s:((sys&&soir)?'dark':'light');
+var t=(s==='dark')?'dark':'light';
 r.setAttribute('data-theme',t);
 var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute('content',t==='dark'?'#0E2A31':'#F5F8F8');
 }catch(e){}})();</script>
@@ -294,11 +288,11 @@ var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute('co
 <header class="hd" id="hd">
   <div class="wrap">
     <a class="fv-logo" href="#top" aria-label="Fervia, haut de page"><svg class="fv-lock" viewBox="43.20 602.50 755.93 222.95" aria-hidden="true" focusable="false"><use href="#fv-logo-h"/></svg><span class="sr-only">Fervia</span></a>
-    <nav class="nav" aria-label="Sections du site"><a href="#methode">Méthode</a><a href="#services">Services</a><a href="#offres">Offres</a><a href="realisations/">Réalisations</a><a href="#contact">Contact</a></nav>
+    <nav class="nav" aria-label="Sections du site"><a href="#methode">Méthode</a><a href="#services">Services</a><a href="#offres">Offres</a><a href="realisations/">Réalisations</a><a href="a-propos/">À propos</a><a href="#contact">Contact</a></nav>
     <div class="hd-right">
       <a class="icon-btn" href="mailto:contact@fervia.be" aria-label="Envoyer un e-mail à contact@fervia.be"><svg class="ico"><use href="#i-mail"/></svg></a>
       <a class="icon-btn" href="tel:+32465935655" aria-label="Appeler Fervia au 0465 93 56 55"><svg class="ico"><use href="#i-tel"/></svg></a>
-      <a class="btn" href="#contact">Demander un devis</a>
+      <a class="btn" href="#contact"><span class="l-long">Demander un devis</span><span class="l-short">Devis</span> <span class="arr" aria-hidden="true">→</span></a>
       <button class="icon-btn theme-btn" id="themeBtn" type="button" aria-label="Passer en mode sombre"><svg class="ico i-moon"><use href="#i-moon"/></svg><svg class="ico i-sun"><use href="#i-sun"/></svg></button>
       <button class="icon-btn menu-btn" id="menuBtn" aria-label="Ouvrir le menu" aria-expanded="false"><svg class="ico" viewBox="0 0 24 24"><path d="M4 8h16M4 16h16"/></svg></button>
     </div>
@@ -307,22 +301,24 @@ var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute('co
 <nav class="mnav" aria-label="Menu">
   <a href="#methode">Méthode</a><a href="#services">Services</a><a href="#offres">Offres</a><a href="realisations/">Réalisations</a><a href="a-propos/">À propos</a><a href="#contact">Contact</a>
   <a class="btn" href="tel:+32465935655"><svg class="ico" aria-hidden="true"><use href="#i-tel"/></svg>0465 93 56 55</a>
+  <button class="mnav-theme" id="themeBtnM" type="button"><svg class="ico i-moon" aria-hidden="true"><use href="#i-moon"/></svg><svg class="ico i-sun" aria-hidden="true"><use href="#i-sun"/></svg><span class="t-dark">Passer en mode sombre</span><span class="t-light">Passer en mode clair</span></button>
 </nav>
 
 <main>
   <section class="hero" id="top">
     <div class="wrap hero-grid">
       <div class="hero-txt" id="heroTxt">
-        <span class="pill"><span class="dot"></span>Studio créatif digital · Wavre (Brabant wallon)</span>
+        <span class="pill"><span class="dot"></span>L'artisanat du digital, accéléré par l'IA</span>
         <p class="tagline">Forger votre voie digitale</p>
-        <h1 class="h1"><span class="ln"><span>L'artisanat du digital,</span></span><span class="ln"><span>accéléré par <em>l'IA</em></span></span></h1>
-        <p class="lede">Création de sites internet, applications web &amp; mobiles et agents IA pour les entreprises, à Wavre. Devis gratuit, réponse rapide.</p>
+        <h1 class="h1"><span class="ln"><span>Sites internet, applications</span></span><span class="ln"><span>et agents IA, <em>conçus à&nbsp;Wavre</em></span></span></h1>
+        <p class="lede">Je conçois et je construis votre projet moi-même, du premier échange à la mise en ligne. Devis gratuit, réponse en général sous 24&nbsp;h ouvrables.</p>
         <ul class="chips">
           <li><svg class="ico"><use href="#i-web"/></svg>Développement web</li>
           <li><svg class="ico"><use href="#i-mob"/></svg>Application mobile</li>
           <li><svg class="ico"><use href="#i-ai"/></svg>Agents IA</li>
         </ul>
-        <div class="ctas"><a class="btn" href="#contact">Demander un devis gratuit <span class="arr">→</span></a><a class="btn-soft" href="#methode">Découvrir</a></div>
+        <div class="ctas"><a class="btn" href="#contact">Demander un devis gratuit <span class="arr">→</span></a></div>
+        <p class="hero-call">ou appeler le <a href="tel:+32465935655">0465&nbsp;93&nbsp;56&nbsp;55</a><br><a class="hero-proof" href="#avis"><span aria-hidden="true">★★★★★</span> Avis Google 5/5 chez RTM et Healthy Sounna</a></p>
       </div>
       <div class="scene-wrap" id="sceneWrap" aria-hidden="true">
         <div id="scene"></div>
@@ -334,6 +330,52 @@ var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute('co
       </div>
     </div>
     <div class="hero-foot"><div class="wrap"><a class="scroll-cue" href="#methode"><i></i>Découvrir</a><span class="geo">Wavre · 50.7167° N · 4.6000° E</span></div></div>
+  </section>
+
+  <section class="sec alt tight" id="avis" aria-labelledby="avis-t">
+    <div class="wrap">
+      <div class="sec-head">
+        <div><p class="kick">Avis Google</p><h2 class="h2 rv" id="avis-t">Ce qu'en disent <em>mes clients</em></h2></div>
+      </div>
+      <div class="quotes">
+        <figure class="card quote tilt rv">
+          <div class="stars" aria-label="5 étoiles sur 5">★★★★★</div>
+          <blockquote>«&nbsp;Fervia, travail pro, soigné, sur mesure. L'outil que Fervia m'a fourni m'a énormément aidé à faire l'inventaire précis et détaillé de mon stock de marchandises. Je recommande tous leurs services, ils sont polyvalents et multifacettes.&nbsp;»</blockquote>
+          <figcaption class="who"><span class="av">JM</span><span><b>Julien Manna</b><span>Healthy Sounna · avis Google, 5/5</span></span></figcaption>
+        </figure>
+        <figure class="card quote tilt rv" style="--d:.1s">
+          <div class="stars" aria-label="5 étoiles sur 5">★★★★★</div>
+          <blockquote>«&nbsp;Vous pouvez faire confiance à Fervia pour son travail et son accompagnement. J'ai été très satisfait de son aide pour ma campagne Google Ads et la création de mon site internet.&nbsp;»</blockquote>
+          <figcaption class="who"><span class="av">SM</span><span><b>Sylvain Manche</b><span>RTM Ready To Move · avis Google, 5/5</span></span></figcaption>
+        </figure>
+      </div>
+      <ul class="trust-logos rv" aria-label="Marques accompagnées">
+        <li><img src="assets/img/logo-rtm.png" alt="Logo RTM Ready To Move" loading="lazy"></li>
+        <li><img src="assets/img/logo-alvoil.png" alt="Logo ALV&amp;OIL" loading="lazy"></li>
+      </ul>
+      <p class="ctas"><a class="btn" href="https://g.page/r/CXPDWR8pvZrGEBM/review" target="_blank" rel="noopener">Voir les avis sur Google <span class="arr" aria-hidden="true">→</span></a></p>
+    </div>
+  </section>
+
+  <section class="sec who" id="qui" aria-labelledby="qui-t">
+    <div class="wrap who-grid">
+      <div class="who-txt">
+        <p class="kick">Qui vous répond</p>
+        <h2 class="h2 rv" id="qui-t">Une seule personne, <em>de bout en bout</em></h2>
+        <p class="who-role rv">Ricardo · fondateur de Fervia, designer et développeur</p>
+        <p class="who-lead rv">C'est moi qui vous réponds, et moi qui construis ce que nous avons décidé ensemble. Je travaille avec l'IA tous les jours, comme un outil&nbsp;: chaque choix de design et chaque livraison restent validés par une main humaine, la mienne.</p>
+        <ul class="who-pledges rv">
+          <li>Un seul interlocuteur, sans commercial ni chef de projet.</li>
+          <li>Un devis gratuit, annoncé par écrit avant de commencer.</li>
+          <li>Le nom de domaine à votre nom&nbsp;: le site vous appartient.</li>
+        </ul>
+        <a class="btn" href="a-propos/">Mon parcours <span class="arr" aria-hidden="true">→</span></a>
+      </div>
+      <figure class="who-card rv" aria-label="Qui vous répond">
+        <svg class="who-flame" viewBox="388 226 226 384" aria-hidden="true" focusable="false"><use href="#fv-flame"/></svg>
+        <figcaption><p class="who-phrase">Vous parlez à la personne qui construit votre site.</p><p class="who-name">Ricardo · Fervia, Wavre</p></figcaption>
+      </figure>
+    </div>
   </section>
 
   <section class="sec" id="methode">
@@ -369,7 +411,7 @@ var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute('co
         </article>
         <article class="card trade rv" style="--d:.2s">
           <div class="ill" data-view="ai" aria-hidden="true"><div class="core-s"></div></div>
-          <div class="trade-body"><p class="tn">03 · IA</p><h3>Agents IA</h3><p>Un métier délégué à un agent installé chez vous&nbsp;: prospection, courrier, contenus, publicité. Prix selon le métier, 500&nbsp;€ par mois pour la prospection.</p><a class="card-link" href="agents-ia/">Découvrir les agents IA <span>→</span></a></div>
+          <div class="trade-body"><p class="tn">03 · IA</p><h3>Agents IA</h3><p>Un métier délégué à un agent installé chez vous&nbsp;: prospection, courrier, contenus, publicité. Prix selon le métier, 500&nbsp;€ par mois pour la prospection.</p><a class="btn" href="agents-ia/">Découvrir les agents IA <span class="arr" aria-hidden="true">→</span></a></div>
         </article>
       </div>
     </div>
@@ -390,7 +432,7 @@ var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute('co
           <ul>
             <li>Site une page, élégant et complet</li><li>Design Fervia sur-mesure</li><li>Rédaction de vos textes incluse</li><li>Parfait sur mobile et ordinateur</li><li>Nom de domaine + mise en ligne</li><li>Formulaire de contact</li><li>Hébergement, sécurité et petites modifications</li><li class="no">Pages multiples</li><li class="no">SEO local approfondi</li>
           </ul>
-          <a class="btn-soft" href="formules/essentiel/">Choisir l'Essentiel</a>
+          <a class="btn" href="formules/essentiel/">Choisir l'Essentiel <span class="arr" aria-hidden="true">→</span></a>
         </article>
         <article class="card plan feat tilt rv" style="--d:.1s">
           <div class="ph"><h3><a href="formules/signature/">Signature</a></h3><span class="best">Le plus choisi</span></div>
@@ -401,7 +443,7 @@ var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute('co
           <ul>
             <li class="hd2">Tout l'Essentiel, plus&nbsp;:</li><li>Jusqu'à 5 à 6 pages complètes</li><li>SEO local de départ&nbsp;: visible sur Google dans votre ville</li><li>Fiche Google Business optimisée</li><li>Galerie, menu ou prise de rendez-vous</li><li>Maintenance et support prioritaire</li>
           </ul>
-          <a class="btn" href="formules/signature/">Choisir le Signature</a>
+          <a class="btn" href="formules/signature/">Choisir le Signature <span class="arr" aria-hidden="true">→</span></a>
         </article>
         <article class="card plan tilt rv" style="--d:.2s">
           <div class="ph"><h3 class="nb"><a href="formules/sur-mesure/">Sur-mesure</a></h3></div>
@@ -411,7 +453,7 @@ var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute('co
           <ul>
             <li>Application web ou mobile</li><li>Agents IA installés chez vous</li><li>Boutique en ligne / réservation</li><li>Système de commande</li><li>Identité de marque complète</li><li>Intégrations et fonctions spécifiques</li><li>Accompagnement sur la durée</li>
           </ul>
-          <a class="btn-soft" href="formules/sur-mesure/">Discutons de votre projet</a>
+          <a class="btn" href="formules/sur-mesure/">Discutons de votre projet <span class="arr" aria-hidden="true">→</span></a>
         </article>
       </div>
       <p class="offers-note rv">Chaque offre inclut l'hébergement, la sécurité et la tranquillité d'esprit d'un interlocuteur unique. Le suivi du référencement et la publicité Google s'ajoutent en option&nbsp;: <a href="referencement-google-ads/">référencement et Google Ads</a>.</p>
@@ -427,7 +469,7 @@ var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute('co
           <span class="k">Une autre approche</span>
           <div><h3>Outil métier</h3><p>Une application de gestion sur mesure, prix fixe.</p></div>
           <div class="big">750&nbsp;€<small>dès</small></div>
-          <a class="card-link" href="outil-metier/">Découvrir l'outil métier <span>→</span></a>
+          <a class="btn" href="outil-metier/">Découvrir l'outil métier <span class="arr" aria-hidden="true">→</span></a>
         </article>
       </div>
       <p class="further rv"><span>Pour aller plus loin&nbsp;:</span><a href="creation-site-internet/">détail des formules</a><a href="prix-site-internet-belgique/">prix d'un site en Belgique</a><a href="aides-site-internet-wallonie/">aides en Wallonie</a><a href="agence-web-brabant-wallon/">agence web en Brabant wallon</a></p>
@@ -467,18 +509,6 @@ var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute('co
         </div>
       </div>
       <p class="further rv"><a href="realisations/">Toutes les réalisations</a></p>
-      <div class="quotes">
-        <figure class="card quote tilt rv">
-          <div class="stars" aria-label="5 étoiles sur 5">★★★★★</div>
-          <blockquote>«&nbsp;Fervia, travail pro, soigné, sur mesure. L'outil que Fervia m'a fourni m'a énormément aidé à faire l'inventaire précis et détaillé de mon stock de marchandises. Je recommande tous leurs services, ils sont polyvalents et multifacettes.&nbsp;»</blockquote>
-          <figcaption class="who"><span class="av">JM</span><span><b>Julien Manna</b><span>Healthy Sounna · avis Google, 5/5</span></span></figcaption>
-        </figure>
-        <figure class="card quote tilt rv" style="--d:.1s">
-          <div class="stars" aria-label="5 étoiles sur 5">★★★★★</div>
-          <blockquote>«&nbsp;Vous pouvez faire confiance à Fervia pour son travail et son accompagnement. J'ai été très satisfait de son aide pour ma campagne Google Ads et la création de mon site internet.&nbsp;»</blockquote>
-          <figcaption class="who"><span class="av">SM</span><span><b>Sylvain Manche</b><span>RTM Ready To Move · avis Google, 5/5</span></span></figcaption>
-        </figure>
-      </div>
     </div>
   </section>
 
@@ -493,7 +523,7 @@ var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute('co
         <details><summary>Travaillez-vous uniquement à Wavre&nbsp;?</summary><p>Fervia est basé à <b>Wavre, au cœur du Brabant wallon</b>, et travaille aussi bien en rendez-vous qu'à distance&nbsp;: Ottignies, Louvain-la-Neuve, Rixensart, Waterloo, Bruxelles et toute la Belgique francophone. <a href="agence-web-brabant-wallon/">Le détail de la zone desservie est sur la page consacrée au Brabant wallon</a>.</p></details>
         <details><summary>Le référencement Google (SEO) est-il inclus&nbsp;?</summary><p>Les fondations techniques du référencement (structure propre, vitesse, balisage, données structurées) sont incluses dans chaque site. L'offre Signature ajoute un <b>SEO local approfondi</b>&nbsp;: optimisation pour les recherches dans votre ville et fiche Google Business. Ce travail est fait à la création du site. Le suivi mensuel du référencement est en option, en plus du forfait&nbsp;: +50&nbsp;€ par mois pour l'Essentiel, +100&nbsp;€ pour le Signature. Il comprend la fiche Google Business tenue (une publication par semaine, réponses aux avis) et un contrôle mensuel de vos chiffres Google, avec un court compte rendu. Aucune place sur Google ne peut être garantie&nbsp;: c'est un travail suivi, pas un classement promis.</p></details>
         <details><summary>Que comprend le forfait mensuel&nbsp;?</summary><p>L'hébergement, la sécurité, l'entretien, les mises à jour et les petites modifications de contenu&nbsp;: <b>25&nbsp;€ par mois</b> pour l'Essentiel, <b>50&nbsp;€</b> pour le Signature. Pour un site, ce forfait fait partie de l'offre&nbsp;; l'ajout de pages n'y entre pas, il se devise à part, et le suivi du référencement est en option. Pour l'outil métier, l'entretien (29&nbsp;€ par mois) est facultatif&nbsp;: votre application continue de fonctionner sans lui.</p></details>
-        <details><summary>Pouvez-vous aussi gérer ma publicité sur Google&nbsp;?</summary><p>Oui, avec le pack SEO et Google Ads&nbsp;: <b>300&nbsp;€ par mois</b> pour l'Essentiel, <b>400&nbsp;€</b> pour le Signature, hors TVA. Il remplace le forfait mensuel et comprend le suivi du référencement, la mise en place de votre campagne et sa gestion&nbsp;: lecture des recherches qui déclenchent vos annonces, exclusions, ajustements et un compte rendu chaque mois. Le budget publicitaire est payé par vous, directement à Google, sur un compte à votre nom. Une campagne se juge sur deux à trois mois&nbsp;: le pack se prend pour trois mois minimum.</p></details>
+        <details><summary>Pouvez-vous aussi gérer ma publicité sur Google&nbsp;?</summary><p>Oui, avec le pack SEO et Google Ads&nbsp;: <b>300&nbsp;€ par mois</b> pour l'Essentiel, <b>400&nbsp;€</b> pour le Signature. Il remplace le forfait mensuel et comprend le suivi du référencement, la mise en place de votre campagne et sa gestion&nbsp;: lecture des recherches qui déclenchent vos annonces, exclusions, ajustements et un compte rendu chaque mois. Le budget publicitaire est payé par vous, directement à Google, sur un compte à votre nom. Une campagne se juge sur deux à trois mois&nbsp;: le pack se prend pour trois mois minimum.</p></details>
         <details><summary>L'IA remplace-t-elle le travail de création&nbsp;?</summary><p>Non. L'IA absorbe le répétitif (exploration de pistes, itérations, tests) pour que le temps aille à l'essentiel&nbsp;: comprendre votre besoin et soigner chaque détail. Chaque choix de design et chaque livraison restent validés par une main humaine.</p></details>
       </div>
     </div>
@@ -506,6 +536,7 @@ var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute('co
         <h2 class="h2 rv">Un projet <em>en tête&nbsp;?</em></h2>
         <p class="intro rv">Parlons-en. Une idée, un devis, une question&nbsp;: j'y réponds personnellement.</p>
         <div class="v-globe" data-view="globe" aria-hidden="true"></div>
+        <p class="reply-pill rv"><span class="dot" aria-hidden="true"></span>Réponse personnelle, en général sous 24&nbsp;h ouvrables</p>
         <div class="direct rv">
           <a href="mailto:contact@fervia.be"><svg class="ico"><use href="#i-mail"/></svg><span><small>ou directement</small>contact@fervia.be</span></a>
           <a href="tel:+32465935655"><svg class="ico"><use href="#i-tel"/></svg><span><small>téléphone</small>0465.93.56.55</span></a>
@@ -525,7 +556,7 @@ var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute('co
         <input type="hidden" name="from_name" value="Formulaire fervia.be">
         <input type="hidden" name="redirect" value="https://fervia.be/?envoye=1#contact">
         <button class="btn full" type="submit">Envoyer ma demande <span class="arr">→</span></button>
-        <p class="form-note full">Ou écrivez directement à <a href="mailto:contact@fervia.be">contact@fervia.be</a></p>
+        <p class="form-note full">Réponse personnelle, en général sous 24&nbsp;h ouvrables.<br>Ou écrivez directement à <a href="mailto:contact@fervia.be">contact@fervia.be</a></p>
       </form>
     </div>
   </section>
@@ -534,7 +565,7 @@ var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute('co
 <footer class="ft">
   <div class="wrap">
     <div class="top">
-      <div><a class="fv-logo" href="#top" aria-label="Fervia, haut de page"><svg class="fv-lock" viewBox="43.20 602.50 755.93 222.95" aria-hidden="true" focusable="false"><use href="#fv-logo-hd"/></svg><span class="sr-only">Fervia</span></a><p>Fervia · Studio créatif digital · Wavre (Brabant wallon) · Belgique</p></div>
+      <div><a class="fv-logo" href="#top" aria-label="Fervia, haut de page"><svg class="fv-lock" viewBox="43.20 602.50 755.93 222.95" aria-hidden="true" focusable="false"><use href="#fv-logo-hd"/></svg><span class="sr-only">Fervia</span></a><p>Fervia · Studio créatif digital · Wavre (Brabant wallon) · Belgique</p><p class="ft-contact"><a href="tel:+32465935655">0465&nbsp;93&nbsp;56&nbsp;55</a><a href="mailto:contact@fervia.be">contact@fervia.be</a></p></div>
       <nav aria-label="Pied de page"><a href="#methode">Méthode</a><a href="#services">Services</a><a href="#offres">Offres</a><a href="realisations/">Réalisations</a><a href="a-propos/">À propos</a><a href="#contact">Contact</a></nav>
     </div>
     <div class="bot"><span>© 2026 Fervia · Tous droits réservés · Conçu &amp; réalisé par Fervia</span><div><a href="mentions-legales.html">Mentions légales</a><a href="politique-confidentialite.html">Politique de confidentialité</a></div></div>
@@ -543,6 +574,6 @@ var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute('co
 <canvas id="fx" aria-hidden="true"></canvas>
 
 <script src="assets/vendor/three.min.js?v=f3695727"></script>
-<script src="assets/site.js?v=b73a099f"></script>
+<script src="assets/site.js?v=ea03c435"></script>
 </body>
 </html>
