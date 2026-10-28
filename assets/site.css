@@ -227,7 +227,7 @@ main,.ft{position:relative;z-index:1}
 .tilt .lift{transform:translateZ(28px)}
 .card{position:relative;background:var(--white);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow)}
 .card::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:radial-gradient(300px circle at var(--gx,50%) var(--gy,0%),rgba(255,255,255,.55),transparent 60%);opacity:0;transition:opacity .3s}
-@media (hover:hover) and (pointer:fine){.card:hover::after{opacity:1}}
+/* Lueur qui suivait la souris retirée le 28/10 (AbduLlah : elle voilait le texte, sur blanc comme sur la carte sombre) */
 @media (hover:hover) and (pointer:fine){.card:hover{box-shadow:var(--shadow-lg)}}
 
 /* Méthode */
