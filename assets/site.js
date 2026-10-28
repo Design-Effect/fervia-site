@@ -507,20 +507,35 @@
   })();
 
 
-  // 28/10 : formulaire de secours. FormSubmit affichait « message bien parti » sans rien transmettre
-  // (dernier message reçu le 24/07). En attendant le nouveau service, l'envoi ouvre l'application
-  // mail du visiteur avec un message déjà rempli vers contact@fervia.be : aucune demande ne se perd.
+  // 28/10 : envoi du formulaire par Web3Forms (FormSubmit ne transmettait plus rien depuis le 24/07).
+  // En JS : envoi en arrière-plan puis message de confirmation sur place. Si l'envoi échoue, repli :
+  // l'application mail du visiteur s'ouvre avec le message déjà rempli vers contact@fervia.be.
+  // Sans JS : envoi classique, Web3Forms renvoie vers /?envoye=1.
   try{
     var cf=document.getElementById('contactForm');
-    if(cf){cf.addEventListener('submit',function(e){
+    if(cf&&window.fetch&&window.FormData){cf.addEventListener('submit',function(e){
       e.preventDefault();
       if(cf.reportValidity&&!cf.reportValidity())return;
-      if((cf.querySelector('[name="_honey"]')||{}).value)return;
+      var bc=cf.querySelector('[name="botcheck"]'); if(bc&&bc.checked)return;
       var v=function(n){var el=cf.querySelector('[name="'+n+'"]');return el?(el.value||'').trim():''};
-      var corps='Nom : '+v('Nom')+'\nE-mail : '+v('Email')+'\nBesoin : '+v('Type de projet')+'\n\n'+v('Message')+'\n\n(Envoyé depuis le formulaire de fervia.be)';
-      location.href='mailto:contact@fervia.be?subject='+encodeURIComponent('Demande via fervia.be : '+(v('Type de projet')||'contact'))+'&body='+encodeURIComponent(corps);
+      var btn=cf.querySelector('button[type="submit"]'); if(btn){btn.disabled=true;btn.setAttribute('aria-busy','true')}
+      var repli=function(){
+        var corps='Nom : '+v('Nom')+'\nE-mail : '+v('Email')+'\nBesoin : '+v('Type de projet')+'\n\n'+v('Message')+'\n\n(Envoyé depuis le formulaire de fervia.be)';
+        location.href='mailto:contact@fervia.be?subject='+encodeURIComponent('Demande via fervia.be : '+(v('Type de projet')||'contact'))+'&body='+encodeURIComponent(corps);
+      };
+      var fd=new FormData(cf); fd.delete('redirect'); fd.set('replyto',v('Email'));
+      fetch(cf.action,{method:'POST',body:fd,headers:{'Accept':'application/json'}})
+        .then(function(r){return r.json()})
+        .then(function(j){
+          if(j&&j.success){
+            cf.reset(); var ok=document.getElementById('envoye'); if(ok){ok.hidden=false;ok.focus&&ok.setAttribute('tabindex','-1');ok.focus&&ok.focus()}
+          } else repli();
+        })
+        .catch(repli)
+        .then(function(){if(btn){btn.disabled=false;btn.removeAttribute('aria-busy')}});
     })}
   }catch(e){}
+
   // Confirmation d'envoi : FormSubmit renvoie vers /?envoye=1#contact
   try{
     var ok=document.getElementById('envoye');

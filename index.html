@@ -509,18 +509,18 @@ var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute('co
           <a href="#contact"><svg class="ico"><use href="#i-pin"/></svg><span><small>studio</small>Wavre (Brabant wallon) · Belgique</span></a>
         </div>
       </div>
-      <form class="form rv" id="contactForm" action="https://formsubmit.co/contact@fervia.be" method="POST">
+      <form class="form rv" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
         <p class="sent full" id="envoye" role="status" hidden>Merci, votre message est bien parti. Je vous réponds personnellement, en général sous 24&nbsp;h ouvrables.</p>
         <div><label for="f-nom">Votre nom</label><input class="field" id="f-nom" name="Nom" required placeholder="Prénom et nom" autocomplete="name"></div>
         <div><label for="f-mail">Votre e-mail</label><input class="field" id="f-mail" name="Email" type="email" required placeholder="vous@exemple.be" autocomplete="email"></div>
         <div class="full"><label for="f-besoin">Votre besoin</label><select class="field" id="f-besoin" name="Type de projet" required><option value="" disabled selected>Choisissez un service</option><option>Un site vitrine</option><option>Une application / un outil métier</option><option>Un agent IA (un métier délégué)</option><option>Une identité visuelle (logo, marque)</option><option>Formule Essentiel</option><option>Formule Signature</option><option>Sur-mesure</option><option>Référencement et Google Ads</option><option>Autre / je ne sais pas encore</option></select></div>
         <div class="full"><label for="f-msg">Votre message</label><textarea class="field" id="f-msg" name="Message" required placeholder="Parlez-moi de votre projet en quelques lignes."></textarea></div>
         <label class="consent full"><input type="checkbox" name="Consentement RGPD" value="Accepté" required>J'accepte que mes données soient utilisées pour traiter ma demande, conformément à la <a href="politique-confidentialite.html">politique de confidentialité</a>.</label>
-        <input type="text" class="hp" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
-        <input type="hidden" name="_subject" value="Nouveau contact via fervia.be">
-        <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_next" value="https://fervia.be/?envoye=1#contact">
+        <input type="checkbox" class="hp" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <input type="hidden" name="access_key" value="3a0565fc-0c59-45aa-9bfe-7e7a9cd7cc88">
+        <input type="hidden" name="subject" value="Nouveau contact via fervia.be">
+        <input type="hidden" name="from_name" value="Formulaire fervia.be">
+        <input type="hidden" name="redirect" value="https://fervia.be/?envoye=1#contact">
         <button class="btn full" type="submit">Envoyer ma demande <span class="arr">→</span></button>
         <p class="form-note full">Ou écrivez directement à <a href="mailto:contact@fervia.be">contact@fervia.be</a></p>
       </form>
