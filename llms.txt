@@ -4,7 +4,7 @@
 
 Fervia est mené par une seule personne : celui qui comprend le besoin est celui qui dessine et qui développe, sans commercial ni chef de projet intermédiaire. Le nom de domaine est déposé au nom du client et le site lui appartient. Les fondations techniques du référencement sont comprises dans chaque projet.
 
-Dernière mise à jour : 27 octobre 2026.
+Dernière mise à jour : 28 octobre 2026.
 
 ## Prix (hors TVA)
 
@@ -27,6 +27,10 @@ Basé à Wavre (1300), chef-lieu du Brabant wallon. Déplacements dans les 27 co
 ## Pages
 
 - [Création de site internet](https://fervia.be/creation-site-internet/) : les deux formules en détail, ce qui est compris, le déroulement d'un projet, et ce que Fervia ne fait pas
+- [Formule Essentiel](https://fervia.be/formules/essentiel/) : le site d'une page en détail, dès 1 200 € puis 25 € par mois, ce qui est compris, ce qui ne l'est pas, les deux options Google
+- [Formule Signature](https://fervia.be/formules/signature/) : le site de 5 à 6 pages avec référencement local et fiche Google Business, dès 2 900 € puis 50 € par mois
+- [Sur-mesure](https://fervia.be/formules/sur-mesure/) : application, boutique, agents IA, identité de marque, sur devis écrit après cadrage ; comment un projet est chiffré, trois exemples
+- [Référencement local et Google Ads](https://fervia.be/referencement-google-ads/) : ce qui est fait chaque mois, le compte rendu, les prix du suivi (+50 ou +100 € par mois) et du pack (300 ou 400 € par mois), aucun classement promis
 - [Prix d'un site internet en Belgique](https://fervia.be/prix-site-internet-belgique/) : fourchettes réellement pratiquées sur le marché belge, prix de Fervia, et les cinq facteurs qui font varier une facture
 - [Agence web en Brabant wallon](https://fervia.be/agence-web-brabant-wallon/) : zone d'intervention, façon de travailler, réalisations locales
 - [Outil métier sur mesure](https://fervia.be/outil-metier/) : applications de gestion pour indépendants et commerces, à partir de 750 €, fonctionnant hors connexion

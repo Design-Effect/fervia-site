@@ -663,3 +663,24 @@ textarea.field{min-height:120px;resize:vertical}
 .pg .avis1 blockquote{margin:0 0 14px;font-size:19px;line-height:1.55;color:var(--ink);font-weight:500}
 .pg .avis1 figcaption{font-size:14px;color:var(--muted);font-weight:600}
 .pg .works.index{margin-top:0}
+
+/* Pages de formules et de référencement : listes, cartes d'options, bouton d'ouverture */
+.pg .list{margin:0 0 1.1em;padding-left:1.25em;max-width:46em;font-size:17px;display:grid;gap:8px}
+.pg .list li::marker{color:var(--teal)}
+.pg .btnrow{margin:26px 0 0}
+.pg .ch .cp{margin:0 0 14px;font-size:16.5px}
+.pg .ch .list{font-size:16.5px;margin-bottom:14px}
+.pg .ch > :last-child{margin-bottom:0}
+.pg .ch .cp strong{color:var(--ink)}
+.pg .choix + .lead,.pg .flow + .lead,.pg .nots + .lead,.pg .list + .lead{margin-top:28px}
+.pg .lead + .choix,.pg .lead + .flow,.pg .lead + .nots,.pg .lead + .items{margin-top:6px}
+.pg .sec .further{margin-top:0}
+.offers-note a{position:relative;font-weight:700;color:var(--teal);border-bottom:1.5px solid var(--teal-soft)}
+.offers-note a::before{content:"";position:absolute;left:-6px;right:-6px;top:50%;height:44px;transform:translateY(-50%)}
+@media (hover:hover) and (pointer:fine){.offers-note a:hover{border-color:var(--teal)}}
+.pg .tablewrap td a{color:var(--teal);border-bottom:1.5px solid var(--teal-soft)}
+@media (hover:hover) and (pointer:fine){.pg .tablewrap td a:hover{border-color:var(--teal)}}
+/* Tableau de prix à trois colonnes : tient dans un téléphone sans défilement latéral */
+.tablewrap.tbl3 table{min-width:0;font-size:15px}
+.tablewrap.tbl3 th,.tablewrap.tbl3 td{padding:12px 8px}
+.tablewrap.tbl3 td.amount{white-space:normal;width:25%}

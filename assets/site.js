@@ -506,9 +506,33 @@
     L.start(); gl(views.map(function(v){return v.el}),L);
   })();
 
+
+  // 28/10 : formulaire de secours. FormSubmit affichait « message bien parti » sans rien transmettre
+  // (dernier message reçu le 24/07). En attendant le nouveau service, l'envoi ouvre l'application
+  // mail du visiteur avec un message déjà rempli vers contact@fervia.be : aucune demande ne se perd.
+  try{
+    var cf=document.getElementById('contactForm');
+    if(cf){cf.addEventListener('submit',function(e){
+      e.preventDefault();
+      if(cf.reportValidity&&!cf.reportValidity())return;
+      if((cf.querySelector('[name="_honey"]')||{}).value)return;
+      var v=function(n){var el=cf.querySelector('[name="'+n+'"]');return el?(el.value||'').trim():''};
+      var corps='Nom : '+v('Nom')+'\nE-mail : '+v('Email')+'\nBesoin : '+v('Type de projet')+'\n\n'+v('Message')+'\n\n(Envoyé depuis le formulaire de fervia.be)';
+      location.href='mailto:contact@fervia.be?subject='+encodeURIComponent('Demande via fervia.be : '+(v('Type de projet')||'contact'))+'&body='+encodeURIComponent(corps);
+    })}
+  }catch(e){}
   // Confirmation d'envoi : FormSubmit renvoie vers /?envoye=1#contact
   try{
     var ok=document.getElementById('envoye');
     if(ok&&/(^|[?&])envoye=1(&|$)/.test(location.search)) ok.hidden=false;
+  }catch(e){}
+
+  // Formule choisie sur une page de formule : /?formule=signature#contact présélectionne l'option du menu « Votre besoin »
+  try{
+    var fm=/(?:^|[?&])formule=([^&#]*)/.exec(location.search), sel=document.getElementById('f-besoin');
+    if(fm&&sel){
+      var want={'essentiel':'Formule Essentiel','signature':'Formule Signature','sur-mesure':'Sur-mesure','referencement':'Référencement et Google Ads'}[decodeURIComponent(fm[1])];
+      if(want) Array.prototype.some.call(sel.options,function(o){ if(o.value===want){ sel.value=want; return true } });
+    }
   }catch(e){}
 })();
