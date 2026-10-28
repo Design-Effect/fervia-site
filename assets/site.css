@@ -347,6 +347,16 @@ main,.ft{position:relative;z-index:1}
 .logo-wall{display:grid;align-content:center;grid-template-columns:repeat(4,1fr);gap:12px;padding:24px;background:var(--blueprint);border-left:1px solid var(--line)}
 .logo-wall div{background:#0E2A31;border:1px solid rgba(176,214,214,.16);border-radius:14px;display:grid;place-items:center;padding:18px;min-height:120px}
 .logo-wall img{max-height:64px;width:auto;object-fit:contain}
+.who-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(32px,5vw,80px);align-items:center}
+.who-role{margin:18px 0 14px;font-family:var(--mono);font-size:13px;color:var(--muted)}
+.who-lead{font-size:clamp(17px,1.4vw,19px);max-width:34em;margin:0 0 18px}
+.who-pledges{margin:0 0 28px;padding:0;list-style:none;display:grid;gap:10px}
+.who-pledges li{position:relative;padding-left:28px;font-weight:600;color:var(--ink)}
+.who-pledges li::before{content:"";position:absolute;left:2px;top:.5em;width:12px;height:7px;border-left:2.5px solid var(--teal);border-bottom:2.5px solid var(--teal);transform:rotate(-45deg)}
+.who-card{position:relative;margin:0;aspect-ratio:4/5;max-width:440px;width:100%;justify-self:end;display:flex;flex-direction:column;justify-content:space-between;padding:28px;border-radius:18px;border:1px solid var(--line);background:var(--deep);overflow:hidden}
+.who-flame{width:56px;height:96px;flex:none}
+.who-phrase{margin:0 0 14px;font-size:26px;line-height:1.2;font-weight:700;letter-spacing:-.02em;color:#fff}
+.who-name{margin:0;font-family:var(--mono);font-size:13px;color:var(--mint)}
 .sec.tight{padding:clamp(48px,6vw,80px) 0}
 .sec.tight .sec-head{margin-bottom:clamp(24px,3vw,36px)}
 .trust-logos{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:22px 0 0;padding:0;list-style:none}
@@ -498,7 +508,8 @@ textarea.field{min-height:120px;resize:vertical}
   .forge-status{bottom:auto;top:4px}
   .hero .h1{font-size:36px}
   .tagline{margin-top:20px}
-  .chips{display:none}
+  .chips{margin-bottom:28px}
+  .chips li{font-size:13.5px;padding:7px 11px 7px 8px}
   .ctas .btn,.ctas .btn-soft{width:100%}
   /* Au téléphone le bouton « Découvrir » pleine largeur double l'indicateur de défilement (le texte du héros descend de 90 px en défilant et passe dessus) : on ne garde que l'indicateur */
   .hero .ctas .btn-soft{display:none}
@@ -513,6 +524,10 @@ textarea.field{min-height:120px;resize:vertical}
   .alt-card{grid-template-columns:1fr}
   .alt-card .big{text-align:left}
   .logo-wall{grid-template-columns:repeat(2,1fr);padding:16px}
+  .who-grid{grid-template-columns:1fr}
+  .who-card{aspect-ratio:4/3;max-width:none;justify-self:stretch;padding:22px}
+  .who-flame{width:40px;height:68px}
+  .who-phrase{font-size:20px}
   .trust-logos{gap:8px}
   .trust-logos li{padding:12px;min-height:72px}
   .trust-logos img{max-height:36px}
