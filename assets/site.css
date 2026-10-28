@@ -332,10 +332,10 @@ main,.ft{position:relative;z-index:1}
 .who-pledges li{position:relative;padding-left:28px;font-weight:600;color:var(--ink)}
 .who-pledges li::before{content:"";position:absolute;left:2px;top:.5em;width:12px;height:7px;border-left:2.5px solid var(--teal);border-bottom:2.5px solid var(--teal);transform:rotate(-45deg)}
 .who-card{position:relative;margin:0;aspect-ratio:4/5;max-width:440px;width:100%;justify-self:end;display:flex;flex-direction:column;justify-content:space-between;padding:28px;border-radius:18px;border:1px solid var(--line);background:var(--deep);overflow:hidden}
-.who-flame{position:relative;z-index:1;width:84px;height:144px;flex:none;transform-origin:50% 100%}
+.who-flame{position:relative;z-index:1;width:132px;height:226px;flex:none;align-self:center;margin-top:9%;transform-origin:50% 100%}
 .who-card figcaption{position:relative;z-index:1}
 .who-card::before,.who-card::after{content:"";position:absolute;pointer-events:none;border-radius:50%}
-.who-card::before{left:-18%;top:-22%;width:90%;aspect-ratio:1;background:radial-gradient(closest-side,rgba(14,124,134,.55),rgba(14,124,134,.18) 55%,transparent);opacity:.8}
+.who-card::before{left:5%;top:-6%;width:90%;aspect-ratio:1;background:radial-gradient(closest-side,rgba(14,124,134,.55),rgba(14,124,134,.18) 55%,transparent);opacity:.8}
 .who-card::after{right:-30%;bottom:-40%;width:85%;aspect-ratio:1;background:radial-gradient(closest-side,rgba(143,211,199,.22),transparent);opacity:.6}
 @keyframes who-breathe{0%,100%{transform:scale(1);opacity:.65}50%{transform:scale(1.14);opacity:1}}
 @keyframes who-drift{0%,100%{transform:translate3d(0,0,0)}50%{transform:translate3d(-14%,-12%,0) scale(1.1)}}
@@ -519,7 +519,8 @@ textarea.field{min-height:120px;resize:vertical}
   .logo-wall{grid-template-columns:repeat(2,1fr);padding:16px}
   .who-grid{grid-template-columns:1fr}
   .who-card{aspect-ratio:auto;gap:26px;max-width:none;justify-self:stretch;padding:22px}
-  .who-flame{width:66px;height:113px}
+  .who-flame{width:66px;height:113px;align-self:flex-start;margin-top:0}
+  .who-card::before{left:-18%;top:-22%}
   .who-phrase{font-size:20px}
   .trust-logos{grid-template-columns:repeat(2,1fr);gap:8px}
   .trust-logos li{padding:12px;min-height:72px}
