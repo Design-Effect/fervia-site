@@ -40,30 +40,7 @@
 /* === MODE SOMBRE ===========================================================
    Base : les sections déjà sombres du site (contact / pied, teal profond).
    Un seul jeu de jetons, la peau change, pas le design.
-   - Repli sans JS : bascule automatique par @media (prefers-color-scheme:dark).
-   - Avec JS (toujours le cas ici) : data-theme posé avant le rendu, l'override
-     manuel prime. Les surcharges de composants sont scopées [data-theme=dark]. */
-@media (prefers-color-scheme:dark){
-  :root:not([data-theme="light"]){
-    --bg:#0E2A31; --bg-2:#0A2027; --white:#15333C;
-    --ink:#ECF3F2; --text:#C6D7D7; --muted:#95AEB0; --line:rgba(176,214,214,.16); --line-2:rgba(176,214,214,.28); --field-line:rgba(176,214,214,.34); --ph:#8AA1A4;
-    --teal:#58C5B8; --teal-d:#7AD6C9; --teal-soft:rgba(88,197,184,.15); --mint:#8FD3C7; --sky:#20404F;
-    --deep:#081C22; --deep-2:#0E2A31; --deep-line:rgba(255,255,255,.1);
-    --shadow:0 1px 2px rgba(0,0,0,.3),0 18px 40px -18px rgba(0,0,0,.6);
-    --shadow-lg:0 2px 4px rgba(0,0,0,.3),0 40px 80px -30px rgba(0,0,0,.7);
-    --on-teal:#06231F;
-    --hero-bg:radial-gradient(55% 65% at 72% 46%,#143A42 0%,rgba(20,58,66,0) 70%),radial-gradient(40% 50% at 92% 10%,#15323D 0%,rgba(21,50,61,0) 70%),linear-gradient(180deg,#0C262D 0%,#0E2A31 100%);
-    --hero-fade:linear-gradient(180deg,rgba(14,42,49,0),var(--bg));
-    --hd-glass:rgba(10,32,39,.82);
-    --glass:rgba(21,51,60,.72);
-    --glass-strong:rgba(21,51,60,.9);
-    --num-grad:linear-gradient(145deg,#1A3B45,#102C34);
-    --blueprint:#0C2730; --ill-bg:#103540; --ill-grid:rgba(143,211,199,.2);
-    --field-bg:#102C34;
-    color-scheme:dark;
-  }
-}
-:root[data-theme="dark"]{
+   - Repli sans JS : bascule automatique par :root[data-theme="dark"]{
   --bg:#0E2A31; --bg-2:#0A2027; --white:#15333C;
   --ink:#ECF3F2; --text:#C6D7D7; --muted:#95AEB0; --line:rgba(176,214,214,.16); --line-2:rgba(176,214,214,.28); --field-line:rgba(176,214,214,.34); --ph:#8AA1A4;
   --teal:#58C5B8; --teal-d:#7AD6C9; --teal-soft:rgba(88,197,184,.15); --mint:#8FD3C7; --sky:#20404F;
@@ -128,8 +105,6 @@ main,.ft{position:relative;z-index:1}
 /* Flamme du lettrage : les dégradés lisent ces variables sur :root (pas sur .fv-logo) */
 :root{--fv-f0:#0F9890;--fv-f1:#0E7C86;--fv-f2:#0A636B}
 :root[data-theme="dark"]{--fv-f0:#8FD3C7;--fv-f1:#58C5B8;--fv-f2:#2E9C98}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--fv-f0:#8FD3C7;--fv-f1:#58C5B8;--fv-f2:#2E9C98}}
-
 /* Boutons */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--teal);color:var(--on-teal);font-weight:700;font-size:16px;padding:15px 24px;border-radius:14px;border:0;cursor:pointer;white-space:nowrap;box-shadow:0 10px 24px -10px rgba(14,124,134,.6);transition:background .2s,transform .2s var(--ease),box-shadow .2s}
 @media (hover:hover) and (pointer:fine){.btn:hover{background:var(--teal-d);transform:translateY(-2px);box-shadow:0 16px 30px -12px rgba(14,124,134,.65)}}
@@ -550,7 +525,6 @@ textarea.field{min-height:120px;resize:vertical}
    .h2, .btn, .plan, .faq, .work) + quelques briques propres. Jetons seuls,
    donc clair et sombre suivent le socle. */
 :root{--bad:#A23A24;--bad-soft:rgba(200,80,60,.12);--good:#0A636B}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bad:#F2A18C;--bad-soft:rgba(242,161,140,.14);--good:#8FE8DA}}
 :root[data-theme="dark"]{--bad:#F2A18C;--bad-soft:rgba(242,161,140,.14);--good:#8FE8DA}
 
 .phero{position:relative;padding:clamp(112px,12vw,150px) 0 clamp(40px,5vw,64px);background:var(--hero-bg);border-bottom:1px solid var(--line)}

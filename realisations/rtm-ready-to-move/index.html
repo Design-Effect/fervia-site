@@ -64,13 +64,11 @@
 }
 </script>
 <script>document.documentElement.classList.add('js')</script>
-<script>/* Thème posé AVANT le premier rendu : aucun flash. Décision du 28/10 : clair d'office ;
-   sombre seulement si le téléphone est en sombre ET qu'il est le soir (19 h à 7 h) ; le bouton vaut pour la visite. */
-(function(){try{var r=document.documentElement,s=sessionStorage.getItem('fervia-theme'),
-h=new Date().getHours(),soir=(h>=19||h<7),
-sys=window.matchMedia&&window.matchMedia('(prefers-color-scheme:dark)').matches;
+<script>/* Thème posé AVANT le premier rendu : aucun flash. Décision du 28/10 (20 h 25) : clair par défaut, quels que soient l'heure et le réglage du téléphone ;
+   sombre seulement si le visiteur a appuyé sur le bouton de thème (choix gardé le temps de la visite). */
+(function(){try{var r=document.documentElement,s=sessionStorage.getItem('fervia-theme');
 try{localStorage.removeItem('fervia-theme')}catch(x){}
-var t=(s==='dark'||s==='light')?s:((sys&&soir)?'dark':'light');
+var t=(s==='dark')?'dark':'light';
 r.setAttribute('data-theme',t);
 var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute('content',t==='dark'?'#0E2A31':'#F5F8F8');
 }catch(e){}})();</script>
