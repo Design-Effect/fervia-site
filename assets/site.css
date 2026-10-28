@@ -769,3 +769,19 @@ textarea.field{min-height:120px;resize:vertical}
 .tablewrap.tbl3 table{min-width:0;font-size:15px}
 .tablewrap.tbl3 th,.tablewrap.tbl3 td{padding:12px 8px}
 .tablewrap.tbl3 td.amount{white-space:normal;width:25%}
+
+/* Couleurs réchauffées (brief de Claude Design, validé par AbduLlah le 28/10) : thème clair seulement,
+   le thème sombre (:root[data-theme="dark"], plus précis) ne change pas. */
+:root{
+  --bg:#F7F7F4; --bg-2:#EEF1EC; --line:#DDE2DC; --line-2:#CBD3CC;
+  --hero-bg:radial-gradient(55% 65% at 72% 46%,#E3EFEA 0%,rgba(227,239,234,0) 70%),radial-gradient(40% 50% at 92% 10%,#E8EEF0 0%,rgba(232,238,240,0) 70%),linear-gradient(180deg,#F8F8F5 0%,#F1F4EF 100%);
+  --hd-glass:rgba(247,247,244,.86); --blueprint:#F4F6F2; --ill-bg:#E2ECE6;
+}
+/* Une seule note chaude : les étoiles des avis */
+:root:not([data-theme="dark"]) .quote .stars,
+:root:not([data-theme="dark"]) .pg .avis1 .stars{color:#B7862F}
+/* Petits textes teal : teal foncé (hors sections sombres) */
+:root:not([data-theme="dark"]) .kick:not(.contact .kick),
+:root:not([data-theme="dark"]) .card-link,
+:root:not([data-theme="dark"]) .further a,
+:root:not([data-theme="dark"]) .faq details p a{color:var(--teal-d)}
