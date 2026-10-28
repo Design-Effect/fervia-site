@@ -509,8 +509,8 @@ textarea.field{min-height:120px;resize:vertical}
 .pg .sh .h2{font-size:clamp(28px,3.2vw,42px);letter-spacing:-.035em;line-height:1.08}
 .pg .lead{font-size:18px;max-width:46em;margin:0 0 1.1em}
 .pg .lead strong,.pg .answer strong,.pg .case strong{color:var(--ink)}
-.pg p a,.pg li a,.pg .tcap a,.pg .sources a{color:var(--teal);font-weight:700;border-bottom:1.5px solid var(--teal-soft)}
-@media (hover:hover) and (pointer:fine){.pg p a:hover,.pg li a:hover,.pg .tcap a:hover,.pg .sources a:hover,.crumb a:hover{border-color:var(--teal)}}
+.pg p a:not(.btn),.pg li a:not(.btn),.pg .tcap a,.pg .sources a{color:var(--teal);font-weight:700;border-bottom:1.5px solid var(--teal-soft)}
+@media (hover:hover) and (pointer:fine){.pg p a:not(.btn):hover,.pg li a:not(.btn):hover,.pg .tcap a:hover,.pg .sources a:hover,.crumb a:hover{border-color:var(--teal)}}
 .answer{padding:clamp(24px,3vw,34px) clamp(22px,3vw,36px);border-left:4px solid var(--teal)}
 .answer p{margin:0;font-size:clamp(18px,1.6vw,20px);line-height:1.6;color:var(--ink)}
 .answer strong{color:var(--teal)}
