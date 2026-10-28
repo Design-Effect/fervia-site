@@ -29,6 +29,9 @@
       clearTimeout(themeBtn._t); themeBtn._t=setTimeout(function(){root.classList.remove('theme-anim')},400);
     });
   }
+  // Même bascule, relayée depuis le menu du téléphone (la logique ci-dessus ne change pas)
+  var themeBtnM=document.getElementById('themeBtnM');
+  if(themeBtnM&&themeBtn) themeBtnM.addEventListener('click',function(){themeBtn.click()});
   // Suivre le système (le soir seulement pour le sombre) tant qu'aucun choix n'est fait pendant la visite
   var mq=window.matchMedia&&window.matchMedia('(prefers-color-scheme:dark)');
   if(mq){var onSys=function(e){var s,h=new Date().getHours();try{s=sessionStorage.getItem('fervia-theme')}catch(x){} if(s!=='dark'&&s!=='light') syncTheme((e.matches&&(h>=19||h<7))?'dark':'light')};

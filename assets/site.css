@@ -150,6 +150,8 @@ main,.ft{position:relative;z-index:1}
 @media (hover:hover) and (pointer:fine){.icon-btn:hover{transform:translateY(-2px);border-color:var(--line-2)}}
 .btn:active,.btn-soft:active,.icon-btn:active{transform:scale(.97);transition-duration:.12s}
 .hd .btn{padding:12px 18px;font-size:15px;border-radius:12px}
+.hd .l-short{display:none}
+.mnav-theme{display:none}
 .menu-btn{display:none}
 /* Interrupteur clair/sombre : lune en mode clair (clic vers sombre), soleil en mode sombre */
 .theme-btn{position:relative}
@@ -163,6 +165,13 @@ main,.ft{position:relative;z-index:1}
 .mnav .btn{margin-top:24px;align-self:flex-start;font-size:17px;min-height:48px;padding:12px 24px;color:var(--on-teal)}
 .mnav .btn .ico{width:20px;height:20px;flex:none}
 .hd.open + .mnav{opacity:1;pointer-events:auto}
+.mnav-theme{align-items:center;gap:10px;align-self:flex-start;min-height:48px;margin-top:6px;padding:0;background:none;border:0;font:inherit;font-size:16px;font-weight:600;color:var(--muted);cursor:pointer}
+.mnav-theme .ico{width:20px;height:20px;flex:none}
+.mnav-theme .i-sun,.mnav-theme .t-light{display:none}
+:root[data-theme="dark"] .mnav-theme .i-sun,:root[data-theme="dark"] .mnav-theme .t-light{display:inline-block}
+:root[data-theme="dark"] .mnav-theme .i-moon,:root[data-theme="dark"] .mnav-theme .t-dark{display:none}
+.mnav-theme:active{transform:scale(.97)}
+@media (max-width:720px){.mnav-theme{display:flex}}
 
 /* Premier écran */
 .hero{position:relative;min-height:min(100svh,940px);padding:116px 0 56px;display:flex;flex-direction:column;justify-content:center;overflow:hidden;
@@ -461,8 +470,12 @@ textarea.field{min-height:120px;resize:vertical}
   body{font-size:16px}
   .hd .wrap{height:66px}
   .hd .fv-lock{height:30px}
-  .hd-right .icon-btn,.hd-right .btn{display:none}
-  .menu-btn,.theme-btn{display:grid!important}
+  /* En-tête du téléphone : appel direct et « Devis → » restent visibles ; l'e-mail et la bascule de thème passent dans le menu */
+  .hd-right{gap:8px}
+  .hd-right a.icon-btn[href^="mailto:"],.hd-right .theme-btn{display:none}
+  .hd .btn{padding:0 14px;min-height:44px;font-size:15px}
+  .hd .l-long{display:none}.hd .l-short{display:inline}
+  .menu-btn{display:grid!important}
   .hero{padding:80px 0 40px;min-height:0}
   .scene-wrap{height:380px;margin:0 -20px 10px}
   #scene{inset:0}
