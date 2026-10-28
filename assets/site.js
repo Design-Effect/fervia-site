@@ -24,14 +24,14 @@
     themeBtn.addEventListener('click',function(){
       var next=(root.getAttribute('data-theme')==='dark')?'light':'dark';
       if(!reduce) root.classList.add('theme-anim');
-      try{localStorage.setItem('fervia-theme',next)}catch(e){}
+      try{sessionStorage.setItem('fervia-theme',next)}catch(e){}
       syncTheme(next);
       clearTimeout(themeBtn._t); themeBtn._t=setTimeout(function(){root.classList.remove('theme-anim')},400);
     });
   }
-  // Suivre le système tant qu'aucun choix manuel n'est mémorisé
+  // Suivre le système (le soir seulement pour le sombre) tant qu'aucun choix n'est fait pendant la visite
   var mq=window.matchMedia&&window.matchMedia('(prefers-color-scheme:dark)');
-  if(mq){var onSys=function(e){var s;try{s=localStorage.getItem('fervia-theme')}catch(x){} if(s!=='dark'&&s!=='light') syncTheme(e.matches?'dark':'light')};
+  if(mq){var onSys=function(e){var s,h=new Date().getHours();try{s=sessionStorage.getItem('fervia-theme')}catch(x){} if(s!=='dark'&&s!=='light') syncTheme((e.matches&&(h>=19||h<7))?'dark':'light')};
     mq.addEventListener?mq.addEventListener('change',onSys):mq.addListener&&mq.addListener(onSys);}
 
   // Défilement : en-tête, et le premier écran qui s'éloigne en profondeur

@@ -209,10 +209,13 @@
 }
 </script>
 <script>document.documentElement.classList.add('js')</script>
-<script>/* Thème posé AVANT le premier rendu : aucun flash. Choix mémorisé > réglage système. */
-(function(){try{var r=document.documentElement,s=localStorage.getItem('fervia-theme'),
-sys=window.matchMedia&&window.matchMedia('(prefers-color-scheme:dark)').matches,
-t=(s==='dark'||s==='light')?s:(sys?'dark':'light');
+<script>/* Thème posé AVANT le premier rendu : aucun flash. Décision d'AbduLlah du 28/10 : clair d'office ;
+   sombre seulement si le téléphone est en sombre ET qu'il est le soir (19 h à 7 h) ; le bouton vaut pour la visite. */
+(function(){try{var r=document.documentElement,s=sessionStorage.getItem('fervia-theme'),
+h=new Date().getHours(),soir=(h>=19||h<7),
+sys=window.matchMedia&&window.matchMedia('(prefers-color-scheme:dark)').matches;
+try{localStorage.removeItem('fervia-theme')}catch(x){}
+var t=(s==='dark'||s==='light')?s:((sys&&soir)?'dark':'light');
 r.setAttribute('data-theme',t);
 var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute('content',t==='dark'?'#0E2A31':'#F5F8F8');
 }catch(e){}})();</script>
@@ -401,6 +404,6 @@ var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute('co
 </footer>
 
 
-<script src="../assets/site.js?v=28b3cf3d"></script>
+<script src="../assets/site.js?v=b73a099f"></script>
 </body>
 </html>
