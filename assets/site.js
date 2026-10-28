@@ -542,12 +542,92 @@
     if(ok&&/(^|[?&])envoye=1(&|$)/.test(location.search)) ok.hidden=false;
   }catch(e){}
 
+  // 28/10 : menu « Votre besoin » dessiné par le site (le <select> natif s'ouvre dans la fenêtre de Windows, qui jure avec le site).
+  // Amélioration progressive : le vrai <select name="Type de projet" required> reste dans le formulaire, masqué, et garde
+  // la valeur et la validation ; le bouton et la liste ci-dessous le pilotent (motif ARIA « select-only combobox »).
+  try{
+    var sel=document.getElementById('f-besoin');
+    if(sel&&sel.tagName==='SELECT'){
+      var lab=document.querySelector('label[for="f-besoin"]');
+      var box=document.createElement('div'); box.className='dd';
+      var btn=document.createElement('button'); btn.type='button'; btn.className='field dd-btn'; btn.id='f-besoin-btn';
+      btn.setAttribute('role','combobox'); btn.setAttribute('aria-haspopup','listbox'); btn.setAttribute('aria-expanded','false');
+      btn.setAttribute('aria-controls','f-besoin-liste'); if(lab){lab.htmlFor='f-besoin-btn'}
+      var list=document.createElement('ul'); list.className='dd-list'; list.id='f-besoin-liste'; list.setAttribute('role','listbox'); list.hidden=true;
+      if(lab){list.setAttribute('aria-labelledby',lab.id||(lab.id='f-besoin-lab'))}
+      var err=document.createElement('p'); err.className='dd-err'; err.id='f-besoin-err'; err.setAttribute('role','alert'); err.hidden=true; err.textContent='Choisissez un service pour continuer.';
+      var items=[]; Array.prototype.forEach.call(sel.options,function(o,k){
+        if(o.disabled||!o.value) return;
+        var li=document.createElement('li'); li.className='dd-opt'; li.setAttribute('role','option'); li.id='f-besoin-o'+k; li.textContent=o.text; li.dataset.v=o.value; list.appendChild(li); items.push(li);
+      });
+      sel.parentNode.insertBefore(box,sel); box.appendChild(btn); box.appendChild(list); box.appendChild(err);
+      sel.classList.add('dd-native'); sel.tabIndex=-1; sel.setAttribute('aria-hidden','true'); sel.removeAttribute('id'); sel.id='f-besoin';
+      box.appendChild(sel); sel.id='f-besoin'; btn.setAttribute('aria-describedby','f-besoin-err');
+      var holder=sel.options[0]&&sel.options[0].disabled?sel.options[0].text:'Choisissez un service';
+      var act=-1, typed='', typedT=0;
+      var sync=function(){
+        var cur=-1; items.forEach(function(li,k){var on=li.dataset.v===sel.value; li.setAttribute('aria-selected',on?'true':'false'); if(on)cur=k});
+        btn.textContent=cur>-1?items[cur].textContent:holder; btn.classList.toggle('is-empty',cur<0);
+        if(cur>-1){err.hidden=true; box.classList.remove('is-bad'); btn.removeAttribute('aria-invalid')}
+      };
+      var isOpen=function(){return !list.hidden};
+      var setAct=function(k){
+        if(k<0)k=0; if(k>items.length-1)k=items.length-1;
+        items.forEach(function(li){li.classList.remove('is-active')}); act=k; items[k].classList.add('is-active');
+        btn.setAttribute('aria-activedescendant',items[k].id);
+        var t=items[k].offsetTop, h=items[k].offsetHeight; if(t<list.scrollTop)list.scrollTop=t-6; else if(t+h>list.scrollTop+list.clientHeight)list.scrollTop=t+h-list.clientHeight+6;
+      };
+      var open=function(){
+        if(isOpen())return;
+        var r=btn.getBoundingClientRect(), below=innerHeight-r.bottom-14, above=r.top-14, up=below<230&&above>below, room=up?above:below;
+        box.classList.toggle('up',up); list.style.maxHeight=Math.max(176,Math.min(360,room))+'px';
+        list.hidden=false; btn.setAttribute('aria-expanded','true');
+        var cur=0; items.forEach(function(li,k){if(li.getAttribute('aria-selected')==='true')cur=k}); list.scrollTop=0; setAct(cur);
+        if(!up){var b=list.getBoundingClientRect(); if(b.bottom>innerHeight)scrollBy(0,b.bottom-innerHeight+14)}
+      };
+      var close=function(){
+        if(!isOpen())return; list.hidden=true; btn.setAttribute('aria-expanded','false'); btn.removeAttribute('aria-activedescendant');
+        items.forEach(function(li){li.classList.remove('is-active')});
+      };
+      var choose=function(k){
+        if(k<0||k>=items.length)return;
+        var ch=sel.value!==items[k].dataset.v; sel.value=items[k].dataset.v; sync();
+        if(ch)sel.dispatchEvent(new Event('change',{bubbles:true}));
+      };
+      btn.addEventListener('click',function(){isOpen()?close():open()});
+      btn.addEventListener('keydown',function(e){
+        var k=e.key;
+        if(k==='ArrowDown'||k==='ArrowUp'){e.preventDefault(); if(!isOpen()){open();return} setAct(act+(k==='ArrowDown'?1:-1))}
+        else if(k==='Home'||k==='End'){e.preventDefault(); if(!isOpen())open(); setAct(k==='Home'?0:items.length-1)}
+        else if(k==='Enter'||k===' '){e.preventDefault(); if(isOpen()){choose(act);close()}else open()}
+        else if(k==='Escape'){if(isOpen()){e.preventDefault();close()}}
+        else if(k==='Tab'){if(isOpen()){choose(act);close()}}
+        else if(k.length===1&&!e.ctrlKey&&!e.metaKey&&!e.altKey){
+          var n=Date.now(); typed=(n-typedT<700?typed:'')+k.toLowerCase(); typedT=n;
+          var from=isOpen()?act:-1, hit=-1, i;
+          for(i=1;i<=items.length;i++){var j=(from+i)%items.length; if(items[j].textContent.toLowerCase().indexOf(typed)===0){hit=j;break}}
+          if(hit>-1){if(!isOpen())open(); setAct(hit)}
+        }
+      });
+      list.addEventListener('mousedown',function(e){e.preventDefault()});
+      list.addEventListener('click',function(e){var li=e.target.closest&&e.target.closest('.dd-opt'); if(!li)return; choose(items.indexOf(li)); close(); btn.focus()});
+      document.addEventListener('pointerdown',function(e){if(isOpen()&&!box.contains(e.target))close()});
+      btn.addEventListener('blur',function(){setTimeout(function(){if(isOpen()&&document.activeElement!==btn)close()},0)});
+      addEventListener('resize',close);
+      sel.addEventListener('change',sync);
+      // Validation : le <select> masqué ne peut pas montrer sa bulle, on montre notre message sur le bouton.
+      sel.addEventListener('invalid',function(e){e.preventDefault(); box.classList.add('is-bad'); err.hidden=false; btn.setAttribute('aria-invalid','true'); btn.focus()});
+      var f=sel.form; if(f)f.addEventListener('reset',function(){setTimeout(function(){sync();close()},0)});
+      sync();
+    }
+  }catch(e){}
+
   // Formule choisie sur une page de formule : /?formule=signature#contact présélectionne l'option du menu « Votre besoin »
   try{
-    var fm=/(?:^|[?&])formule=([^&#]*)/.exec(location.search), sel=document.getElementById('f-besoin');
-    if(fm&&sel){
+    var fm=/(?:^|[?&])formule=([^&#]*)/.exec(location.search), sel2=document.getElementById('f-besoin');
+    if(fm&&sel2){
       var want={'essentiel':'Formule Essentiel','signature':'Formule Signature','sur-mesure':'Sur-mesure','referencement':'Référencement et Google Ads'}[decodeURIComponent(fm[1])];
-      if(want) Array.prototype.some.call(sel.options,function(o){ if(o.value===want){ sel.value=want; return true } });
+      if(want) Array.prototype.some.call(sel2.options,function(o){ if(o.value===want){ sel2.value=want; sel2.dispatchEvent(new Event('change',{bubbles:true})); return true } });
     }
   }catch(e){}
 })();
