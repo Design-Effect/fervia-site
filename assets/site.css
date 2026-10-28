@@ -496,7 +496,7 @@ textarea.field{min-height:120px;resize:vertical}
   .hd .btn{white-space:nowrap}
   .menu-btn{display:grid!important}
   .hero{padding:80px 0 40px;min-height:0}
-  .scene-wrap{height:250px;margin:8px -20px 10px}
+  .scene-wrap{height:380px;margin:8px -20px 10px}
   #scene{inset:0}
   .forge-status{bottom:auto;top:4px}
   .hero .h1{font-size:36px}
@@ -504,8 +504,9 @@ textarea.field{min-height:120px;resize:vertical}
   .chips{margin-bottom:28px}
   .chips li{font-size:13.5px;padding:7px 11px 7px 8px}
   .ctas .btn,.ctas .btn-soft{width:100%}
-  /* Au téléphone l'indicateur à souris (.hero-foot) n'a pas de sens au doigt et se lisait comme une pastille vide : on garde le bouton « Découvrir » des .ctas */
-  .hero-foot{display:none}
+  .hero .ctas .btn-soft{display:none}
+  .hero-foot{margin-top:56px}
+  .hero-foot .geo{display:none}
   .hero{padding-bottom:24px}
   .sec-head{grid-template-columns:1fr;margin-bottom:34px}
   .sec-head p{font-size:16.5px}
