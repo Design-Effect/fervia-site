@@ -76,6 +76,24 @@
   }
 
   if(!window.THREE){var sc=document.getElementById('scene'); if(sc) sc.classList.add('fallback'); return}
+
+  // 23/11 : rendu graphique LOGICIEL (SwiftShader, llvmpipe : pas de carte graphique, c'est le cas des serveurs de test de Google)
+  // ou appareil à 2 cœurs ou moins : la 3D y occupe le fil principal pendant des dizaines de secondes (Lighthouse mobile du 23/11 :
+  // blocage total 63 s, performance 58 sur 100). On garde alors la flamme fixe (.fb-flame) et les cartes sans scène, comme le
+  // faisait le héros du 26/10 (assets/hero-vivant.js, même garde). Le reste de la page et le formulaire ne changent pas.
+  function rendu3dLogiciel(){
+    try{
+      var c=document.createElement('canvas'), g=c.getContext('webgl')||c.getContext('experimental-webgl');
+      if(!g) return true;
+      var x=g.getExtension('WEBGL_debug_renderer_info'), n=String(g.getParameter(x?x.UNMASKED_RENDERER_WEBGL:g.RENDERER)), l=g.getExtension('WEBGL_lose_context');
+      if(l) l.loseContext();
+      return /swiftshader|llvmpipe|softpipe|software|basic render/i.test(n);
+    }catch(err){return true}
+  }
+  var sans3d=(navigator.hardwareConcurrency||4)<=2||rendu3dLogiciel();
+  if(sans3d){var sc0=document.getElementById('scene'); if(sc0) sc0.classList.add('fallback')}
+
+  function demarrer3d(){
   var T=THREE, C=function(x){return new T.Color(x).convertSRGBToLinear()};
   var mx=0,my=0,tx=0,ty=0;
   if(fine) addEventListener('pointermove',function(e){tx=(e.clientX/innerWidth-.5)*2;ty=(e.clientY/innerHeight-.5)*2},{passive:true});
@@ -503,6 +521,8 @@
     if(reduce){L.once(2);addEventListener('scroll',function(){L.once(2)},{passive:true});return}
     L.start(); gl(views.map(function(v){return v.el}),L);
   })();
+  }
+  if(!sans3d) demarrer3d();
 
 
   // 28/10 : envoi du formulaire par Web3Forms (FormSubmit ne transmettait plus rien depuis le 24/07).
